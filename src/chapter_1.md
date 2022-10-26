@@ -1,6 +1,6 @@
 # Chapter 1
 
-Hello
+Hello World!
 
 ## Section 1
 
