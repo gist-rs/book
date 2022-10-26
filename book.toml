@@ -3,16 +3,16 @@ authors = ["katopz <katopz@gmail.com>"]
 language = "en"
 multilingual = false
 src = "src"
-title = "nani-rust"
+title = "nani!?"
 
-[preprocessor.theme]
-pagetoc = true
-sidebar-width = "250px"
+[rust]
+edition = "2021"
 
 [output.html]
 default-theme = "coal"
 preferred-dark-theme = "coal"
-git-repository-url = "https://github.com/nani-rs/nani-book"
+git-repository-url = "https://github.com/nani-rs/book"
+edit-url-template = "https://github.com/nani-rs/book/edit/main/{path}"
 additional-css = ["theme/pagetoc.css"]
 additional-js = ["theme/pagetoc.js"]
 
@@ -26,6 +26,11 @@ editable = true
 [output.html.print]
 enable = false
 
+[preprocessor.theme]
+# pagetoc = true
+sidebar-width = "250px"
+
 [output.theme-ace]
-theme-white = "xcode"
-theme-dark = "monokai"
+theme-white     = "dawn"
+theme-dark      = "monokai"
+below-build-dir = true
