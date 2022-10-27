@@ -3,16 +3,16 @@ authors = ["katopz <katopz@gmail.com>"]
 language = "en"
 multilingual = false
 src = "src"
-title = "gist"
+title = "gist-rust"
 
-[rust]
-edition = "2021"
+[preprocessor.theme]
+pagetoc = true
+sidebar-width = "250px"
 
 [output.html]
 default-theme = "coal"
 preferred-dark-theme = "coal"
 git-repository-url = "https://github.com/gist-rs/book"
-edit-url-template = "https://github.com/gist-rs/book/edit/main/{path}"
 additional-css = ["theme/pagetoc.css"]
 additional-js = ["theme/pagetoc.js"]
 
@@ -26,10 +26,6 @@ editable = true
 [output.html.print]
 enable = false
 
-[preprocessor.theme]
-pagetoc = true
-sidebar-width = "250px"
-
 [output.theme-ace]
-theme-white = "dawn"
+theme-white = "xcode"
 theme-dark = "monokai"
