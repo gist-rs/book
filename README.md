@@ -1,4 +1,4 @@
-# nani-book
+# gist-book
 
 Rust, Wasm, TLDR;
 
@@ -13,5 +13,5 @@ Rust, Wasm, TLDR;
 
 ## Wasm
 
-- [ ] `nani-web3-dapp`:
-- [ ] `nani-web3-wallet`:
+- [ ] `gist-web3-dapp`:
+- [ ] `gist-web3-wallet`:

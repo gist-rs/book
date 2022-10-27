@@ -3,7 +3,7 @@ authors = ["katopz <katopz@gmail.com>"]
 language = "en"
 multilingual = false
 src = "src"
-title = "nani!?"
+title = "gist"
 
 [rust]
 edition = "2021"
@@ -11,8 +11,8 @@ edition = "2021"
 [output.html]
 default-theme = "coal"
 preferred-dark-theme = "coal"
-git-repository-url = "https://github.com/nani-rs/book"
-edit-url-template = "https://github.com/nani-rs/book/edit/main/{path}"
+git-repository-url = "https://github.com/gist-rs/book"
+edit-url-template = "https://github.com/gist-rs/book/edit/main/{path}"
 additional-css = ["theme/pagetoc.css"]
 additional-js = ["theme/pagetoc.js"]
 
@@ -27,10 +27,9 @@ editable = true
 enable = false
 
 [preprocessor.theme]
-# pagetoc = true
+pagetoc = true
 sidebar-width = "250px"
 
 [output.theme-ace]
-theme-white     = "dawn"
-theme-dark      = "monokai"
-below-build-dir = true
+theme-white = "dawn"
+theme-dark = "monokai"
