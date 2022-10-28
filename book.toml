@@ -5,16 +5,18 @@ multilingual = false
 src = "src"
 title = "gist-rust"
 
-[preprocessor.theme]
-pagetoc = true
-sidebar-width = "250px"
+## Uncomment this section to regennerate theme
+# [preprocessor.theme]
+# pagetoc = true
+# sidebar-width = "250px"
 
 [output.html]
+# theme = "theme"
 default-theme = "coal"
 preferred-dark-theme = "coal"
 git-repository-url = "https://github.com/gist-rs/book"
-additional-css = ["theme/pagetoc.css"]
-additional-js = ["theme/pagetoc.js"]
+# additional-css = ["theme/pagetoc.css", "theme/css/variables.css", "theme/css/general.css", "theme/css/chrome.css"]
+# additional-js = ["theme/pagetoc.js"]
 
 [output.html.fold]
 enable = false
@@ -26,6 +28,7 @@ editable = true
 [output.html.print]
 enable = false
 
+# Uncomment this section to regennerate theme
 [output.theme-ace]
 theme-white = "xcode"
 theme-dark = "monokai"
