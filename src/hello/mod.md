@@ -1,5 +1,6 @@
 # Why us
 
+- Code first, talk later.
 - We're [Rustacean](https://rustacean-principles.netlify.app/what_is_rust.html) 🦀.
 
 # Index

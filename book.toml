@@ -15,7 +15,7 @@ title = "gist-rust"
 default-theme = "coal"
 preferred-dark-theme = "coal"
 git-repository-url = "https://github.com/gist-rs/book"
-# additional-css = ["theme/pagetoc.css", "theme/css/variables.css", "theme/css/general.css", "theme/css/chrome.css"]
+additional-css = ["theme/css/variables.css", "theme/css/general.css", "theme/css/chrome.css"]
 # additional-js = ["theme/pagetoc.js"]
 
 [output.html.fold]
@@ -28,7 +28,7 @@ editable = true
 [output.html.print]
 enable = false
 
-# Uncomment this section to regennerate theme
-[output.theme-ace]
-theme-white = "xcode"
-theme-dark = "monokai"
+# # Uncomment this section to regennerate theme
+# [output.theme-ace]
+# theme-white = "xcode"
+# theme-dark = "monokai"

@@ -17,6 +17,8 @@
   - [Huawei is committed to the the success of Rust](https://trusted-programming.github.io/2021/02/07/our-rust-mission-at-huawei.html)
 - Discord:
   - [We drastically improved the performance of a service by switching its implementation from Go to Rust](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
+- Volvo
+  - [Code developed from scratch should definitely be developed in Rust](https://medium.com/volvo-cars-engineering/why-volvo-thinks-you-should-have-rust-in-your-car-4320bd639e09)
 
 # Why us
 
