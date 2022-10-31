@@ -28,7 +28,7 @@ editable = true
 [output.html.print]
 enable = false
 
-# # Uncomment this section to regennerate theme
-# [output.theme-ace]
-# theme-white = "xcode"
-# theme-dark = "monokai"
+# Uncomment this section to regennerate theme
+[output.theme-ace]
+theme-white = "xcode"
+theme-dark = "monokai"
