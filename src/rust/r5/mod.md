@@ -1,7 +1,4 @@
 # R5 - Entry
 
-```rust,editable
-fn main(){
-  println!("hello world!");
-}
-```
+- [init](./init.md)
+- [hello](./hello.md)

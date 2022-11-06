@@ -11,4 +11,4 @@
 
 ## Learn
 
-- [Rust](../solana/mod.md)
+- [Solana ➠](../solana/mod.md)

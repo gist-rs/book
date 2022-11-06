@@ -2,32 +2,32 @@
 
 TLDR;
 
-## R5 : Novice
+## R5 : Entry
 
 > Basic main, focus on simple and straight forward. // Able to hello, condition, loop
 
-[Enroll R5](./r5.md)
+[Enroll R5 ➠](./r5)
 
-## R4 : Beginner
+## R4 : Basic
 
 > Advance main, focus on complex, combine, compose // Able to create basic app + lib.
 
-[Enroll R5](./r4.md)
+[Enroll R4 ➠](./r4)
 
-## R3 : Mid - Level
+## R3 : Advanced
 
 > Basic lib, Serve cli, focus on app, use existing lib. // Able to create async app + advance lib
 
-[Enroll R5](./r3.md)
+[Enroll R3 ➠](./r3)
 
-## R2 : Advance
+## R2 : Expert
 
 > Advance lib, Serve API, Consume as web // Able to create lib, wasm
 
-[Enroll R5](./r2.md)
+[Enroll R2 ➠](./r2)
 
-## R1 : Expert
+## R1 : Master
 
 > Integrate with other, Security, Speed, Prod, CI/CD // Able to use advance lib, deploy.
 
-[Enroll R5](./r1.md)
+[Enroll R1 ➠](./r1.md)

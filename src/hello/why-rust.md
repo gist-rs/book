@@ -28,4 +28,4 @@
 
 ## Learn
 
-- [Rust](../rust/mod.md)
+- [Rust ➠](../rust/mod.md)

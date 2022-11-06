@@ -18,4 +18,4 @@
 
 ## Learn
 
-- [Wasm](../wasm/mod.md)
+- [Wasm ➠](../wasm/mod.md)
