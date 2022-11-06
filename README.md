@@ -1,6 +1,6 @@
 # gist-book
 
-Rust, Wasm, TLDR;
+Focus on gist of `Rust`, `Wasm`, `Solana`.
 
 ## Dev
 
@@ -26,49 +26,3 @@ mdbook serve
 - [ ] `User::PREMIUM` can see `R3` section.
 - [ ] `User::PREMIUM` can see `R2` section.
 - [ ] `User::PREMIUM` can see `R1` section.
-
-## POC
-
-> Project structure
-
-```
-🦀 Project
-├─ 📂 src
-│  ├─ 📄 main.rs
-│  └─ 📄 lib.rs
-└─ 📦 Cargo.toml
-```
-
-```
-* Project
-+ src
-  - main.rs
-  - lib.rs
-# Cargo.toml
-```
-
-```json
-[
-  {
-    "id": "0",
-    "type": "folder",
-    "label": "src",
-    "children": ["0_0", "0_1"]
-  },
-  {
-    "id": "0_0",
-    "type": "file",
-    "label": "main.rs"
-  },
-  {
-    "id": "0_1",
-    "type": "file",
-    "label": "lib.rs"
-  },
-  {
-    "id": "1",
-    "type": "file",
-    "label": "Cargo.toml"
-  }
-]
-```

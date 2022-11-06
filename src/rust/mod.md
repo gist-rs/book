@@ -1,12 +1,10 @@
 # Rust
 
-TLDR;
-
 ## R5 : Entry
 
 > Basic main, focus on simple and straight forward. // Able to hello, condition, loop
 
-[Enroll R5 ➠](./r5)
+[Enroll R5 ➠](./r5/mod.md)
 
 ## R4 : Basic
 

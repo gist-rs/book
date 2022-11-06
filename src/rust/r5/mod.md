@@ -1,4 +1,5 @@
 # R5 - Entry
 
-- [init](./init.md)
-- [hello](./hello.md)
+- [Setup](./setup.md): The required tools.
+- [Develop](./develop.md): Run/Debug/Release.
+- [Next step](./next-step.md): What to do next.
