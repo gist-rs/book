@@ -2,6 +2,12 @@
 
 Rust, Wasm, TLDR;
 
+## Dev
+
+```
+mdbook serve
+```
+
 ## TODO
 
 - [x] `User::Guest` can see `hello` section.

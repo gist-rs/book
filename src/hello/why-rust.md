@@ -1,5 +1,7 @@
 # Why Rust
 
+## Reasons
+
 - Google:
   - [Should your team adopt the Rust programming language?](https://www.youtube.com/watch?v=Gnp4XP1b82E)
 - Microsoft:
@@ -20,7 +22,10 @@
 - Volvo
   - [Code developed from scratch should definitely be developed in Rust](https://medium.com/volvo-cars-engineering/why-volvo-thinks-you-should-have-rust-in-your-car-4320bd639e09)
 
-# Why us
+## Resources
 
-- TLDR;
-- [Rust](../rust/mod.md)
+- [awesome-rust](https://github.com/katopz/awesome-rust)
+
+## Learn
+
+- [Rust ➠](../rust/mod.md)

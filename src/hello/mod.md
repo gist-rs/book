@@ -1,7 +1,9 @@
+> 🚧 This gist is WIP, feel to help.
+
 # Why us
 
-- Code first, talk later.
-- We're [Rustacean](https://rustacean-principles.netlify.app/what_is_rust.html) 🦀.
+- We code first, talkless.
+- We follow [Rustacean](https://rustacean-principles.netlify.app/what_is_rust.html) guide 🦀.
 
 # Index
 
