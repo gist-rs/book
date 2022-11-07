@@ -1,4 +1,4 @@
-> 🚧 This gist is WIP, feel to help.
+> 🚧 This gist is WIP, feel free to help.
 
 # Intro
 

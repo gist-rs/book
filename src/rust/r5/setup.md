@@ -1,59 +1,37 @@
 # Setup
 
-## 🛠 Install `IDE` and tools.
+## 1️⃣ 🛠 Install `IDE` and tools.
 
 - [Rust in Visual Studio Code](https://code.visualstudio.com/docs/languages/rust)
 
-## 📦 Cargo
-
-`Cargo` ≈ `NPM` = Package Manager.
-
-### Init
-
-> How to init app name `foo`.
+## 2️⃣ Use `Cargo`.
+> 💡 📦 [`Cargo`](https://doc.rust-lang.org/cargo/index.html) ≈ `NPM` = Package Manager.
 
 ```shell
-cargo init foo
+cargo init foo           # 👈 Will init app name `foo`.
+
+cargo run                # 👈 Build and Run.
+cargo watch              # 👈 Will watch file change and rebuild.
+cargo test               # 👈 Test the tests if has.
+
+cargo build              # 👈 Just build.
+cargo build --release    # 👈 No debug = Smaller/Faster.
+
+cargo add tokio          # 👈 add package named `tokio`.
+cargo remove tokio       # 👈 remove package named `tokio`.
 ```
+> 💡 [`tokio`](https://tokio.rs/) crate make `async` easier.
 
-### Dev
-
-```shell
-cargo build
-cargo run
-cargo test
-```
-
-### Release
-
-```shell
-cargo build --release
-```
-
-### Add/Remove package (crate)
-
-> How to add, remove package named `tokio`.
-
-```shell
-cargo add tokio
-cargo remove tokio
-```
-
-## 🦀 App
-
-```shell
-cargo init foo
-```
-
+## 3️⃣ Try `hello world`.
+> 👩🏻‍💻 enter `cargo init hello-world` via command line.
 ```yml
-📂 foo
-├─ 📂 src
+📂 hello-world
+├─ 📂 src            # 👈 keep source code in here.
 │  └─ 📄 main.rs     # 👈 app entrypoint.
 └─ 📦 Cargo.toml
 ```
 
-## 🦀 Rust file
-
+└─ 📄 main.rs
 ```rust,editable
 // 👇 main function as an entrypoint.
 fn main(){
@@ -61,10 +39,23 @@ fn main(){
   println!("hello world!"); // 👈 end with ; suffix.
 }
 ```
+└─ 📦 Cargo.toml
+```yml
+[package]
+name = "foo"         # 👈 App name.
+version = "0.1.0"    # 👈 App version.
+edition = "2021"     # 👈 Rust edition.
+
+[dependencies]
+tokio = "1.21.2"     # 👈 Added by `cargo add tokio`.
+```
+
+> You can now skip reading and go [enjoy](./enjoy.md) coding or keep digging below. 👇
 
 ---
 
 ## 🦀 App + File Module
+> Separation of concern to each file.
 
 ```yml
 📂 foo
@@ -75,6 +66,7 @@ fn main(){
 ```
 
 ## 🦀 App + Folder Module
+> Separation of concern to each folder.
 
 ```yml
 📂 foo
@@ -91,6 +83,7 @@ fn main(){
 ```
 
 ## 🦀 Lib
+> Separation of concern to each lib as crate.
 
 ```shell
 cargo init bar --lib
@@ -104,6 +97,7 @@ cargo init bar --lib
 ```
 
 ## 🦀 Mono-repo
+> 1 folder = 1 package.
 
 ```yml
 📂 mono-repo-example
@@ -115,16 +109,6 @@ cargo init bar --lib
 └─ 📦 Cargo.toml    # 👈 Another Cargo.
 ```
 
-## 📦 Cargo.toml
+---
 
-```yml
-[package]
-name = "foo"         # 👈 App name.
-version = "0.1.0"    # 👈 App version.
-edition = "2021"     # 👈 Rust edition.
-
-[dependencies]
-tokio = "1.21.2"     # 👈 Added by `cargo add tokio`.
-```
-
-[Develop ➠](./develop.md)
+[Enjoy ➠](./enjoy.md)
