@@ -27,6 +27,13 @@
 - Code first.
 - We are [Rustacean](https://rustacean-principles.netlify.app/what_is_rust.html) 🦀.
 
+# Goal
+
+- Can fetch/deserialize onchain data.
+- Can target web with `wasm-bindgen`.
+- Can deploy `web-wasm` as static web or dynamic serverless.
+- Can connect and sign messages with `web3` via `wasm`.
+
 # Index
 
 - [Why Rust](hello/why-rust.md)
