@@ -1,29 +1,32 @@
 # Setup
 
-## 1️⃣ 🛠 Install `IDE` and tools.
+## 1️⃣ `IDE` and tools
 
 - [Rust in Visual Studio Code](https://code.visualstudio.com/docs/languages/rust)
 
-## 2️⃣ Use `Cargo`.
+## 2️⃣ Use `Cargo`
+
 > 💡 📦 [`Cargo`](https://doc.rust-lang.org/cargo/index.html) ≈ `NPM` = Package Manager.
 
 ```shell
 cargo init foo           # 👈 Will init app name `foo`.
 
 cargo run                # 👈 Build and Run.
-cargo watch              # 👈 Will watch file change and rebuild.
+cargo watch              # 👈 Watch for file change and rebuild.
 cargo test               # 👈 Test the tests if has.
 
-cargo build              # 👈 Just build.
 cargo build --release    # 👈 No debug = Smaller/Faster.
 
-cargo add tokio          # 👈 add package named `tokio`.
+cargo add tokio          # 👈 add package named `tokio`
 cargo remove tokio       # 👈 remove package named `tokio`.
 ```
+
 > 💡 [`tokio`](https://tokio.rs/) crate make `async` easier.
 
-## 3️⃣ Try `hello world`.
+## 3️⃣ Hello World
+
 > 👩🏻‍💻 enter `cargo init hello-world` via command line.
+
 ```yml
 📂 hello-world
 ├─ 📂 src            # 👈 keep source code in here.
@@ -32,14 +35,17 @@ cargo remove tokio       # 👈 remove package named `tokio`.
 ```
 
 └─ 📄 main.rs
+
 ```rust,editable
 // 👇 main function as an entrypoint.
-fn main(){
+fn main() {
   // 👇 macro to print something out.
   println!("hello world!"); // 👈 end with ; suffix.
 }
 ```
+
 └─ 📦 Cargo.toml
+
 ```yml
 [package]
 name = "foo"         # 👈 App name.
@@ -50,65 +56,143 @@ edition = "2021"     # 👈 Rust edition.
 tokio = "1.21.2"     # 👈 Added by `cargo add tokio`.
 ```
 
-> You can now skip reading and go [enjoy](./enjoy.md) coding or keep digging below. 👇
+> ⚡️ You can now skip to 👉 [enjoy](./enjoy.md) coding or continue reading 4️⃣ below. 👇
 
 ---
 
-## 🦀 App + File Module
-> Separation of concern to each file.
+## 4️⃣ Modules and Project structure.
+
+> 🤔 What if `main.rs` has to many codes? Your should separate that concern to each file/folder.
+
+## 🗂 App + File Module
+
+<details>
+<summary>Separate some function to each file.</summary>
 
 ```yml
 📂 foo
 ├─ 📂 src
 │  ├─ 📄 utils.rs    # 👈 module as a file.
-│  └─ 📄 main.rs     # 👈 `mod utils;` then `use utils;`
+│  └─ 📄 main.rs     # 👈 will need utils file.
 └─ 📦 Cargo.toml
 ```
 
-## 🦀 App + Folder Module
-> Separation of concern to each folder.
+├─ 📄 utils.rs
+
+```rust
+pub fn hello() { // 👈 make it public, or just pub(crate) for internal use.
+  println!("hello world!");
+}
+```
+
+└─ 📄 main.rs
+
+```rust
+mod utils;       // 👈 include utils file.
+use utils        // 👈 and use it.
+
+fn main () {
+  utils.hello(); // 👈 call hello function.
+}
+```
+
+</details>
+
+## 🗂 App + Folder Module
+
+<details>
+<summary>Group related files to each folder.</summary>
 
 ```yml
 📂 foo
 ├─ 📂 src
 │  │
-│  ├─ 🗂 bar            # 👈 module as a folder.
+│  ├─ 🗂 utils
 │  │  ├─ 📄 mod.rs      # 👈 entrypoint.
-│  │  ├─ 📄 hello.rs    # 👈 some file.
-│  │  └─ 📄 world.rs    # 👈 other file.
+│  │  └─ 📄 say.rs      # 👈 Contain hello function.
 │  │
 │  └─ 📄 main.rs        # 👈 `mod bar;` then `use bar::hello;`
 │
 └─ 📦 Cargo.toml
 ```
 
-## 🦀 Lib
-> Separation of concern to each lib as crate.
+├─ 📄 mod.rs
+
+```rust
+pub mod sat;    // 👈 include say file and make it pub so main can use.
+```
+
+└─ 📄 say.rs
+
+```rust
+pub fn hello() { // 👈 make it public, or just pub(crate) for internal use.
+  println!("hello world!");
+}
+```
+
+└─ 📄 main.rs
+
+```rust
+mod utils;        // 👈 include utils file.
+use utils::say;   // 👈 and use.
+
+fn main(){
+  say.hello();    // 👈 then call hello function.
+}
+```
+
+</details>
+
+## 🗂 Lib
+
+<details>
+<summary>Separate each lib as crate.</summary>
 
 ```shell
 cargo init bar --lib
 ```
 
 ```yml
-🗂 bar
+🗂 utils
 ├─ 📂 src
 │  └─ 📄 lib.rs    # 👈 lib entrypoint.
 └─ 📦 Cargo.toml
 ```
 
-## 🦀 Mono-repo
-> 1 folder = 1 package.
+└─ 📄 lib.rs
+
+```rust
+pub fn hello() {    // 👈  make it pub so other can use.
+    println!("hello world!");
+}
+```
+
+> 🤔 Now you have 3 options to use it.
+
+- Use it in `mono-repo` which is the next topic below (Recommend).
+- Push to github and [use it](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html?highlight=git#specifying-dependencies-from-git-repositories) like this in `Cargo.toml`.
+  ```yaml
+  [dependencies]
+  foo = { git="https://YOU_GITHUB_REPO_URL"}
+  ```
+- [Publish](https://doc.rust-lang.org/cargo/reference/publishing.html) it to the internet and `cargo add foo` to use it.
+
+</details>
+
+## 🗂 Mono-repo
+
+<details>
+<summary>1 folder = 1 package.</summary>
 
 ```yml
 📂 mono-repo-example
 │
-├─ 🗂 bar           # 👈 lib.
-├─ 🗂 baz           # 👈 other lib.
+├─ 🗂 utils         # 👈 lib.
 ├─ 📁 foo           # 👈 app.
 │
 └─ 📦 Cargo.toml    # 👈 Another Cargo.
 ```
 
----
+Let's continue to [Enjoy ➠](./enjoy.md)
 
-[Enjoy ➠](./enjoy.md)
+</details>

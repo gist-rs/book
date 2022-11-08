@@ -79,6 +79,12 @@ TLDR;
 
 > Prod, CI/CD, Deploy, Security, Speed, Upgrade.
 
+### Resources
+
+- [ ] https://github.com/rui314/mold
+- [ ] https://github.com/johnthagen/min-sized-rust
+- [ ] https://github.com/richardanaya/wasm-service
+
 ### Program (rs)
 
 - Clockwork ⚙️
