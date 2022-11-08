@@ -111,7 +111,8 @@ fn main () {
 │  │
 │  ├─ 🗂 utils
 │  │  ├─ 📄 mod.rs      # 👈 entrypoint.
-│  │  └─ 📄 say.rs      # 👈 Contain hello function.
+│  │  ├─ 📄 say.rs      # 👈 Contain hello function.
+│  │  └─ 📄 cast.rs    # 👈 will able to use say.
 │  │
 │  └─ 📄 main.rs        # 👈 `mod bar;` then `use bar::hello;`
 │
@@ -121,14 +122,24 @@ fn main () {
 │ │ ├─ 📄 mod.rs
 
 ```rust
-pub mod sat;    // 👈 include say file and make it pub so main can use.
+pub mod say;    // 👈 include say file and make it pub so main can use.
 ```
 
-│ │ └─ 📄 say.rs
+│ │ ├─ 📄 say.rs
 
 ```rust
 pub fn hello() { // 👈 make it public, or just pub(crate) for internal use.
   println!("hello world!");
+}
+```
+
+│ │ └─ 📄 cast.rs
+
+```rust
+use super::say    // 👈 just use. (no mod need because of super)
+
+pub fn cast() {
+  say.hello();    // 👈 then call hello function.
 }
 ```
 
@@ -138,7 +149,7 @@ pub fn hello() { // 👈 make it public, or just pub(crate) for internal use.
 mod utils;        // 👈 include utils file.
 use utils::say;   // 👈 and use.
 
-fn main(){
+fn main() {
   say.hello();    // 👈 then call hello function.
 }
 ```
@@ -186,17 +197,17 @@ pub fn hello() {    // 👈  make it pub so other can use.
 ## 🗂 Workspace
 
 <details>
-<summary>1 folder = 1 package.</summary>
+<summary>>aka Monorepo 1 folder = 1 package.</summary>
 
 ```yml
-📂 mono-repo-example
+📂 workspace-example
 │
-├─ 🗂 utils         # 👈 lib.
-├─ 📂 foo           # 👈 app.
+├─ 🗂 utils         # 👈 utils lib folder.
+├─ 📂 foo           # 👈 same boring app.
 │  ├─ 📄 main.rs
-│  └─ 📦 Cargo.toml # 👈 app Cargo.
+│  └─ 📦 Cargo.toml # 👈 app's Cargo.
 │
-└─ 📦 Cargo.toml    # 👈 Workspace Cargo.
+└─ 📦 Cargo.toml    # 👈 Workspace's Cargo.
 ```
 
 │ └─ 📦 Cargo.toml
@@ -211,7 +222,9 @@ foo = { path="../utils"}  # 👈 refer to parent mod via path
 ```yaml
 [workspace]
 members = [
-    "seahorse-compile",
+  "utils",
+  "foo",
+]
 ```
 
 > Now you are happy! You even can
