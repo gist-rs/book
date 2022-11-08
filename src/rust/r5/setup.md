@@ -18,7 +18,7 @@ cargo test               # 👈 Test the tests if has.
 cargo build --release    # 👈 No debug = Smaller/Faster.
 
 cargo add tokio          # 👈 add package named `tokio`
-cargo remove tokio       # 👈 remove package named `tokio`.
+cargo rm tokio       # 👈 remove package named `tokio`.
 ```
 
 > 💡 [`tokio`](https://tokio.rs/) crate make `async` easier.
