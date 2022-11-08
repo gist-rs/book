@@ -77,7 +77,7 @@ tokio = "1.21.2"     # 👈 Added by `cargo add tokio`.
 └─ 📦 Cargo.toml
 ```
 
-├─ 📄 utils.rs
+│ ├─ 📄 utils.rs
 
 ```rust
 pub fn hello() { // 👈 make it public, or just pub(crate) for internal use.
@@ -85,16 +85,18 @@ pub fn hello() { // 👈 make it public, or just pub(crate) for internal use.
 }
 ```
 
-└─ 📄 main.rs
+│ └─ 📄 main.rs
 
 ```rust
 mod utils;       // 👈 include utils file.
-use utils        // 👈 and use it.
+use utils;        // 👈 and use it.
 
 fn main () {
   utils.hello(); // 👈 call hello function.
 }
 ```
+
+> Now you have too many files and want to group it into folder as a module. See below how to👇
 
 </details>
 
@@ -116,13 +118,13 @@ fn main () {
 └─ 📦 Cargo.toml
 ```
 
-├─ 📄 mod.rs
+│ │ ├─ 📄 mod.rs
 
 ```rust
 pub mod sat;    // 👈 include say file and make it pub so main can use.
 ```
 
-└─ 📄 say.rs
+│ │ └─ 📄 say.rs
 
 ```rust
 pub fn hello() { // 👈 make it public, or just pub(crate) for internal use.
@@ -130,7 +132,7 @@ pub fn hello() { // 👈 make it public, or just pub(crate) for internal use.
 }
 ```
 
-└─ 📄 main.rs
+│ └─ 📄 main.rs
 
 ```rust
 mod utils;        // 👈 include utils file.
@@ -140,6 +142,8 @@ fn main(){
   say.hello();    // 👈 then call hello function.
 }
 ```
+
+> This is better but now you want to reuse that module with other project. Let's make a library then 👇
 
 </details>
 
@@ -159,7 +163,7 @@ cargo init bar --lib
 └─ 📦 Cargo.toml
 ```
 
-└─ 📄 lib.rs
+│ └─ 📄 lib.rs
 
 ```rust
 pub fn hello() {    // 👈  make it pub so other can use.
@@ -169,17 +173,17 @@ pub fn hello() {    // 👈  make it pub so other can use.
 
 > 🤔 Now you have 3 options to use it.
 
-- Use it in `mono-repo` which is the next topic below (Recommend).
 - Push to github and [use it](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html?highlight=git#specifying-dependencies-from-git-repositories) like this in `Cargo.toml`.
   ```yaml
   [dependencies]
   foo = { git="https://YOU_GITHUB_REPO_URL"}
   ```
 - [Publish](https://doc.rust-lang.org/cargo/reference/publishing.html) it to the internet and `cargo add foo` to use it.
+- Use it in `Workspace` which is the next topic below.👇
 
 </details>
 
-## 🗂 Mono-repo
+## 🗂 Workspace
 
 <details>
 <summary>1 folder = 1 package.</summary>
@@ -188,10 +192,29 @@ pub fn hello() {    // 👈  make it pub so other can use.
 📂 mono-repo-example
 │
 ├─ 🗂 utils         # 👈 lib.
-├─ 📁 foo           # 👈 app.
+├─ 📂 foo           # 👈 app.
+│  ├─ 📄 main.rs
+│  └─ 📦 Cargo.toml # 👈 app Cargo.
 │
-└─ 📦 Cargo.toml    # 👈 Another Cargo.
+└─ 📦 Cargo.toml    # 👈 Workspace Cargo.
 ```
+
+│ └─ 📦 Cargo.toml
+
+```yaml
+[dependencies]
+foo = { path="../utils"}  # 👈 refer to parent mod via path
+```
+
+└─ 📦 Cargo.toml
+
+```yaml
+[workspace]
+members = [
+    "seahorse-compile",
+```
+
+> Now you are happy! You even can
 
 Let's continue to [Enjoy ➠](./enjoy.md)
 
