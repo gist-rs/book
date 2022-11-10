@@ -33,6 +33,7 @@
 - Can target web with `wasm-bindgen`.
 - Can deploy `web-wasm` as static web or dynamic serverless.
 - Can connect and sign messages with `web3` via `wasm`.
+- Can transfer Native/`SPL`/`NFT` with `ATA`.
 
 # Index
 
