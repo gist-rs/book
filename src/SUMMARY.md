@@ -18,6 +18,7 @@
 - [Wasm](wasm/mod.md)
   - [W5 - Entry](wasm/w5/mod.md)
   - [W4 - Basic](wasm/w4/mod.md)
+    - [Hello React Wasm](wasm/w4/hello-react-wasm.md)
     - [Time](wasm/w4/time.md)
   - [W3 - Advanced](wasm/w3/mod.md)
     - [Hello web npm](wasm/w3/hello-web-npm.md)
