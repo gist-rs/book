@@ -1,6 +1,6 @@
 # R3 - Advanced
 
-## Goal
+## Goals
 
 - Can crate/use custom features.
 
