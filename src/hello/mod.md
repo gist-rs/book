@@ -27,7 +27,7 @@
 - Code first.
 - We are [Rustacean](https://rustacean-principles.netlify.app/what_is_rust.html) 🦀.
 
-# Goal
+# Goals
 
 - Can fetch/deserialize onchain data.
 - Can target web with `wasm-bindgen`.
