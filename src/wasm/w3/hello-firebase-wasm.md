@@ -1,4 +1,4 @@
-# Hello firebase wasm
+# Hello Firebase Wasm
 
 ## TL;DR
 

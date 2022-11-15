@@ -1,23 +1,5 @@
 # W5 - Entry
 
-## Dev
-
-```
-wasm-pack new
-```
-
-## Test
-
-> You can try `--chrome` but buggy.
-
-```
-wasm-pack test --headless --firefox
-```
-
-## Release
-
-> target web
-
-```
-wasm-pack build . --target web
-```
+- [Setup](./setup.md): The required tools.
+- [Enjoy](./enjoy.md): Enjoy touching 👉🦀.
+- [Next step](./next-step.md): What to do next.
