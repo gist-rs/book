@@ -29,8 +29,8 @@ cargo rm tokio           # 👈 remove package named `tokio`.
 
 ```yml
 📂 hello-world
-├─ 📂 src            # 👈 keep source code in here.
-│  └─ 📄 main.rs     # 👈 app entrypoint.
+├─ 📂 src           # 👈 keep source code in here.
+│  └─ 📄 main.rs    # 👈 app entrypoint.
 └─ 📦 Cargo.toml
 ```
 
@@ -80,7 +80,7 @@ tokio = "1.21.2"     # 👈 Added by `cargo add tokio`.
 │ ├─ 📄 utils.rs
 
 ```rust
-pub fn hello() { // 👈 make it public, or just pub(crate) for internal use.
+pub fn hello() {    // 👈 make it public, or just pub(crate) for internal use.
   println!("hello world!");
 }
 ```
@@ -88,11 +88,11 @@ pub fn hello() { // 👈 make it public, or just pub(crate) for internal use.
 │ └─ 📄 main.rs
 
 ```rust
-mod utils;       // 👈 include utils file.
-use utils;        // 👈 and use it.
+mod utils;          // 👈 include utils file.
+use utils;          // 👈 and use it.
 
 fn main () {
-  utils.hello(); // 👈 call hello function.
+  utils.hello();    // 👈 call hello function.
 }
 ```
 
@@ -110,11 +110,11 @@ fn main () {
 ├─ 📂 src
 │  │
 │  ├─ 🗂 utils
-│  │  ├─ 📄 mod.rs      # 👈 entrypoint.
-│  │  ├─ 📄 say.rs      # 👈 Contain hello function.
+│  │  ├─ 📄 mod.rs     # 👈 entrypoint.
+│  │  ├─ 📄 say.rs     # 👈 Contain hello function.
 │  │  └─ 📄 cast.rs    # 👈 will able to use say.
 │  │
-│  └─ 📄 main.rs        # 👈 `mod bar;` then `use bar::hello;`
+│  └─ 📄 main.rs       # 👈 `mod bar;` then `use bar::hello;`
 │
 └─ 📦 Cargo.toml
 ```
@@ -122,13 +122,13 @@ fn main () {
 │ │ ├─ 📄 mod.rs
 
 ```rust
-pub mod say;    // 👈 include say file and make it pub so main can use.
+pub mod say;        // 👈 include say file and make it pub so main can use.
 ```
 
 │ │ ├─ 📄 say.rs
 
 ```rust
-pub fn hello() { // 👈 make it public, or just pub(crate) for internal use.
+pub fn hello() {    // 👈 make it public, or just pub(crate) for internal use.
   println!("hello world!");
 }
 ```
@@ -136,21 +136,21 @@ pub fn hello() { // 👈 make it public, or just pub(crate) for internal use.
 │ │ └─ 📄 cast.rs
 
 ```rust
-use super::say    // 👈 just use. (no mod need because of super)
+use super::say      // 👈 just use. (no mod need because of super)
 
 pub fn cast() {
-  say.hello();    // 👈 then call hello function.
+  say.hello();      // 👈 then call hello function.
 }
 ```
 
 │ └─ 📄 main.rs
 
 ```rust
-mod utils;        // 👈 include utils file.
-use utils::say;   // 👈 and use.
+mod utils;          // 👈 include utils file.
+use utils::say;     // 👈 and use.
 
 fn main() {
-  say.hello();    // 👈 then call hello function.
+  say.hello();      // 👈 then call hello function.
 }
 ```
 
@@ -170,7 +170,7 @@ cargo init bar --lib
 ```yml
 🗂 utils
 ├─ 📂 src
-│  └─ 📄 lib.rs    # 👈 lib entrypoint.
+│  └─ 📄 lib.rs     # 👈 lib entrypoint.
 └─ 📦 Cargo.toml
 ```
 
@@ -202,19 +202,19 @@ pub fn hello() {    // 👈  make it pub so other can use.
 ```yml
 📂 workspace-example
 │
-├─ 🗂 utils         # 👈 utils lib folder.
-├─ 📂 foo           # 👈 same boring app.
+├─ 🗂 utils            # 👈 utils lib folder.
+├─ 📂 foo              # 👈 same boring app.
 │  ├─ 📄 main.rs
-│  └─ 📦 Cargo.toml # 👈 app's Cargo.
+│  └─ 📦 Cargo.toml    # 👈 app's Cargo.
 │
-└─ 📦 Cargo.toml    # 👈 Workspace's Cargo.
+└─ 📦 Cargo.toml       # 👈 Workspace's Cargo.
 ```
 
 │ └─ 📦 Cargo.toml
 
 ```yaml
 [dependencies]
-foo = { path="../utils"}  # 👈 refer to parent mod via path
+foo = { path="../utils"}    # 👈 refer to parent mod via path
 ```
 
 └─ 📦 Cargo.toml
