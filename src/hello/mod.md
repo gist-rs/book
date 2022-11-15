@@ -37,7 +37,7 @@
 
 # Index
 
-- [Why Rust](hello/why-rust.md)
-- [Why Wasm](hello/why-wasm.md)
-- [Why Solana](hello/why-solana.md)
+- [Why Rust](why-rust.md)
+- [Why Wasm](why-wasm.md)
+- [Why Solana](why-solana.md)
 - [Bye](../bye.md)
