@@ -1,4 +1,4 @@
-# Hello web+npm
+# Hello web npm
 
 ## How to publish `wasm` to `npm` and use via `web`.
 
