@@ -197,7 +197,7 @@ pub fn hello() {    // 👈  make it pub so other can use.
 ## 🗂 Workspace
 
 <details>
-<summary>>aka Monorepo 1 folder = 1 package.</summary>
+<summary>aka Monorepo 1 folder = 1 package.</summary>
 
 ```yml
 📂 workspace-example

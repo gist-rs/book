@@ -2,8 +2,17 @@
 
 ## How to publish `wasm` to `npm` and use via `web`.
 
-> 💡 This example use `no bundler` way to keep it simple.
-> If you use webpack or other bundler go [here](https://rustwasm.github.io/docs/wasm-bindgen/examples/hello-world.html)
+<details>
+<summary>🚥 We will use <code>no-bundler</code> style.</summary>
+
+### You have 2 options here 
+- `bundler` (default, support `webpack`)
+- `no-bundler` (init before use).
+
+We use [vite](https://vitejs.dev/guide/why.html) which is still has [Wasm bundle issue](https://github.com/vitejs/vite/issues/4551) so we tend to use `no-bundler` in the meantime to avoid its and to keep it simple (bundler free).
+
+> 💡 For `bundler` via webpack go [here](https://rustwasm.github.io/docs/wasm-bindgen/examples/hello-world.html)
+</details>
 
 ### 1️⃣ Prerequisites
 
@@ -40,7 +49,3 @@ init().then({
   greet('World!')
 }).catch(console.error);
 ```
-
-> To use with bundler (webpack) see 👉
-
----

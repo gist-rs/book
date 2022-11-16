@@ -20,7 +20,7 @@ TLDR;
 - Transfer `Native` token.
 - Mint `NFT` with `sugar`.
 
-[Enroll R5 ➠](./s5)
+[Enjoy R5 ➠](./s5)
 
 ## R4 : Basic
 
@@ -39,7 +39,7 @@ TLDR;
 - Understand Token Account data.
 - Read `Pyth` data.
 
-[Enroll R4 ➠](./s4)
+[Enjoy R4 ➠](./s4)
 
 ## R3 : Advanced
 
@@ -56,7 +56,7 @@ TLDR;
 - Create `ATA`.
 - Transfer `SPL` token to `ATA`.
 
-[Enroll R3 ➠](./s3)
+[Enjoy R3 ➠](./s3)
 
 ## R2 : Expert
 
@@ -73,7 +73,7 @@ TLDR;
 - Solana Pay.
 - Dialect.
 
-[Enroll R2 ➠](./s2)
+[Enjoy R2 ➠](./s2)
 
 ## R1 : Master
 
@@ -95,4 +95,4 @@ TLDR;
 - Name Service
 - DAO
 
-[Enroll R1 ➠](./s1)
+[Enjoy R1 ➠](./s1)

@@ -27,4 +27,4 @@ wasm-pack publish                     # 👈 publish to npm.
 
 ## 3️⃣ Hello World
 
-// TODO : compile https://rustwasm.github.io/docs/wasm-pack/quickstart.html
+// 🚧 TODO : compile https://rustwasm.github.io/docs/wasm-pack/quickstart.html

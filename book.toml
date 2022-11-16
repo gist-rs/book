@@ -19,8 +19,8 @@ additional-css = ["theme/css/variables.css", "theme/css/general.css", "theme/css
 # additional-js = ["theme/pagetoc.js"]
 
 [output.html.fold]
-enable = false
-level = 1
+enable = true
+level = 0
 
 [output.html.playground]
 editable = true
