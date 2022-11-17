@@ -1,4 +1,6 @@
-# gist-book
+> 🚧 This gist is WIP, feel free to help.
+
+# gist of rust book
 
 Focus on gist of `Rust`, `Wasm`, `Solana`.
 
@@ -14,7 +16,7 @@ mdbook serve
 - [x] `User::Guest` can see `bye` section.
 - [x] `User::Guest` can see `R5` section.
 - [x] `User::Guest` can see and able to run `editor` section.
-- [ ] `User::Guest` can read as step by step.
+- [z] `User::Guest` can read as step by step.
 - [ ] `User::Guest` can see `rust-by-practice` section.
 - [ ] `User::Guest` can see `rustling` section.
 - [ ] `User::Guest` can `auth` with `web3`.
