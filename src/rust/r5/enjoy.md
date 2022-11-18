@@ -1,6 +1,6 @@
 # Enjoy
 
-Frequency use gist for survival purpose, for more examples see 👉 https://doc.rust-lang.org/rust-by-example/index.html
+Frequency use gist for survival purpose, for more examples see 👉 [rust-by-example](https://doc.rust-lang.org/rust-by-example/index.html)
 
 ## Variables
 
