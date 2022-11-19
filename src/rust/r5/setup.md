@@ -56,7 +56,7 @@ edition = "2021"     # 👈 Rust edition.
 tokio = "1.21.2"     # 👈 Added by `cargo add tokio`.
 ```
 
-> ⚡️ You can now skip to 👉 [enjoy](./enjoy.md) coding or continue reading 4️⃣ below. 👇
+> ⚡️ You can now skip to 👉 [enjoy](./enjoy1.md) coding or continue reading 4️⃣ below. 👇
 
 ---
 
@@ -229,6 +229,6 @@ members = [
 
 > Now you are happy! You even can
 
-Let's continue to [Enjoy ➠](./enjoy.md)
+Let's continue to [Enjoy ➠](./enjoy1.md)
 
 </details>
