@@ -30,7 +30,7 @@ fn main() {
     }
 
     // Then loop.
-    for _i in 0..8 {
+    for _i in 0..8 { // 😳 _i mean we won't use i
         count += 1;
     }
 
