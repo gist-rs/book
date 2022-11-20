@@ -1,3 +1,17 @@
 # R4 - Basic
 
-// 🚧 UNDER CONSTRUCTION
+## Reqwest
+
+// TODO
+
+## Serde
+
+// TODO
+
+## Anyhow
+
+// TODO
+
+## ThisError
+
+// TODO

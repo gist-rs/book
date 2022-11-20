@@ -2,7 +2,7 @@
 
 ![](/assets/kat.png) We will need `vec` and `array` to keep things organized as index.
 
-### Vec, iter, map, collect, into_iter, enumerate
+### Vec, iter, map, collect, into_iter, enumerate, unwrap
 
 ```rust,editable
 fn main() {
@@ -54,21 +54,24 @@ fn main() {
 
     // 😱 Uncomment this to see an error.
     // assert_eq!(
-    //     indexed_vec.first().unwrap().1,
+    //     indexed_vec.first().unwrap().1,  // ✨ FYI: avoid unwrap on prod.
     //     &into_iter_indexed_vec.first().unwrap().1
     // );
 }
 ```
+
+> 💡 Read more about `iterate` [here](https://doc.rust-lang.org/rust-by-example/trait/iter.html).  
+> 💡 If you crazy about `iterate` do try [Rust Iterator Cheat Sheet](https://danielkeep.github.io/itercheat_baked.html)
 
 ![](/assets/duck.png) So `iter` will make an auto borrow `&` for us which is handy.  
 Anyway we can use `into_iter` if we need to move instead of borrow with caution.  
 And also `<Vec<_>>` is for lazy crab like us, nice!
 
 > 🏂 Fun fact!  
-> `String` and `Vec` is on `heap`.  
-> `str` and `array` is on `stack`.
+> `String` and `Vec` is allocated in `heap`.  
+> `str` and `array` is allocated in `stack`.
 
-### HashMap, match, Some, None
+### HashMap, match, Option, Some, None, unwrap_or, panic
 
 ![](/assets/kat.png) `HashMap` is like Key/Value pair.
 
@@ -112,7 +115,7 @@ fn main() {
 }
 ```
 
-> 💡 This will take you sometime to get used to `Option<T>`→ `Some<T>`/`None`.  
+> 💡 This will take you sometime to get used to `Option<T>`⎯⎯ unwrap → `Some<T>`/`None`.  
 > To read more about this try [read more](https://doc.rust-lang.org/rust-by-example/error/option_unwrap.html).
 
 ![](/assets/duck.png) Don't be surprise if you found all this confusing. I did! But don't give up just yet!

@@ -34,12 +34,12 @@ fn main() {
 
 ```rust,editable
 // 👇 Let's move struct out from `fn main`.
-#[derive(Debug)] // ✨ derive Debug so we can print later.
+#[derive(Debug)] // ✨ Derive Debug so we can print later.
 struct Animal {
-    #[allow(dead_code)] // ✨ allow dead code.
+    #[allow(dead_code)] // ✨ Allow dead code.
     name: String,
 
-    #[allow(dead_code)] // ✨ allow dead code.
+    #[allow(dead_code)] // ✨ Allow dead code.
     age: u8,
 
     // 👇 `type` is reserved word but we still can use it.
@@ -77,7 +77,7 @@ impl Animal {
     }
 
     // ✨ Define self 👇 method.
-    pub fn self_say(&self) -> &str {
+    pub fn say(&self) -> &str {
         let animal_type = self.r#type.as_str();
         Animal::static_say(animal_type)
     }
@@ -96,17 +96,12 @@ fn main() {
     let cat = Animal::new_cat("bar", 24u8);
     println!("cat: {:#?}", cat);
 
-    // ✨ Call say via self method.
-    let self_say_str = cat.self_say();
-    println!("self_say_str: {:#?}", self_say_str);
+    // ✨ Call say via method itself.
+    let say_str = cat.say();
+    println!("say_str: {:#?}", say_str);
 }
-
 ```
 
 > 💡 You can derive more than one e.g. `#[derive(Debug,Display,Clone,Copy)]` read more about `derive` [here](https://doc.rust-lang.org/rust-by-example/trait/derive.html) and `struct` [here](https://doc.rust-lang.org/rust-by-example/custom_types/structs.html).
 
-![](/assets/kat.png) Now we need `enum` to replace "cat" and "duck" above.
-
-## Enum
-
-// TODO
+[Continue to Day 4 ➠](./enjoy4.md)

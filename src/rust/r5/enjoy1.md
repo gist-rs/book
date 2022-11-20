@@ -4,7 +4,7 @@
 
 > 💡 for more examples see 👉 [rust-by-example](https://doc.rust-lang.org/rust-by-example/index.html)
 
-## Variables
+## Variables, println, assert_eq
 
 ```rust,editable
 fn main() {
@@ -44,7 +44,7 @@ fn main() {
 
 > 💡 More `println` pattern here 👉 https://doc.rust-lang.org/rust-by-example/hello/print.html
 
-## Function, Const
+## fn, const, return, format
 
 ```rust,editable
 // We use a lot of "count", let's DRY it as a constant.
