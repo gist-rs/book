@@ -1,9 +1,8 @@
 mod utils;
 
-use serde_json::Value;
+use serde_json::{json, Value};
 use utils::set_panic_hook;
 use wasm_bindgen::prelude::*;
-use wasm_bindgen_test::wasm_bindgen_test;
 
 // app
 
@@ -13,18 +12,54 @@ use wasm_bindgen_test::wasm_bindgen_test;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
+// 1️⃣
+
 #[wasm_bindgen]
-pub async fn fetch_js_value() -> Result<JsValue, JsError> {
-    set_panic_hook();
-
-    let resp = fetch_value().await?;
-
-    println!("resp:{:#?}", resp);
-
-    Ok(serde_wasm_bindgen::to_value(&resp)?)
+pub fn hello() -> JsValue {
+    serde_wasm_bindgen::to_value(&json!({
+        "foo": "bar"
+    }))
+    .unwrap_or(JsValue::NULL)
 }
 
-pub async fn fetch_value() -> Result<Value, JsError> {
+// 2️⃣
+
+use serde::{Deserialize, Serialize};
+
+#[wasm_bindgen]
+#[derive(Serialize, Deserialize)]
+struct FooBar {
+    foo: String,
+}
+
+#[allow(non_snake_case)]
+#[wasm_bindgen]
+pub async fn getFooBar(input: &str) -> Result<JsValue, JsError> {
+    match serde_wasm_bindgen::to_value(&json!(FooBar {
+        foo: format!("hi! {input}")
+    })) {
+        Ok(js_value) => Ok(js_value),
+        Err(err) => Err(JsError::new(err.to_string().as_ref())),
+    }
+}
+
+// 3️⃣
+
+#[allow(non_snake_case)]
+#[wasm_bindgen]
+pub async fn fetchJsValue() -> Result<JsValue, JsError> {
+    let value = match fetch_value().await {
+        Ok(value) => value,
+        Err(err) => return Err(JsError::new(err.to_string().as_str())),
+    };
+
+    match serde_wasm_bindgen::to_value(&json!(value)) {
+        Ok(js_value) => Ok(js_value),
+        Err(err) => return Err(JsError::new(err.to_string().as_ref())),
+    }
+}
+
+pub async fn fetch_value() -> anyhow::Result<Value> {
     set_panic_hook();
 
     let resp = reqwest::get("https://raw.githubusercontent.com/gist-rs/book/main/examples/wasm/w5/hello-world/src/hello.json")
