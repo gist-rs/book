@@ -72,6 +72,15 @@ pub async fn fetch_value() -> anyhow::Result<Value> {
     Ok(resp)
 }
 
+/*** md
+## Output
+```
+1️⃣ hello: {foo: 'bar'}
+2️⃣ getFooBar: {foo: 'hi! baz'}
+3️⃣ fetchJsValue: {foo: 'bar'}
+```
+***/
+
 #[cfg(test)]
 mod test {
     use crate::fetch_value;
