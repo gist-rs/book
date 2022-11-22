@@ -23,6 +23,8 @@
   - [Code developed from scratch should definitely be developed in Rust](https://medium.com/volvo-cars-engineering/why-volvo-thinks-you-should-have-rust-in-your-car-4320bd639e09)
 - Cloudflare:
   - [Rust is staking its claim as a must-have in the developer toolbox](https://blog.cloudflare.com/workers-rust-sdk/)
+- LogRocket
+  - [optimized Rust code was at least 30 percent faster than the most optimized Go code](https://blog.logrocket.com/when-to-use-rust-when-to-use-golang/)
 
 ## Resources
 
