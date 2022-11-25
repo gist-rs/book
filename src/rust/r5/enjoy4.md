@@ -1,6 +1,6 @@
 # Enjoy Day 4
 
-![](/assets/kat.png) Now we need `enum` to replace "cat" and "duck" type by previous example.
+![](/assets/kat.png) Now we need `enum` to replace "cat" and "duck" type from previous example.
 
 ## Enum
 
@@ -45,6 +45,8 @@ fn main() {
 }
 ```
 
+> 💡 There's more examples about [Enums](https://doc.rust-lang.org/rust-by-example/custom_types/enum.html), and [match enums](https://doc.rust-lang.org/rust-by-example/flow_control/match/destructuring/destructure_enum.html).
+
 ![](/assets/kat.png) That's too easy, let's change to higher gear.
 
 ## strum, Result, Ok, Err
@@ -79,7 +81,7 @@ fn main() {
 
     // ✨ Unwrap or assign as Unknown.
     let animal_type = animal_type.unwrap_or(AnimalType::Unknown).to_string();
-    println!("2️⃣ nimal_type: {animal_type:?}");
+    println!("2️⃣ animal_type: {animal_type:?}");
 
     // ✨ Get AnimalSound from str.
     let cat_sound = AnimalSound::from_str("cat");

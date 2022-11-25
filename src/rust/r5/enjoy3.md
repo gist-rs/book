@@ -34,7 +34,7 @@ fn main() {
 
 ```rust,editable
 // 👇 Let's move struct out from `fn main`.
-#[derive(Debug)] // ✨ Derive Debug so we can print later.
+#[derive(Debug, Clone)] // ✨ Derive Debug so we can print later.
 struct Animal {
     #[allow(dead_code)] // ✨ Allow dead code.
     name: String,
@@ -99,6 +99,30 @@ fn main() {
     // ✨ Call say via method itself.
     let say_str = cat.say();
     println!("say_str: {:#?}", say_str);
+
+    // ✨ You can also clone after derive Clone above 👆
+    let mut duck = cat.clone();
+    duck.name = "duck the duck".to_owned();
+    duck.age = 13;
+
+    //  ✨ Destructing from struct.
+    let Animal { age, .. } = cat;
+    println!("age: {:#?}", age);
+
+    //  ✨ Match struct where animal
+    match &duck {
+        // ✨ Match age at 24
+        Animal { age: 24, .. } => println!("match age at 24 : {:#?}", age),
+
+        // ✨ Match age between 30-50 range.
+        Animal { age: 30..=50, .. } => println!("match age between 30-50 : {:#?}", age),
+
+        // Guard name equal to "foo"
+        Animal { name, .. } if name == "duck the duck" => println!("animal.name: {:#?}", name),
+
+        // Other age.
+        _ => println!("age not in range"),
+    }
 }
 ```
 
