@@ -93,13 +93,11 @@ fn main() {
 
     assert_eq!(another_foo_string, foo_str.to_string());
 
-    // 😱 You can try uncomment this to experience an error `value borrowed here after move`.
-    // 💡 It's has been move 👋 = you can't use it = memory are now free = good.
-
+    // 😱 You can try uncomment 👇 this to experience an error `value borrowed here after move`.
     // println!("foo_string:{foo_string}");
 
     // But if you really want to keep access `foo_string` how?
-    // Just don't move at the first place! 👇
+    // Just don't move in the first place! See below👇
 
     // 1. let other borrow `&` instead of move.
     let borrowed_foo_string = &another_foo_string;

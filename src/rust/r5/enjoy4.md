@@ -11,6 +11,17 @@ enum AnimalType {
     Duck,
 }
 
+// How to return string or &str from enum.
+impl AnimalType {
+    fn as_str(&self) -> &str {
+        match self {
+            AnimalType::Cat => "🐈",
+            AnimalType::Duck => "🐥",
+        }
+    }
+}
+
+// How to use enum with function and match.
 fn sound_of(animal_type: AnimalType) -> &'static str {
     match animal_type {
         AnimalType::Cat => "meaowww",
@@ -19,8 +30,18 @@ fn sound_of(animal_type: AnimalType) -> &'static str {
 }
 
 fn main() {
-    println!("{0:?}: {1:?}", AnimalType::Cat, sound_of(AnimalType::Cat));
-    println!("{0:?}: {1:?}", AnimalType::Duck, sound_of(AnimalType::Duck));
+    println!(
+        "{0:?} aka {1:?} say {2:?}",
+        AnimalType::Cat,
+        AnimalType::Cat.as_str(),
+        sound_of(AnimalType::Cat)
+    );
+    println!(
+        "{0:?} aka {1:?} say {2:?}",
+        AnimalType::Duck,
+        AnimalType::Duck.as_str(),
+        sound_of(AnimalType::Duck)
+    );
 }
 ```
 
@@ -28,7 +49,7 @@ fn main() {
 
 ## strum, Result, Ok, Err
 
-```rust,no_run
+```rust,editable
 use std::str::FromStr;
 use strum_macros::{Display, EnumString};
 
@@ -93,6 +114,9 @@ fn main() {
 
 > 🤷‍♂️ `strum` is not runnable via Rust Playground so output is shown below.
 
+<details>
+<summary>Run</summary>
+
 ```
 1️⃣ animal_type: Ok(Cat)
 2️⃣ nimal_type: "catty"
@@ -100,6 +124,8 @@ fn main() {
 4️⃣ cat_sound_string: "meaowww"
 5️⃣ my_pet: "snoopy"
 ```
+
+</details>
 
 > 💡 Like an `Option`, but this time `Result<T, Error>`⎯⎯ unwrap → `Ok<T>`/`Err`.  
 > Read more about how to handle `Result` [here](https://doc.rust-lang.org/rust-by-example/error/result.html)
