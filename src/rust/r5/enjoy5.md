@@ -51,35 +51,36 @@ fn main() {
 
 ![](/assets/kat.png) Sometime Rust didn't know what type (and size) we return so `Box` and `dyn` is here to help.
 
-```rust,editable
-// Same as previous example.
-#[derive(Debug, Clone)]
-struct Animal {}
-struct Human {}
+```rust
+// ...Continue from example above.
 
-trait Say {
-    fn say(&self) -> String;
-}
-
-impl Say for Animal {
-    fn say(&self) -> String {
-        "meow!".to_owned()
-    }
-}
-
-impl Say for Human {
-    fn say(&self) -> String {
-        "hi!".to_owned()
-    }
-}
-
+# #[derive(Debug, Clone)]
+# struct Animal {}
+# struct Human {}
+#
+# trait Say {
+#     fn say(&self) -> String;
+# }
+#
+# impl Say for Animal {
+#     fn say(&self) -> String {
+#         "meow!".to_owned()
+#     }
+# }
+#
+# impl Say for Human {
+#     fn say(&self) -> String {
+#         "hi!".to_owned()
+#     }
+# }
+#
 // ✨ Compiler need this 👇 to know it size.
 fn animal_or_human() -> Box<dyn Say> {
 
     // ✨ How to get current time.
     let now = std::time::SystemTime::now();
 
-    // ✨ New way to convert `Result` to `Option`
+    // ✨ How to convert `Result` to `Option`.
     let maybe_duration = now.elapsed().ok();
 
     match maybe_duration {
@@ -102,6 +103,60 @@ fn main() {
 }
 ```
 
-![](/assets/kat.png) At this point you should able to read 50% of `Rust` code out there, wait no more! let's go write something or continue to [next section](./r4/mod.md).
+## Supertraits
 
-[Enjoy R4 ➠](../r4/mod.md)
+```rust,editable
+trait Human {
+    fn name(&self) -> String;
+}
+
+trait Learner: Human {
+    fn is_enjoy(&self) -> bool;
+}
+
+trait Coder {
+    fn language(&self) -> String;
+}
+
+trait Rustaceans: Coder + Learner {
+    fn blog(&self) -> String;
+}
+
+struct Me {}
+impl Human for Me {
+    fn name(&self) -> String {
+        "katopz".to_owned()
+    }
+}
+impl Learner for Me {
+    fn is_enjoy(&self) -> bool {
+        true
+    }
+}
+impl Coder for Me {
+    fn language(&self) -> String {
+        "rust".to_owned()
+    }
+}
+impl Rustaceans for Me {
+    fn blog(&self) -> String {
+        "https://katopz.medium.com/".to_owned()
+    }
+}
+
+fn greeting_rustaceans(someone: &dyn Rustaceans) -> String {
+    format!(
+        "My name is {}, I {} coding in {}, you can visit my blog at {}.",
+        someone.name(),
+        someone.is_enjoy().then(|| "enjoy").unwrap_or("sad"),
+        someone.language(),
+        someone.blog(),
+    )
+}
+
+fn main() {
+    println!("{}", greeting_rustaceans(&Me {}));
+}
+```
+
+![](/assets/kat.png) At this point you should able to read 50% of `Rust` code out there, let's [teardown ➠](./teardown.md).

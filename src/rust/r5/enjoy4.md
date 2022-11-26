@@ -135,3 +135,5 @@ fn main() {
 
 > 💡 Like an `Option`, but this time `Result<T, E>`⎯⎯ unwrap → `Ok<T>`/`Err(E)`.  
 > Read more about how to handle `Result` [here](https://doc.rust-lang.org/rust-by-example/error/result.html)
+
+[Continue to Day 5 ➠](./enjoy5.md)
