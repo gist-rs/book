@@ -19,7 +19,7 @@ fn main() {
 
     // Create animal
     let animal = Animal {
-        name: "foo".to_owned(), // ✨ You can use `to_string()` here.
+        name: "foo".to_owned(), // ✨ You can also use `to_string()` here.
         age: 42u8,              // ✨ Shorthand for casting `42 as u8` or `42_u8`.
     };
 
@@ -39,7 +39,7 @@ struct Animal {
     #[allow(dead_code)] // ✨ Allow dead code.
     name: String,
 
-    #[allow(dead_code)] // ✨ Allow dead code.
+    #[allow(dead_code)]
     age: u8,
 
     // 👇 `type` is reserved word but we still can use it.
@@ -99,6 +99,9 @@ fn main() {
     // ✨ Call say via method itself.
     let say_str = cat.say();
     println!("say_str: {:#?}", say_str);
+
+    // ✨ Or via Animal 😳
+    println!("Animal::say: {:#?}", Animal::say(&cat));
 
     // ✨ You can also clone after derive Clone above 👆
     let mut duck = cat.clone();

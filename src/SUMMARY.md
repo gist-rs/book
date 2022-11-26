@@ -11,6 +11,7 @@
     - [Enjoy Day 2](rust/r5/enjoy2.md)
     - [Enjoy Day 3](rust/r5/enjoy3.md)
     - [Enjoy Day 4](rust/r5/enjoy4.md)
+    - [Enjoy Day 5](rust/r5/enjoy5.md)
     - [Next step](rust/r5/next-step.md)
   - [R4 - Basic](rust/r4/mod.md)
     - [How to fetch with reqwest](rust/r4/howto-fetch-reqwest.md)

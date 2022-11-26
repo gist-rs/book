@@ -21,8 +21,9 @@ impl AnimalType {
     }
 }
 
-// How to use enum with function and match.
-fn sound_of(animal_type: AnimalType) -> &'static str {
+// How to use type as a parameters, hey!👇 what's this 😳
+fn say(animal_type: AnimalType) -> &'static str {
+    // ✨  To keep &str survive, we need 👆
     match animal_type {
         AnimalType::Cat => "meaowww",
         AnimalType::Duck => "quackkk",
@@ -34,13 +35,13 @@ fn main() {
         "{0:?} aka {1:?} say {2:?}",
         AnimalType::Cat,
         AnimalType::Cat.as_str(),
-        sound_of(AnimalType::Cat)
+        say(AnimalType::Cat)
     );
     println!(
         "{0:?} aka {1:?} say {2:?}",
         AnimalType::Duck,
         AnimalType::Duck.as_str(),
-        sound_of(AnimalType::Duck)
+        say(AnimalType::Duck)
     );
 }
 ```
@@ -84,11 +85,11 @@ fn main() {
     println!("2️⃣ animal_type: {animal_type:?}");
 
     // ✨ Get AnimalSound from str.
-    let cat_sound = AnimalSound::from_str("cat");
-    println!("3️⃣ cat_sound: {cat_sound:?}");
+    let cat_sound_result = AnimalSound::from_str("cat");
+    println!("3️⃣ cat_sound_result: {:?}", cat_sound_result);
 
     // ✨ Handle cat_sound Result.
-    let cat_sound_string = match cat_sound {
+    let cat_sound_string = match cat_sound_result {
         // ✨ Handle happy case.
         Ok(animal_sound) => animal_sound.to_string(),
 
@@ -97,6 +98,9 @@ fn main() {
     };
 
     println!("4️⃣ cat_sound_string: {cat_sound_string:?}");
+
+    // 😱 Uncomment this to experience an error and try to fix it by add Clone, Copy to AnimalSound
+    // println!("4️⃣ cat_sound_result: {cat_sound_result:?}");
 
     // Match
     let animals = vec![AnimalType::Cat, AnimalType::Pet("snoopy".to_owned())];
@@ -121,13 +125,13 @@ fn main() {
 
 ```
 1️⃣ animal_type: Ok(Cat)
-2️⃣ nimal_type: "catty"
-3️⃣ cat_sound: Ok(Cat)
+2️⃣ animal_type: "catty"
+3️⃣ cat_sound_result: Ok(Cat)
 4️⃣ cat_sound_string: "meaowww"
 5️⃣ my_pet: "snoopy"
 ```
 
 </details>
 
-> 💡 Like an `Option`, but this time `Result<T, Error>`⎯⎯ unwrap → `Ok<T>`/`Err`.  
+> 💡 Like an `Option`, but this time `Result<T, E>`⎯⎯ unwrap → `Ok<T>`/`Err(E)`.  
 > Read more about how to handle `Result` [here](https://doc.rust-lang.org/rust-by-example/error/result.html)
