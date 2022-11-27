@@ -1,0 +1,14 @@
+[
+  {
+    "id": "foo",
+    "type": "Cat",
+    "weight": 123.45,
+    "createdAt": "2022-09-01"
+  },
+  {
+    "id": "bar",
+    "type": "Duck",
+    "weight": 42.2424,
+    "createdAt": "2022-08-01"
+  }
+]
