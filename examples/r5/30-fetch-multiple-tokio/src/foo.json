@@ -1,0 +1,6 @@
+{
+  "id": "foo",
+  "type": "Cat",
+  "weight": 123.45,
+  "createdAt": "2022-09-01"
+}
