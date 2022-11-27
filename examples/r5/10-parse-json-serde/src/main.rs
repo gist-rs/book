@@ -1,13 +1,28 @@
+use serde::{Deserialize, Serialize};
 use serde_json::Value;
+
+// ✨ How to derive serde enum
+#[derive(Serialize, Deserialize, Debug)]
+enum AnimalType {
+    Cat,
+    Duck,
+}
+
+// ✨ How to derive serde struct
+#[derive(Serialize, Deserialize, Debug)]
+struct AnimalData {
+    id: String,
+    r#type: AnimalType,
+}
 
 fn main() {
     // ✨ How to preserve newline JSON str.
     let foo_str = r#"[
-        {"id": "foo"},
-        {"id": "bar"}
+        {"id": "foo", "type": "Cat"},
+        {"id": "bar", "type": "Duck"}
     ]"#;
 
-    // ✨ How to parse json from str.
+    // ✨ How to parse json from str to Value.
     let foo_json: Vec<Value> = serde_json::from_str::<Vec<Value>>(foo_str).unwrap();
     println!("1️⃣ foo_json = {:#?}", foo_json);
 
@@ -42,4 +57,9 @@ fn main() {
         .collect::<Vec<_>>();
 
     println!("4️⃣ filtered_foo_value_json = {:#?}", filtered_foo_value_json);
+
+    // ✨ How to parse json from str to struct.
+    let foo_struct: Vec<AnimalData> = serde_json::from_str::<Vec<AnimalData>>(foo_str).unwrap();
+
+    println!("5️⃣ foo_struct = {:#?}", foo_struct);
 }

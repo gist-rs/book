@@ -1,8 +1,9 @@
 [package]
-name = "howto-parse-json"
+name = "howto-parse-json-serde"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-serde = "1.0.147"
-serde_json = "1.0.89"
+# Use No-std support https://serde.rs/no-std.html
+serde = { version = "1.0", default-features = false, features = ["derive"] }
+serde_json = "1.0"
