@@ -5,19 +5,19 @@
 #### `foo.json`
 
 ```json
-{{#include ../../../examples/r5/20-fetch-json-reqwest/src/foo.json}}
+{{#include ../../../examples/r4/20-fetch-json-reqwest/src/foo.json}}
 ```
 
 #### `Cargo.toml`
 
 ```toml
-{{#include ../../../examples/r5/20-fetch-json-reqwest/Cargo.toml}}
+{{#include ../../../examples/r4/20-fetch-json-reqwest/Cargo.toml}}
 ```
 
 #### `main.rs`
 
 ```rust,edition2021
-{{#include ../../../examples/r5/20-fetch-json-reqwest/src/main.rs}}
+{{#include ../../../examples/r4/20-fetch-json-reqwest/src/main.rs}}
 ```
 
 > 🤷‍♂️ `reqwest`+`TLS` is not runnable via Rust Playground so output is shown below.

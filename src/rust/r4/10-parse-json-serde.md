@@ -1,7 +1,7 @@
 # How to parse json with serde
 
 ```rust
-{{#include ../../../examples/r5/10-parse-json-serde/src/main.rs}}
+{{#include ../../../examples/r4/10-parse-json-serde/src/main.rs}}
 ```
 
 > 🤷‍♂️ `serde_json` is not runnable via Rust Playground so output is shown below.

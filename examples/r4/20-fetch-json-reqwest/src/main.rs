@@ -30,6 +30,6 @@ async fn fetch(url: &str) -> anyhow::Result<Vec<AnimalData>> {
 // ✨ How to async main.
 #[tokio::main]
 async fn main() {
-    let json = fetch("https://raw.githubusercontent.com/gist-rs/book/main/examples/r5/20-fetch-json-reqwest/src/foo.json").await;
+    let json = fetch("https://raw.githubusercontent.com/gist-rs/book/main/examples/r4/20-fetch-json-reqwest/src/foo.json").await;
     println!("{json:#?}");
 }

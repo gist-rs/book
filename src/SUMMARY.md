@@ -16,7 +16,7 @@
   - [R4 - Basic](rust/r4/mod.md)
     - [How to parse json with serde](rust/r4/10-parse-json-serde.md)
     - [How to fetch json with reqwest](rust/r4/20-fetch-json-reqwest.md)
-    - [How to fetch multiple with tokio]()(rust/r4/30-fetch-multiple-tokio.md)
+    - [How to fetch multiple with tokio](rust/r4/30-fetch-multiple-tokio.md)
     - [How to fetch multiple with async_std]()(rust/r4/31-fetch-multiple-async_std.md)
     - [How to fetch multiple with futures]()(rust/r4/32-fetch-multiple-futures.md)
     - [How to handle multiple errors]()(rust/r4/40-handle-multiple-errors.md)
