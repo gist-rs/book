@@ -15,7 +15,7 @@ title = "Gist of Rust 🦀"
 default-theme = "coal"
 preferred-dark-theme = "coal"
 git-repository-url = "https://github.com/gist-rs/book"
-additional-css = ["theme/css/variables.css", "theme/css/general.css", "theme/css/chrome.css"]
+additional-css = ["theme/css/variables.css", "theme/css/general.css", "theme/css/chrome.css", "theme/highlight.css"]
 # additional-js = ["theme/pagetoc.js"]
 additional-js = ["js/helper.js"]
 
@@ -29,7 +29,7 @@ editable = true
 [output.html.print]
 enable = false
 
-# Uncomment this section to regennerate theme
+# Uncomment this section to regenerate theme
 [output.theme-ace]
 theme-white = "xcode"
 theme-dark = "monokai"

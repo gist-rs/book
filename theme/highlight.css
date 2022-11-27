@@ -1,82 +1,65 @@
-/*
- * An increased contrast highlighting scheme loosely based on the
- * "Base16 Atelier Dune Light" theme by Bram de Haan
- * (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/dune)
- * Original Base16 color scheme by Chris Kempson
- * (https://github.com/chriskempson/base16)
- */
-
-/* Comment */
-.hljs-comment,
-.hljs-quote {
-  color: #575757;
-}
-
-/* Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-attribute,
-.hljs-tag,
-.hljs-name,
-.hljs-regexp,
-.hljs-link,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class {
-  color: #d70025;
-}
-
-/* Orange */
-.hljs-number,
-.hljs-meta,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params {
-  color: #b21e00;
-}
-
-/* Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet {
-  color: #008200;
-}
-
-/* Blue */
-.hljs-title,
-.hljs-section {
-  color: #0030f2;
-}
-
-/* Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-  color: #9d00ec;
-}
-
 .hljs {
   display: block;
   overflow-x: auto;
-  background: #f6f7f6;
-  color: #000;
+  padding: 1em;
 }
-
-.hljs-emphasis {
-  font-style: italic;
+.hljs {
+  padding: 3px 5px;
 }
-
-.hljs-strong {
-  font-weight: bold;
+.hljs {
+  background: #272822;
+  color: #ddd;
 }
-
-.hljs-addition {
-  color: #22863a;
-  background-color: #f0fff4;
+.hljs-keyword,
+.hljs-literal,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-strong,
+.hljs-tag {
+  color: #f92672;
 }
-
-.hljs-deletion {
-  color: #b31d28;
-  background-color: #ffeef0;
+.hljs-code {
+  color: #66d9ef;
+}
+.hljs-attribute,
+.hljs-link,
+.hljs-regexp,
+.hljs-symbol {
+  color: #bf79db;
+}
+.hljs-addition,
+.hljs-built_in,
+.hljs-bullet,
+.hljs-emphasis,
+.hljs-section,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-string,
+.hljs-subst,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-title,
+.hljs-type,
+.hljs-variable {
+  color: #a6e22e;
+}
+.hljs-class .hljs-title,
+.hljs-title.class_ {
+  color: #fff;
+}
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta,
+.hljs-quote {
+  color: #75715e;
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-literal,
+.hljs-section,
+.hljs-selector-id,
+.hljs-selector-tag,
+.hljs-title,
+.hljs-type {
+  font-weight: 700;
 }
