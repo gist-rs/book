@@ -36,11 +36,11 @@ async fn fetch_multiple_with_one_client_join_all(urls: &[&str]) -> anyhow::Resul
 
 #[tokio::main]
 async fn main() {
-    let sources = [
-        "https://raw.githubusercontent.com/gist-rs/book/main/examples/r4/32-fetch-multiple-futures/src/foo.json",
-    "https://raw.githubusercontent.com/gist-rs/book/main/examples/r4/32-fetch-multiple-futures/src/bar.json"
+    let urls = [
+        "https://raw.githubusercontent.com/gist-rs/book/main/examples/r4/30-fetch-multiple-futures/src/foo.json",
+    "https://raw.githubusercontent.com/gist-rs/book/main/examples/r4/30-fetch-multiple-futures/src/bar.json"
     ];
 
-    let json = fetch_multiple_with_one_client_join_all(&sources).await;
+    let json = fetch_multiple_with_one_client_join_all(&urls).await;
     println!("{json:#?}");
 }

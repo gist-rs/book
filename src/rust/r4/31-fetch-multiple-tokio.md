@@ -1,29 +1,29 @@
-# How to fetch multiple with futures
+# How to fetch multiple with tokio
 
 > 🚧 `#[tokio::main]` Not support `wasm`, do use `futures` instead.
 
 #### `foo.json`
 
 ```json
-{{#include ../../../examples/r4/31-fetch-multiple-futures/src/foo.json}}
+{{#include ../../../examples/r4/31-fetch-multiple-tokio/src/foo.json}}
 ```
 
 #### `bar.json`
 
 ```json
-{{#include ../../../examples/r4/31-fetch-multiple-futures/src/bar.json}}
+{{#include ../../../examples/r4/31-fetch-multiple-tokio/src/bar.json}}
 ```
 
 #### `Cargo.toml`
 
 ```toml
-{{#include ../../../examples/r4/31-fetch-multiple-futures/Cargo.toml}}
+{{#include ../../../examples/r4/31-fetch-multiple-tokio/Cargo.toml}}
 ```
 
 #### `main.rs`
 
 ```rust,edition2021
-{{#include ../../../examples/r4/31-fetch-multiple-futures/src/main.rs}}
+{{#include ../../../examples/r4/31-fetch-multiple-tokio/src/main.rs}}
 ```
 
 > 🤷‍♂️ `reqwest`+`TLS` is not runnable via Rust Playground so output is shown below.
