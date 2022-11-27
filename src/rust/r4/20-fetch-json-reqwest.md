@@ -1,5 +1,7 @@
 # How to fetch json with reqwest
 
+> 🚧 `#[tokio::main]` Not support `wasm`, do use `futures` instead.
+
 #### `foo.json`
 
 ```json
