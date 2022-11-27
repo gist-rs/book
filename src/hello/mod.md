@@ -7,13 +7,13 @@
 
 # Goals
 
-- Provide enjoyable learning path `Rust`, `Wasm` level by level.
-- Provide from Working examples along with informative comments.
-- No `teach by errors`, only shortest and happy case.
+- 🎄 Provide smoothed `Rust`, `Wasm` learning curve by stack up working examples.
+- 🛣 Provide shorten `happy case` examples (failure case is optional).
+- 🏔 Provide 5 levels to climb up, focus sort by most use.
 
 # Non-Goals
 
-- Cover all topics and details, only important gists.
+- We won't cover all topics and details, focus only a must gists.
 
 # Index
 

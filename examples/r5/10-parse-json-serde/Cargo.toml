@@ -1,0 +1,8 @@
+[package]
+name = "howto-parse-json"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = "1.0.147"
+serde_json = "1.0.89"

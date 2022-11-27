@@ -1,17 +1,10 @@
 # R4 - Basic
 
-## Reqwest
+![](/assets/kat.png) Before we can continue please make sure that you have learnt this [cool stuff](../r5/teardown.md) already. From now on we will learn by examples.
 
-// TODO
+## Examples
 
-## Serde
+> ✨ You will learn how to fetch with `reqwest` then parse with `serde`, handle result with `anyhow`, control error with `thiserror`.
 
-// TODO
-
-## Anyhow
-
-// TODO
-
-## ThisError
-
-// TODO
+- [How to parse `json` with `serde`](./10-parse-json-serde.md)
+- [How to fetch with `reqwest`](./20-fetch-reqwest.md)

@@ -32,4 +32,4 @@
 
 ---
 
-![](/assets/kat.png) Easy right? Let's go deeper! We're not done yet 👉 [Continue to R 4 ➠](../r4/mod.md)
+![](/assets/kat.png) Easy right? Let's go deeper! We're not done yet 👉 [Continue to R4 ➠](../r4/mod.md)
