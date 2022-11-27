@@ -2,9 +2,11 @@
 
 ## Reasons
 
-- [WebAssembly 2-3 times faster than Javascript](https://vercel.com/blog/introducing-support-for-webassembly-at-the-edge)
-- [Production Ready](https://bytecodealliance.org/articles/wasmtime-1-0-fast-safe-and-production-ready)
-- [How Fastly and the developer community are investing in the WebAssembly ecosystem](https://www.fastly.com/blog/how-fastly-and-developer-community-invest-in-webassembly-ecosystem)
+- [WebAssembly 2-3 times faster than Javascript.](https://vercel.com/blog/introducing-support-for-webassembly-at-the-edge)
+- Bytecode Alliance: [Production Ready](https://bytecodealliance.org/articles/wasmtime-1-0-fast-safe-and-production-ready)
+- Disney+: [We chose `Rust`, targeting WebAssembly (`WASM`), for ease of web deployment and app updatability.](https://medium.com/disney-streaming/introducing-the-disney-application-development-kit-adk-ad85ca139073)
+- Fastly: [How Fastly and the developer community are investing in the `WebAssembly` ecosystem.](https://www.fastly.com/blog/how-fastly-and-developer-community-invest-in-webassembly-ecosystem)
+- Midokura (Sony Group): [We believe that Wasm will play a key role in #IoT development.](https://twitter.com/midokura/status/1457603964447363079)
 
 ## Landscape
 
