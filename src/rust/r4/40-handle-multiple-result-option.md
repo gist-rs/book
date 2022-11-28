@@ -60,7 +60,7 @@ fn main() {
     let random_results = vec![Ok(1), Ok(2), Err(3)];
     println!("1️⃣ random_results: {:?}", random_results);
 
-    let map_option_foo = random_result.iter().map(|e| e.ok()).collect::<Vec<_>>();
+    let map_option_foo = random_results.iter().map(|e| e.ok()).collect::<Vec<_>>();
     println!("2️⃣ map_option_foo: {:?}", map_option_foo);
 
     // How to convert from `Option` to `Result`.
@@ -69,7 +69,7 @@ fn main() {
 
     let map_result_foo = random_options
         .iter()
-        .map(|e| e.ok_or("❗️ Error"))
+        .map(|e| e.ok_or("Error!!!"))
         .collect::<Vec<_>>();
 
     println!("4️⃣ map_result_foo: {:?}", map_result_foo);
