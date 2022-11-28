@@ -18,7 +18,7 @@
     - [How to fetch json with reqwest](rust/r4/20-fetch-json-reqwest.md)
     - [How to fetch multiple with futures](rust/r4/30-fetch-multiple-futures.md)
     - [How to fetch multiple with tokio](rust/r4/31-fetch-multiple-tokio.md)
-    - [How to handle multiple errors]()(rust/r4/40-handle-multiple-errors.md)
+    - [How to handle multiple result and option](rust/r4/40-handle-multiple-result-option.md)
   - [R3 - Advanced]()(rust/r3/mod.md)
     - [Custom features]()(rust/r3/custom-feature.md)
     - [Chill Day 1]()(rust/r3/chill1.md)
