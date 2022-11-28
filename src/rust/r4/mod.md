@@ -11,3 +11,7 @@
 - Able to control error with `thiserror`.
 - Able to fetch multiple with `futures` and `tokio`
 - Able to handle multiple `result` and `option`.
+
+## Need more like this?
+
+- [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook)

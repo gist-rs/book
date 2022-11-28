@@ -3,6 +3,11 @@
 ## 1️⃣ `IDE` and tools
 
 - [Rust in Visual Studio Code](https://code.visualstudio.com/docs/languages/rust)
+- Install extra tools.
+  ```shell
+  cargo install cargo-edit    # 👈 so we can use cargo add.
+  cargo install cargo-watch   # 👈 so we can use cargo watch.
+  ```
 
 ## 2️⃣ Use `Cargo`
 

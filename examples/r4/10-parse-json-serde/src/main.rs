@@ -1,5 +1,5 @@
 use serde::{Deserialize, Serialize};
-use serde_json::Value;
+use serde_json::{json, Value};
 use url::Url;
 
 // ✨ How to derive serde enum
@@ -14,11 +14,11 @@ enum AnimalType {
 struct AnimalData {
     id: String,
     r#type: AnimalType,
-    img_url: Url,       // ✨ Parse to Url.
+    img_url: Url, // ✨ Parse to Url.
 }
 
 fn main() {
-    // ✨ How to preserve newline JSON str.
+    // ✨ How to create JSON raw(r#) &str.
     let foo_str = r#"[
         {"id": "foo", "type": "Cat", "img_url": "http://localhost:3000/assets/kat.png"},
         {"id": "bar", "type": "Duck", "img_url": "http://localhost:3000/assets/duck.png"}
@@ -60,10 +60,19 @@ fn main() {
 
     println!("4️⃣ filtered_foo_value_json = {:#?}", filtered_foo_json);
 
-    // ✨ How to parse json from str to struct.
-    let foo_struct: Vec<AnimalData> = serde_json::from_str::<Vec<AnimalData>>(foo_str).unwrap();
+    // ✨ How to parse json from &str to struct.
+    let foo_struct = serde_json::from_str::<Vec<AnimalData>>(foo_str).unwrap();
 
     println!("5️⃣ foo_struct = {:#?}", foo_struct);
-}
 
-> 💡 Read more about `Url` [here](https://rust-lang-nursery.github.io/rust-cookbook/web/url.html)
+    // ✨ How to create JSON value.
+    let bar_value = json!({
+        "id": "bar",
+        "type": "Duck",
+        "img_url": "http://localhost:3000/assets/duck.png"
+    });
+
+    // ✨ How to parse json from value
+    let bar_struct = serde_json::from_value::<AnimalData>(bar_value).unwrap();
+    println!("6️⃣ bar_struct = {:#?}", bar_struct);
+}
