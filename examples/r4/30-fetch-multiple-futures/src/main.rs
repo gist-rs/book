@@ -12,14 +12,13 @@ struct AnimalData {
 
 // Shared client for each call.
 async fn fetch_multiple_with_one_client_join_all(urls: &[&str]) -> anyhow::Result<Vec<AnimalData>> {
-    // New shared client once.
+    // ✨ New shared client once.
     let client = Client::new();
 
     // ✨ How to use join_all.
-    let results = future::join_all(urls.iter().map(|url| {
+    let results = future::join_all(urls.iter().map(|&url| {
         // ✨ Use shared client.
         let client = &client;
-        let url = *url;
         async move {
             let resp = client.get(url).send().await?;
             resp.json::<AnimalData>().await
@@ -40,14 +39,9 @@ async fn fetch_multiple_with_each_client_join_all(
     urls: &[&str],
 ) -> anyhow::Result<Vec<AnimalData>> {
     // ✨ How to use join_all.
-    let results = future::join_all(urls.iter().map(|url| async move {
+    let results = future::join_all(urls.iter().map(|&url| async move {
         // Fetch each url with new client.
-        Client::new()
-            .get(*url)
-            .send()
-            .await?
-            .json::<AnimalData>()
-            .await
+        reqwest::get(url).await?.json::<AnimalData>().await
     }))
     .await;
 
