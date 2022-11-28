@@ -1,6 +1,6 @@
 # How to fetch multiple with futures
 
-> 🚧 `#[tokio::main]` Not support `wasm`, do use `futures` instead.
+> 💡 full source code is on [<i id="git-repository-button" class="fa fa-github"></i> github](https://github.com/gist-rs/book/blob/main/examples/r4/30-fetch-multiple-futures)
 
 #### `foo.json`
 
