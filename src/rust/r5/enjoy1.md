@@ -11,17 +11,17 @@ fn main() {
     // Define immutable variable.
     let count = 0;
 
-    // {:#?} mean format pretty for Debug.
-    println!("count = {:#?}", count);
+    // {} mean param(0).
+    println!("count = {}", count);
 
     // Define mutable variable.
     let mut count = 1;
 
-    // {0} mean first param for Display.
-    println!("{0} = {1}", "count", count);
-
     // So we can change it
     count += 1;
+
+    // {0} mean param(0), {1:#?} mean param(1) with pretty print(#) for Debug(?).
+    println!("{0} = {1:#?}", "count", count);
 
     // Let's make some condition.
     if count == 2 {
@@ -29,12 +29,12 @@ fn main() {
         println!("count = {count}");
     }
 
-    // This .. 👇 here's mean range i from 0 to 7.
+    // This .. 👇 mean range i from 0 to 7.
     for _i in 0..8 { // ✨ _i mean we won't use i
         count += 1;
     }
 
-    // Assert that count is 10.
+    // Assert that count is equal 10.
     assert_eq!(count, 10);
 
     // As base 16 hexadecimal.
