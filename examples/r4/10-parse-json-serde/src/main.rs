@@ -1,5 +1,6 @@
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
+use url::Url;
 
 // ✨ How to derive serde enum
 #[derive(Serialize, Deserialize, Debug)]
@@ -12,14 +13,15 @@ enum AnimalType {
 #[derive(Serialize, Deserialize, Debug)]
 struct AnimalData {
     id: String,
-    r#type: AnimalType,
+    r#type: AnimalType, // Custom type
+    img_url: Url,       // Url
 }
 
 fn main() {
     // ✨ How to preserve newline JSON str.
     let foo_str = r#"[
-        {"id": "foo", "type": "Cat"},
-        {"id": "bar", "type": "Duck"}
+        {"id": "foo", "type": "Cat", "img_url": "http://localhost:3000/assets/kat.png"},
+        {"id": "bar", "type": "Duck", "img_url": "http://localhost:3000/assets/duck.png"}
     ]"#;
 
     // ✨ How to parse json from str to Value.

@@ -52,7 +52,7 @@ fn main() {
 }
 ```
 
-### How to convert between `Result` and `Option`
+## How to convert between `Result` and `Option`
 
 ```rust,editable
 fn main() {
