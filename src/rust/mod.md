@@ -1,6 +1,6 @@
 # Rust
 
-![](/assets/kat.png) Welcome!
+![](/assets/kat.png) Welcome to `Rust` journey. I'll be with you til the end. Enjoy!
 
 ## R5 : Entry
 
