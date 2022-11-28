@@ -1,8 +1,8 @@
-use futures::future;
 use reqwest::Client;
 use serde::{Deserialize, Serialize};
+use tokio::task;
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "camelCase")]
 struct AnimalData {
     id: String,
@@ -10,37 +10,44 @@ struct AnimalData {
     created_at: String,
 }
 
-async fn fetch_multiple_with_one_client_join_all(urls: &[&str]) -> anyhow::Result<Vec<AnimalData>> {
-    let client = Client::new();
+async fn fetch(url: &str) -> anyhow::Result<AnimalData> {
+    Ok(Client::new()
+        .get(url)
+        .send()
+        .await?
+        .json::<AnimalData>()
+        .await?)
+}
 
-    // ✨ How to use join_all.
-    let results = future::join_all(urls.iter().map(|url| {
-        let client = &client;
-        async move {
-            let resp = client.get(*url).send().await?;
-            resp.json::<AnimalData>().await
-        }
-    }))
-    .await;
+async fn fetch_multiple(urls: [&'static str; 2]) -> anyhow::Result<Vec<AnimalData>> {
+    // ✨ How to use task::spawn
+    let tasks = urls.iter().map(|url| task::spawn(fetch(url)));
 
-    let result = results
+    // ✨ Collect task result.
+    let mut results = vec![];
+    for task in tasks {
+        results.push(task.await);
+    }
+
+    // Return flatten results.
+    Ok(results
+        // We use into_iter so we get Vec<AnimalData> instead of Vec<&AnimalData>
         .into_iter()
-        .map(|res| match res {
-            Ok(json) => json,
-            Err(err) => panic!("Error: {err}"),
-        })
-        .collect::<Vec<_>>();
-
-    Ok(result)
+        // ✨ Ignore task join result
+        .flatten()
+        // ✨ Ignore fetch result
+        .flatten()
+        // Finally get it.
+        .collect::<Vec<AnimalData>>())
 }
 
 #[tokio::main]
 async fn main() {
-    let sources = [
+    let urls:[&'static str;2] = [
         "https://raw.githubusercontent.com/gist-rs/book/main/examples/r4/31-fetch-multiple-tokio/src/foo.json",
-    "https://raw.githubusercontent.com/gist-rs/book/main/examples/r4/31-fetch-multiple-tokio/src/bar.json"
+    "https://raw.githubusercontent.com/gist-rs/book/main/examples/r4/31-fetch-multiple-tokio/src/bar.json" 
     ];
 
-    let json = fetch_multiple_with_one_client_join_all(&sources).await;
+    let json = fetch_multiple(urls).await;
     println!("{json:#?}");
 }

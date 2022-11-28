@@ -21,6 +21,7 @@
     - [How to handle multiple errors]()(rust/r4/40-handle-multiple-errors.md)
   - [R3 - Advanced]()(rust/r3/mod.md)
     - [Custom features]()(rust/r3/custom-feature.md)
+    - [Chill Day 1]()(rust/r3/chill1.md)
   - [R2 - Expert]()(rust/r2/mod.md)
     - [Hello Actix CloudRun]()(rust/r2/hello-actix-cloudrun.md)
   - [R1 - Master]()(rust/r1/mod.md)
