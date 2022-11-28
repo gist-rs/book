@@ -26,19 +26,15 @@ async fn fetch_multiple(urls: [&'static str; 2]) -> anyhow::Result<Vec<AnimalDat
     // ✨ Collect task result.
     let mut results = vec![];
     for task in tasks {
-        results.push(task.await);
+        results.push(task.await?);
     }
 
-    // Return flatten results.
+    // ✨ Return flattened results, silent if error.
     Ok(results
         // We use into_iter so we get Vec<AnimalData> instead of Vec<&AnimalData>
         .into_iter()
-        // ✨ Ignore task join result
         .flatten()
-        // ✨ Ignore fetch result
-        .flatten()
-        // Finally get it.
-        .collect::<Vec<AnimalData>>())
+        .collect::<Vec<_>>())
 }
 
 #[tokio::main]

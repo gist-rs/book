@@ -46,6 +46,20 @@ Ok(
         },
     ],
 )
+Ok(
+    [
+        AnimalData {
+            id: "foo",
+            weight: 123.45,
+            created_at: "2022-09-01",
+        },
+        AnimalData {
+            id: "bar",
+            weight: 42.2424,
+            created_at: "2022-08-01",
+        },
+    ],
+)
 ```
 
 </details>

@@ -10,28 +10,53 @@ struct AnimalData {
     created_at: String,
 }
 
+// Shared client for each call.
 async fn fetch_multiple_with_one_client_join_all(urls: &[&str]) -> anyhow::Result<Vec<AnimalData>> {
+    // New shared client once.
     let client = Client::new();
 
     // ✨ How to use join_all.
     let results = future::join_all(urls.iter().map(|url| {
+        // ✨ Use shared client.
         let client = &client;
+        let url = *url;
         async move {
-            let resp = client.get(*url).send().await?;
+            let resp = client.get(url).send().await?;
             resp.json::<AnimalData>().await
         }
     }))
     .await;
 
-    let result = results
+    // ✨ Return flattened results, silent if error.
+    Ok(results
+        // We use into_iter so we get Vec<AnimalData> instead of Vec<&AnimalData>
         .into_iter()
-        .map(|res| match res {
-            Ok(json) => json,
-            Err(err) => panic!("Error: {err}"),
-        })
-        .collect::<Vec<_>>();
+        .flatten()
+        .collect::<Vec<_>>())
+}
 
-    Ok(result)
+// Each client for each call.
+async fn fetch_multiple_with_each_client_join_all(
+    urls: &[&str],
+) -> anyhow::Result<Vec<AnimalData>> {
+    // ✨ How to use join_all.
+    let results = future::join_all(urls.iter().map(|url| async move {
+        // Fetch each url with new client.
+        Client::new()
+            .get(*url)
+            .send()
+            .await?
+            .json::<AnimalData>()
+            .await
+    }))
+    .await;
+
+    // ✨ Return flattened results, silent if error.
+    Ok(results
+        // We use into_iter so we get Vec<AnimalData> instead of Vec<&AnimalData>
+        .into_iter()
+        .flatten()
+        .collect::<Vec<_>>())
 }
 
 #[tokio::main]
@@ -42,5 +67,8 @@ async fn main() {
     ];
 
     let json = fetch_multiple_with_one_client_join_all(&urls).await;
+    println!("{json:#?}");
+
+    let json = fetch_multiple_with_each_client_join_all(&urls).await;
     println!("{json:#?}");
 }
