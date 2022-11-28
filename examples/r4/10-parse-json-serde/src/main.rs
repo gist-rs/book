@@ -50,13 +50,13 @@ fn main() {
     println!("3️⃣ filter_map_foo_json = {:#?}", filtered_foo_json);
 
     // ✨ How to filter json element's value with filter_map by matched value.
-    let filtered_foo_value_json = foo_json
+    let filtered_foo_json = foo_json
         .iter()
         .filter(|v| v["id"] == "foo")
         .filter_map(|v| v["id"].as_str())
         .collect::<Vec<_>>();
 
-    println!("4️⃣ filtered_foo_value_json = {:#?}", filtered_foo_value_json);
+    println!("4️⃣ filtered_foo_value_json = {:#?}", filtered_foo_json);
 
     // ✨ How to parse json from str to struct.
     let foo_struct: Vec<AnimalData> = serde_json::from_str::<Vec<AnimalData>>(foo_str).unwrap();
