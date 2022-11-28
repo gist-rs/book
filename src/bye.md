@@ -4,13 +4,17 @@
 
 ### Reading
 
-1. [📚 Official Book](https://doc.rust-lang.org/book/): Don't skip this.
+1. [📚 Official Book](https://doc.rust-lang.org/book/): Don't skip this ⭐️.
 1. [📚 Easy Rust](https://dhghomon.github.io/easy_rust/Chapter_1.html): Easier to read, no fancy word.
 1. [📚 A half-hour to learn Rust](https://fasterthanli.me/articles/a-half-hour-to-learn-rust): Took more than a half-hour for me 😅.
 
+### Using
+
+1. [👨‍🍳 Rust cookbook](https://rust-lang-nursery.github.io/rust-cookbook/intro.html): Recommend! ⭐️.
+
 ### Doing
 
-1. [👨🏻‍💻 Rust By Example](https://doc.rust-lang.org/rust-by-example): Less talk, Plenty of working example.
+1. [👨🏻‍💻 Rust By Example](https://doc.rust-lang.org/rust-by-example): Less talk, Plenty of working example ⭐️.
 1. [👨🏻‍💻 Rustlings](https://github.com/rust-lang/rustlings): Learn by fixing bugs.
 
 ### Playing

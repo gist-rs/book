@@ -1,5 +1,7 @@
 # Rust
 
+![](/assets/kat.png) Welcome!
+
 ## R5 : Entry
 
 > Basic main, focus on simple and straight forward. // Able to hello, condition, loop

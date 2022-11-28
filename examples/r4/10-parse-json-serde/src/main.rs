@@ -13,8 +13,8 @@ enum AnimalType {
 #[derive(Serialize, Deserialize, Debug)]
 struct AnimalData {
     id: String,
-    r#type: AnimalType, // Custom type
-    img_url: Url,       // Url
+    r#type: AnimalType,
+    img_url: Url,       // ✨ Parse to Url.
 }
 
 fn main() {
@@ -65,3 +65,5 @@ fn main() {
 
     println!("5️⃣ foo_struct = {:#?}", foo_struct);
 }
+
+> 💡 Read more about `Url` [here](https://rust-lang-nursery.github.io/rust-cookbook/web/url.html)

@@ -1,4 +1,4 @@
-# Custom features
+# Create your own lib
 
 ## How to implement extra feature to `lib`.
 
@@ -7,7 +7,6 @@
   ```rust
   // 👇 exclamation ! mean apply to whole file.
   #![cfg(feature = "hi")]
-
   pub fn hi(){
     println!(":#?", base64::encode("hi"));
   }
@@ -37,5 +36,19 @@
 
   [dependencies]
   # To include feature named "hi" 👇
-  foo = { version = "1, features = ["hi"] }
+  foo = { version = "1", features = ["hi"] }
   ```
+
+## How to use your `lib` from `path`
+
+```toml
+[dependencies]
+pyth-sdk-solana = { path = "../pyth-sdk-solana" }
+```
+
+## How to use your `lib` from `github`
+
+```toml
+[dependencies]
+pyth-sdk-solana = { git = "https://github.com/pyth-network/pyth-sdk-rs", rev = "75e2742" }
+```
