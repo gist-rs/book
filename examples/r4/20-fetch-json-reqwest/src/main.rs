@@ -1,4 +1,3 @@
-use reqwest::Client;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -14,9 +13,7 @@ struct AnimalData {
 // 👇 How to async fetch.   // 👇 How to use anyhow.
 async fn fetch(url: &str) -> anyhow::Result<Vec<AnimalData>> {
     // ✨ Beware, This will new client every fetch.
-    let json = Client::new()
-        .get(url)
-        .send()
+    let json = reqwest::get(url)
         // ✨ Use `?` to unwrap fetch Result and return Error to anyhow above if has
         .await?
         // ✨ Parse to vec of AnimalData.
