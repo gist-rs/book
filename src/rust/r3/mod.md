@@ -1,11 +1,8 @@
 # R3 - Advanced
 
+![](/assets/kat.png) This is ongoing topic, not finished yet bare with me!
+
 ## Goals
 
-- Able to understand more about life time.
+- Able to understand more about lifetime.
 - Able to create your own crate.
-
-## On going list
-
-- [Create your own `lib`](rust/r3/create-lib.md)
-- [Chill out part 1 with `RefCell`](chill1.md)

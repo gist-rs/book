@@ -14,10 +14,3 @@
 # Non-Goals
 
 - We won't cover all topics and details, focus only a must gists.
-
-# Index
-
-- [Why Rust](why-rust.md)
-- [Why Wasm](why-wasm.md)
-- [Why Solana](why-solana.md)
-- [Bye](../bye.md)
