@@ -13,7 +13,7 @@ jobs:
       MDBOOK_LINKCHECK_VERSION: '0.7.4'
       MDBOOK_MERMAID_VERSION: '0.12.2'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           submodules: true
       - name: Install mdbook
