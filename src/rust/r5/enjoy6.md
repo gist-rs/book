@@ -82,7 +82,7 @@ impl Feedable for Animal {
     }
 }
 
-// Bounds
+// Bounds only Feedable allowed here.
 fn feed<T: Feedable>(t: &mut T) {
     t.feed(1f64)
 }
@@ -103,6 +103,11 @@ trait Duck {}
 #[allow(dead_code)]
 fn feed_duck_100<T: Feedable + Duck>(t: &mut T) {
     t.feed(100f64)
+}
+
+// ✨ Or use traits as parameters like this
+fn feed_duck_200(t: &mut (impl Feedable + Cat)) {
+    t.feed(200f64)
 }
 
 fn main() {
@@ -126,7 +131,11 @@ fn main() {
     // feed_duck_100(&mut animal);
     // println!("weight: {}", animal.weight);
 
-    // 💁‍♂️ To solve this error try add `impl Duck for Animal {}`
+    // 💁 To solve this error try add `impl Duck for Animal {}`
+
+    // 🤔 But this traits as parameters won't need `impl`, like feed_duck_100 above.
+    feed_duck_200(&mut animal);
+    println!("weight: {}", animal.weight);
 }
 ```
 
