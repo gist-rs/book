@@ -22,7 +22,7 @@
     - [Handle multiple result and option](rust/r4/40-handle-multiple-result-option.md)
   - [R3 - Advanced](rust/r3/mod.md)
     - [Create your own lib](rust/r3/create-lib.md)
-    - [Chill Day 1](rust/r3/chill1.md)
+    - [RefCell](rust/r3/refcell.md)
   - [R2 - Expert](rust/r2/mod.md)
     - [Hello Actix CloudRun](rust/r2/hello-actix-cloudrun.md)
   - [R1 - Master](rust/r1/mod.md)
