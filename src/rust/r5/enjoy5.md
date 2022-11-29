@@ -51,7 +51,7 @@ fn main() {
 
 ![](/assets/kat.png) Sometime Rust didn't know what size (and type) we return so `Box` and `dyn` is here to help.
 
-```rust
+```rust,editable
 // ...Continue from example above.
 
 # #[derive(Debug, Clone)]

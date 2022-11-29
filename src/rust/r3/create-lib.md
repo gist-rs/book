@@ -4,7 +4,7 @@
 
 - lib `hi.rs`
 
-  ```rust
+  ```rust,no_run
   // 👇 exclamation ! mean apply to whole file.
   #![cfg(feature = "hi")]
   pub fn hi(){

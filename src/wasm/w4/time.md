@@ -6,7 +6,7 @@
 
 - std
 
-  ```rust
+  ```rust,no_run
   use std::time::SystemTime;
 
   let now = SystemTime::now()
@@ -16,7 +16,7 @@
 
 - wasm
 
-  ```rust
+  ```rust,no_run
   use fluvio_wasm_timer::SystemTime;
 
   let now = SystemTime::now()
@@ -30,7 +30,7 @@
 
 - std
 
-  ```rust
+  ```rust,no_run
     use std::thread::sleep;
     use std::time::Duration;
 
@@ -38,7 +38,7 @@
   ```
 
 - wasm
-  ```rust
+  ```rust,no_run
     use fluvio_wasm_timer::Delay;
     Delay::new(Duration::from_secs(1)).await.ok();
   ```

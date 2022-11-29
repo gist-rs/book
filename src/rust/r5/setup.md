@@ -84,7 +84,7 @@ tokio = "1.21.2"     # 👈 Added by `cargo add tokio`.
 
 │ ├─ 📄 utils.rs
 
-```rust
+```rust,no_run
 pub fn hello() {    // 👈 make it public, or just pub(crate) for internal use.
   println!("hello world!");
 }
@@ -92,7 +92,7 @@ pub fn hello() {    // 👈 make it public, or just pub(crate) for internal use.
 
 │ └─ 📄 main.rs
 
-```rust
+```rust,no_run
 mod utils;          // 👈 include utils file.
 use utils;          // 👈 and use it.
 
@@ -126,13 +126,13 @@ fn main () {
 
 │ │ ├─ 📄 mod.rs
 
-```rust
+```rust,no_run
 pub mod say;        // 👈 include say file and make it pub so main can use.
 ```
 
 │ │ ├─ 📄 say.rs
 
-```rust
+```rust,no_run
 pub fn hello() {    // 👈 make it public, or just pub(crate) for internal use.
   println!("hello world!");
 }
@@ -140,7 +140,7 @@ pub fn hello() {    // 👈 make it public, or just pub(crate) for internal use.
 
 │ │ └─ 📄 cast.rs
 
-```rust
+```rust,no_run
 use super::say      // 👈 just use. (no mod need because of super)
 
 pub fn cast() {
@@ -150,7 +150,7 @@ pub fn cast() {
 
 │ └─ 📄 main.rs
 
-```rust
+```rust,no_run
 mod utils;          // 👈 include utils file.
 use utils::say;     // 👈 and use.
 
@@ -181,7 +181,7 @@ cargo init bar --lib
 
 │ └─ 📄 lib.rs
 
-```rust
+```rust,no_run
 pub fn hello() {    // 👈  make it pub so other can use.
     println!("hello world!");
 }

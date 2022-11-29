@@ -8,7 +8,7 @@
 {{#include ../../../examples/r4/10-parse-json-serde/Cargo.toml}}
 ```
 
-```rust
+```rust,no_run
 {{#include ../../../examples/r4/10-parse-json-serde/src/main.rs}}
 ```
 
