@@ -4,5 +4,5 @@
 
 ## Goals
 
-- Able to understand more about lifetime.
+- Able to understand more about lifetimes.
 - Able to create your own crate.

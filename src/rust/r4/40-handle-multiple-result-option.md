@@ -75,3 +75,5 @@ fn main() {
     println!("4️⃣ map_result_foo: {:?}", map_result_foo);
 }
 ```
+
+> 💡 Read more about [Error Handling](https://rust-lang-nursery.github.io/rust-cookbook/errors/handle.html)

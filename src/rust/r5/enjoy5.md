@@ -49,7 +49,7 @@ fn main() {
 
 ## Box, dyn
 
-![](/assets/kat.png) Sometime Rust didn't know what type (and size) we return so `Box` and `dyn` is here to help.
+![](/assets/kat.png) Sometime Rust didn't know what size (and type) we return so `Box` and `dyn` is here to help.
 
 ```rust
 // ...Continue from example above.
@@ -76,6 +76,7 @@ fn main() {
 #
 // ✨ Compiler need this 👇 to know it size.
 fn animal_or_human() -> Box<dyn Say> {
+    // ✨ Compiler need this 👆 to know it's dynamic (Animal or Human)
 
     // ✨ How to get current time.
     let now = std::time::SystemTime::now();
@@ -103,60 +104,4 @@ fn main() {
 }
 ```
 
-## Supertraits
-
-```rust,editable
-trait Human {
-    fn name(&self) -> String;
-}
-
-trait Learner: Human {
-    fn is_enjoy(&self) -> bool;
-}
-
-trait Coder {
-    fn language(&self) -> String;
-}
-
-trait Rustaceans: Coder + Learner {
-    fn blog(&self) -> String;
-}
-
-struct Me {}
-impl Human for Me {
-    fn name(&self) -> String {
-        "katopz".to_owned()
-    }
-}
-impl Learner for Me {
-    fn is_enjoy(&self) -> bool {
-        true
-    }
-}
-impl Coder for Me {
-    fn language(&self) -> String {
-        "rust".to_owned()
-    }
-}
-impl Rustaceans for Me {
-    fn blog(&self) -> String {
-        "https://katopz.medium.com/".to_owned()
-    }
-}
-
-fn greeting_rustaceans(someone: &dyn Rustaceans) -> String {
-    format!(
-        "My name is {}, I {} coding in {}, you can visit my blog at {}.",
-        someone.name(),
-        someone.is_enjoy().then(|| "enjoy").unwrap_or("sad"),
-        someone.language(),
-        someone.blog(),
-    )
-}
-
-fn main() {
-    println!("{}", greeting_rustaceans(&Me {}));
-}
-```
-
-![](/assets/kat.png) At this point you should able to read 50% of `Rust` code out there, let's [teardown ➠](./teardown.md).
+[Continue to Day 6 ➠](./enjoy6.md)

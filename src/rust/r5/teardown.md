@@ -28,6 +28,7 @@
 1. `str`, `array`, `struct`, and other primitives type is allocated on `stack`.
 1. `dyn` take case unsure on some type (`Box`, `Supertraits`) for us.
 1. Don't over thinking, trust compiler, `clippy` and 🦀[`Rustacean`](https://rustacean-principles.netlify.app/), you will be fine.
+1. Generic look nearly like `TypeScript` so it should be easy there.
 1. Did we forget `Some(thing)`? 🤔
 
 ---

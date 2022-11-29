@@ -23,7 +23,7 @@ impl AnimalType {
 
 // How to use type as a parameters, hey!👇 what's this 😳
 fn say(animal_type: AnimalType) -> &'static str {
-    // ✨  To keep &str survive, we need 👆
+    // ✨ To keep &str survive, we need 👆 'static
     match animal_type {
         AnimalType::Cat => "meaowww",
         AnimalType::Duck => "quackkk",

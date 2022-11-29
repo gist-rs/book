@@ -12,6 +12,7 @@
     - [Enjoy Day 3](rust/r5/enjoy3.md)
     - [Enjoy Day 4](rust/r5/enjoy4.md)
     - [Enjoy Day 5](rust/r5/enjoy5.md)
+    - [Enjoy Day 6](rust/r5/enjoy6.md)
     - [Teardown](rust/r5/teardown.md)
   - [R4 - Basic](rust/r4/mod.md)
     - [Parse json with serde](rust/r4/10-parse-json-serde.md)
