@@ -9,9 +9,9 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     env:
-      MDBOOK_VERSION: '0.4.12'
-      MDBOOK_LINKCHECK_VERSION: '0.7.4'
-      MDBOOK_MERMAID_VERSION: '0.8.3'
+      MDBOOK_VERSION: '0.4.22'
+      MDBOOK_LINKCHECK_VERSION: '0.7.7'
+      MDBOOK_MERMAID_VERSION: '0.12.2'
     steps:
     - uses: actions/checkout@v2
       with:
