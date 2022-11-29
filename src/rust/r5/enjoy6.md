@@ -58,7 +58,7 @@ fn main() {
 
 > 💡 More about [Supertraits](https://doc.rust-lang.org/rust-by-example/trait/supertraits.html)
 
-### Generic Bounds
+## Generic Bounds
 
 ```rust,editable
 #[derive(Debug)]
