@@ -17,7 +17,7 @@ preferred-dark-theme = "coal"
 git-repository-url = "https://github.com/gist-rs/book"
 additional-css = ["theme/css/variables.css", "theme/css/general.css", "theme/css/chrome.css", "theme/highlight.css"]
 # additional-js = ["theme/pagetoc.js"]
-additional-js = ["js/helper.js"]
+additional-js = ["js/helper.js", "theme/theme-monokai.js"]
 
 [output.html.fold]
 enable = true
@@ -29,7 +29,7 @@ editable = true
 [output.html.print]
 enable = false
 
-# Uncomment this section to regenerate theme
-[output.theme-ace]
-theme-white = "xcode"
-theme-dark = "monokai"
+# # Uncomment this section to regenerate theme (no use)
+# [output.theme-ace]
+# theme-white = "xcode"
+# theme-dark = "monokai"
