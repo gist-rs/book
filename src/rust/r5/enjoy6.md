@@ -56,6 +56,8 @@ fn main() {
 }
 ```
 
+> 💡 More about [Supertraits](https://doc.rust-lang.org/rust-by-example/trait/supertraits.html)
+
 ### Generic Bounds
 
 ```rust,editable
@@ -80,24 +82,26 @@ impl Feedable for Animal {
     }
 }
 
+// Bounds
 fn feed<T: Feedable>(t: &mut T) {
     t.feed(1f64)
 }
 
 // Cat
-trait Catty {}
+trait Cat {}
 
-impl Catty for Animal {}
+impl Cat for Animal {}
 
-fn feed_cat_with_amount<T: Feedable + Catty>(t: &mut T, amount: f64) {
+// ✨ Multiple bounds
+fn feed_cat_with_amount<T: Feedable + Cat>(t: &mut T, amount: f64) {
     t.feed(amount)
 }
 
 // Duck
-trait Ducky {}
+trait Duck {}
 
 #[allow(dead_code)]
-fn feed_duck_100<T: Feedable + Ducky>(t: &mut T) {
+fn feed_duck_100<T: Feedable + Duck>(t: &mut T) {
     t.feed(100f64)
 }
 
@@ -117,14 +121,15 @@ fn main() {
     println!("weight: {}", animal.weight);
 
     // Duck
-    // 😱 Uncomment below to see an error `the trait `Ducky` is not implemented for `Animal``.
+    // 😱 Uncomment below to see an error `the trait `Duck` is not implemented for `Animal``.
 
     // feed_duck_100(&mut animal);
     // println!("weight: {}", animal.weight);
 
-    // 💁‍♂️ To solve this error try add `impl Ducky for Animal {}`
+    // 💁‍♂️ To solve this error try add `impl Duck for Animal {}`
 }
-
 ```
+
+> 💡 More about [Generics-Bounds](https://doc.rust-lang.org/rust-by-example/generics/bounds.html)
 
 ![](/assets/kat.png) At this point you should able to read a lot of `Rust` code out there, let's [teardown ➠](./teardown.md).

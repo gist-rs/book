@@ -11,20 +11,20 @@ struct Animal {}
 struct Human {}
 
 // ✨ New skill, look like interface.
-trait Say {
+trait Sayable {
     fn say(&self) -> String;
 }
 
-// ✨ Implement `Say` skill for `Animal`.
-impl Say for Animal {
+// ✨ Implement `Sayable` skill for `Animal`.
+impl Sayable for Animal {
     // All animal wil say meow for now. 😆
     fn say(&self) -> String {
         "meow!".to_owned() // convert &str to String.
     }
 }
 
-// Implement `Say` skill for `Human`.
-impl Say for Human {
+// Implement `Sayable` skill for `Human`.
+impl Sayable for Human {
     // All human kind say hi! 🤘
     fn say(&self) -> String {
         "hi!".to_owned() // convert &str to String.
@@ -51,43 +51,49 @@ fn main() {
 
 ![](/assets/kat.png) Sometime Rust didn't know what size (and type) we return so `Box` and `dyn` is here to help.
 
-```rust,editable
+```rust
 // ...Continue from example above.
 
 # #[derive(Debug, Clone)]
 # struct Animal {}
 # struct Human {}
 #
-# trait Say {
+# trait Sayable {
 #     fn say(&self) -> String;
 # }
 #
-# impl Say for Animal {
+# impl Sayable for Animal {
 #     fn say(&self) -> String {
 #         "meow!".to_owned()
 #     }
 # }
 #
-# impl Say for Human {
+# impl Sayable for Human {
 #     fn say(&self) -> String {
 #         "hi!".to_owned()
 #     }
 # }
 #
 // ✨ Compiler need this 👇 to know it size.
-fn animal_or_human() -> Box<dyn Say> {
+fn animal_or_human() -> Box<dyn Sayable> {
     // ✨ Compiler need this 👆 to know it's dynamic (Animal or Human)
 
     // ✨ How to get current time.
     let now = std::time::SystemTime::now();
 
+    // ✨ How to get duration since UNIX_EPOCH.
+    let result_duration = now.duration_since(std::time::UNIX_EPOCH);
+
     // ✨ How to convert `Result` to `Option`.
-    let maybe_duration = now.elapsed().ok();
+    let maybe_duration = result_duration.ok();
 
     match maybe_duration {
         Some(duration) => {
+            // Take secs
+            let sec = duration.as_secs();
+
             // ✨ Modulo so we get 50% chance randomly by current time.
-            if duration.as_micros() % 2 == 0 {
+            if sec % 2 == 0 {
                 Box::new(Animal {})
             } else {
                 Box::new(Human {})
