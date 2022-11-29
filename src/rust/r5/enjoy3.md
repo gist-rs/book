@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-![](/assets/duck.png) Cool `Struct` seem handy, gimme more.
+![](/assets/kat.png) Still curious about why `String` instead of `&str`? [try read this](https://doc.rust-lang.org/book/ch05-01-defining-structs.html#ownership-of-struct-data)
 
 ## derive, impl, Self, &self
 
@@ -128,6 +128,8 @@ fn main() {
     }
 }
 ```
+
+![](/assets/duck.png) Oh! I read a [Rust book](https://doc.rust-lang.org/book/ch05-03-method-syntax.html#associated-functions) they call all functions defined within an `impl` block are called `associated functions`. Cool name!
 
 > 💡 You can derive more than one e.g. `#[derive(Debug,Display,Clone,Copy)]` read more about `derive` [here](https://doc.rust-lang.org/rust-by-example/trait/derive.html) and `struct` [here](https://doc.rust-lang.org/rust-by-example/custom_types/structs.html).
 
