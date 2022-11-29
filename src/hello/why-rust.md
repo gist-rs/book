@@ -12,6 +12,7 @@
 - Facebook: [Reliability is a top priority. That’s why the team chose to go with `Rust` over `C++`.](https://engineering.fb.com/2021/04/29/developer-tools/rust/)
 - Google: [Should your team adopt the `Rust` programming language?](https://www.youtube.com/watch?v=Gnp4XP1b82E)
 - Huawei: [Huawei is committed to the the success of `Rust`.](https://trusted-programming.github.io/2021/02/07/our-rust-mission-at-huawei.html)
+- IBM: [Why you should learn the `Rust` programming language](https://developer.ibm.com/articles/os-developers-know-rust/)
 - LogRocket:[optimized `Rust` code was at least 30 percent faster than the most optimized Go code.](https://blog.logrocket.com/when-to-use-rust-when-to-use-golang/)
 - Microsoft: [Ask the Expert: `Rust` at Microsoft.](https://www.youtube.com/watch?v=1uAsA1hm52I)
 - Volvo: [Code developed from scratch should definitely be developed in `Rust`.](https://medium.com/volvo-cars-engineering/why-volvo-thinks-you-should-have-rust-in-your-car-4320bd639e09)
