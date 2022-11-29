@@ -1,6 +1,6 @@
 # R3 - Advanced
 
-![](/assets/kat.png) This is ongoing topic, not finished yet bare with me!
+![](/assets/kat.png) This is ongoing topic, not finished yet bear 🧸 with me!
 
 ## Goals
 
