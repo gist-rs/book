@@ -142,3 +142,13 @@ fn main() {
 > 💡 More about [Generics-Bounds](https://doc.rust-lang.org/rust-by-example/generics/bounds.html)
 
 ![](/assets/kat.png) At this point you should able to read a lot of `Rust` code out there, let's [teardown ➠](./teardown.md).
+
+## TODO
+
+> parameterize traits
+
+```rust
+trait Combiner<A, B, C> {
+    fn combine(a: &A, b: &B) -> C;
+}
+```
