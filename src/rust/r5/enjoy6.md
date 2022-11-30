@@ -143,9 +143,7 @@ fn main() {
 
 ![](/assets/kat.png) At this point you should able to read a lot of `Rust` code out there, let's [teardown ➠](./teardown.md).
 
-## TODO
-
-> parameterize traits
+// 🚧 TODO : parameterize traits
 
 ```rust
 trait Combiner<A, B, C> {

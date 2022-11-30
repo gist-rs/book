@@ -17,7 +17,7 @@ firebase login
 # Setup Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# Setup Cargo
+# Setup Cargo watch
 cargo install cargo-watch
 
 # Setup WASM

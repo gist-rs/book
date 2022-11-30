@@ -16,13 +16,19 @@
 ## 2️⃣ Use `wasmpack`
 
 ```shell
-wasm-pack new hello-wasm              # 👈 create new app.
+wasm-pack new hello-wasm              # 👈 Create new app.
 
-wasm-pack test --headless --firefox   # 👈 test with headless firefox.
+wasm-pack test --headless --firefox   # 👈 Test with headless firefox.
 
-wasm-pack build                       # 👈 build to pkg dir.
+wasm-pack build                       # 👈 Build to pkg dir.
 
-wasm-pack publish                     # 👈 publish to npm.
+wasm-pack publish                     # 👈 Publish to npm.
+```
+
+![](/assets/kat.png) We can use with `cargo watch` like this 👇 to watch with ignore(`-i`) and auto refresh the tests.
+
+```shell
+cargo watch -i .gitignore -i "pkg/*" -s "wasm-pack test --headless --firefox"
 ```
 
 ## 3️⃣ Hello World
