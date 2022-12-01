@@ -7,4 +7,4 @@
 - Able to understand more about `lifetimes`.
 - Able to create your own `crate`.
 
-[Let's Rust! ➠](./create-lib.md)
+[Let's Rust! ➠](./lifetimes.md)

@@ -1,8 +1,8 @@
 # Solana
 
-TLDR;
+// 🚧 Still draft.
 
-## R5 : Entry
+## S5 : Entry
 
 > Basic app, simple and straight forward, understand basic knowledge.
 
@@ -20,9 +20,9 @@ TLDR;
 - Transfer `Native` token.
 - Mint `NFT` with `sugar`.
 
-[Enjoy R5 ➠](./s5)
+<!-- [Enjoy S5 ➠](./s5) -->
 
-## R4 : Basic
+## S4 : Basic
 
 > Advance app, integrate with SDK, CPIs.
 
@@ -39,9 +39,9 @@ TLDR;
 - Understand Token Account data.
 - Read `Pyth` data.
 
-[Enjoy R4 ➠](./s4)
+<!-- [Enjoy S4 ➠](./s4) -->
 
-## R3 : Advanced
+## S3 : Advanced
 
 > Basic lib, Anchor, Read/Write data on/off chain, Oracle.
 
@@ -56,9 +56,9 @@ TLDR;
 - Create `ATA`.
 - Transfer `SPL` token to `ATA`.
 
-[Enjoy R3 ➠](./s3)
+<!-- [Enjoy S3 ➠](./s3) -->
 
-## R2 : Expert
+## S2 : Expert
 
 > Advance lib
 
@@ -73,9 +73,9 @@ TLDR;
 - Solana Pay.
 - Dialect.
 
-[Enjoy R2 ➠](./s2)
+<!-- [Enjoy S2 ➠](./s2) -->
 
-## R1 : Master
+## S1 : Master
 
 > Prod, CI/CD, Deploy, Security, Speed, Upgrade.
 
@@ -95,4 +95,4 @@ TLDR;
 - Name Service
 - DAO
 
-[Enjoy R1 ➠](./s1)
+<!-- [Enjoy S1 ➠](./s1) -->

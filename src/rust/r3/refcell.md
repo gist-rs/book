@@ -1,5 +1,7 @@
 # RefCell
 
+// 🚧 Still draft.
+
 ## How to move captured variable into a closure within a closure.
 
 > 🤔 [refer to stack overflow](https://stackoverflow.com/questions/28521637/how-can-i-move-a-captured-variable-into-a-closure-within-a-closure)

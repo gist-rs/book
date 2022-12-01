@@ -1,5 +1,7 @@
 # Trait
 
+// 🚧 Still draft.
+
 ## How can I define a function with a parameter that can be multiple kinds of trait objects?
 
 > 🤔 [refer to stack overflow](https://stackoverflow.com/questions/51247690/how-can-i-define-a-function-with-a-parameter-that-can-be-multiple-kinds-of-trait)
