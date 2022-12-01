@@ -111,17 +111,19 @@ impl Cat {
     }
 }
 
-// BTW, static = lives the entire lifetime of your program.
-
 fn main() {
     println!("{:?}", Me { name: "foo" }.say_my_name());
 
-    #[rustfmt::skip]
     println!("{:?}", You { name: "bar".to_owned() }.say_my_name());
 
-    #[rustfmt::skip]
     println!("{:?}", Cat { name: "baz" }.say_my_name());
 }
 ```
+
+### Fun facts
+
+- `&'static str` = lives the entire lifetime of your program = book hotel for entire year = use it wisely.
+- `String` = smart pointer = heap = a bit more allocation (not much).
+- `&'a str` = lifetime annotations = less scope = less used ram = good but headache.
 
 ![](/assets/kat.png) Now we know that we need to add `<'a>` lifetime annotations to let compiler know its lifetime.

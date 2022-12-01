@@ -1,29 +1,25 @@
 # Enjoy Day 1
 
+![](/assets/kat.png) They said `Wasm` should be fun, Let's do it!
+
+> 💡 for more examples see 👉 [here](https://github.com/rustwasm/wasm-bindgen/tree/main/examples)
+
+## JS Object in Wasm
+
+```rust,no_run
+// 👇 This allow us to bind rs with js
+#[wasm_bindgen]
+//      This & 👇 mean short-lived.
+pub fn foo(bar: &JsValue) {
+    // ...
+}
+
+#[wasm_bindgen]
+//   This no & 👇 mean short-lived.
+pub fn foo(bar: JsValue) {
+    // ...
+}
+```
+
 // 🚧 UNDER CONSTRUCTION
-
-#### `Cargo.toml`
-
-```toml
-{{#include ../../../examples/w5/hello-wasm/Cargo.toml}}
-```
-
-#### `utils.rs`
-
-```rust,no_run
-{{#include ../../../examples/w5/hello-wasm/src/utils.rs}}
-```
-
-#### `lib.rs`
-
-```rust,no_run
-{{#include ../../../examples/w5/hello-wasm/src/lib.rs}}
-```
-
-#### `tests/web.rs`
-
-```rust,no_run
-{{#include ../../../examples/w5/hello-wasm/tests/web.rs}}
-```
-
-> 💡 More examples[ here](https://github.com/rustwasm/wasm-bindgen/tree/main/examples)
+// If you can't wait try start [here](https://rustwasm.github.io/docs/book/)

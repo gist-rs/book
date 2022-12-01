@@ -24,12 +24,15 @@ console_error_panic_hook = { version = "0.1.7", optional = true }
 # allocator, however.
 wee_alloc = { version = "0.4.5", optional = true }
 
-# App dependencies
+# use for `async fn`.
 wasm-bindgen-futures = { version = "0.4.33", default-features = false }
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.33"
 
 [profile.release]
-# Tell `rustc` to optimize for small code size.
-opt-level = "s"
+opt-level = "z"  # Optimize for size.
+strip = true  # Automatically strip symbols from the binary.
+lto = true # Enable Link Time Optimization (LTO)
+codegen-units = 1 # Reduce Parallel Code Generation Units to Increase Optimization
+panic = "abort" # Reduce panic code

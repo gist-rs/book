@@ -33,4 +33,28 @@ cargo watch -i .gitignore -i "pkg/*" -s "wasm-pack test --headless --firefox"
 
 ## 3️⃣ Hello World
 
-// 🚧 TODO : compile https://rustwasm.github.io/docs/wasm-pack/quickstart.html
+![](/assets/kat.png) We did not start with default `alert` example because it's too boring, Let's start with `sync` and `async` instead.
+
+#### `Cargo.toml`
+
+```toml
+{{#include ../../../examples/w5/hello-wasm/Cargo.toml}}
+```
+
+#### `utils.rs`
+
+```rust,no_run
+{{#include ../../../examples/w5/hello-wasm/src/utils.rs}}
+```
+
+#### `lib.rs`
+
+```rust,no_run
+{{#include ../../../examples/w5/hello-wasm/src/lib.rs}}
+```
+
+#### `tests/web.rs`
+
+```rust,no_run
+{{#include ../../../examples/w5/hello-wasm/tests/web.rs}}
+```

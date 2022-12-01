@@ -22,7 +22,7 @@
 
 ## R2 : Expert
 
-> Advance lib, Serve API, Consume as web // Able to create lib, wasm
+> Advance lib, Serve API, Consume as web
 
 [Enjoy R2 ➠](./r2/mod.md)
 
