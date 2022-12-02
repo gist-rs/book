@@ -10,12 +10,12 @@
 struct Animal {}
 struct Human {}
 
-// ✨ New skill, look like interface.
+// New skill, look like interface.
 trait Sayable {
     fn say(&self) -> String;
 }
 
-// ✨ Implement `Sayable` skill for `Animal`.
+// Implement `Sayable` skill for `Animal`.
 impl Sayable for Animal {
     // All animal wil say meow for now. 😆
     fn say(&self) -> String {
@@ -74,17 +74,17 @@ fn main() {
 #     }
 # }
 #
-// ✨ Compiler need this 👇 to know it size.
+// Compiler'll need this 👇 to know it size.
 fn animal_or_human() -> Box<dyn Sayable> {
-    // ✨ Compiler need this 👆 to know it's dynamic (Animal or Human)
+    // Compiler'll need this 👆 dyn to know it's dynamic (Animal or Human)
 
-    // ✨ How to get current time.
+    // How to get current time.
     let now = std::time::SystemTime::now();
 
-    // ✨ How to get duration since UNIX_EPOCH.
+    // How to get duration since UNIX_EPOCH.
     let result_duration = now.duration_since(std::time::UNIX_EPOCH);
 
-    // ✨ How to convert `Result` to `Option`.
+    // How to convert `Result` to `Option`.
     let maybe_duration = result_duration.ok();
 
     match maybe_duration {
@@ -92,14 +92,14 @@ fn animal_or_human() -> Box<dyn Sayable> {
             // Take secs
             let sec = duration.as_secs();
 
-            // ✨ Modulo so we get 50% chance randomly by current time.
+            // Modulo so we get 50% chance randomly by current time.
             if sec % 2 == 0 {
                 Box::new(Animal {})
             } else {
                 Box::new(Human {})
             }
         }
-        // ✨ When you not finish implementation yet, try use todo.
+        // When you not finish implementation yet, try use todo.
         None => todo!(),
     }
 }

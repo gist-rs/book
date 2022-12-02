@@ -92,7 +92,7 @@ trait Cat {}
 
 impl Cat for Animal {}
 
-// ✨ Multiple bounds
+// Multiple bounds
 fn feed_cat_with_amount<T: Feedable + Cat>(t: &mut T, amount: f64) {
     t.feed(amount)
 }
@@ -105,7 +105,7 @@ fn feed_duck_100<T: Feedable + Duck>(t: &mut T) {
     t.feed(100f64)
 }
 
-// ✨ Or use traits as parameters like this
+// Or use traits as parameters like this
 fn feed_duck_200(t: &mut (impl Feedable + Cat)) {
     t.feed(200f64)
 }

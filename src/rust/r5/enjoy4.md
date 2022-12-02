@@ -23,7 +23,7 @@ impl AnimalType {
 
 // How to use type as a parameters, hey!👇 what's this? 😳
 fn say(animal_type: AnimalType) -> &'static str {
-    // ✨ To survive from fn {}, we need 👆 'static to let is has program's lifetime.
+    // To survive from fn {}, we need 👆 'static to let is has program's lifetime.
     match animal_type {
         AnimalType::Cat => "meaowww",
         AnimalType::Duck => "quackkk",
@@ -76,24 +76,24 @@ enum AnimalSound {
 }
 
 fn main() {
-    // ✨ Get AnimalType from &str.
+    // Get AnimalType from &str.
     let animal_type = AnimalType::from_str("cat");
     println!("1️⃣ animal_type: {animal_type:?}");
 
-    // ✨ Unwrap or assign as Unknown.
+    // Unwrap or assign as Unknown.
     let animal_type = animal_type.unwrap_or(AnimalType::Unknown).to_string();
     println!("2️⃣ animal_type: {animal_type:?}");
 
-    // ✨ Get AnimalSound from str.
+    // Get AnimalSound from str.
     let cat_sound_result = AnimalSound::from_str("cat");
     println!("3️⃣ cat_sound_result: {:?}", cat_sound_result);
 
-    // ✨ Handle cat_sound Result.
+    // Handle cat_sound Result.
     let cat_sound_string = match cat_sound_result {
-        // ✨ Handle happy case.
+        // Handle happy case.
         Ok(animal_sound) => animal_sound.to_string(),
 
-        // ✨ Handle error case.
+        // Handle error case.
         Err(err) => panic!("{:?}", err),
     };
 

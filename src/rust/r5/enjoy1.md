@@ -30,7 +30,7 @@ fn main() {
     }
 
     // This .. 👇 mean range i from 0 to 7.
-    for _i in 0..8 { // ✨ _i mean we won't use i
+    for _i in 0..8 { // _i mean we won't use i
         count += 1;
     }
 
@@ -48,12 +48,12 @@ fn main() {
 
 ```rust,editable
 // We use a lot of "count", let's DRY it as a constant.
-const COUNT: &str = "count"; // ✨ Say hi to referenced string slice &str
+const COUNT: &str = "count"; // Say hi to referenced string slice &str
 
 // "add" as a function
 fn add(a: i32, b: i32) -> i32 {
-    // ✨ i32 = integer 32
-    a + b // ✨ This mean return a + b, hence no semicolon ;
+    // i32 = integer 32
+    a + b // This mean return a + b, hence no semicolon ;
 }
 
 fn main() {

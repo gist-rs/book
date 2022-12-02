@@ -20,16 +20,16 @@ async fn fetch(url: &str) -> anyhow::Result<AnimalData> {
 }
 
 async fn fetch_multiple(urls: [&'static str; 2]) -> anyhow::Result<Vec<AnimalData>> {
-    // ✨ How to use task::spawn
+    // How to use task::spawn
     let tasks = urls.iter().map(|url| task::spawn(fetch(url)));
 
-    // ✨ Collect task result.
+    // Collect task result.
     let mut results = vec![];
     for task in tasks {
         results.push(task.await?);
     }
 
-    // ✨ Return flattened results, silent if error.
+    // Return flattened results, silent if error.
     Ok(results
         // We use into_iter so we get Vec<AnimalData> instead of Vec<&AnimalData>
         .into_iter()

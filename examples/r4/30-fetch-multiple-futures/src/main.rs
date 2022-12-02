@@ -12,12 +12,12 @@ struct AnimalData {
 
 // Shared client for each call.
 async fn fetch_multiple_with_one_client_join_all(urls: &[&str]) -> anyhow::Result<Vec<AnimalData>> {
-    // ✨ New shared client once.
+    // New shared client once.
     let client = Client::new();
 
-    // ✨ How to use join_all.
+    // How to use join_all.
     let results = future::join_all(urls.iter().map(|&url| {
-        // ✨ Use shared client.
+        // Use shared client.
         let client = &client;
         async move {
             let resp = client.get(url).send().await?;
@@ -26,7 +26,7 @@ async fn fetch_multiple_with_one_client_join_all(urls: &[&str]) -> anyhow::Resul
     }))
     .await;
 
-    // ✨ Return flattened results, silent if error.
+    // Return flattened results, silent if error.
     Ok(results
         // We use into_iter so we get Vec<AnimalData> instead of Vec<&AnimalData>
         .into_iter()
@@ -38,14 +38,14 @@ async fn fetch_multiple_with_one_client_join_all(urls: &[&str]) -> anyhow::Resul
 async fn fetch_multiple_with_each_client_join_all(
     urls: &[&str],
 ) -> anyhow::Result<Vec<AnimalData>> {
-    // ✨ How to use join_all.
+    // How to use join_all.
     let results = future::join_all(urls.iter().map(|&url| async move {
         // Fetch each url with new client.
         reqwest::get(url).await?.json::<AnimalData>().await
     }))
     .await;
 
-    // ✨ Return flattened results, silent if error.
+    // Return flattened results, silent if error.
     Ok(results
         // We use into_iter so we get Vec<AnimalData> instead of Vec<&AnimalData>
         .into_iter()
