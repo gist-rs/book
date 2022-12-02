@@ -110,4 +110,52 @@ fn main() {
 }
 ```
 
+## Async Traits
+
+### `Cargo.toml`
+
+```toml
+[package]
+name = "foo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+async-trait = "0.1.59"
+tokio = { version ="1.22", features = ["full"] }
+```
+
+### `main.rs`
+
+```rust,editable,edition2021
+use async_trait::async_trait;
+use std::thread::sleep;
+use std::time::{Duration, SystemTime};
+
+#[async_trait]
+trait Animal {
+    async fn sleep(&self);
+}
+
+struct Cat;
+
+#[async_trait]
+impl Animal for Cat {
+    async fn sleep(&self) {
+        // will sleep for 2 seconds
+        sleep(Duration::new(2, 0));
+    }
+}
+
+#[tokio::main]
+async fn main() {
+    let now = SystemTime::now();
+    Cat {}.sleep().await;
+
+    let now_sec = now.elapsed().ok().unwrap().as_secs();
+    assert_eq!(now_sec, 2);
+    println!("Cat has been sleep for {} sec.", now_sec);
+}
+```
+
 [Continue to Day 6 ➠](./enjoy6.md)

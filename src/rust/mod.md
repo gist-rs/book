@@ -10,13 +10,13 @@
 
 ## R4 : Basic
 
-> Let's try some "must have" lib (`crate`) with simple `async`.
+> Learning by an examples, Let's try some "must have" lib (`crate`) with simple `async`.
 
 [Enjoy R4 ➠](./r4/mod.md)
 
 ## R3 : Advanced
 
-> Unlock confusing about `struct`, `impl` with generic and crazy `lifetimes`.
+> Unlock confusing topic e.g. `struct`, `impl` with `generic` and crazy `lifetimes`.
 
 [Enjoy R3 ➠](./r3/mod.md)
 

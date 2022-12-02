@@ -20,6 +20,7 @@
     - [Fetch multiple with futures](rust/r4/30-fetch-multiple-futures.md)
     - [Fetch multiple with tokio](rust/r4/31-fetch-multiple-tokio.md)
     - [Handle multiple result and option](rust/r4/40-handle-multiple-result-option.md)
+    - [Build a fetch module]()(rust/r4/50-build-fetch-module.md)
   - [R3 - Advanced](rust/r3/mod.md)
     - [Lifetimes](rust/r3/lifetimes.md)
     - [Create your own lib](rust/r3/create-lib.md)
