@@ -115,8 +115,8 @@ fn main() {
 }
 ```
 
-> 💡 This will take you sometime to get used to `Option<T>`⎯⎯ unwrap → `Some<T>`/`None`.  
-> To read more about this try [read more](https://doc.rust-lang.org/rust-by-example/error/option_unwrap.html).
+> 💡 `Option<T>`⎯⎯ unwrap → `Some<T>`/`None` which `T` is generic.  
+> To know more about this try [read more](https://doc.rust-lang.org/rust-by-example/error/option_unwrap.html).
 
 ![](/assets/duck.png) Don't be surprise if you found all this confusing. I did! But don't give up just yet!
 

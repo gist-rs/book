@@ -4,30 +4,30 @@
 
 ## R5 : Entry
 
-> Basic main, focus on simple and straight forward. // Able to hello, condition, loop
+> An easy parts of `Rust` that you need for surviving chewing glass.
 
 [Enjoy R5 ➠](./r5/mod.md)
 
 ## R4 : Basic
 
-> Advance main, focus on complex, combine, compose // Able to create basic app + lib.
+> Let's try some "must have" lib (`crate`) with simple `async`.
 
 [Enjoy R4 ➠](./r4/mod.md)
 
 ## R3 : Advanced
 
-> Basic lib, Serve cli, focus on app, use existing lib. // Able to create async app + advance lib
+> Unlock confusing about `struct`, `impl` with generic and crazy `lifetimes`.
 
 [Enjoy R3 ➠](./r3/mod.md)
 
 ## R2 : Expert
 
-> Advance lib, Serve API, Consume as web
+> Time to deploy and serve our service to the world.
 
 [Enjoy R2 ➠](./r2/mod.md)
 
 ## R1 : Master
 
-> Integrate with other, Security, Speed, Prod, CI/CD // Able to use advance lib, deploy.
+> Fine tune Security, Speed, Prod, CI/CD and in-depth topic.
 
 [Enjoy R1 ➠](./r1/mod.md)

@@ -25,6 +25,7 @@
     - [Create your own lib](rust/r3/create-lib.md)
     - [RefCell](rust/r3/refcell.md)
     - [Trait](rust/r3/trait.md)
+    - [Serde](rust/r3/serde.md)
   - [R2 - Expert](rust/r2/mod.md)
     - [Hello Actix CloudRun](rust/r2/hello-actix-cloudrun.md)
   - [R1 - Master](rust/r1/mod.md)

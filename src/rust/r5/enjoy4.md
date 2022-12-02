@@ -21,9 +21,9 @@ impl AnimalType {
     }
 }
 
-// How to use type as a parameters, hey!👇 what's this 😳
+// How to use type as a parameters, hey!👇 what's this? 😳
 fn say(animal_type: AnimalType) -> &'static str {
-    // ✨ To keep &str survive, we need 👆 'static
+    // ✨ To survive from fn {}, we need 👆 'static to let is has program's lifetime.
     match animal_type {
         AnimalType::Cat => "meaowww",
         AnimalType::Duck => "quackkk",
@@ -48,7 +48,7 @@ fn main() {
 
 > 💡 There's more examples about [Enums](https://doc.rust-lang.org/rust-by-example/custom_types/enum.html), and [match enums](https://doc.rust-lang.org/rust-by-example/flow_control/match/destructuring/destructure_enum.html).
 
-![](/assets/kat.png) That's too easy, let's change to higher gear.
+![](/assets/kat.png) Don't worry about `&'static str` or `lifetimes` just yet, compiler will let you know when need (usually out of `{ }` scope ) and we will talk about it later. Let's continue on other topics.
 
 ## strum, Result, Ok, Err
 
@@ -133,7 +133,7 @@ fn main() {
 
 </details>
 
-> 💡 Like an `Option`, but this time `Result<T, E>`⎯⎯ unwrap → `Ok<T>`/`Err(E)`.  
+> 💡 `Result<T, E>`⎯⎯ unwrap → `Ok<T>`/`Err(E)` which `T`,`E` are generic.  
 > Read more about how to handle `Result` [here](https://doc.rust-lang.org/rust-by-example/error/result.html)
 
 [Continue to Day 5 ➠](./enjoy5.md)
