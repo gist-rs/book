@@ -110,8 +110,13 @@ fn feed_duck_200(t: &mut (impl Feedable + Cat)) {
     t.feed(200f64)
 }
 
+fn feed_any_300(t: &mut dyn Feedable) {
+    t.feed(300f64)
+}
+
 fn main() {
     let mut animal = Animal { weight: 100f64 };
+
     animal.feed(1f64);
     println!("weight: {}", animal.weight);
 
@@ -119,10 +124,13 @@ fn main() {
     println!("weight: {}", animal.weight);
 
     // Cat
-    let mut animal = Animal { weight: 100f64 };
     feed_cat_with_amount(&mut animal, 10f64);
-    animal.feed(10f64);
+    println!("weight: {}", animal.weight);
 
+    animal.feed(10f64);
+    println!("weight: {}", animal.weight);
+
+    Feedable::feed(&mut animal, 10f64);
     println!("weight: {}", animal.weight);
 
     // Duck
@@ -135,6 +143,9 @@ fn main() {
 
     // 🤔 But this traits as parameters won't need `impl`, like feed_duck_100 above.
     feed_duck_200(&mut animal);
+    println!("weight: {}", animal.weight);
+
+    feed_any_300(&mut animal);
     println!("weight: {}", animal.weight);
 }
 ```
