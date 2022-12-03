@@ -115,7 +115,7 @@ fn main() {
 
 ---
 
-![](/assets/kat.png) We also have `async trait` supported by `async-trait`. [Official support](https://blog.rust-lang.org/inside-rust/2022/11/17/async-fn-in-trait-nightly.html) is nearly there.
+![](/assets/kat.png) We also have `async trait` supported by `async-trait` lib. [Official support](https://blog.rust-lang.org/inside-rust/2022/11/17/async-fn-in-trait-nightly.html) is almost there.
 
 ## Async Traits
 
@@ -154,6 +154,7 @@ impl Animal for Cat {
     }
 }
 
+// This `async fn main` need `tokio::main`
 #[tokio::main]
 async fn main() {
     let now = SystemTime::now();

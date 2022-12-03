@@ -69,7 +69,7 @@ impl Animal {
     // Define static method.
     pub fn static_say(animal_type: &str) -> &str {
         match animal_type {
-            // 👇 This &str is bad practice, we need enum here.
+            // 👇 This &str is bad practice, we will need enum here (later).
             "cat" => "meaowww",
             "duck" => "quackkk",
             _ => "wat!?",
@@ -78,6 +78,7 @@ impl Animal {
 
     // With &self 👇 method.
     pub fn say(&self) -> &str {
+        // So we can call 👇 ourself here.
         let animal_type = self.r#type.as_str();
         Animal::static_say(animal_type)
     }
