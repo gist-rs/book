@@ -23,8 +23,6 @@ pub async fn async_greet(something: &str) -> Result<String, JsError> {
     // Hook when panic (optional)
     set_panic_hook();
 
-    // Return String
-    let result = format!("Hello {something}");
-
-    Ok(result)
+    // Return Result String
+    Ok(format!("Hello {something}"))
 }
