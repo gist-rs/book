@@ -13,12 +13,12 @@ struct Human {}
 // New skill. Wanna to say something?
 trait Sayable {
     // This nearly like interface.
-    fn say(&self) -> String;
+    fn say(&self) -> String; // We use String instead of &str here for no reason.
 }
 
 // Implement `Sayable` skill for `Animal`.
 impl Sayable for Animal {
-    // All animal wil say meow for now. 😆
+    // All animal will say meow for now. 😆
     fn say(&self) -> String {
         "meow!".to_owned() // convert &str to String.
     }
