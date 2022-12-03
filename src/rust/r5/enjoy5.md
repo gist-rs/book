@@ -52,11 +52,10 @@ fn main() {
 
 ![](/assets/kat.png) Sometime Rust didn't know what size (and type) we return so `Box` and `dyn` is here to help.
 
-## Box, dyn
+## Dynamic Dispatch with `Box`, `dyn`
 
 ```rust
 // ...Continue from example above.
-
 # #[derive(Debug, Clone)]
 # struct Animal {}
 # struct Human {}
@@ -76,7 +75,7 @@ fn main() {
 #         "hi!".to_owned()
 #     }
 # }
-#
+
 // Compiler'll need this👇 Box to know a size (Box size BTW).
 fn animal_or_human() -> Box<dyn Sayable> {
     // Compiler'll need this 👆 dyn to know it's dynamic (Animal or Human)
@@ -102,7 +101,7 @@ fn animal_or_human() -> Box<dyn Sayable> {
                 Box::new(Human {})
             }
         }
-        // When you not finish implementation yet, try use todo.
+        // When you not finish implementation yet, try use todo!.
         None => todo!(),
     }
 }
@@ -110,6 +109,117 @@ fn animal_or_human() -> Box<dyn Sayable> {
 fn main() {
     // Randomly say by animal or human.
     println!("{:?}", animal_or_human().say());
+}
+```
+
+![](/assets/kat.png) This `-> Box<dyn Sayable>` is [Dynamic Dispatch](https://doc.rust-lang.org/book/ch17-02-trait-objects.html#trait-objects-perform-dynamic-dispatch) which have some overhead compare to `-> impl Sayable` (static dispatch).
+
+---
+
+![](/assets/kat.png) Let's try avoid `Dynamic Dispatch` with `Static Dispatch` by [either](https://crates.io/crates/either)
+
+## Static Dispatch with [either](https://crates.io/crates/either)
+
+```rust
+// ...Continue from example above.
+# #[derive(Debug, Clone)]
+# struct Human {}
+# struct Animal {}
+#
+# trait Sayable {
+#     fn say(&self) -> String;
+# }
+#
+# impl Sayable for Animal {
+#     fn say(&self) -> String {
+#         "meow!".to_owned()
+#     }
+# }
+#
+# impl Sayable for Human {
+#     fn say(&self) -> String {
+#         "hi!".to_owned()
+#     }
+# }
+
+use either::Either;
+use rand::Rng;
+
+// Can be either Sayable or Sayable.
+fn animal_or_human() -> Either<impl Sayable, impl Sayable> {
+    // Use random number instead of time, just for fun.
+    if rand::thread_rng().gen_range(0u8..9u8) % 2 == 0 {
+        Either::Left(Animal {})
+    } else {
+        Either::Right(Human {})
+    }
+}
+
+fn main() {
+    // Randomly say by animal or human.
+    let either_animal_or_human = animal_or_human();
+    println!(
+        "{:?}",
+        match either_animal_or_human.is_left() {
+            true => either_animal_or_human.left().unwrap().say(),
+            false => either_animal_or_human.right().unwrap().say(),
+        }
+    );
+}
+```
+
+![](/assets/kat.png) Let's try avoid `Dynamic Dispatch` with `Static Dispatch` by [enum_dispatch](https://crates.io/crates/enum_dispatch)
+
+## Static dispatch with [enum_dispatch](https://crates.io/crates/enum_dispatch)
+
+```rust
+// ...Continue from example above.
+# #[derive(Debug, Clone)]
+# struct Human {}
+# struct Animal {}
+#
+# trait Sayable {
+#     fn say(&self) -> String;
+# }
+#
+# impl Sayable for Animal {
+#     fn say(&self) -> String {
+#         "meow!".to_owned()
+#     }
+# }
+#
+# impl Sayable for Human {
+#     fn say(&self) -> String {
+#         "hi!".to_owned()
+#     }
+# }
+
+use enum_dispatch::enum_dispatch;
+use rand::Rng;
+
+#[enum_dispatch]
+enum SayableEnum {
+    Animal,
+    Human,
+}
+
+fn animal_or_human() -> SayableEnum {
+    if rand::thread_rng().gen_range(0u8..9u8) % 2 == 0 {
+        Animal {}.into()
+    } else {
+        Human {}.into()
+    }
+}
+
+fn main() {
+    // Randomly say by animal or human.
+    println!(
+        "{:?}",
+        match animal_or_human() {
+            SayableEnum::Animal(e) => e.say(),
+            SayableEnum::Human(e) => e.say(),
+        }
+    );
 }
 ```
 

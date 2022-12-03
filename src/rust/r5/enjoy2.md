@@ -25,8 +25,8 @@ fn main() {
     let hello_vec = vec_of_foo
         .iter() // Must `iter()` before you can map, filter,...
         .map(|e| format!("hello {e}")) // Say hi to `closure` |e| aka (e)=> in js.
-        .collect::<Vec<_>>(); // `collect` any result from iterate.
-        //             👆 `_` mean any.
+        .collect::<Vec<_>>(); // `collect` inferred type from iterate.
+        //             👆 `_` is inferred type (let compiler desire).
 
     println!("hello_vec: {hello_vec:#?}");
 
@@ -60,6 +60,7 @@ fn main() {
 }
 ```
 
+> 💡 `::<>` is [turbo fish](https://turbo.fish/) <span style="transform: scaleX(-1);"><span>🐟💨</span></span> .  
 > 💡 Read more about `iterate` [here](https://doc.rust-lang.org/rust-by-example/trait/iter.html).  
 > 💡 If you crazy about `iterate` do try [Rust Iterator Cheat Sheet](https://danielkeep.github.io/itercheat_baked.html)
 
