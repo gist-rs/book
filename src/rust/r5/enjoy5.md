@@ -1,8 +1,8 @@
 # Enjoy Day 5
 
-![](/assets/kat.png) Glad you made it this far. We almost there!
+![](/assets/kat.png) We `impl` (implement) some `trait` (aka skill) for `struct` so that `struct` can have that skill.
 
-## Trait, impl for
+## trait, impl
 
 ```rust,editable
 // Just boring struct.
@@ -10,8 +10,9 @@
 struct Animal {}
 struct Human {}
 
-// New skill, look like interface.
+// New skill. Wanna to say something?
 trait Sayable {
+    // This nearly like interface.
     fn say(&self) -> String;
 }
 
@@ -45,11 +46,13 @@ fn main() {
 }
 ```
 
-![](/assets/duck.png) Hey! That's look like [`impl`](enjoy3.md) we learn before, but this time we can just apply some `trait` (aka skill) to some `struct`. So we didn't have any circular dependency problems!
+![](/assets/duck.png) That's look like [`impl`](enjoy3.md) to `struct`, but this time we can implement that `trait` to any `struct` we want!
 
-## Box, dyn
+---
 
 ![](/assets/kat.png) Sometime Rust didn't know what size (and type) we return so `Box` and `dyn` is here to help.
+
+## Box, dyn
 
 ```rust
 // ...Continue from example above.
@@ -74,7 +77,7 @@ fn main() {
 #     }
 # }
 #
-// Compiler'll need this 👇 to know it size.
+// Compiler'll need this👇 Box to know a size (Box size BTW).
 fn animal_or_human() -> Box<dyn Sayable> {
     // Compiler'll need this 👆 dyn to know it's dynamic (Animal or Human)
 
@@ -109,6 +112,10 @@ fn main() {
     println!("{:?}", animal_or_human().say());
 }
 ```
+
+---
+
+![](/assets/kat.png) We also have `async trait` supported by `async-trait`. [Official support](https://blog.rust-lang.org/inside-rust/2022/11/17/async-fn-in-trait-nightly.html) is nearly there.
 
 ## Async Traits
 
