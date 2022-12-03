@@ -1,6 +1,6 @@
 # How to handle multiple result and option
 
-![](/assets/kat.png) We have many way to handle returned value, let's sum it up here so we can recall when need.
+![](/assets/kat.png) We have many way to handle returned value, let's sum it up here so we can recall them when needed.
 
 ## How to handle multiple `Result`.
 

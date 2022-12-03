@@ -115,12 +115,12 @@ fn main () {
 📂 foo
 ├─ 📂 src
 │  │
-│  ├─ 🗂 utils
+│  ├─ 📂 utils
 │  │  ├─ 📄 mod.rs     # 👈 entrypoint.
 │  │  ├─ 📄 say.rs     # 👈 Contain hello function.
 │  │  └─ 📄 cast.rs    # 👈 will able to use say.
 │  │
-│  └─ 📄 main.rs       # 👈 `mod bar;` then `use bar::hello;`
+│  └─ 📄 main.rs       # 👈 `mod utils;` then `use utils::say;`
 │
 └─ 📦 Cargo.toml
 ```
@@ -208,10 +208,15 @@ pub fn hello() {    // 👈  make it pub so other can use.
 ```yml
 📂 workspace-example
 │
-├─ 🗂 utils            # 👈 utils lib folder.
-├─ 📂 foo              # 👈 same boring app.
-│  ├─ 📄 main.rs
-│  └─ 📦 Cargo.toml    # 👈 app's Cargo.
+├─ 🗂 utils
+│  ├─ 📂 src
+│  │  └─ 📄 lib.rs     # 👈 lib entrypoint.
+│  └─ 📦 Cargo.toml
+│
+├─ 📂 foo
+│  ├─ 📂 src
+│  │  └─ 📄 main.rs    # 👈 app entrypoint.
+│  └─ 📦 Cargo.toml
 │
 └─ 📦 Cargo.toml       # 👈 Workspace's Cargo.
 ```
@@ -233,8 +238,10 @@ members = [
 ]
 ```
 
-> Now you are happy! You even can
+</details>
+
+---
+
+## Next
 
 Let's continue to [Enjoy ➠](./enjoy1.md)
-
-</details>
