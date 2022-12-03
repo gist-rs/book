@@ -82,8 +82,9 @@ impl Feedable for Animal {
     }
 }
 
-// Bounds only Feedable allowed here.
+// This👇 T = Type mean this fn will accept Feedable Type = Generic Bounds.
 fn feed<T: Feedable>(t: &mut T) {
+    // And can be reuse here 👆.
     t.feed(1f64)
 }
 
@@ -92,7 +93,7 @@ trait Cat {}
 
 impl Cat for Animal {}
 
-// Multiple bounds
+// We can compose type 👇 with this 👇 = Multiple bounds.
 fn feed_cat_with_amount<T: Feedable + Cat>(t: &mut T, amount: f64) {
     t.feed(amount)
 }
