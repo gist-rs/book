@@ -61,93 +61,123 @@ fn main() {
 ## Generic Bounds
 
 ```rust,editable
-#[derive(Debug)]
-struct Animal {
-    weight: f64,
+use std::ops::Deref;
+
+trait Human {
+    fn name(&self) -> String;
 }
 
-impl Animal {
-    fn add_weight(&mut self, weight: f64) {
-        self.weight += weight
+trait Learner: Human {
+    fn is_enjoy(&self) -> bool;
+    fn increase_power(&mut self, amount: u8);
+}
+
+trait Coder {
+    fn get_language(&self) -> &str;
+}
+
+trait Rustaceans: Coder + Learner {
+    fn blog(&self) -> String;
+}
+
+#[derive(Debug, Default)]
+struct Me {
+    language: String,
+    power: u8,
+}
+
+impl Me {
+    // We derived Default so we need to impl this fn default().
+    fn default() -> Self {
+        Me {
+            power: 0u8,
+            language: "🦀 Rust".to_owned(),
+        }
+    }
+
+    // Here's getter/setter.
+    fn set_power(&mut self, amount: u8) {
+        self.power = amount
     }
 }
 
-trait Feedable {
-    fn feed(&mut self, food_amount: f64);
+impl Human for Me {
+    fn name(&self) -> String {
+        "katopz".to_owned()
+    }
 }
+impl Learner for Me {
+    fn is_enjoy(&self) -> bool {
+        true
+    }
 
-impl Feedable for Animal {
-    fn feed(&mut self, food_amount: f64) {
-        self.add_weight(food_amount);
+    fn increase_power(&mut self, amount: u8) {
+        self.set_power(self.power + amount);
+    }
+}
+impl Coder for Me {
+    fn get_language(&self) -> &str {
+        // We need to 👇 deref so👆 we can return &str.
+        self.language.deref()
+    }
+}
+impl Rustaceans for Me {
+    fn blog(&self) -> String {
+        "https://katopz.medium.com/".to_owned()
     }
 }
 
-// This👇 T = Type mean this fn will accept Feedable Type = Generic Bounds.
-fn feed<T: Feedable>(t: &mut T) {
+struct You {}
+
+// You are just ordinary Human.
+impl Human for You {
+    fn name(&self) -> String {
+        "foo".to_owned()
+    }
+}
+
+// This👇 T = Type mean this fn will accept Learner Type = Generic Bounds.
+fn learn<T: Learner>(t: &mut T) {
     // And can be reuse here 👆.
-    t.feed(1f64)
+    t.increase_power(9u8)
 }
-
-// Cat
-trait Cat {}
-
-impl Cat for Animal {}
 
 // We can compose type 👇 with this 👇 = Multiple bounds.
-fn feed_cat_with_amount<T: Feedable + Cat>(t: &mut T, amount: f64) {
-    t.feed(amount)
+fn join_hackathon<T: Human + Learner>(t: &mut T, amount: u8) {
+    t.increase_power(amount)
 }
 
-// Duck
-trait Duck {}
-
-#[allow(dead_code)]
-fn feed_duck_100<T: Feedable + Duck>(t: &mut T) {
-    t.feed(100f64)
+// Or use compose traits as parameters like this
+fn enjoy_rust(t: &mut (impl Learner + Coder)) {
+    t.increase_power(11u8)
 }
 
-// Or use traits as parameters like this
-fn feed_duck_200(t: &mut (impl Feedable + Cat)) {
-    t.feed(200f64)
-}
-
-fn feed_any_300(t: &mut dyn Feedable) {
-    t.feed(300f64)
+// Or dynamic like this
+fn blog_rust(t: &mut dyn Rustaceans) {
+    t.increase_power(12u8)
 }
 
 fn main() {
-    let mut animal = Animal { weight: 100f64 };
+    let mut me = Me::default();
 
-    animal.feed(1f64);
-    println!("weight: {}", animal.weight);
+    // Learn lonely
+    learn(&mut me);
+    println!("1️⃣ {:?}", me);
 
-    feed(&mut animal);
-    println!("weight: {}", animal.weight);
+    // Join hackathon
+    join_hackathon(&mut me, 10u8);
+    println!("2️⃣ {:?}", me);
 
-    // Cat
-    feed_cat_with_amount(&mut animal, 10f64);
-    println!("weight: {}", animal.weight);
+    // 😱 Uncomment below to see `the trait bound `You: Learner` is not satisfied`.
+    // join_hackathon(&mut You {}, 100u8);
 
-    animal.feed(10f64);
-    println!("weight: {}", animal.weight);
+    // Enjoy!
+    enjoy_rust(&mut me);
+    println!("3️⃣ {:?}, enjoy {}", me, Coder::get_language(&me));
 
-    Feedable::feed(&mut animal, 10f64);
-    println!("weight: {}", animal.weight);
-
-    // Duck
-    // 😱 Uncomment below to see an error `the trait `Duck` is not implemented for `Animal``.
-
-    // feed_duck_100(&mut animal);
-    // println!("weight: {}", animal.weight);
-
-    // 💁 To solve this error try add `impl Duck for Animal {}`
-
-    // 🤔 But this traits as parameters won't need `impl`, like feed_duck_100 above.
-    feed_duck_200(&mut animal);
-    println!("weight: {}", animal.weight);
-
-    feed_any_300(&mut animal);
-    println!("weight: {}", animal.weight);
+    // We can do anything. Yeah!
+    blog_rust(&mut me);
+    println!("4️⃣ {:?}", me);
 }
 ```
 
