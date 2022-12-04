@@ -26,7 +26,7 @@
 {{#include ../../../examples/r4/30-fetch-multiple-futures/src/main.rs}}
 ```
 
-> 🤷‍♂️ `reqwest`+`TLS` is not runnable via Rust Playground so output is shown below.
+> 🤷 `reqwest`+`TLS` is not runnable via Rust Playground so output is shown below.
 
 <details>
 <summary>Run</summary>

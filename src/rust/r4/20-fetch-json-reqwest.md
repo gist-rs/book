@@ -20,7 +20,7 @@
 {{#include ../../../examples/r4/20-fetch-json-reqwest/src/main.rs}}
 ```
 
-> 🤷‍♂️ `reqwest`+`TLS` is not runnable via Rust Playground so output is shown below.
+> 🤷 `reqwest`+`TLS` is not runnable via Rust Playground so output is shown below.
 
 <details>
 <summary>Run</summary>

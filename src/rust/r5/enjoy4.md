@@ -118,7 +118,7 @@ fn main() {
 }
 ```
 
-> 🤷‍♂️ `strum` is not runnable via Rust Playground so output is shown below.
+> 🤷 `strum` is not runnable via Rust Playground so output is shown below.
 
 <details>
 <summary>Run</summary>

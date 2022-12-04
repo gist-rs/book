@@ -4,20 +4,33 @@
 
 ## Lifetime
 
+✅ borrowed value does live long enough.
+
 ```rust,editable
 fn main() {
     let my_money;
 
     // This is fine.
     let your_money = 5;
-    my_money = &your_money;
+    my_money = your_money;
 
-    // 😱 This is not, because `your_money` is in your house { }
-    // {
-    //     let your_money = 5;
-    //     my_money = &your_money;
-    // }
-    // 👆 `your_money` dropped here while still borrowed to `my_money`
+    println!("my_money: {}", my_money);
+    println!("your_money: {}", your_money);
+}
+```
+
+❎ borrowed value does not live long enough.
+
+```rust,editable
+fn main() {
+    let my_money;
+
+    // 😱 This is not, because `your_money` is in your { } scope.
+    {
+        let your_money = 5;
+        my_money = &your_money;
+    }
+    // 👆 `your_money` dropped here, it won't leave your { } scope.
 
     // borrow later used here 👇.
     println!("my_money: {}", my_money);
@@ -74,13 +87,13 @@ fn main() {
 
 ### Lifetime Annotations in Method Definitions
 
-```rust,no_run
+```rust,editable
 // We need👇 <'a> here.
 struct Me<'a> {
     name: &'a str, // Because of this 'a.
 }
 
-// So this will need <'a> here too! 🤷‍♂️
+// So this will need <'a> here too! 🤷
 impl<'a> Me<'a> {
     fn say_my_name(&self) -> &str {
         self.name
@@ -124,6 +137,6 @@ fn main() {
 
 - `&'static str` = lives the entire lifetime of your program = book hotel for entire year = use it wisely.
 - `String` = smart pointer = heap = a bit more allocation (not much).
-- `&'a str` = lifetime annotations = less scope = less used ram = good but headache.
+- `&'a str` = lifetime annotations = more specific lifetime = good (but headache).
 
 ![](/assets/kat.png) Now we know that we need to add `<'a>` lifetime annotations to let compiler know its lifetime.
