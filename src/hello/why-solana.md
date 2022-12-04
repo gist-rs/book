@@ -13,10 +13,12 @@
 - Multisig: [Squads](https://squads.so/)
 - Automation: [Clockwork](https://www.clockwork.xyz/)
 - Storage: [Shadow Drive](https://github.com/GenesysGo/shadow-drive)
-- Payment: [Solana Pay]()
+- Payment: [Solana Pay](https://solanapay.com/)
 - Framework: [Anchor](https://www.anchor-lang.com/)
 - Oracle: [Pyth](https://pyth.network/)
 - Bridge: [Wormhole](https://linktr.ee/wormholecrypto)
+- Mobile: [Saga](https://solanamobile.com/)
+- xNFT: [Backpack](https://www.backpack.app/)
 
 ## Resources
 
