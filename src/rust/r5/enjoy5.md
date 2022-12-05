@@ -120,7 +120,7 @@ fn main() {
 
 ## Static Dispatch with [either](https://crates.io/crates/either)
 
-```rust
+```rust,no_run
 // ...Continue from example above.
 # #[derive(Debug, Clone)]
 # struct Human {}
@@ -172,7 +172,7 @@ fn main() {
 
 ## Static dispatch with [enum_dispatch](https://crates.io/crates/enum_dispatch)
 
-```rust
+```rust,no_run
 // ...Continue from example above.
 # #[derive(Debug, Clone)]
 # struct Human {}
