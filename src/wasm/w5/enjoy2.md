@@ -7,31 +7,31 @@
 #### `Cargo.toml`
 
 ```toml
-{{#include ../../../examples/w5/hello-wasm/Cargo.toml}}
+{{#include ../../../examples/w5/11-hello-wasm-js/Cargo.toml}}
 ```
 
 #### `utils.rs`
 
 ```rust,no_run
-{{#include ../../../examples/w5/hello-wasm/src/utils.rs}}
+{{#include ../../../examples/w5/11-hello-wasm-js/src/utils.rs}}
 ```
 
 #### `lib.rs`
 
 ```rust,no_run
-{{#include ../../../examples/w5/hello-wasm/src/lib.rs}}
+{{#include ../../../examples/w5/11-hello-wasm-js/src/lib.rs}}
 ```
 
 #### `tests/web.rs`
 
 ```rust,no_run
-{{#include ../../../examples/w5/hello-wasm/tests/web.rs}}
+{{#include ../../../examples/w5/11-hello-wasm-js/tests/web.rs}}
 ```
 
 #### `tests/index.html`
 
 ```html,no_run
-{{#include ../../../examples/w5/hello-wasm/tests/index.html}}
+{{#include ../../../examples/w5/11-hello-wasm-js/tests/index.html}}
 ```
 
 ## To test

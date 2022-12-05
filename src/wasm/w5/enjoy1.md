@@ -15,7 +15,7 @@ pub fn foo(bar: &JsValue) {
 }
 
 #[wasm_bindgen]
-//   This no & 👇 mean short-lived.
+//   This no & 👇 mean long-lived.
 pub fn foo(bar: JsValue) {
     // ...
 }
