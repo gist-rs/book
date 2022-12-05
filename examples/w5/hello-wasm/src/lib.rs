@@ -26,3 +26,12 @@ pub async fn async_greet(something: &str) -> Result<String, JsError> {
     // Return Result String
     Ok(format!("Hello {something}"))
 }
+
+#[wasm_bindgen]
+pub async fn async_greet_js_value(something: &str) -> Result<JsValue, JsError> {
+    // Hook when panic (optional)
+    set_panic_hook();
+
+    // Return Result String
+    Ok(JsValue::from_str(format!("Hello {something}").as_str()))
+}

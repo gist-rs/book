@@ -34,6 +34,7 @@
   - [W5 - Entry](wasm/w5/mod.md)
     - [Setup](wasm/w5/setup.md)
     - [Enjoy Day 1](wasm/w5/enjoy1.md)
+    - [Enjoy Day 2](wasm/w5/enjoy2.md)
   - [W4 - Basic]()(wasm/w4/mod.md)
     - [Fetch using React via Wasm]()(wasm/w4/fetch-react-wasm.md)
     - [TODO using React via Wasm]()(wasm/w4/todo-react-wasm.md)

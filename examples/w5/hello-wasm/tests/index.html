@@ -1,0 +1,19 @@
+<script type="module">
+  import init, { greet, async_greet, async_greet_js_value } from './hello_wasm.js'
+
+  init().then(async () => {
+    const p1 = document.createElement('p')
+    p1.innerText = greet('world')
+    document.body.appendChild(p1)
+
+    let text = await async_greet('world')
+    const p2 = document.createElement('p')
+    p2.innerText = text
+    document.body.appendChild(p2)
+
+    let text_js_value = await async_greet_js_value('world')
+    const p3 = document.createElement('p')
+    p3.innerText = text_js_value
+    document.body.appendChild(p3)
+  })
+</script>

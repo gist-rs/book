@@ -1,4 +1,12 @@
 # W5 - Entry
 
-- [Setup](./setup.md): The required tools.
-- [Enjoy Day 1](./enjoy1.md): Enjoy touching 👉🦀.
+![](/assets/kat.png) Enjoy!
+
+## Goals
+
+- Able to getting start.
+- Enjoy working un-docs `js` ↔︎ `rs` examples.
+- Feel "Thanks god, someone have working examples!".
+- Hungry for more.
+
+[Let's Rust! ➠](./setup.md)
