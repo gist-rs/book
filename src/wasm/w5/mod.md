@@ -14,5 +14,5 @@
 ## TODO
 
 - [x] 10-hello-wasm
-- [x] 11-hello-wasm-js: untyped-sync-async-js-value
-- [ ] 12-hello-wasm-ts: typed-ptr-struct-ts
+- [x] 11-hello-wasm-js: sync-async-js-value
+- [ ] 12-hello-wasm-ts: react-ptr-struct-ts
