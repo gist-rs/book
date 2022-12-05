@@ -4,7 +4,7 @@
 
 - [Rust in Visual Studio Code](https://code.visualstudio.com/docs/languages/rust)
 - Install extra tools.
-  ```shell
+  ```bash
   cargo install cargo-edit    # 👈 = cargo add.
   cargo install cargo-watch   # 👈 = cargo watch.
   cargo install cargo-audit   # 👈 = cargo audit.
@@ -14,7 +14,7 @@
 
 > 💡 📦 [`Cargo`](https://doc.rust-lang.org/cargo/index.html) ≈ `NPM` = Package Manager.
 
-```shell
+```bash
 cargo init foo           # 👈 Will init app name `foo`.
 
 cargo run                # 👈 Build and Run.
@@ -169,7 +169,7 @@ fn main() {
 <details>
 <summary>Separate each lib as crate.</summary>
 
-```shell
+```bash
 cargo init bar --lib
 ```
 

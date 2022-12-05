@@ -94,5 +94,3 @@
 
 - Name Service
 - DAO
-
-<!-- [Enjoy S1 ➠](./s1) -->

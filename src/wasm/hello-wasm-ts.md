@@ -1,3 +1,3 @@
-# Hello Fastly Wasm
+# Hello Wasm Ts
 
 // 🚧 UNDER CONSTRUCTION

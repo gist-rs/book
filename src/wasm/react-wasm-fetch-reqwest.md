@@ -1,7 +1,5 @@
-# Hello Actix CloudRun
+# React Wasm fetch with reqwest
 
 > 🚧 UNDER CONSTRUCTION: This is ongoing topic, not finished yet bear 🧸 with me! If you can't wait please try [read more](../../bye.md).
 
-## TL;DR
-
-// 🚧 TODO: [https://github.com/katopz/hello-rust-actix-cloudrun]()
+// 🚧 TODO: [https://github.com/katopz/hello-react-rust-wasm]()

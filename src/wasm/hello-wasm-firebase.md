@@ -1,14 +1,12 @@
-# Hello Firebase Wasm
+# Hello Wasm Firebase
 
 ## TL;DR
 
-https://github.com/katopz/hello-firebase-wasm
-
-> POC WASM on Firebase Cloud Function
+[https://github.com/katopz/hello-firebase-wasm]()
 
 ## Initialize
 
-```shell
+```bash
 # Setup Firebase
 npm install -g firebase-tools
 firebase init
@@ -26,7 +24,7 @@ cargo install -f wasm-bindgen-cli
 
 ## Develop
 
-```shell
+```bash
 # To watch and build WASM from Rust
 cd wasm
 cargo watch -- . ./dev.sh

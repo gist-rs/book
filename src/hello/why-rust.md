@@ -23,6 +23,6 @@
 
 - [awesome-rust](https://github.com/katopz/awesome-rust)
 
-## Learn
+---
 
-- [Rust ➠](../rust/mod.md)
+[Rust ➠](../rust/mod.md)

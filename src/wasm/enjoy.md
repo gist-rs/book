@@ -1,4 +1,4 @@
-# Enjoy Day 1
+# Enjoy
 
 ![](/assets/kat.png) They said `Wasm` should be fun, Let's do it!
 

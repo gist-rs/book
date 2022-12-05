@@ -1,6 +1,6 @@
 # Bye
 
-## Hungry for more? Try below 👇
+## Rust Resources
 
 ### 📚 Reading
 
@@ -24,3 +24,24 @@
 1. [The Rust Programming Language + Quiz](https://rust-book.cs.brown.edu/): Tricky quiz.
 1. [Rust By Practice](https://github.com/sunface/rust-by-practice): Fill in the blank quiz.
 1. [Tour of Rust](https://tourofrust.com/): Explore rust with playground.
+
+### More
+
+1. [https://github.com/katopz/awesome-rust]()
+
+---
+
+## WASM Resources
+
+1. [Rust and WebAssembly](https://rustwasm.github.io/docs/book/)
+1. [https://github.com/katopz/awesome-wasm]()
+
+---
+
+## Solana Resources
+
+1. [Solana Cookbook](https://solanacookbook.com/)
+1. [SolDev](https://soldev.app/)
+1. [Anchor](https://github.com/coral-xyz/anchor/tree/master/tests)
+1. [Metaplex](https://github.com/metaplex-foundation/metaplex-program-library)
+1. [https://github.com/avareum/awesome-solana]()

@@ -27,6 +27,6 @@
 - [`Rust` and `WebAssembly`](https://rustwasm.github.io/docs/book/)
 - [The `wasm-bindgen` Guide](https://rustwasm.github.io/wasm-bindgen/)
 
-## Learn
+---
 
-- [Wasm ➠](../wasm/mod.md)
+[Wasm ➠](../wasm/mod.md)

@@ -26,6 +26,6 @@
 - [Solana Cookbook](https://solanacookbook.com/)
 - [Solana Development Course](https://soldev.app/course)
 
-## Learn
+---
 
-- [Solana ➠](../solana/mod.md)
+[Let's Rust Solana! ➠](../solana/mod.md)

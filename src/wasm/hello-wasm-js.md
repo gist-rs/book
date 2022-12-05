@@ -1,4 +1,4 @@
-# Enjoy Day 2
+# Hello Wasm Js
 
 ![](/assets/kat.png) Here's how to create `sync` and `async` function tha return `String`, `JsValue` and how to `test`.
 
@@ -7,31 +7,31 @@
 #### `Cargo.toml`
 
 ```toml
-{{#include ../../../examples/w5/11-hello-wasm-js/Cargo.toml}}
+{{#include ../../examples/wasm/hello-wasm-js/Cargo.toml}}
 ```
 
 #### `utils.rs`
 
 ```rust,no_run
-{{#include ../../../examples/w5/11-hello-wasm-js/src/utils.rs}}
+{{#include ../../examples/wasm/hello-wasm-js/src/utils.rs}}
 ```
 
 #### `lib.rs`
 
 ```rust,no_run
-{{#include ../../../examples/w5/11-hello-wasm-js/src/lib.rs}}
+{{#include ../../examples/wasm/hello-wasm-js/src/lib.rs}}
 ```
 
 #### `tests/web.rs`
 
 ```rust,no_run
-{{#include ../../../examples/w5/11-hello-wasm-js/tests/web.rs}}
+{{#include ../../examples/wasm/hello-wasm-js/tests/web.rs}}
 ```
 
 #### `tests/index.html`
 
 ```html,no_run
-{{#include ../../../examples/w5/11-hello-wasm-js/tests/index.html}}
+{{#include ../../examples/wasm/hello-wasm-js/tests/index.html}}
 ```
 
 ## To test
