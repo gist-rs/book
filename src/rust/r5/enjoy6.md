@@ -12,11 +12,11 @@ trait Learner: Human {
 }
 
 trait Coder {
-    fn language(&self) -> String;
+    fn get_language(&self) -> String;
 }
 
 trait Rustaceans: Coder + Learner {
-    fn blog(&self) -> String;
+    fn get_blog(&self) -> String;
 }
 
 struct Me {}
@@ -31,12 +31,12 @@ impl Learner for Me {
     }
 }
 impl Coder for Me {
-    fn language(&self) -> String {
+    fn get_language(&self) -> String {
         "rust".to_owned()
     }
 }
 impl Rustaceans for Me {
-    fn blog(&self) -> String {
+    fn get_blog(&self) -> String {
         "https://katopz.medium.com/".to_owned()
     }
 }
@@ -46,8 +46,8 @@ fn greeting_rustaceans(someone: &dyn Rustaceans) -> String {
         "My name is {}, I {} coding in {}, you can visit my blog at {}.",
         someone.name(),
         someone.is_enjoy().then(|| "enjoy").unwrap_or("sad"),
-        someone.language(),
-        someone.blog(),
+        someone.get_language(),
+        someone.get_blog(),
     )
 }
 
@@ -77,7 +77,7 @@ trait Coder {
 }
 
 trait Rustaceans: Coder + Learner {
-    fn blog(&self) -> String;
+    fn get_blog(&self) -> String;
 }
 
 #[derive(Debug, Default)]
@@ -122,7 +122,7 @@ impl Coder for Me {
     }
 }
 impl Rustaceans for Me {
-    fn blog(&self) -> String {
+    fn get_blog(&self) -> String {
         "https://katopz.medium.com/".to_owned()
     }
 }
@@ -139,22 +139,22 @@ impl Human for You {
 // This👇 T = Type mean this fn will accept Learner Type = Generic Bounds.
 fn learn<T: Learner>(t: &mut T) {
     // And can be reuse here 👆.
-    t.increase_power(9u8)
+    t.increase_power(9u8);
 }
 
 // We can compose type 👇 with this 👇 = Multiple bounds.
 fn join_hackathon<T: Human + Learner>(t: &mut T, amount: u8) {
-    t.increase_power(amount)
+    t.increase_power(amount);
 }
 
 // Or use compose traits as parameters like this
 fn enjoy_rust(t: &mut (impl Learner + Coder)) {
-    t.increase_power(11u8)
+    t.increase_power(11u8);
 }
 
 // Or dynamic like this
 fn blog_rust(t: &mut dyn Rustaceans) {
-    t.increase_power(12u8)
+    t.increase_power(12u8);
 }
 
 fn main() {
@@ -177,7 +177,7 @@ fn main() {
 
     // We can do anything. Yeah!
     blog_rust(&mut me);
-    println!("4️⃣ {:?}", me);
+    println!("4️⃣ {:?}, blog {}", me, Rustaceans::get_blog(&me));
 }
 ```
 
