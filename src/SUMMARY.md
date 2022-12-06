@@ -42,4 +42,5 @@
   - [Hello Wasm Firebase](wasm/hello-wasm-firebase.md)
 - [Solana](solana/mod.md)
   - [Hello Solana](solana/hello-solana.md)
+  - [Fetch balance](solana/fetch-balance.md)
 - [Bye](bye.md)

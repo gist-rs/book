@@ -1,8 +1,10 @@
-// Add heart
-const div_right = document.querySelector('#menu-bar > div.right-buttons')
-const sponsor_html = '<a href="https://patreon.com/gist_rs" title="Sponsor" aria-label="Sponsor" target="_blank" rel="noopener"><i id="sponsor-button" class="fa fa-heart fa-beat beat-fade"></i></a>'
-div_right.innerHTML = sponsor_html + div_right.innerHTML
+# Fetch balance
 
+![](/assets/kat.png) Usually we will use [Solana SDK](https://solanacookbook.com/references/accounts.html#how-to-get-account-balance) but we doing vanilla here so...
+
+## How to fetch account balance in `Javascript` vanilla.
+
+```javascript
 const get_balance = async (pubkey, options) =>
   new Promise(async (resolve, reject) => {
     const { rpc_url, id, maximumFractionDigits } = {
@@ -37,11 +39,28 @@ const get_balance = async (pubkey, options) =>
     )
   })
 
+// Consider donate some SOL to this 👇 account to see some number show up 😆
 get_balance('gistmeAhMG7AcKSPCHis8JikGmKT9tRRyZpyMLNNULq', {
   rpc_url: 'https://rpc.ankr.com/solana'
 })
-  .then((lamports) => {
-    const sponsor_html = `<a href="https://patreon.com/gist_rs" title="Sponsor" aria-label="Sponsor" target="_blank" rel="noopener"><pre class="balance">◎ ${lamports}</pre></a>`
-    div_right.innerHTML = sponsor_html + div_right.innerHTML
-  })
+  .then(console.log)
   .catch(console.error)
+```
+
+---
+
+![](/assets/kat.png) Now let's try `Rust` version.
+
+## How to fetch account balance in `Rust` vanilla.
+
+#### `Cargo.toml`
+
+```toml
+{{#include ../../examples/solana/fetch-balance/Cargo.toml}}
+```
+
+#### `main.rs`
+
+```rust,edition2021
+{{#include ../../examples/solana/fetch-balance/src/main.rs}}
+```

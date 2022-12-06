@@ -29,3 +29,16 @@
     opacity: 1;
   }
 }
+
+.balance {
+  display: inline-block;
+  border: none;
+  border-radius: 1em;
+  background-color: #d21faa33;
+  font-size: small;
+  padding: 0.3em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+  line-height: 0.8em;
+  color: crimson;
+}
