@@ -1,5 +1,4 @@
 .fa-beat {
-  color: #d21faa;
   animation: 1.5s infinite beat;
   animation: 1.5s infinite beat-fade;
 }
@@ -18,12 +17,15 @@
 
 @keyframes beat-fade {
   0% {
+    color: #d21faa;
     opacity: 1;
   }
   50% {
+    color: #ffffff;
     opacity: 0.5;
   }
   100% {
+    color: #d21faa;
     opacity: 1;
   }
 }

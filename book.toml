@@ -3,7 +3,7 @@ authors = ["katopz <katopz@gmail.com>"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Gist of Rust 🦀"
+title = "Gist of Rust"
 
 ## Uncomment this section to regennerate theme
 # [preprocessor.theme]
