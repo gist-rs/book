@@ -1,0 +1,29 @@
+.fa-beat {
+  color: #d21faa;
+  animation: 1.5s infinite beat;
+  animation: 1.5s infinite beat-fade;
+}
+
+@keyframes beat {
+  0%,
+  50%,
+  100% {
+    transform: scale(1, 1);
+  }
+  30%,
+  80% {
+    transform: scale(0.92, 0.95);
+  }
+}
+
+@keyframes beat-fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
