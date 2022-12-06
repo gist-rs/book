@@ -134,4 +134,6 @@ fn main() {
 
 > 💡 You can derive more than one e.g. `#[derive(Debug,Display,Clone,Copy)]` read more about `derive` [here](https://doc.rust-lang.org/rust-by-example/trait/derive.html) and `struct` [here](https://doc.rust-lang.org/rust-by-example/custom_types/structs.html).
 
+---
+
 [Continue to Day 4 ➠](./enjoy4.md)

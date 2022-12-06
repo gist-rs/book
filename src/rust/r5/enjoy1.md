@@ -114,4 +114,6 @@ fn main() {
 ![](/assets/duck.png) Now we know why we need `&` to borrow some value from some variable instead of move.  
 And we don't like to `clone` (or `copy`) that much because of more memory will need for doing that.
 
+---
+
 [Continue to Day 2 ➠](./enjoy2.md)

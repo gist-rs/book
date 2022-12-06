@@ -1,5 +1,7 @@
 # Enjoy Day 6
 
+![](/assets/kat.png) We should use `Composition` over `Inheritance` and here's how to do it.
+
 ## Supertraits
 
 ```rust,editable
@@ -57,6 +59,10 @@ fn main() {
 ```
 
 > 💡 More about [Supertraits](https://doc.rust-lang.org/rust-by-example/trait/supertraits.html)
+
+---
+
+![](/assets/kat.png) We can use `generic` to make a boundary what we accept, see example below.
 
 ## Generic Bounds
 
@@ -183,12 +189,17 @@ fn main() {
 
 > 💡 More about [Generics-Bounds](https://doc.rust-lang.org/rust-by-example/generics/bounds.html)
 
-![](/assets/kat.png) At this point you should able to read a lot of `Rust` code out there, let's [teardown ➠](./teardown.md).
+---
 
-// 🚧 TODO : parameterize traits
+<details>
+<summary>🚧 TODO : parameterize traits</summary>
 
 ```rust
 trait Combiner<A, B, C> {
     fn combine(a: &A, b: &B) -> C;
 }
 ```
+
+</details>
+
+[Continue to Day 7 ➠](./enjoy7.md)

@@ -136,4 +136,6 @@ fn main() {
 > 💡 `Result<T, E>`⎯⎯ unwrap → `Ok<T>`/`Err(E)` which `T`,`E` are generic.  
 > Read more about how to handle `Result` [here](https://doc.rust-lang.org/rust-by-example/error/result.html)
 
+---
+
 [Continue to Day 5 ➠](./enjoy5.md)

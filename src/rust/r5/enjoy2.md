@@ -121,4 +121,6 @@ fn main() {
 
 ![](/assets/duck.png) Don't be surprise if you found all this confusing. I did! But don't give up just yet!
 
+---
+
 [Continue to Day 3 ➠](./enjoy3.md)
