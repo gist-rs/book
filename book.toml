@@ -17,7 +17,7 @@ preferred-dark-theme = "coal"
 git-repository-url = "https://github.com/gist-rs/book"
 additional-css = ["theme/css/variables.css", "theme/css/general.css", "theme/css/chrome.css", "theme/highlight.css"]
 # additional-js = ["theme/pagetoc.js"]
-additional-js = ["js/helper.js", "theme/theme-monokai.js"]
+additional-js = ["js/helper.js"]
 
 [output.html.fold]
 enable = true
