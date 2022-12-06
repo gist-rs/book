@@ -1,6 +1,50 @@
 # Trait
 
-// 🚧 Still draft.
+## Generic Trait Parameters
+
+```rust,editable
+use std::fmt::Display;
+
+trait Logger<S: Display> {
+    fn log(&self, value: S) {
+        println!("{}", value);
+    }
+}
+
+struct Console {}
+
+impl<S: Display> Logger<S> for Console {}
+
+fn main() {
+    let foo = "Hello";
+    let bar = 100u8;
+    let console = Console {};
+
+    console.log(foo);
+    console.log(bar);
+}
+```
+
+## Generic Trait for Generic Type
+
+```rust,editable
+use std::fmt::Display;
+
+trait Console<S: Display> {
+    fn log(&self, value: S) {
+        println!("{value}");
+    }
+}
+
+impl<S: Display, T> Console<S> for T {}
+
+fn main() {
+    let foo = "Hello world!";
+    let bar = 100u8;
+
+    bar.log(foo);
+}
+```
 
 ## How can I define a function with a parameter that can be multiple kinds of trait objects?
 
