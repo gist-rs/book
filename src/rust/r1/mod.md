@@ -11,3 +11,4 @@
 
 - [Rust Before Main - Ryan Levick - Rust Linz, July 2022](https://www.youtube.com/watch?v=q8irLfXwaFM&t=1s)
 - [The Rustonomicon](https://doc.rust-lang.org/nomicon/intro.html)
+- [Mutex](https://fongyoong.github.io/easy_rust/Chapter_43.html)
