@@ -3,7 +3,6 @@ const div_right = document.querySelector('#menu-bar > div.right-buttons')
 const sponsor_html = '<a href="https://patreon.com/gist_rs" title="Sponsor" aria-label="Sponsor" target="_blank" rel="noopener"><i id="sponsor-button" class="fa fa-heart fa-beat beat-fade"></i></a>'
 div_right.innerHTML = sponsor_html + div_right.innerHTML
 
-import bs58 from './bs58.js'
 class Web3LiteClient {
   constructor(options) {
     const { rpc_url } = {
@@ -50,12 +49,6 @@ class Web3LiteClient {
         })
       )
     })
-
-  get_recent_blockhash = async () =>
-    new Promise(async (resolve, reject) => {
-      const { result } = await this.call('getRecentBlockhash').catch(reject)
-      return result?.value?.blockhash ? resolve(result?.value?.blockhash) : reject(new Error('No blockhash.'))
-    })
 }
 class Web3LiteWallet {
   constructor(client) {
@@ -75,7 +68,6 @@ class Web3LiteWallet {
 
   post_message = async (method, params = {}) =>
     new Promise((resolve, _reject) => {
-      console.log(method, params)
       const id = new Date().valueOf()
       window.addEventListener(
         'message',
@@ -84,7 +76,6 @@ class Web3LiteWallet {
           const { data } = event
           if (!data.result) return
 
-          console.log(id, event)
           if (data.id === id) return resolve(data.result)
         },
         false
@@ -98,42 +89,12 @@ class Web3LiteWallet {
       })
     })
 
-  sign_and_send_transaction = async (data) =>
-    new Promise((resolve, reject) => {
-      const params = {
-        message: bs58.encode(new TextEncoder().encode(JSON.stringify(data)))
-      }
-      this.post_message('signAndSendTransaction', params).then((result) => {
-        console.log('result:', result)
-        if (!result?.signature) return reject('No signature')
-        resolve(result.signature)
-      })
-    })
-
   connect_phantom = async () =>
     new Promise(async (resolve, reject) => {
       this.post_message('connect').then((result) => {
         return result?.publicKey ? resolve(result.publicKey) : reject('Not connected')
       })
     })
-
-  transfer_native = async (from, to, ui_lamports = 1) => {
-    // const lamports = ui_lamports * Math.pow(10, 9)
-    const recentBlockhash = await this.client.get_recent_blockhash()
-    console.log('recentBlockhash:', recentBlockhash)
-    const message_data = {
-      signatures: ['1111111111111111111111111111111111111111111111111111111111111111'],
-      message: {
-        header: { numRequiredSignatures: 1, numReadonlySignedAccounts: 0, numReadonlyUnsignedAccounts: 1 },
-        accountKeys: [from, to, '11111111111111111111111111111111'],
-        recentBlockhash,
-        instructions: { programIdIndex: 2, accounts: [0, 1], data: [2, 0, 0, 0, 0, 202, 154, 59, 0, 0, 0, 0] }
-      }
-    }
-    console.log(message_data)
-
-    return this.sign_and_send_transaction(message_data)
-  }
 }
 
 const GIST_PUBKEY = 'gistmeAhMG7AcKSPCHis8JikGmKT9tRRyZpyMLNNULq'
@@ -141,14 +102,15 @@ const web3_lite_client = new Web3LiteClient()
 web3_lite_client
   .get_balance(GIST_PUBKEY)
   .then((lamports) => {
-    const sponsor_html = `<a href="#" onClick title="Sponsor" aria-label="Sponsor" target="_blank" rel="noopener"><pre class="balance">◎ ${lamports}</pre></a>`
+    const sponsor_html = `<a href="#" onClick="window.connect_phantom()" title="Sponsor" aria-label="Sponsor"><pre class="balance">◎ ${lamports}</pre></a>`
     div_right.innerHTML = sponsor_html + div_right.innerHTML
   })
   .catch(console.error)
 
-const web3_lite_wallet = new Web3LiteWallet(web3_lite_client)
-web3_lite_wallet.connect_phantom().then(async (public_key) => {
-  window.public_key = public_key
-  const result = await web3_lite_wallet.transfer_native(public_key, GIST_PUBKEY)
-  console.log(result)
-})
+window.connect_phantom = () => {
+  const web3_lite_wallet = new Web3LiteWallet(web3_lite_client)
+  web3_lite_wallet.connect_phantom().then(async (public_key) => {
+    window.public_key = public_key
+    console.log('connected:', public_key)
+  })
+}
