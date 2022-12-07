@@ -3,6 +3,7 @@ const div_right = document.querySelector('#menu-bar > div.right-buttons')
 const sponsor_html = '<a href="https://patreon.com/gist_rs" title="Sponsor" aria-label="Sponsor" target="_blank" rel="noopener"><i id="sponsor-button" class="fa fa-heart fa-beat beat-fade"></i></a>'
 div_right.innerHTML = sponsor_html + div_right.innerHTML
 
+import bs58 from './bs58.js'
 class Web3LiteClient {
   constructor(options) {
     const { rpc_url } = {
@@ -53,7 +54,6 @@ class Web3LiteClient {
   get_recent_blockhash = async () =>
     new Promise(async (resolve, reject) => {
       const { result } = await this.call('getRecentBlockhash').catch(reject)
-      console.log(result)
       return result?.value?.blockhash ? resolve(result?.value?.blockhash) : reject(new Error('No blockhash.'))
     })
 }
@@ -101,7 +101,7 @@ class Web3LiteWallet {
   sign_and_send_transaction = async (data) =>
     new Promise((resolve, reject) => {
       const params = {
-        message: this.to_base64(data)
+        message: bs58.encode(new TextEncoder().encode(JSON.stringify(data)))
       }
       this.post_message('signAndSendTransaction', params).then((result) => {
         console.log('result:', result)
@@ -119,12 +119,16 @@ class Web3LiteWallet {
 
   transfer_native = async (from, to, ui_lamports = 1) => {
     // const lamports = ui_lamports * Math.pow(10, 9)
-    const recent_blockhash = await this.client.get_recent_blockhash()
+    const recentBlockhash = await this.client.get_recent_blockhash()
+    console.log('recentBlockhash:', recentBlockhash)
     const message_data = {
-      header: { num_required_signatures: 1, num_readonly_signed_accounts: 0, num_readonly_unsigned_accounts: 1 },
-      account_keys: [from, to, '11111111111111111111111111111111'],
-      recent_blockhash,
-      instructions: { program_id_index: 2, accounts: [0, 1], data: [2, 0, 0, 0, 0, 202, 154, 59, 0, 0, 0, 0] }
+      signatures: ['1111111111111111111111111111111111111111111111111111111111111111'],
+      message: {
+        header: { numRequiredSignatures: 1, numReadonlySignedAccounts: 0, numReadonlyUnsignedAccounts: 1 },
+        accountKeys: [from, to, '11111111111111111111111111111111'],
+        recentBlockhash,
+        instructions: { programIdIndex: 2, accounts: [0, 1], data: [2, 0, 0, 0, 0, 202, 154, 59, 0, 0, 0, 0] }
+      }
     }
     console.log(message_data)
 

@@ -306,7 +306,7 @@
 
         <!-- Custom JS scripts -->
         {{#each additional_js}}
-        <script src="{{ ../path_to_root }}{{this}}"></script>
+        <script type="module" src="{{ ../path_to_root }}{{this}}"></script>
         {{/each}}
 
         {{#if is_print}}
