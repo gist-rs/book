@@ -2,10 +2,10 @@ use currency_rs::{Currency, CurrencyOpts};
 use rand::Rng;
 use serde::{Deserialize, Serialize};
 
-struct GetBalanceOptions {
-    rpc_url: String,
+struct GetBalanceOptions<'a> {
+    rpc_url: &'static str,
     id: u32,
-    precision: i64,
+    currency_opts: Option<CurrencyOpts<'a>>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -35,7 +35,10 @@ struct UiBalance {
     ui_lamports: String,
 }
 
-async fn get_balance(pubkey: String, options: GetBalanceOptions) -> anyhow::Result<UiBalance> {
+async fn get_balance<'a>(
+    pubkey: String,
+    options: GetBalanceOptions<'_>,
+) -> anyhow::Result<UiBalance> {
     let client = reqwest::Client::new();
     let json_payload = RpcPayload {
         jsonrpc: "2.0".to_owned(),
@@ -44,25 +47,16 @@ async fn get_balance(pubkey: String, options: GetBalanceOptions) -> anyhow::Resu
         params: vec![pubkey],
     };
 
-    let res = client
+    let balance_response: GetBalanceResponse = client
         .post(options.rpc_url)
         .json(&json_payload)
         .send()
+        .await?
+        .json()
         .await?;
 
-    let balance_response = res.json::<GetBalanceResponse>().await?;
     let lamports = balance_response.result.value as f64 / 10u64.pow(9) as f64;
-    let ui_lamports = Currency::new_float(
-        lamports,
-        Some(
-            CurrencyOpts::new()
-                .set_precision(options.precision)
-                .set_symbol("")
-                .set_separator(",")
-                .set_decimal("."),
-        ),
-    )
-    .format();
+    let ui_lamports = Currency::new_float(lamports, options.currency_opts).format();
 
     Ok(UiBalance {
         lamports,
@@ -76,9 +70,15 @@ async fn main() {
         // Consider donate some SOL to this 👇 account to see some number show up 😆
         "gistmeAhMG7AcKSPCHis8JikGmKT9tRRyZpyMLNNULq".to_owned(),
         GetBalanceOptions {
-            rpc_url: "https://rpc.ankr.com/solana".to_owned(),
+            rpc_url: "https://rpc.ankr.com/solana",
             id: rand::thread_rng().gen_range(0u32..u32::MAX),
-            precision: 2,
+            currency_opts: Some(
+                CurrencyOpts::new()
+                    .set_precision(2)
+                    .set_symbol("")
+                    .set_separator(",")
+                    .set_decimal("."),
+            ),
         },
     )
     .await;
