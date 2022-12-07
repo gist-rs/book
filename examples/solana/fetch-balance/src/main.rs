@@ -2,9 +2,11 @@ use currency_rs::{Currency, CurrencyOpts};
 use rand::Rng;
 use serde::{Deserialize, Serialize};
 
+// We need this lifetime 👇.
 struct GetBalanceOptions<'a> {
     rpc_url: &'static str,
     id: u32,
+    // Because of this options 👇 required it.
     currency_opts: Option<CurrencyOpts<'a>>,
 }
 
@@ -35,8 +37,10 @@ struct UiBalance {
     ui_lamports: String,
 }
 
+// We need this 'a  👇
 async fn get_balance<'a>(
     pubkey: String,
+    // But this can be elided 'a👇
     options: GetBalanceOptions<'_>,
 ) -> anyhow::Result<UiBalance> {
     let client = reqwest::Client::new();
@@ -47,6 +51,7 @@ async fn get_balance<'a>(
         params: vec![pubkey],
     };
 
+    // We can deserialize json by 👇 specify type
     let balance_response: GetBalanceResponse = client
         .post(options.rpc_url)
         .json(&json_payload)
@@ -64,6 +69,7 @@ async fn get_balance<'a>(
     })
 }
 
+// We need tokio main here due to async.
 #[tokio::main]
 async fn main() {
     let ui_balance_result = get_balance(
@@ -83,5 +89,6 @@ async fn main() {
     )
     .await;
 
+    // Consider use match to handle this 👇 as a homework.
     println!("ui_balance_result: {:?}", ui_balance_result);
 }
