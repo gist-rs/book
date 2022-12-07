@@ -13,6 +13,7 @@
 
 1. [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/intro.html): Recommend!.
 1. [A half-hour to learn Rust](https://fasterthanli.me/articles/a-half-hour-to-learn-rust): Took more than a half-hour for me 😅.
+1. [Blessed](https://blessed.rs/crates#section-common-subsection-general): An unofficial guide to the Rust ecosystem.
 
 ### 👨🏻‍💻 Doing
 
