@@ -25,6 +25,7 @@
   - [R3 - Advanced](rust/r3/mod.md)
     - [Lifetimes](rust/r3/lifetimes.md)
     - [Create your own lib](rust/r3/create-lib.md)
+    - [ref](rust/r3/ref.md)
     - [RefCell](rust/r3/refcell.md)
     - [Trait](rust/r3/trait.md)
     - [Serde](rust/r3/serde.md)
