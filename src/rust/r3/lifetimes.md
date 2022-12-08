@@ -43,7 +43,7 @@ fn main() {
 
 ```rust,no_run
 fn main() {
-    // Actually we need 'a lifetime annotations. 😱
+    // Actually we need 'a 👇 lifetime annotations. 😱
     fn hello_with_lifetime<'a>(x: &'a str) -> &'a str {
         x
     }
@@ -91,18 +91,21 @@ fn main() {
 // We need👇 <'a> here.
 struct Me<'a> {
     name: &'a str, // Because of this 'a.
+    // Mean 👆 this str name is have a good life in this { } scope.
 }
 
-// So this will need <'a> here too! 🤷
+// So 👇 we will need <'a> here too when we impl! 🤷
 impl<'a> Me<'a> {
+    // Due to👆 this.
     fn say_my_name(&self) -> &str {
         self.name
     }
 }
 
-// But this don't
+// But this don't.
 struct You {
-    name: String, // Because of no 'a here.
+    name: String, // Because of no 'a here, why?
+    // Because 👆 String, Vec, Box allocated on heap. Thanks heap!
 }
 
 // So this no need <'a>.
@@ -114,7 +117,7 @@ impl You {
 
 // And this also don't need <'a>
 struct Cat {
-    name: &'static str, // Because of no 'a here.
+    name: &'static str, // Because it's a long life static.
 }
 
 // So this no need <'a>.
@@ -125,18 +128,23 @@ impl Cat {
 }
 
 fn main() {
+    // Say my name
     println!("{:?}", Me { name: "foo" }.say_my_name());
 
+    // To &str → String You have to add 👇 to_owned.
     println!("{:?}", You { name: "bar".to_owned() }.say_my_name());
 
+    // Say my name 🎵
     println!("{:?}", Cat { name: "baz" }.say_my_name());
 }
 ```
 
-### Fun facts
+### Recap
 
-- `&'static str` = lives the entire lifetime of your program = book hotel for entire year = use it wisely.
-- `String` = smart pointer = heap = a bit more allocation (not much).
-- `&'a str` = lifetime annotations = more specific lifetime = good (but headache).
+- `&'static str` = lives the entire lifetime of your program = like book hotel for entire year = use it wisely.
+- `String` = on heap = a bit more allocation and ref to stack (not much).
+- `&'a str` = named (as a) lifetime annotations = more specific lifetime scope = good (but noisy).
+- `to_owned()` = more generic, can be any type.
+- `to_string()` = more specific that we need `String`.
 
-![](/assets/kat.png) Now we know that we need to add `<'a>` lifetime annotations to let compiler know its lifetime.
+![](/assets/kat.png) Now we know that we need to add `<'a>` or `static` lifetime annotations to let compiler know its lifetime on stack or maybe use `String`, `Vec`, `Box` on heap (depend on use case).
