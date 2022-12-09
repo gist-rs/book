@@ -19,7 +19,7 @@ fn main() {
 }
 ```
 
-❎ borrowed value does not live long enough.
+❌ borrowed value does not live long enough.
 
 ```rust,editable
 fn main() {

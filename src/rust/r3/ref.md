@@ -13,7 +13,7 @@ match x { _ => {} }
 // Moves x
 match x { y => {} }
 
-// 😱 Uncomment this to move on.
+// 💁 Uncomment this to get rid of error.
 // let x = AnEnum::Branch(String::new());
 
 // Does not move x
@@ -22,7 +22,7 @@ match x { AnEnum::Branch(_) => {} }
 // Moves x
 match x { AnEnum::Branch(y) => {} }
 
-// 😱 Uncomment this to move on.
+// 💁 Uncomment this to move on.
 // let x = AnEnum::Branch(String::new());
 
 // Does not move x
