@@ -35,6 +35,7 @@
 ## WASM Resources
 
 1. [Rust and WebAssembly](https://rustwasm.github.io/docs/book/)
+1. [Second State](https://github.com/second-state/wasm-learning)
 1. [https://github.com/katopz/awesome-wasm]()
 
 ---
