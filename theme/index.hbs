@@ -261,15 +261,15 @@
         <script>
             // make sure we don't activate google analytics if the developer is
             // inspecting the book locally...
-            if (["localhost", "127.0.0.1", ""].indexOf(document.location.hostname) > -1) return;
+            if (['localhost', '127.0.0.1', '', '.pages.dev'].indexOf(document.location.hostname) === -1) {
+                window.dataLayer = window.dataLayer || []
+                function gtag() {
+                    dataLayer.push(arguments)
+                }
+                gtag('js', new Date())
 
-            window.dataLayer = window.dataLayer || []
-            function gtag() {
-                dataLayer.push(arguments)
+                gtag('config', '{{google_analytics}}')
             }
-            gtag('js', new Date())
-
-            gtag('config', '{{google_analytics}}')
         </script>
         {{/if}}
 
