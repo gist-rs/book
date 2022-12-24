@@ -18,7 +18,7 @@ git-repository-url = "https://github.com/gist-rs/book"
 additional-css = ["theme/other.css","theme/css/variables.css", "theme/css/general.css", "theme/css/chrome.css", "theme/highlight.css"]
 # additional-js = ["theme/pagetoc.js"]
 additional-js = ["js/helper.js", "js/support.js", "theme/theme-monokai.js"]
-
+google-analytics = "G-YPLDRH4ZKP"
 
 [output.html.fold]
 enable = true
