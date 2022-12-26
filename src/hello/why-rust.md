@@ -3,8 +3,8 @@
 ## Reasons
 
 - 1Password: [We believe there is no better language up to that challenge than `Rust`](https://foundation.rust-lang.org/news/secure-app-development-with-rust-s-memory-model/)
-- Apple: [Our codebase is written entirely in modern `Rust`.](https://jobs.apple.com/en-us/search?search=rust&sort=relevance)
 - Android: [For the lower layers of the OS, `Java` and `Kotlin` are not an option.](https://source.android.com/docs/setup/build/rust/building-rust-modules/overview)
+- Apple: [Our codebase is written entirely in modern `Rust`.](https://jobs.apple.com/en-us/search?search=rust&sort=relevance)
 - AWS: [`Rust` is an amazing technology to sustain and secure our industry.](https://aws.amazon.com/blogs/opensource/sustainability-with-rust/)
 - Azure: [It's time to use `Rust`.](https://twitter.com/markrussinovich/status/1571995117233504257)
 - Cloudflare: [`Rust` is staking its claim as a must-have in the developer toolbox.](https://blog.cloudflare.com/workers-rust-sdk/)
