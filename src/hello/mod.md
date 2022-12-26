@@ -3,14 +3,19 @@
   <p>Let's learn together ✨</p>
 </div>
 
-> 🚧 This gist is WIP, feel free to help.
+## Welcome
 
-# Goals
+- ✨ This book is like random working `gist` + `stack overflow` + `cheat sheet` + `short note` for `Rust` and `Wasm`.
+- 🚧 This book is ongoing, feel free to help.
 
-- 🎄 Provide smoothed `Rust`, `Wasm` learning curve by stack up working examples.
-- 🛣 Provide shorten `happy case` examples (failure case is optional).
-- 🏔 Provide 5 levels to climb up, focus sort by most use.
+## Goals
 
-# Non-Goals
+- 🏔 Provide smoothed `Rust` and `Wasm` learning curve by working examples.
+- 🛣 Provide a `happy case` examples (failure case is optional).
+- 🛠 Regularly maintain and update to keep things fresh.
 
-- We won't cover all topics and details, focus only a must gists.
+## Non-Goals
+
+- We won't cover all topics, only pass by field mostly web/worker/`Wasm` related.
+- We won't cover low level topic, `macros`, `unsafe`, embed device.
+- We will cover `game`, `3d`, `ml` topic if we get enough funding and time on earth.
