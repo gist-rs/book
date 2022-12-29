@@ -16,6 +16,5 @@
 
 ## Non-Goals
 
-- We won't cover all topics, only pass by field mostly web/worker/`Wasm` related.
-- We won't cover low level topic, `macros`, `unsafe`, embed device.
-- We will cover `game`, `3d`, `ml` topic if we get enough funding and time on earth.
+- We won't cover topics that we didn't have a chance to use it yet e.g. `macros`, `unsafe`,`FFI`, embed device.
+- We maybe cover `game`, `3d`, `ml` topic if we get enough funding and time on earth.
