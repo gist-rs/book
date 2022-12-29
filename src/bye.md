@@ -8,6 +8,8 @@
 1. [Easy Rust](https://dhghomon.github.io/easy_rust/Chapter_1.html): Easier to read, no fancy word.
 1. [The Rust Reference](https://doc.rust-lang.org/stable/reference/): Feel like short note 🤔.
 1. [Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html): Collection of `async` things.
+1. [Rust Design Patterns](https://rust-unofficial.github.io/patterns/): Design Patterns obviously.
+1. [The Embedded Rust Book](https://doc.rust-lang.org/stable/embedded-book/): Embedded things.
 
 ### 👨‍🍳 Cooking
 
@@ -26,17 +28,12 @@
 1. [Rust By Practice](https://github.com/sunface/rust-by-practice): Fill in the blank quiz.
 1. [Tour of Rust](https://tourofrust.com/): Explore rust with playground.
 
-### More
-
-1. [https://github.com/katopz/awesome-rust]()
-
 ---
 
 ## WASM Resources
 
 1. [Rust and WebAssembly](https://rustwasm.github.io/docs/book/)
 1. [Second State](https://github.com/second-state/wasm-learning)
-1. [https://github.com/katopz/awesome-wasm]()
 
 ---
 
@@ -46,4 +43,11 @@
 1. [SolDev](https://soldev.app/)
 1. [Anchor](https://github.com/coral-xyz/anchor/tree/master/tests)
 1. [Metaplex](https://github.com/metaplex-foundation/metaplex-program-library)
+
+---
+
+### Awesome
+
+1. [https://github.com/katopz/awesome-rust]()
+1. [https://github.com/katopz/awesome-wasm]()
 1. [https://github.com/avareum/awesome-solana]()
