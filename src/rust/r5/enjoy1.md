@@ -4,7 +4,7 @@
 
 > 💡 for more examples see 👉 [rust-by-example](https://doc.rust-lang.org/rust-by-example/index.html)
 
-## Variables, println, assert_eq
+## Variables, println, assert_eq, for
 
 ```rust,editable
 fn main() {
@@ -54,25 +54,37 @@ fn main() {
 
 > 💡 More `println` pattern here 👉 https://doc.rust-lang.org/rust-by-example/hello/print.html
 
-## fn, const, return, format
+## fn, const, static, return, format
 
 ```rust,editable
 // We use a lot of "count", let's DRY it as a constant.
 const COUNT: &str = "count"; // Say hi to referenced string slice &str
 
-// "add" as a function
+// And maybe we want something global that can mutate.
+static mut total: u32 = 0;
+
+// Define "add" as a function
 fn add(a: i32, b: i32) -> i32 {
     // i32 = integer 32
     a + b // This mean return a + b, hence no semicolon ;
 }
 
 fn main() {
-    // Or better use assert_eq.
+    // We can use assert instead of assert_eq for test.
     assert!(add(1, 2) == 3);
 
-    // Use const and fn
+    // Try use COUNT with format!
     let result = format!("{COUNT} = {}", add(1, 9));
     println!("{result}");
+
+    // We will need unsafe to mutate static.
+    unsafe {
+        // Try mutate and 👇 cast i32 to u32 (unsigned integer 32)
+        total = add(3, 4) as u32;
+
+        // Try assert_eq.
+        assert_eq!(total, 7);
+    }
 }
 ```
 
