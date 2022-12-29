@@ -37,8 +37,18 @@ fn main() {
     // Assert that count is equal 10.
     assert_eq!(count, 10);
 
-    // As base 16 hexadecimal.
+    // As base 16 hexadecimal by adding 👇.
     println!("count = {count} = 0x{count:x}");
+
+    // 👇 This is how we loop element (e).
+    for e in ["a","b","c"] {
+        println!("{e}")
+    }
+
+    //  👇 This is index (i) can be use by 👇 call enumerate fn.
+    for (i, e) in ["a","b","c"].iter().enumerate() {
+        println!("{i} = {e}")
+    }
 }
 ```
 
