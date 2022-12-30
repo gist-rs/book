@@ -10,6 +10,8 @@
 1. [Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html): Collection of `async` things.
 1. [Rust Design Patterns](https://rust-unofficial.github.io/patterns/): Design Patterns obviously.
 1. [The Embedded Rust Book](https://doc.rust-lang.org/stable/embedded-book/): Embedded things.
+1. [MacroKata](https://tfpk.github.io/macrokata/): A set of exercises which you can use to learn how to write `macros` in `Rust`.
+1. [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/about.html): How to design and present APIs
 
 ### 👨‍🍳 Cooking
 
