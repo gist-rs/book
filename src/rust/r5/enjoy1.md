@@ -29,30 +29,86 @@ fn main() {
         println!("count = {count}");
     }
 
+    // Assert that count is equal 2.
+    assert_eq!(count, 2);
+
+    // As base 16 hexadecimal by adding 👇.
+    println!("count = {count} = 0x{count:x}");
+}
+```
+
+> 💡 More `println` pattern 👉 [here](https://doc.rust-lang.org/rust-by-example/hello/print.html)
+
+## for, while, loop, break
+
+```rust,editable
+fn main() {
+    let mut count = 0;
+
     // This .. 👇 mean range i from 0 to 7.
     for _i in 0..8 { // _i mean we won't use i
         count += 1;
     }
 
-    // Assert that count is equal 10.
-    assert_eq!(count, 10);
+    println!("count = {count}");
 
-    // As base 16 hexadecimal by adding 👇.
-    println!("count = {count} = 0x{count:x}");
+    // This .. 👇 mean range i from 0 to 8.
+    for i in 0..=8 {
+        count += i;
+    }
+
+    println!("count = {count}", count = count);
 
     // 👇 This is how we loop element (e).
     for e in ["a","b","c"] {
-        println!("{e}")
+        println!("{e}");
     }
 
     //  👇 This is index (i) can be use by 👇 call enumerate fn.
     for (i, e) in ["a","b","c"].iter().enumerate() {
-        println!("{i} = {e}")
+        println!("{i} = {e}");
     }
+
+    // while
+    while count < 50 {
+        count += 1;
+    }
+
+    println!("count = {0}", count);
+
+    // loop
+    loop {
+        count += 1;
+        if count >= 100 {
+            break;
+        }
+    }
+
+    println!("count = {}", count);
+
+    // loop and break
+    'outer: loop {
+        count += 1;
+
+        // Break at 200
+        if count >= 200 {
+            // Never readch here.
+            break;
+        } else {
+            // Inner loop
+            loop {
+                count += 1;
+                // Because thi s break first.
+                if count >= 150 {
+                    break 'outer;
+                }
+            }
+        }
+    }
+
+    println!("count = {}", count);
 }
 ```
-
-> 💡 More `println` pattern here 👉 https://doc.rust-lang.org/rust-by-example/hello/print.html
 
 ## fn, const, static, return, format
 
