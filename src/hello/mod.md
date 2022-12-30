@@ -16,5 +16,5 @@
 
 ## Non-Goals
 
-- We won't cover topics that we didn't have a chance to use it yet e.g. [`macros`](https://doc.rust-lang.org/book/ch19-06-macros.html), [`unsafe`](https://doc.rust-lang.org/nomicon/),`FFI`, [embed device](https://doc.rust-lang.org/stable/embedded-book/).
+- We won't cover the topics that we didn't have a chance to use it yet e.g. [`macros`](https://doc.rust-lang.org/book/ch19-06-macros.html), [`unsafe`](https://doc.rust-lang.org/nomicon/),[`FFI`](https://github.com/dtolnay/cxx), [embed device](https://doc.rust-lang.org/stable/embedded-book/).
 - We maybe cover `game`, `3d`, `ml` topic if we get enough funding and time on earth.
