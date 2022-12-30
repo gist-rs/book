@@ -116,7 +116,7 @@ fn main () {
 ├─ 📂 src
 │  │
 │  ├─ 📂 utils
-│  │  ├─ 📄 mod.rs     # 👈 entrypoint.
+│  │  ├─ 📄 mod.rs     # 👈 entrypoint (similar to index.js in JS).
 │  │  ├─ 📄 say.rs     # 👈 Contain hello function.
 │  │  └─ 📄 cast.rs    # 👈 will able to use say.
 │  │
@@ -128,7 +128,10 @@ fn main () {
 │ │ ├─ 📄 mod.rs
 
 ```rust,no_run
-pub mod say;        // 👈 include say file and make it pub so main can use.
+pub mod say;        // 👈 import "say" and export.
+
+// 👇 It's look like this in JS.
+// export * from say;
 ```
 
 │ │ ├─ 📄 say.rs
