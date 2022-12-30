@@ -10,12 +10,15 @@ title = "Gist of Rust"
 # pagetoc = true
 # sidebar-width = "250px"
 
+[preprocessor.svgbob]
+class = "bob"
+
 [output.html]
 # theme = "theme"
 default-theme = "coal"
 preferred-dark-theme = "coal"
 git-repository-url = "https://github.com/gist-rs/book"
-additional-css = ["theme/other.css","theme/css/variables.css", "theme/css/general.css", "theme/css/chrome.css", "theme/highlight.css"]
+additional-css = ["theme/svgbob.css", "theme/other.css","theme/css/variables.css", "theme/css/general.css", "theme/css/chrome.css", "theme/highlight.css"]
 # additional-js = ["theme/pagetoc.js"]
 additional-js = ["js/helper.js", "js/support.js", "theme/theme-monokai.js"]
 google-analytics = "G-YPLDRH4ZKP"

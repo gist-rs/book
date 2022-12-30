@@ -4,7 +4,23 @@
 
 ![](/assets/duck.png) Oh, it's just like we put something in the 📦 so mister postman(compiler) can manage them properly!
 
-![](/assets/kat.png) Yes!, same idea for `String` 👉 `str`, `Vec` 👉 `array` which is `Heap` 👉 `Stack`.
+![](/assets/kat.png) Yes!, same idea for `String` → `str`, `Vec` → `array` which is `Stack` → `Heap`.
+
+```bob
+
+ Stack                              Heap
+.- - - - - - - - - - - - - -.      .- - - - - - - - - - - - - -.
+:                           :      :                           :
+:    String                 :      :    str                    :
+:   +-----------+------+    : owns :   +----+----+----+----+   :
+:   | ptr       |   o--+----+------+-->| R  | u  | s  | t  |   :
+:   | len       |   4  |    :      :   +----+----+----+----+   :
+:   | capacity  |   4  |    :      :                           :
+:   +-----------+------+    :      :                           :
+:                           :      :                           :
+`- - - - - - - - - - - - - -'      `- - - - - - - - - - - - - -'
+
+```
 
 ## Dynamic Dispatch with `Box`, `dyn`
 

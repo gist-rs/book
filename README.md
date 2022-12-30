@@ -6,6 +6,13 @@
 
 Focus on gist of `Rust`, `Wasm`, `Solana`.
 
+## Setup
+
+```
+cargo install mdbook
+cargo install mdbook-svgbob
+```
+
 ## Dev
 
 ```

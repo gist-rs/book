@@ -31,6 +31,10 @@ jobs:
                  | wget -qi -
           tar -xzf mdbook-theme_linux.tar.gz -C ~/tools
           echo ~/tools >> $GITHUB_PATH
+
+      - name: Install mdbook-svgbob
+        run: cargo install mdbook-svgbob --version 0.2.1
+
       - name: Build
         run: mdbook build
       # share between different jobs

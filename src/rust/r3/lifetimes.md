@@ -142,7 +142,7 @@ fn main() {
 ### Recap
 
 - `&'static str` = lives the entire lifetime of your program = like book hotel for entire year = use it wisely.
-- `String` = on heap = a bit more allocation and ref to stack (not much).
+- `String` = on `heap`.
 - `&'a str` = named (as a) lifetime annotations = more specific lifetime scope = good (but noisy).
 - `to_owned()` = more generic, can be any type.
 - `to_string()` = more specific that we need `String`.
