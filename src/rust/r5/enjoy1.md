@@ -90,12 +90,14 @@ fn main() {
 
 > 💡 There's lot more [Primitives](https://doc.rust-lang.org/rust-by-example/primitives.html) we didn't cover here, feel free to take a look!
 
+![](/assets/kat.png) We just use [unsafe](https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html) mutate because `static mut` can be mutate and access by any function at anytime globally so that make sense to make as `unsafe`. But no worry! we won't do that again until we really need it.
+
 ## String, Vec, Tuple, HashMap
 
 ### `String` ⚔️ `&str`
 
 ![](/assets/kat.png) We will need both `&str`and `String` for entire our `Rust` journey.
-You will know when and which to use it later. Just use it for now.
+You will know when and which to use it later. Let's just use it for now.
 
 ```rust,editable
 fn main() {
@@ -118,15 +120,15 @@ fn main() {
     // 😱 You can try uncomment 👇 this to experience an error `value borrowed here after move`.
     // println!("foo_string:{foo_string}");
 
-    // But if you really want to keep access `foo_string` how?
+    // But if you really want to keep access `foo_string`.
     // Just don't move in the first place! See below👇
 
-    // 1. let other borrow `&` instead of move.
+    // 1️⃣ let other borrow `&` instead of move.
     let borrowed_foo_string = &another_foo_string;
     println!("another_foo_string: {another_foo_string}"); // Still can access.
     println!("borrowed_foo_string: {borrowed_foo_string}"); // Also here.
 
-    // 2. or make a clone/copy instead of move.
+    // 2️⃣ or make a clone/copy instead of move.
     let borrowed_foo_string = another_foo_string.clone();
     println!("another_foo_string: {another_foo_string}"); // Still can access.
     println!("borrowed_foo_string: {borrowed_foo_string}"); // Also here.
