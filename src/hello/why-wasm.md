@@ -23,7 +23,7 @@
 
 ## Resources
 
-- [awesome-rust](https://github.com/katopz/awesome-rust)
+- [awesome-wasm](https://github.com/katopz/awesome-wasm)
 - [`Rust` and `WebAssembly`](https://rustwasm.github.io/docs/book/)
 - [The `wasm-bindgen` Guide](https://rustwasm.github.io/wasm-bindgen/)
 
