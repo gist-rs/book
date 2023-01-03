@@ -52,3 +52,32 @@ pyth-sdk-solana = { path = "../pyth-sdk-solana" }
 [dependencies]
 pyth-sdk-solana = { git = "https://github.com/pyth-network/pyth-sdk-rs", rev = "75e2742" }
 ```
+
+---
+
+## What common traits we should derive?
+
+- `Debug`
+- `Send` for `Mutex`
+- `Sync` for `Arc`
+- `Clone`
+- `Default`
+- `PartialEq`, `PartialOrd`, `Hash`, `Eq`, and `Ord` for comparison.
+- `Serialize`, `Deserialize`
+
+> 💡 You can read more about this at at [Rust for Rustaceans](https://nostarch.com/rust-rustaceans)
+
+## Which function restrictions shall we use?
+
+```rust
+// Take owned String, return owned String.
+fn hello(foo: String) -> String
+
+// Take ref to str, return Copy on Write.
+fn hello(foo: &str) -> Cow<'_, str>
+
+// Take impl, return impl.
+fn hello(foo: impl AsRef<Str>) -> impl AsRef<str>
+```
+
+> 💡 You can read more about `Cow` here 👉 [6 things you can do with the Cow 🐄 in Rust 🦀](https://dev.to/kgrech/6-things-you-can-do-with-the-cow-in-rust-4l55)

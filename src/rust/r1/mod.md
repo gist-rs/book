@@ -4,8 +4,7 @@
 
 ## Goals
 
-- Able to understand in depth.
-- Able to read/write `macro`.
+- Able to understand `Rust` in depth.
 
 ## TODO
 
@@ -13,3 +12,4 @@
 - [The Rustonomicon](https://doc.rust-lang.org/nomicon/intro.html)
 - [Mutex](https://fongyoong.github.io/easy_rust/Chapter_43.html)
 - [Rust, Realloc, and References](https://osec.io/blog/reports/2022-12-09-rust-realloc-and-references/)
+- [6 things you can do with the Cow 🐄 in Rust 🦀](https://dev.to/kgrech/6-things-you-can-do-with-the-cow-in-rust-4l55)

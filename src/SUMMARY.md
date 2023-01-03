@@ -32,7 +32,7 @@
   - [R2 - Expert](rust/r2/mod.md)
     - [Hello Actix CloudRun](rust/r2/hello-actix-cloudrun.md)
   - [R1 - Master](rust/r1/mod.md)
-    - [String](rust/r1/String.md)
+    - [String](rust/r1/string.md)
     - [Marker Types](rust/r1/marker-types.md)
 - [Wasm](wasm/mod.md)
   - [Setup](wasm/setup.md)
