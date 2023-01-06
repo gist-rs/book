@@ -13,6 +13,7 @@
 1. [MacroKata](https://tfpk.github.io/macrokata/): A set of exercises which you can use to learn how to write `macros` in `Rust`.
 1. [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/about.html): How to design and present APIs.
 1. [The Rustonomicon](https://doc.rust-lang.org/nomicon): The Dark Arts of Unsafe `Rust`.
+1. [Rust Atomics and Locks](https://marabos.nl/atomics): Low-Level Concurrency in Practice.
 
 ### 👨‍🍳 Cooking
 
