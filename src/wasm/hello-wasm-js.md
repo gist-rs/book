@@ -1,6 +1,6 @@
 # Hello Wasm Js
 
-![](/assets/kat.png) Here's how to create `sync` and `async` function tha return `String`, `JsValue` and how to `test`.
+![](/assets/kat.png) Here's how to create `sync` and `async` function that return `String`, `JsValue` and how to `test`.
 
 ## Structure.
 
