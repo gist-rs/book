@@ -19,14 +19,20 @@ cargo install mdbook-svgbob
 mdbook serve
 ```
 
-## TODO
+---
 
-- [x] Create book with `mdbook`.
-- [ ] Fill `Rust` contents.
-- [ ] Fill `Wasm` contents.
-- [ ] Fill `Solana` contents.
-- [ ] Can fetch/parse both offchain/onchain data with rust/wasm.
-- [ ] Can target web with `wasm-bindgen`.
-- [ ] Can deploy `web-wasm` as static web or dynamic serverless.
-- [ ] Can connect and sign messages with `web3` via `wasm`.
-- [ ] Can transfer Native/`SPL`/`NFT` with `ATA`.
+## Notifications
+
+Get notified when a book get published by
+
+- [Following katopz on Twitter](https://twitter.com/katopz) or
+- [Subscribing to this repo's release RSS feed](https://github.com/gist-rs/book/releases.atom) or
+- Watching this repo's releases (click `Watch` -> click `Custom` -> select `Releases` -> click `Apply`)
+
+## Feedback
+
+If you have any feedback please feel welcome to [open an issue](https://github.com/gist-rs/book/issues/new) on this repo. I accept pull requests for minor fixes like typos and grammar.
+
+## Discuss
+
+This repo has a [discussion forum](https://github.com/gist-rs/book/discussions)! Feel free to ask questions or start discussions.
