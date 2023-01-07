@@ -148,3 +148,5 @@ fn main() {
 - `to_string()` = more specific that we need `String`.
 
 ![](/assets/kat.png) Now we know that we need to add `<'a>` or `static` lifetime annotations to let compiler know its lifetime on stack or maybe use `String`, `Vec`, `Box` on heap (depend on use case).
+
+Consider read more about [Common Rust Lifetime Misconceptions](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md) if you plan to use it properly.

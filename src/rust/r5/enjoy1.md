@@ -113,10 +113,10 @@ fn main() {
 ## fn, const, static, return, format
 
 ```rust,editable
-// We use a lot of "count", let's DRY it as a constant.
+// We previously use a lot of "count", let's DRY it as a constant.
 const COUNT: &str = "count"; // Say hi to referenced string slice &str
 
-// And maybe we want something global that can mutate.
+// And maybe we want static footgun 💥 that can mutate.
 static mut total: u32 = 0;
 
 // Define "add" as a function
@@ -133,7 +133,7 @@ fn main() {
     let result = format!("{COUNT} = {}", add(1, 9));
     println!("{result}");
 
-    // We will need unsafe to mutate static.
+    // We will need unsafe to mutate static (fyi: bad practice).
     unsafe {
         // Try mutate and 👇 cast i32 to u32 (unsigned integer 32)
         total = add(3, 4) as u32;
