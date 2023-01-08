@@ -1,3 +1,5 @@
+// import init, { get_nft_content } from './solana-toolbox.js'
+
 window.onload = () => {
   // Open external link as new windows.
   ;[...document.getElementsByTagName('a')].map((e) => {
@@ -9,4 +11,17 @@ window.onload = () => {
     }
     return e
   })
+
+  // Render NFT contents
+  if (typeof init === 'function') {
+    const nft_elements = document.getElementsByTagName('nft')
+    if (nft_elements.length > 0) {
+      init().then(async () => {
+        ;[...nft_elements].map((e) => {
+          const viewer_address = window.__SESSION__.pubkey
+          e.innerHTML = get_nft_content(e.dataset.nft_address, viewer_address)
+        })
+      })
+    }
+  }
 }

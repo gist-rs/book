@@ -1,6 +1,6 @@
 # Hello Actix CloudRun
 
-> 🚧 UNDER CONSTRUCTION: This is ongoing topic, not finished yet bear 🧸 with me! If you can't wait please try [read more](../../bye.md).
+> 🚧 UNDER CONSTRUCTION: Please bear 🧸 with me! If you can't wait please try [read more](../../bye.md).
 
 ## TL;DR
 

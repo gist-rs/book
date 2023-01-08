@@ -13,6 +13,9 @@ title = "Gist of Rust"
 [preprocessor.svgbob]
 class = "bob"
 
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
 [output.html]
 # theme = "theme"
 default-theme = "coal"
@@ -20,7 +23,7 @@ preferred-dark-theme = "coal"
 git-repository-url = "https://github.com/gist-rs/book"
 additional-css = ["theme/svgbob.css", "theme/other.css","theme/css/variables.css", "theme/css/general.css", "theme/css/chrome.css", "theme/highlight.css"]
 # additional-js = ["theme/pagetoc.js"]
-additional-js = ["js/helper.js", "js/support.js", "theme/theme-monokai.js"]
+additional-js = ["js/helper.js", "js/support.js", "theme/theme-monokai.js","js/mermaid.min.js", "js/mermaid-init.js"]
 google-analytics = "G-YPLDRH4ZKP"
 
 [output.html.fold]

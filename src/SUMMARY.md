@@ -45,4 +45,5 @@
 - [Solana](solana/mod.md)
   - [Hello Solana](solana/hello-solana.md)
   - [Fetch balance](solana/fetch-balance.md)
+  - [NFT Memberships](solana/nft-memberships.md)
 - [Bye](bye.md)
