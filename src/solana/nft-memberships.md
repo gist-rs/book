@@ -58,8 +58,12 @@ sequenceDiagram
 ### To use
 
 ```html
-<nft src="some_nft_address" />
+<nft src="some_nft_address">
+  <button>🔑 continue with wallet</button>
+</nft>
 ```
+
+### Flow
 
 ```mermaid
 sequenceDiagram
@@ -69,13 +73,13 @@ sequenceDiagram
   participant cf_kv as Edge (KV)
   participant mdbook as mdbook
   mdbook->>cf_kv: key: nft_address, value: content_id
-  browser->>+edge: /{nft_address}
+  browser->>+edge: /v/{nft_address}
   Note right of browser: 🔑 access_token
   edge->>edge: Verify 🔑 access_token
   edge->>edge: Validate member by<br>user_pubkey held derived nft
   edge->>edge: Validate expiry by<br>derived nft.data.expired_at
   edge->>cf_kv: route
-  Note right of edge: /{nft_address}/*
+  Note right of edge: /v/{nft_address}/*
   cf_kv->>edge: nft contents
   edge->>-browser: nft contents
 ```
@@ -87,6 +91,33 @@ sequenceDiagram
 ### Cons
 
 - Can be slow to query if has a number of held `NFTs`.
+
+### Demo
+
+1. Click below button to connect `Phantom` wallet.
+1. Sign `pubkey` to get `access_token`.
+1. Buy `NFT` to get membership.
+1. Enjoy content after successful received `NFT`.
+
+<br/>
+<nft src="some_nft_address">
+  <button onclick="alert('TODO: connect wallet')">🔑 continue with wallet</button>
+</nft>
+<br/>
+<br/>
+
+### Source
+
+- TODO
+
+---
+
+### Alternative
+
+<details>
+  <summary>
+  Paywalls Content (ALTs)
+  </summary>
 
 ## Paywalls Content (ALTs)
 
@@ -119,3 +150,5 @@ sequenceDiagram
 
 - Limited to 256 accounts.
 - Need upfront record and maintain.
+
+</details>
