@@ -25,11 +25,16 @@ sequenceDiagram
   participant edge as Edge (Worker)
   browser->>wallet: connect
   wallet->>browser: phantom_pubkey, nonce, data
-  browser->>+edge: /auth/phantom
+  browser->>edge: /auth/phantom
   Note right of browser: agent=mobile<br>phantom_pubkey, nonce, data
-  edge->>edge: decrypt data
-  edge->>-browser: session cookie, embed variable
-  Note left of edge: pubkey, session, data<br>🔑 access_token
+  edge->>edge: decrypt data w/ 🔑 secret_key
+  alt Invalid
+    edge->>browser: null cookie
+    Note left of edge: error
+  else Valid
+    edge->>browser: httpOnly cookie
+    Note left of edge: pubkey, session, data, 🎫 access_token
+  end
 ```
 
 ## Continue with web wallet
@@ -47,23 +52,18 @@ sequenceDiagram
   browser->>+edge: /auth/phantom
   Note right of browser: agent=extension<br>signed_wallet_pubkey
   edge->>edge: verify signed_wallet_pubkey
-  edge->>-browser: session cookie, embed variable
-  Note left of edge: pubkey<br>🔑 access_token
+  alt Invalid
+    edge->>browser: null cookie
+    Note left of edge: error
+  else Valid
+    edge->>browser: httpOnly cookie
+    Note left of edge: pubkey, session, data, 🎫 access_token
+  end
 ```
 
-## Paywalls Content (via PDA)
+## Paywalls Content
 
-> Use `PDA` and `filter` query.
-
-### To use
-
-```html
-<nft src="some_nft_address">
-  <button>🔑 continue with wallet</button>
-</nft>
-```
-
-### Flow
+### Flow (with `access_token` via server side cookie)
 
 ```mermaid
 sequenceDiagram
@@ -73,35 +73,39 @@ sequenceDiagram
   participant cf_kv as Edge (KV)
   participant mdbook as mdbook
   mdbook->>cf_kv: key: nft_address, value: content_id
-  browser->>+edge: /v/{nft_address}
-  Note right of browser: 🔑 access_token
-  edge->>edge: Verify 🔑 access_token
-  edge->>edge: Validate member by<br>user_pubkey held derived nft
+  browser->>+edge: /view/{nft_address}
+  Note right of browser: 🎫 access_token
+  edge->>edge: Verify 🎫 access_token
+  edge->>edge: Validate member by<br>user_pubkey held valid nft::mint
   edge->>edge: Validate expiry by<br>derived nft.data.expired_at
-  edge->>cf_kv: route
-  Note right of edge: /v/{nft_address}/*
-  cf_kv->>edge: nft contents
-  edge->>-browser: nft contents
+  edge->>cf_kv: get contents
+  cf_kv->>edge: contents
+  edge->>-browser: contents
 ```
 
-### Pros
+### Known Limits
 
-- Can grow per user.
+- Can be slow to query if has a number of holding `NFTs`.
+- Required `cookie`.
 
-### Cons
+### How to use
 
-- Can be slow to query if has a number of held `NFTs`.
+```html
+<nft network="devnet" address="8N6BAdK88vc2Nbrqviggk4kigyFbud2QjAap7Nq3KePN">
+  <button>🔑 continue with wallet</button>
+</nft>
+```
 
 ### Demo
 
-1. Click below button to connect `Phantom` wallet.
-1. Sign `pubkey` to get `access_token`.
-1. Buy `NFT` to get membership.
-1. Enjoy content after successful received `NFT`.
+1. <button id="w3-connect">Continue with wallet</button>
+1. <button id="w3-register">Sign pubkey to login</button>
+1. <button id="w3-stake">Stake to get NFT membership</button>
+1. <button id="w3-unstake">Unstake to cancel membership</button>
+1. <button id="w3-disconnect">Signout</button>
 
 <br/>
-<nft src="some_nft_address">
-  <button onclick="alert('TODO: connect wallet')">🔑 continue with wallet</button>
+<nft src="solana::devnet::8N6BAdK88vc2Nbrqviggk4kigyFbud2QjAap7Nq3KePN">
 </nft>
 <br/>
 <br/>
@@ -131,14 +135,13 @@ sequenceDiagram
   participant cf_kv as Edge (KV)
   participant mdbook as mdbook
   mdbook->>cf_kv: key: nft_address, value: content_id
-  browser->>+edge: /{nft_address}
-  Note right of browser: 🔑 access_token
-  edge->>edge: Verify 🔑 access_token
+  browser->>+edge: /view/{nft_address}
+  Note right of browser: 🎫 access_token
+  edge->>edge: Verify 🎫 access_token
   edge->>edge: Validate member by<br>user_pubkey exist in ALTs
-  edge->>cf_kv: route_nft_content
-  Note right of edge: /{nft_address}/*
-  cf_kv->>edge: nft contents
-  edge->>-browser: nft contents
+  edge->>cf_kv: get contents
+  cf_kv->>edge: contents
+  edge->>-browser: contents
 ```
 
 ### Pros

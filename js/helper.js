@@ -1,5 +1,3 @@
-// import init, { get_nft_content } from './solana-toolbox.js'
-
 window.onload = () => {
   // Open external link as new windows.
   ;[...document.getElementsByTagName('a')].map((e) => {
@@ -13,15 +11,34 @@ window.onload = () => {
   })
 
   // Render NFT contents
-  if (typeof init === 'function') {
-    const nft_elements = document.getElementsByTagName('nft')
-    if (nft_elements.length > 0) {
-      init().then(async () => {
-        ;[...nft_elements].map((e) => {
-          const viewer_address = window.__SESSION__.pubkey
-          e.innerHTML = get_nft_content(e.dataset.nft_address, viewer_address)
-        })
-      })
-    }
+  const nft_elements = document.getElementsByTagName('nft')
+  if (nft_elements.length > 0) {
+    ;[...nft_elements].map((e) => {
+      const { access_token } = window?.__SESSION__ || { access_token: 'foo' }
+
+      if (!access_token) {
+        if (e.innerHTML) {
+          return
+        } else {
+          e.innerHTML = `<div style="border-style: dashed; border-width: 1px;
+          padding: 0.5em;">Apply <button>NFT membership</button> to view this content.</div>`
+          return
+        }
+      }
+
+      const [chain, network, address] = e.getAttribute('src').split('::')
+      if (!chain || !network || !address) {
+        return 'expected: address'
+      }
+
+      const src = `https://gist.rs/?chain=${chain}&network=${network}&address=${address}`
+
+      // 2. Apply iframe
+      e.innerHTML = `<iframe src="${src}" />`
+
+      // 3. Remove parent style
+      e.style.padding = 0
+      e.style.borderWidth = 0
+    })
   }
 }

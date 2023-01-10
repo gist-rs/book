@@ -226,3 +226,13 @@ blockquote {
 svg {
   height: 100%;
 }
+
+/* General iframe */
+iframe {
+  border: none;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
