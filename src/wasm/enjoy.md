@@ -15,11 +15,19 @@ pub fn foo(bar: &JsValue) {
 }
 
 #[wasm_bindgen]
-//   This no & 👇 mean long-lived.
+// And this no & 👇 mean long-lived.
 pub fn foo(bar: JsValue) {
     // ...
 }
 ```
 
+## Relation Overview
+
+```mermaid
+graph TD
+A[Rust Lib] -.Struct.-> B[Rust Main]
+A[Rust Lib] --Struct--> C[Rust Wasm]--<code>wasm_bindgen</code> <br> JsValue/Struct/Primitive--> D[JavaScript]
+```
+
 // 🚧 UNDER CONSTRUCTION
-// If you can't wait try start [here](https://rustwasm.github.io/docs/book/)
+// If you can't wait try start [here](https://book.gist.rs/bye.html#wasm-resources)

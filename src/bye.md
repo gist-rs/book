@@ -37,6 +37,8 @@
 ## WASM Resources
 
 1. [Rust and WebAssembly](https://rustwasm.github.io/docs/book/)
+1. [The `wasm-bindgen` Guide](https://rustwasm.github.io/wasm-bindgen/)
+1. [Hello wasm-pack!](https://rustwasm.github.io/docs/wasm-pack/)
 1. [Second State](https://github.com/second-state/wasm-learning)
 
 ---
