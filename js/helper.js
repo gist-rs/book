@@ -32,7 +32,7 @@ window.onload = () => {
         return 'expected: src'
       }
 
-      const src = `https://gist.rs/nft/${address}/?chain=${chain}&network=${cluster}`
+      const src = `https://gist.rs/nft/${address}?chain=${chain}&cluster=${cluster}`
 
       // 2. Apply iframe
       e.innerHTML = `<iframe src="${src}" />`

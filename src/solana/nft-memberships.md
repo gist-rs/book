@@ -148,7 +148,7 @@ sequenceDiagram
 1. <button id="w3-disconnect">Signout</button>
 
 <br/>
-<nft data-cluster="devnet"  src="A2NzysADP3a6FzgKkh4dzQbwK6CgsJcdo3Rz6opfFMPy">
+<nft data-cluster="devnet" src="A2NzysADP3a6FzgKkh4dzQbwK6CgsJcdo3Rz6opfFMPy">
 </nft>
 <br/>
 <br/>
