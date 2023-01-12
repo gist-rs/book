@@ -148,7 +148,7 @@ fn main() {
 
 ![](/assets/kat.png) We just use [unsafe](https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html) mutate because `static mut` can be mutate and access by any function at anytime globally so that make sense to make as `unsafe`. But no worry! we won't do that again until we really need it.
 
-## String, Vec, Tuple, HashMap
+## String, Vec, Tuple
 
 ### `String` ⚔️ `&str`
 

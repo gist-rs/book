@@ -113,6 +113,17 @@ fn main() {
     foo_hashmap
         .iter()                             // iter as usual, will use `for_each`.
         .for_each(|e| println!("{:?}", e)); // Just print, No need to collect.
+
+    // Then we will use get👇 to borrow the value.
+    let name = foo_hashmap.get("name").unwrap();
+    println!("name:{name:?}");
+
+    // Or take it by remove 👇.
+    let age = foo_hashmap.remove("age").unwrap();
+    println!("age:{age:?}");
+
+    // 😱 So this will failed because we already remove it above.
+    // let age = foo_hashmap.remove("age").unwrap();
 }
 ```
 
