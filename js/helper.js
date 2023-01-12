@@ -26,12 +26,13 @@ window.onload = () => {
         }
       }
 
-      const [chain, network, address] = e.getAttribute('src').split('::')
-      if (!chain || !network || !address) {
-        return 'expected: address'
+      const { chain, cluster } = { chain: 'solana', cluster: 'mainnet-beta', ...e.dataset }
+      const address = e.getAttribute('src')
+      if (!address) {
+        return 'expected: src'
       }
 
-      const src = `https://gist.rs/?chain=${chain}&network=${network}&address=${address}`
+      const src = `https://gist.rs/nft/${address}/?chain=${chain}&network=${cluster}`
 
       // 2. Apply iframe
       e.innerHTML = `<iframe src="${src}" />`

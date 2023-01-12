@@ -33,7 +33,7 @@ sequenceDiagram
     Note left of edge: error
   else Valid
     edge->>browser: httpOnly cookie
-    Note left of edge: pubkey, session, data, 🎫 access_token
+    Note left of edge: 🎫 web3_token = { wallet_pubkey, <br>provider:{ name, session, data } }
   end
 ```
 
@@ -57,13 +57,11 @@ sequenceDiagram
     Note left of edge: error
   else Valid
     edge->>browser: httpOnly cookie
-    Note left of edge: pubkey, session, data, 🎫 access_token
+    Note left of edge: 🎫 web3_token = { wallet_pubkey, <br>provider:{ name, session, data } }
   end
 ```
 
-## Paywalls Content
-
-### Flow (with `access_token` via server side cookie)
+## NFT Mint Content
 
 ```mermaid
 sequenceDiagram
@@ -71,16 +69,61 @@ sequenceDiagram
   participant browser as Browser
   participant edge as Edge (Worker)
   participant cf_kv as Edge (KV)
-  participant mdbook as mdbook
-  mdbook->>cf_kv: key: nft_address, value: content_id
-  browser->>+edge: /view/{nft_address}
-  Note right of browser: 🎫 access_token
-  edge->>edge: Verify 🎫 access_token
-  edge->>edge: Validate member by<br>user_pubkey held valid nft::mint
-  edge->>edge: Validate expiry by<br>derived nft.data.expired_at
-  edge->>cf_kv: get contents
-  cf_kv->>edge: contents
-  edge->>-browser: contents
+
+  browser->>+edge: PUT /nft/{mint_address}
+  Note right of browser: 🎫 web3_token<br>Metaplex::DataV2
+  edge->>cf_kv: set protected content Metaplex::DataV2
+  Note right of edge: KV: mint_address, Metaplex::DataV2
+```
+
+## NFT Paywalls Content
+
+### Flow (with `web3_token` via server side cookie)
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant browser as Browser
+  participant edge as Edge (Worker)
+  participant cf_kv as Edge (KV)
+  participant chain as Chain
+
+  browser->>+edge: /nft/{mint_address}
+  Note right of browser: 🎫 web3_token
+
+  alt validate internal
+    edge->>edge: Verify 🎫 web3_token
+    edge->>browser: error: invalid
+  end
+
+  alt validate external
+    edge->>chain: Get wallet PDA mint_address
+    chain->>edge: token account
+    Note left of chain: mint: address, amount
+    edge->>edge: Validate by mint_amount > 0
+    edge->>edge: Validate by PDA mint_address
+    edge->>chain: Get mint metadata
+    chain->>edge: metadata
+    Note left of chain: Metaplex::DataV2
+    edge->>browser: error: invalid
+  end
+
+  alt validate state
+    edge->>cf_kv: get url
+    Note right of edge: mint_address
+    edge->>edge: Validate by KV mint_address
+    edge->>browser: error: invalid
+  else
+    cf_kv->>edge: url
+    Note left of cf_kv: KV: mint_address → url
+  end
+
+  edge->>edge: handle Metaplex::DataV2
+  edge->>cf_kv: get content from metadata.uri
+  Note right of edge: uri
+  cf_kv->>edge: content
+  edge->>browser: content
+
 ```
 
 ### Known Limits
@@ -91,7 +134,7 @@ sequenceDiagram
 ### How to use
 
 ```html
-<nft network="devnet" address="8N6BAdK88vc2Nbrqviggk4kigyFbud2QjAap7Nq3KePN">
+<nft data-chain="solana" data-cluster="mainnet-beta" src="8N6BAdK88vc2Nbrqviggk4kigyFbud2QjAap7Nq3KePN">
   <button>🔑 continue with wallet</button>
 </nft>
 ```
@@ -105,7 +148,7 @@ sequenceDiagram
 1. <button id="w3-disconnect">Signout</button>
 
 <br/>
-<nft src="solana::devnet::8N6BAdK88vc2Nbrqviggk4kigyFbud2QjAap7Nq3KePN">
+<nft data-cluster="devnet"  src="A2NzysADP3a6FzgKkh4dzQbwK6CgsJcdo3Rz6opfFMPy">
 </nft>
 <br/>
 <br/>
