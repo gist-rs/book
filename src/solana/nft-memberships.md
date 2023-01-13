@@ -141,11 +141,9 @@ sequenceDiagram
 
 ### Demo
 
-1. <button id="w3-connect">Continue with wallet</button>
-1. <button id="w3-register">Sign pubkey to login</button>
-1. <button id="w3-stake">Stake to get NFT membership</button>
-1. <button id="w3-unstake">Unstake to cancel membership</button>
-1. <button id="w3-disconnect">Signout</button>
+1. <a href="https://gist.rs/wallet/connect/?redirect_uri=https://book.gist.rs/solana/nft-memberships.html#demo">Continue with wallet</a>
+1. <a href="https://gist.rs/wallet/stake/?redirect_uri=https://book.gist.rs/solana/nft-memberships.html#demo">Swap to get NFT membership</a>
+1. <a href="https://gist.rs/wallet/disconnect/?redirect_uri=https://book.gist.rs/solana/nft-memberships.html#demo">Signout</a>
 
 <br/>
 <nft data-cluster="devnet" src="A2NzysADP3a6FzgKkh4dzQbwK6CgsJcdo3Rz6opfFMPy">
