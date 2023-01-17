@@ -61,19 +61,54 @@ sequenceDiagram
   end
 ```
 
-## NFT Mint Content
+<br>
+
+## Publish public unlisted `IPFS` content as `NFT`
 
 ```mermaid
 sequenceDiagram
   autonumber
   participant browser as Browser
   participant edge as Edge (Worker)
-  participant cf_kv as Edge (KV)
+  participant ipfs as Edge (IPFS)
+  participant candy as Chain (Candy Machine)
 
-  browser->>+edge: PUT /nft/{mint_address}
-  Note right of browser: 🎫 web3_token<br>Metaplex::DataV2
-  edge->>cf_kv: set protected content Metaplex::DataV2
-  Note right of edge: KV: mint_address, Metaplex::DataV2
+  browser->>+edge: PUT /nft/new/{content_slug}
+  Note right of browser: content, img
+  edge->>ipfs: publish_content
+  Note right of edge: slug, content, img
+  ipfs->>edge: ipfs_result
+  Note left of ipfs: ipfs_hash
+  edge->>candy: publish NFT
+  Note right of edge: ipfs_url
+  candy->>edge: candy_result
+  Note left of candy: candy_address,<br>mint_address
+  edge->>-browser: publish_result
+  Note left of edge: ipfs_url,<br>candy_address,<br>mint_address
+```
+
+## Publish membership as `NFT`
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant browser as Browser
+  participant edge as Edge (Worker)
+  participant ipfs as Edge (IPFS)
+  participant candy as Chain (Candy Machine)
+
+  browser->>+edge: PUT /nft/new/{content_slug}
+  Note right of browser: site_url, img
+  edge->>ipfs: publish_content
+  Note right of edge: slug, content, img
+  ipfs->>edge: ipfs_result
+  Note left of ipfs: ipfs_hash
+  edge->>candy: publish NFT
+  Note right of edge: ipfs_url
+  candy->>edge: candy_result
+  Note left of candy: candy_address,<br>mint_address
+  edge->>-browser: publish_result
+  Note left of edge: ipfs_url,<br>candy_address,<br>mint_address
 ```
 
 ## NFT Paywalls Content
@@ -88,7 +123,7 @@ sequenceDiagram
   participant cf_kv as Edge (KV)
   participant chain as Chain
 
-  browser->>+edge: /nft/{mint_address}
+  browser->>+edge: /nft/view/{mint_address}
   Note right of browser: 🎫 web3_token
 
   alt validate internal
@@ -121,8 +156,7 @@ sequenceDiagram
   edge->>edge: handle Metaplex::DataV2
   edge->>cf_kv: get content from metadata.uri
   Note right of edge: uri
-  cf_kv->>edge: content
-  edge->>browser: content
+  cf_kv->>browser: content
 
 ```
 
@@ -141,8 +175,10 @@ sequenceDiagram
 
 ### Demo
 
-1. <a href="https://gist.rs/wallet/connect/?redirect_uri=https://book.gist.rs/solana/nft-memberships.html#demo">Continue with wallet</a>
-1. <a href="https://gist.rs/wallet/stake/?redirect_uri=https://book.gist.rs/solana/nft-memberships.html#demo">Swap to get NFT membership</a>
+- TODO
+<!-- 1. <a href="https://gist.rs/wallet/connect/?redirect_uri=https://book.gist.rs/solana/nft-memberships.html#demo">Continue with wallet</a>
+
+1. <a href="https://gist.rs/wallet/stake/?redirect_uri=https://book.gist.rs/solana/nft-memberships.html#demo">Mint NFT membership</a>
 1. <a href="https://gist.rs/wallet/disconnect/?redirect_uri=https://book.gist.rs/solana/nft-memberships.html#demo">Signout</a>
 
 <br/>
@@ -150,14 +186,14 @@ sequenceDiagram
 </nft>
 <br/>
 <br/>
-
+ -->
 ### Source
 
 - TODO
 
 ---
 
-### Alternative
+### Alternative Approach
 
 <details>
   <summary>
