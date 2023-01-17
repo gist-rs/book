@@ -47,6 +47,7 @@
 
 ### Program (rs)
 
+- Core concepts with [`Anchor`](https://www.anchor-lang.com/docs/high-level-overview)
 - Able to read/write `Anchor`.
 - Mint `NFT` with `Metaplex`.
 
@@ -64,7 +65,7 @@
 
 ### Program (rs)
 
-- Account Maps `PDAs`.
+- Account Maps [`PDAs`](https://www.anchor-lang.com/docs/pdas).
 - Account Compression (read/write).
 
 ### Web3 (rs)
