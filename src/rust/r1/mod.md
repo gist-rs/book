@@ -14,3 +14,4 @@
 - [Rust, Realloc, and References](https://osec.io/blog/reports/2022-12-09-rust-realloc-and-references/)
 - [6 things you can do with the Cow 🐄 in Rust 🦀](https://dev.to/kgrech/6-things-you-can-do-with-the-cow-in-rust-4l55)
 - [pretzelhammer's Rust blog 🦀](https://github.com/pretzelhammer/rust-blog/blob/master/posts)
+- [Builder with typestate in Rust](https://www.greyblake.com/blog/builder-with-typestate-in-rust/)
