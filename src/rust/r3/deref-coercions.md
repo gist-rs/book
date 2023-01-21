@@ -1,6 +1,11 @@
 # Deref coercions
 
-> 🤔 [refer to ](https://twitter.com/wcrichton/status/1597318042244915201)
+> 🤔 Refer to `Deref` from 👇
+>
+> - [Official Rust Book](https://doc.rust-lang.org/book/ch15-02-deref.html)
+> - [MIT (1st edition)](https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/deref-coercions.html)
+> - [Rust Reference](https://doc.rust-lang.org/reference/type-coercions.html)
+> - [Rust RFC Book](https://rust-lang.github.io/rfcs/0241-deref-conversions.html)
 
 ## Deref
 
@@ -74,10 +79,3 @@ fn main() {
     (&&&Foo).bar();
 }
 ```
-
-## Read more
-
-- Official: https://doc.rust-lang.org/book/ch15-02-deref.html
-- MIT (1st edition): https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/deref-coercions.html
-- Rust Reference: https://doc.rust-lang.org/reference/type-coercions.html
-- Rust RFC Book: https://rust-lang.github.io/rfcs/0241-deref-conversions.html
