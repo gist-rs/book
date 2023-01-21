@@ -42,7 +42,7 @@ fn foo(bar: &str) {
 }
 
 fn main() {
-    // Beacause String implements Deref<Target=str>.
+    // Because String implements Deref<Target=str>.
     let owned_hello = "Hello".to_string();
 
     // So this work because &String → &str
