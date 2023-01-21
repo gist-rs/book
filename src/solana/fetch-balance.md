@@ -53,14 +53,19 @@ get_balance('gistmeAhMG7AcKSPCHis8JikGmKT9tRRyZpyMLNNULq', {
 
 ## How to fetch account balance in `Rust` vanilla.
 
-#### `Cargo.toml`
+<tabs>
+<tab label="main.rs">
+
+```rust,edition2021
+{{#include ../../examples/solana/fetch-balance/src/main.rs}}
+```
+
+</tab>
+<tab label="Cargo.toml">
 
 ```toml
 {{#include ../../examples/solana/fetch-balance/Cargo.toml}}
 ```
 
-#### `main.rs`
-
-```rust,edition2021
-{{#include ../../examples/solana/fetch-balance/src/main.rs}}
-```
+</tab>
+</tabs>

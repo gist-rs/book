@@ -42,4 +42,42 @@ window.onload = () => {
       e.style.borderWidth = 0
     })
   }
+
+  // Render tab
+  render_tab()
+}
+
+function focus_tab(labels, contents, tab_index) {
+  labels.forEach((e, i) => (e.style.cssText = i === tab_index ? e.classList.add('tab-selected') : e.classList.remove('tab-selected')))
+  contents.forEach((e, i) => (e.style.cssText = i === tab_index ? `display:block` : `display:none`))
+}
+
+function render_tab() {
+  const tab_elements = document.getElementsByTagName('tabs')
+  if (tab_elements.length <= 0) return
+  ;[...tab_elements].map((tabs) => {
+    const tab = tabs.getElementsByTagName('tab')
+
+    const labels = []
+    const contents = []
+
+    ;[...tab].map((e, i) => {
+      const label_text = e.getAttribute('label')
+      const content = e.getElementsByTagName('pre').item(0)
+      contents.push(content)
+
+      const label = document.createElement('span')
+      label.classList.add('tab')
+      label.innerText = label_text
+      labels.push(label)
+
+      label.onclick = () => focus_tab(labels, contents, i)
+    })
+
+    labels.map((e) => tabs.parentNode.appendChild(e))
+    contents.map((e) => tabs.parentNode.appendChild(e))
+
+    // Default to first tab
+    focus_tab(labels, contents, 0)
+  })
 }
