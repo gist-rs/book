@@ -247,6 +247,8 @@ button {
   cursor: pointer;
   opacity: 25%;
   margin-right: 1em;
+
+  transition: opacity 0.5s ease-out;
 }
 
 .tab-selected {
