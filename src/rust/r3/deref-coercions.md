@@ -22,12 +22,13 @@ fn bad(foo: &String) {
 }
 
 fn main() {
-    // deref coercion happen here.
+    // 🤩 Deref coercion happen here.
     println!("{:?}", good(&"Ferris".to_string())); // &String → &str
     println!("{:?}", good(&"Ferris"));             // &&str → &str
-    println!("{:?}", good("Ferris"));              // String → &str
+    println!("{:?}", good("Ferris"));              // &str → &str
 
-    println!("{:?}", bad(&"Ferris".to_string()));
+    println!("{:?}", bad(&"Ferris".to_string()));  // &String → &String
+
     // 😱 No coercion here! Uncomment to see an errors.
     println!("{:?}", bad(&"Ferris")); // expected reference `&String` found reference `&&'static str`
     println!("{:?}", bad("Ferris"));  // expected reference `&String` found reference `&'static str`
