@@ -1,25 +1,24 @@
-<img width="1163" alt="image" src="https://user-images.githubusercontent.com/97060/213910328-dfdfa119-74b8-470c-a00d-69a67f7d1ecc.png">
-
-> 🚧 This gist is WIP, feel free to help.
-
-# gist of rust book
+# Gist of Rust Book
 
 Focus on gist of `Rust`, `Wasm`, `Solana`.
 
-## Setup
+> 🚧 This gist is WIP, feel free to help.
+
+<img width="1163" alt="image" src="https://user-images.githubusercontent.com/97060/213910328-dfdfa119-74b8-470c-a00d-69a67f7d1ecc.png">
+
+## Online
+
+Go to 👉 https://book.gist.rs/
+
+## Develop
 
 ```
 cargo install mdbook
 cargo install mdbook-svgbob
-```
+cargo install mdbook-mermaid
 
-## Dev
-
-```
 mdbook serve
 ```
-
----
 
 ## Notifications
 
