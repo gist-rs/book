@@ -58,18 +58,18 @@ fn bar_to_foo_with_match(e: &mut FooBarEnum, x: u8) {
 }
 
 fn main() {
-    // 1️⃣ Create some Foo.
+    // *️⃣ Create some Foo.
     let foo = &mut FooBarEnum::Foo {
         name: "foo".to_owned(),
         x: 0,
     };
     println!("foo: {:?}", foo);
 
-    // 2️⃣ Convert Foo → Bar with if
+    // 1️⃣ Convert Foo → Bar with if
     foo_to_bar_with_if(foo);
     println!("foo_to_bar_with_if: {:?}", foo);
 
-    // 3️⃣ Convert Bar → Foo with match.
+    // 2️⃣ Convert Bar → Foo with match.
     bar_to_foo_with_match(foo, 1);
     println!("bar_to_foo_with_match: {:?}", foo);
 }
