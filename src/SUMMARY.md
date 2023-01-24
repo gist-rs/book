@@ -32,6 +32,7 @@
     - [Serde](rust/r3/serde.md)
     - [Enum](rust/r3/enum.md)
     - [Derive More](rust/r3/derive-more.md)
+    - [Typed Builder](rust/r3/typed-builder.md)
   - [R2 - Expert](rust/r2/mod.md)
     - [Hello Actix CloudRun](rust/r2/hello-actix-cloudrun.md)
   - [R1 - Master](rust/r1/mod.md)
