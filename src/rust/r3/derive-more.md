@@ -34,3 +34,5 @@ fn main() {
     println!("3️⃣ {} + {} = {}", age_1, age_2, age_1 + age_2);
 }
 ```
+
+<a href="https://codesandbox.io/p/sandbox/confident-hofstadter-852zqb" class="button">▢ CodeSandbox</a>
