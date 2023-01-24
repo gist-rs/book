@@ -35,4 +35,4 @@ fn main() {
 }
 ```
 
-<a href="https://codesandbox.io/p/sandbox/confident-hofstadter-852zqb" class="button">▢ CodeSandbox</a>
+<a href="https://codesandbox.io/p/sandbox/derive-more-852zqb" class="button">▢ CodeSandbox</a>
