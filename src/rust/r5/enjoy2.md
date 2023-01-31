@@ -88,8 +88,14 @@ fn main() {
     foo_hashmap.insert("name", "foo");
     foo_hashmap.insert("age", "42");
 
+    // Or rather use HashMap::from for batch insert.
+    let mut foo_hashmap = HashMap::from([
+        ("name", "foo"),
+        ("age", "42"),
+    ]);
+
     // Now use it
-    let maybe_name: Option<&&str> = foo_hashmap.get("name"); // Will return `Option<&&str>`
+    let maybe_name: Option<&&str> = foo_hashmap.get("name"); // Will return `Option<&&str>`.
 
     // `match` aka `switch` in js.
     // Let's handle `Option<&&str>` which can be `Some` or `None`.
