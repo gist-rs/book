@@ -128,7 +128,7 @@ fn main() {
     let age = foo_hashmap.remove("age").unwrap();
     println!("age:{age:?}");
 
-    // 😱 So this will failed because we already remove it above.
+    // 😱 So this will fail because we already remove it above.
     // let age = foo_hashmap.remove("age").unwrap();
 }
 ```

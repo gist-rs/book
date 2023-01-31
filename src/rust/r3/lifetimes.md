@@ -85,6 +85,44 @@ fn main() {
 }
 ```
 
+![](/assets/kat.png) Now we go deeper with `outlive` where clause.
+
+```rust,editable
+fn main() {
+    // Return 'a lifetime.
+    fn longest_a<'a, 'b>(x: &'a str, y: &'b str) -> &'a str
+    // where clause should look like this.
+    where 'b: 'a, // 'b must outlive the lifetime of 👆 'a
+    {
+        if x.len() > y.len() {
+            x // 'a
+        } else {
+            y // 'b
+        }
+    }
+
+    println!("The longest string is {}", longest_a("foooooo", "bar"));
+    println!("The longest string is {}", longest_a("foo", "barrrrr"));
+
+    // Return 'b lifetime.
+    fn longest_b<'a, 'b>(x: &'a str, y: &'b str) -> &'b str
+    // where clause should look like this.
+    where 'a: 'b, // 'a must outlive the lifetime of 👆 'b
+    {
+        if x.len() > y.len() {
+            x // 'a
+        } else {
+            y // 'b
+        }
+    }
+
+    println!("The longest string is {}", longest_b("foooooo", "bar"));
+    println!("The longest string is {}", longest_b("foo", "barrrrr"));
+}
+```
+
+![](/assets/kat.png) And deeper!
+
 ### Lifetime Annotations in Method Definitions
 
 ```rust,editable
@@ -150,3 +188,5 @@ fn main() {
 ![](/assets/kat.png) Now we know that we need to add `<'a>` or `static` lifetime annotations to let compiler know its lifetime on stack or maybe use `String`, `Vec`, `Box` on heap (depend on use case).
 
 Consider read more about [Common Rust Lifetime Misconceptions](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md) if you plan to use it properly.
+
+Don't be surprise if this seem complicated at first, try start with [why](https://app.rust-for-js.dev/posts/12-lifetimes/) which will explain you again from `error` perspective.
