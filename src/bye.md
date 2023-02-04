@@ -35,6 +35,8 @@
 ### 👍 Recommended
 
 1. [Rust for JavaScript Developers](https://rustforjs.dev): Well taught from this to that, by [Sid Chatterjee](https://twitter.com/chatsidhartha)
+1. [Programming Rust, 2nd Edition](https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/): In depth detail about heap/stack.
+1. [Rust for Rustaceans](https://nostarch.com/rust-rustaceans): More explain = less code.
 
 ---
 
