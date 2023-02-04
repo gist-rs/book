@@ -32,6 +32,10 @@
 1. [Rust By Practice](https://github.com/sunface/rust-by-practice): Fill in the blank quiz.
 1. [Tour of Rust](https://tourofrust.com/): Explore rust with playground.
 
+### Recommended
+
+1. [Rust for JavaScript Developers](https://rustforjs.dev): Well taught from this to that, by [Sid Chatterjee](https://twitter.com/chatsidhartha)
+
 ---
 
 ## WASM Resources
