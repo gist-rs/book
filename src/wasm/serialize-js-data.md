@@ -34,7 +34,7 @@ const parsed_u8 = new Uint8Array(Object.values(u8_map)) // Uint8Array [16,42]
 
 ### With `unwrap`
 
-> **Warning**: For POC or test purpose.
+> **Warning**: `unwrap` without handle is for POC or testing purpose.
 
 ```rust,editable,edition2021
 use serde::Deserialize;
@@ -78,8 +78,6 @@ fn main() {
 ```
 
 ### With `Result`
-
-> **Note**: For real life use.
 
 ```rust,edition2021
 # use serde::Deserialize;
