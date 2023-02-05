@@ -6,21 +6,21 @@
 
    ```mermaid
    graph LR
-    A["Js <code>new Uint8Array([16, 42])</code>"] --JsValue<br><code>UInt8Array</code>--> B["Rust <code>serde_wasm_bindgen::from_value(js_value)</code>"] --"Struct<br><code>&[u8]</code>"--> C[Rust <code>Wasm</code>]
+    A["Js <code>new Uint8Array([16, 42])</code>"] --JsValue<br><code>UInt8Array</code>--> B["Wasm <code>serde_wasm_bindgen::from_value(js_value)</code>"] --"Struct<br><code>&[u8]</code>"--> C[Rust <code>Wasm</code>]
    ```
 
 2. Send `JSON.parse(str)` from `js` and use [`js_value.into_serde()`](https://rustwasm.github.io/wasm-bindgen/reference/arbitrary-data-with-serde.html#an-alternative-approach---using-json) to cast `serde` struct in `Rust`.
 
    ```mermaid
    graph LR
-   A["Js <code>JSON.parse(str)</code>"] --"JsValue<br><code>[16,42]</code>"--> B["Rust <code>js_value.into_serde()</code>"] --"Struct<br><code>&[u8]</code>"--> C[Rust <code>Wasm</code>]
+   A["Js <code>JSON.parse(str)</code>"] --"JsValue<br><code>[16,42]</code>"--> B["Wasm <code>js_value.into_serde()</code>"] --"Struct<br><code>&[u8]</code>"--> C[Rust <code>Wasm</code>]
    ```
 
 3. Send `JSON.stringify(json)` from `js` and use serde [`deserialize_with`](https://serde.rs/stream-array.html). // Consider bad practice.
 
    ```mermaid
    graph LR
-   A["Js <code>JSON.stringify(json)</code>"] --"String<br><code>[{'0':16,'1':42}]</code">--> B["Rust <code>serde::deserialize_with</code>"] --"Struct<br><code>&[u8]</code>"--> C[Rust <code>Wasm</code>]
+   A["Js <code>JSON.stringify(json)</code>"] --"String<br><code>[{'0':16,'1':42}]</code">--> B["Wasm <code>serde::deserialize_with</code>"] --"Struct<br><code>&[u8]</code>"--> C[Rust <code>Wasm</code>]
    ```
 
 ## How to handle JSON stringify `UInt8Array`?
