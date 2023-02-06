@@ -80,9 +80,9 @@ fn main() {
         .signatures
         .into_iter()
         .map(|e| {
-            let mut keys: Vec<&String> = e.keys().collect();
-            keys.sort();
-            keys.into_iter().map(|k| e[k].as_u64().unwrap() as u8).collect::<Vec<u8>>()
+            e.into_values()
+                .map(|v| v.as_u64().unwrap() as u8)
+                .collect::<Vec<u8>>()
         })
         .collect::<Vec<_>>();
     println!("{bug_u8s:#?}");
