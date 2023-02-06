@@ -75,13 +75,26 @@ fn main() {
     let tx_value = serde_json::from_value::<TransactionValue>(value).unwrap();
     println!("{tx_value:#?}");
 
+    // 😱 This will be bug you because it won't sorted (randomly).
+    let bug_u8s = tx_value
+        .signatures
+        .into_iter()
+        .map(|e| {
+            let mut keys: Vec<&String> = e.keys().collect();
+            keys.sort();
+            keys.into_iter().map(|k| e[k].as_u64().unwrap() as u8).collect::<Vec<u8>>()
+        })
+        .collect::<Vec<_>>();
+    println!("{bug_u8s:#?}");
+
+    // 😅 This is sorted.
     let u8s = tx_value
         .signatures
         .into_iter()
         .map(|e| {
-            e.into_values()
-                .map(|v| v.as_u64().unwrap() as u8)
-                .collect::<Vec<u8>>()
+            let mut keys: Vec<&String> = e.keys().collect();
+            keys.sort();
+            keys.into_iter().map(|k| e[k].as_u64().unwrap() as u8).collect::<Vec<u8>>()
         })
         .collect::<Vec<_>>();
 
@@ -92,59 +105,6 @@ fn main() {
     println!("{tx:#?}");
     assert_eq!(tx.signatures, vec![16, 42]);
 }
-```
-
-### With `Result`
-
-```rust,edition2021
-# use serde::Deserialize;
-# use serde_json::{json, Value};
-# use std::collections::HashMap;
-#
-# #[derive(Deserialize, Debug)]
-# struct TransactionValue {
-#     signatures: Vec<HashMap<String, Value>>,
-# }
-#
-# #[derive(Deserialize, Debug)]
-# struct Transaction {
-#     signatures: Vec<u8>,
-# }
-#
-# fn main() {
-#     let value = json!({
-#         "signatures": [{"0":16,"1":42}]
-#     });
-#     let tx_value = serde_json::from_value::<TransactionValue>(value).unwrap();
-#     println!("{tx_value:#?}");
-
-    let u8s = tx_value
-        .signatures
-        .into_iter()
-        .map(|e| {
-            e.into_values()
-                .map(|v| {
-                    v.as_u64()
-                        .map(|num| num as u8)
-                        .ok_or(format!("expected u64, but got {:?}", v))
-                })
-                .collect::<Result<Vec<u8>, String>>()
-        })
-        .collect::<Result<Vec<_>, String>>();
-
-#     let tx = match u8s {
-#         Ok(u8s) => Transaction {
-#             signatures: u8s[0].clone(),
-#         },
-#         Err(e) => {
-#             println!("Error: {}", e);
-#             return;
-#         }
-#     };
-
-#     println!("{tx:#?}");
-#     assert_eq!(tx.signatures, vec![16, 42]);
-# }
 ```
 
 ## Can we do better?
