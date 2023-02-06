@@ -107,6 +107,65 @@ fn main() {
 }
 ```
 
+### With `Result`
+
+```rust,editable,edition2021
+use anyhow::Error;
+use serde::Deserialize;
+use serde_json::{json, Value};
+use std::collections::HashMap;
+
+#[derive(Deserialize, Debug)]
+struct TransactionValue {
+    signatures: Vec<HashMap<String, Value>>,
+}
+
+#[derive(Deserialize, Debug)]
+struct Transaction {
+    signatures: Vec<u8>,
+}
+
+fn get_u8s_from_json_stringify_uint8(
+    signatures: Vec<HashMap<String, Value>>,
+) -> Result<Vec<u8>, Error> {
+    let mut signatures_len = 0usize;
+    let u8s = signatures
+        .into_iter()
+        .map(|e| {
+            let mut keys: Vec<&String> = e.keys().collect();
+            keys.sort();
+            signatures_len = keys.len();
+
+            keys.into_iter()
+                .filter_map(|k| e[k].as_u64())
+                .map(|e| e as u8)
+                .collect::<Vec<u8>>()
+        })
+        .collect::<Vec<_>>();
+
+    if u8s[0].len() == signatures_len {
+        Ok(u8s[0].clone())
+    } else {
+        Err(anyhow::format_err!("error while processing signatures"))
+    }
+}
+
+fn main() {
+    let value = json!({
+        "signatures": [{"0":16,"1":42}]
+    });
+    let tx_value = serde_json::from_value::<TransactionValue>(value).unwrap();
+    println!("{tx_value:#?}");
+
+    // We promote to fn so we can handle an error here (you know what todo right?).
+    let signatures = get_u8s_from_json_stringify_uint8(tx_value.signatures).unwrap();
+    let tx = Transaction { signatures };
+    println!("{tx:#?}");
+
+    assert_eq!(tx.signatures, vec![16, 42]);
+}
+```
+
 ## Can we do better?
 
 - Use `#[serde(deserialize_with = "deserialize_signatures")]` and/or `#[serde(rename(deserialize = "signatures"))]` as [ref](https://serde.rs/stream-array.html).
