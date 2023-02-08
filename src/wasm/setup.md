@@ -133,4 +133,4 @@ pub fn set_panic_hook() {
 
 ## Next
 
-Let's continue to [Enjoy ➠](./enjoy1.md)
+Let's continue to [Enjoy ➠](./enjoy.md)
