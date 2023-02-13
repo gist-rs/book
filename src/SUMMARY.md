@@ -47,6 +47,7 @@
   - [Hello Wasm Sleep and Time](wasm/hello-wasm-sleep-time.md)
   - [Hello Wasm NPM](wasm/hello-wasm-npm.md)
   - [Hello Wasm Firebase](wasm/hello-wasm-firebase.md)
+  - [Hello Wasm Cloudflare](wasm/hello-wasm-cloudflare.md)
   - [Serialize Js data](wasm/serialize-js-data.md)
 - [Solana](solana/mod.md)
   - [Hello Solana](solana/hello-solana.md)
