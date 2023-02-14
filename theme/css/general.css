@@ -259,7 +259,7 @@ button {
 .button {
   width: fit-content;
   height: 1.3em;
-  color: cornsilk;
+  color: cornsilk !important;
   border: #ee3388;
   background: radial-gradient(#ee0088, #cc0066);
   box-shadow: 0px 4px 0px #aa0033;
@@ -294,6 +294,7 @@ button {
 }
 
 .button:active {
+  color: cornsilk !important;
   box-shadow: none !important;
   position: relative;
   top: 3px;
@@ -302,10 +303,10 @@ button {
 
 .button:link {
   text-decoration: none;
-  color: white;
+  color: cornsilk !important;
 }
 
 .button:visited {
   text-decoration: none;
-  color: white;
+  color: cornsilk !important;
 }

@@ -6,7 +6,7 @@
 
 - Use [Typed Builder](https://crates.io/crates/typed-builder)
 
-```rust
+```rust,no_run
 use typed_builder::TypedBuilder;
 
 #[derive(Debug, TypedBuilder)]
@@ -26,7 +26,7 @@ fn main() {
         .first_name(Some("Kat".into()))
         .build();
 
-    println!(katopz);
+    println!("{katopz:?}");
 }
 ```
 
