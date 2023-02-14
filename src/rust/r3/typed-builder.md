@@ -26,7 +26,7 @@ fn main() {
         .first_name(Some("Kat".into()))
         .build();
 
-    dbg!(katopz);
+    println!(katopz);
 }
 ```
 
