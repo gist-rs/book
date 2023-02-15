@@ -206,7 +206,7 @@ pub fn hello() {    // 👈  make it pub so other can use.
 ## 🗂 Workspace
 
 <details>
-<summary>aka Monorepo 1 folder = 1 package.</summary>
+<summary>aka Monorepo.</summary>
 
 ```yml
 📂 workspace-example
@@ -214,26 +214,27 @@ pub fn hello() {    // 👈  make it pub so other can use.
 ├─ 🗂 utils
 │  ├─ 📂 src
 │  │  └─ 📄 lib.rs     # 👈 lib entrypoint.
-│  └─ 📦 Cargo.toml
+│  └─ 📦 Cargo.toml    # 1️⃣ utils's cargo.
 │
 ├─ 📂 foo
 │  ├─ 📂 src
 │  │  └─ 📄 main.rs    # 👈 app entrypoint.
-│  └─ 📦 Cargo.toml
+│  └─ 📦 Cargo.toml    # 2️⃣ foo's cargo.
 │
-└─ 📦 Cargo.toml       # 👈 Workspace's Cargo.
+└─ 📦 Cargo.toml       # 3️⃣ Workspace's cargo.
 ```
 
 │ └─ 📦 Cargo.toml
 
 ```yaml
 [dependencies]
-foo = { path="../utils"}    # 👈 refer to parent mod via path
+foo = { path="../utils" }  # 👈 2️⃣ foo's cargo. refer to utils via path
 ```
 
 └─ 📦 Cargo.toml
 
 ```yaml
+# 👇 3️⃣ Workspace's cargo.
 [workspace]
 members = [
   "utils",
