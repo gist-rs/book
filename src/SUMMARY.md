@@ -34,6 +34,7 @@
     - [Derive More](rust/r3/derive-more.md)
     - [Typed Builder](rust/r3/typed-builder.md)
     - [Generic array](rust/r3/generic-array.md)
+    - [AsRef](rust/r3/as-ref.md)
   - [R2 - Expert](rust/r2/mod.md)
     - [Hello Actix CloudRun](rust/r2/hello-actix-cloudrun.md)
   - [R1 - Master](rust/r1/mod.md)
