@@ -78,14 +78,14 @@ fn main() {
     // 😱 This will be bug you because it won't sorted (randomly).
     let bug_u8s = tx_value
         .signatures
-        .into_iter()
+        .iter()
         .map(|e| {
-            e.into_values()
+            e.values()
                 .map(|v| v.as_u64().unwrap() as u8)
                 .collect::<Vec<u8>>()
         })
         .collect::<Vec<_>>();
-    println!("{bug_u8s:#?}");
+    println!("randomly bug:{bug_u8s:#?}");
 
     // 😅 This is sorted.
     let u8s = tx_value
