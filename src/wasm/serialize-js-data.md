@@ -49,7 +49,7 @@ const parsed_u8 = new Uint8Array(Object.values(u8_map)) // Uint8Array [16,42]
 
 ![](/assets/kat.png) But if you tend to keep all logic in `Rust` so we will cry and accept `JSON` as `String` and convert it to `u8` in `Wasm` instead.
 
-### With `unwrap`
+### POC With `unwrap`
 
 > **Warning**: `unwrap` without handle is for POC or testing purpose.
 
@@ -107,10 +107,9 @@ fn main() {
 }
 ```
 
-### With `Result`
+### Promote to `function`
 
 ```rust,editable,edition2021
-use anyhow::Error;
 use serde::Deserialize;
 use serde_json::{json, Value};
 use std::collections::HashMap;
@@ -122,47 +121,36 @@ struct TransactionValue {
 
 #[derive(Deserialize, Debug)]
 struct Transaction {
-    signatures: Vec<u8>,
+    signatures: Vec<Vec<u8>>,
 }
 
-fn get_u8s_from_json_stringify_uint8(
-    signatures: Vec<HashMap<String, Value>>,
-) -> Result<Vec<u8>, Error> {
-    let mut signatures_len = 0usize;
-    let u8s = signatures
+fn get_u8s_from_json_stringify_uint8(signatures: Vec<HashMap<String, Value>>) -> Vec<Vec<u8>> {
+    signatures
         .into_iter()
         .map(|e| {
             let mut keys: Vec<&String> = e.keys().collect();
             keys.sort();
-            signatures_len = keys.len();
-
             keys.into_iter()
                 .filter_map(|k| e[k].as_u64())
                 .map(|e| e as u8)
                 .collect::<Vec<u8>>()
         })
-        .collect::<Vec<_>>();
-
-    if u8s[0].len() == signatures_len {
-        Ok(u8s[0].clone())
-    } else {
-        Err(anyhow::format_err!("error while processing signatures"))
-    }
+        .collect::<Vec<_>>()
 }
 
 fn main() {
     let value = json!({
-        "signatures": [{"0":16,"1":42}]
+        "signatures": [{"0":16,"1":42}, {"0":3,"1":4}]
     });
     let tx_value = serde_json::from_value::<TransactionValue>(value).unwrap();
     println!("{tx_value:#?}");
 
-    // We promote to fn so we can handle an error here (you know what todo right?).
-    let signatures = get_u8s_from_json_stringify_uint8(tx_value.signatures).unwrap();
-    let tx = Transaction { signatures };
-    println!("{tx:#?}");
+    let signatures = get_u8s_from_json_stringify_uint8(tx_value.signatures);
 
-    assert_eq!(tx.signatures, vec![16, 42]);
+    let tx = Transaction { signatures };
+
+    println!("{tx:#?}");
+    assert_eq!(tx.signatures, vec![vec![16, 42], vec![3, 4]]);
 }
 ```
 
