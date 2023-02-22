@@ -47,9 +47,9 @@ const u8_map = JSON.parse(u8_string) // {0: 16, 1: 42}
 const parsed_u8 = new Uint8Array(Object.values(u8_map)) // Uint8Array [16,42]
 ```
 
-![](/assets/kat.png) But if you tend to keep all logic in `Rust` so we will cry and accept `JSON` as `String` and convert it to `u8` in `Wasm` instead.
+![](/assets/kat.png) But if we tend to keep all logic in `Rust` so we cry and accept `JSON` as `String` then convert it to `u8` in `Wasm` instead.
 
-### POC With `unwrap`
+### `Deserialize` with `serde`
 
 > **Warning**: `unwrap` without handle is for POC or testing purpose.
 
@@ -70,7 +70,7 @@ struct Transaction {
 
 fn main() {
     let value = json!({
-        "signatures": [{"0":16,"1":42}]
+        "signatures": [{"0":1,"1":2,"2":3,"3":4,"4":5,"5":6,"6":7,"7":8,"8":9,"9":10,"10":11}]
     });
     let tx_value = serde_json::from_value::<TransactionValue>(value).unwrap();
     println!("{tx_value:#?}");
@@ -86,15 +86,38 @@ fn main() {
         })
         .collect::<Vec<_>>();
     println!("randomly bug:{bug_u8s:#?}");
+    // assert_eq!(bug_u8s[0], vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,]);
 
-    // 😅 This is sorted.
-    let u8s = tx_value
+    // 😱 This is sorted, but still bug because key is String.
+    let still_bug_u8s = tx_value
         .signatures
-        .into_iter()
+        .iter()
         .map(|e| {
             let mut keys: Vec<&String> = e.keys().collect();
             keys.sort();
-            keys.into_iter().map(|k| e[k].as_u64().unwrap() as u8).collect::<Vec<u8>>()
+            keys.into_iter()
+                .map(|k| e[k].as_u64().unwrap() as u8)
+                .collect::<Vec<u8>>()
+        })
+        .collect::<Vec<_>>();
+
+    println!("sorted string bug:{still_bug_u8s:#?}");
+    // assert_eq!(still_bug_u8s[0], vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,]);
+
+    // 👍 This is sorted by usize.
+    let u8s = tx_value
+        .signatures
+        .iter()
+        .map(|e| {
+            let mut keys = e
+                .keys()
+                .flat_map(|e| e.parse::<usize>())
+                .collect::<Vec<_>>();
+
+            keys.sort();
+            keys.into_iter()
+                .map(|k| e[&k.to_string()].as_u64().unwrap() as u8)
+                .collect::<Vec<u8>>()
         })
         .collect::<Vec<_>>();
 
@@ -103,54 +126,7 @@ fn main() {
     };
 
     println!("{tx:#?}");
-    assert_eq!(tx.signatures, vec![16, 42]);
-}
-```
-
-### Promote to `function`
-
-```rust,editable,edition2021
-use serde::Deserialize;
-use serde_json::{json, Value};
-use std::collections::HashMap;
-
-#[derive(Deserialize, Debug)]
-struct TransactionValue {
-    signatures: Vec<HashMap<String, Value>>,
-}
-
-#[derive(Deserialize, Debug)]
-struct Transaction {
-    signatures: Vec<Vec<u8>>,
-}
-
-fn get_u8s_from_json_stringify_uint8(signatures: Vec<HashMap<String, Value>>) -> Vec<Vec<u8>> {
-    signatures
-        .into_iter()
-        .map(|e| {
-            let mut keys: Vec<&String> = e.keys().collect();
-            keys.sort();
-            keys.into_iter()
-                .filter_map(|k| e[k].as_u64())
-                .map(|e| e as u8)
-                .collect::<Vec<u8>>()
-        })
-        .collect::<Vec<_>>()
-}
-
-fn main() {
-    let value = json!({
-        "signatures": [{"0":16,"1":42}, {"0":3,"1":4}]
-    });
-    let tx_value = serde_json::from_value::<TransactionValue>(value).unwrap();
-    println!("{tx_value:#?}");
-
-    let signatures = get_u8s_from_json_stringify_uint8(tx_value.signatures);
-
-    let tx = Transaction { signatures };
-
-    println!("{tx:#?}");
-    assert_eq!(tx.signatures, vec![vec![16, 42], vec![3, 4]]);
+    assert_eq!(tx.signatures, vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,]);
 }
 ```
 
@@ -159,3 +135,4 @@ fn main() {
 - Use `#[serde(deserialize_with = "deserialize_signatures")]` and/or `#[serde(rename(deserialize = "signatures"))]` as [ref](https://serde.rs/stream-array.html).
 - Use `impl TryFrom` as [ref](https://doc.rust-lang.org/rust-by-example/conversion/try_from_try_into.html).
 - Use `thiserror` when failures as [ref](https://docs.rs/thiserror/latest/thiserror/).
+- Use `borsh` and/or try from string slice.
