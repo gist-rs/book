@@ -1,31 +1,40 @@
 # Serialize Js data
 
-![](/assets/kat.png) Here's fun facts.
+![](/assets/kat.png) Here's fun facts. let say we have this in `Js`.
 
-1. Send `JsValue` from `js` and use [`serde_wasm_bindgen::from_value(js_value)`](https://rustwasm.github.io/wasm-bindgen/reference/arbitrary-data-with-serde.html#receive-it-from-javascript-with-serde_wasm_bindgenfrom_value) to cast to derived `serde` struct.
+```js
+const u8 = new Uint8Array([16, 42]) // Uint8Array [16,42]
+const u8_string = JSON.stringify(u8) // '{"0":16,"1":42}'
+```
+
+And want to send that `u8` from `Js` → `Wasm` → `Rust`.
+
+## Our options
+
+1. Send `Uint8Array` as `JsValue` from `js` and use [`serde_wasm_bindgen::from_value(js_value)`](https://rustwasm.github.io/wasm-bindgen/reference/arbitrary-data-with-serde.html#receive-it-from-javascript-with-serde_wasm_bindgenfrom_value) to cast to derived `serde` struct.
 
    ```mermaid
    graph LR
-    A["Js <code>new Uint8Array([16, 42])</code>"] --JsValue<br><code>UInt8Array</code>--> B["Wasm <code>serde_wasm_bindgen::from_value(js_value)</code>"] --"Struct<br><code>&[u8]</code>"--> C[Rust <code>Wasm</code>]
+    A["<code>new Uint8Array([16, 42])</code>"] --JsValue<br><code>UInt8Array</code>--> B["<code>serde_wasm_bindgen::from_value(js_value)</code>"] --"Struct<br><code>&[u8]</code>"--> C[<code>Rust</code>]
    ```
 
-2. Send `JSON.parse(str)` from `js` and use [`js_value.into_serde()`](https://rustwasm.github.io/wasm-bindgen/reference/arbitrary-data-with-serde.html#an-alternative-approach---using-json) to cast `serde` struct in `Rust`.
+2. Send `Array` as `JsValue` from `js` and use [`js_value.into_serde()`](https://rustwasm.github.io/wasm-bindgen/reference/arbitrary-data-with-serde.html#an-alternative-approach---using-json) to cast `serde` struct in `Rust`.
 
    ```mermaid
    graph LR
-   A["Js <code>JSON.parse(str)</code>"] --"JsValue<br><code>[16,42]</code>"--> B["Wasm <code>js_value.into_serde()</code>"] --"Struct<br><code>&[u8]</code>"--> C[Rust <code>Wasm</code>]
+   A["<code>[16, 42]</code>"] --"JsValue<br><code>[16,42]</code>"--> B["<code>js_value.into_serde()</code>"] --"Struct<br><code>&[u8]</code>"--> C[<code>Rust</code>]
    ```
 
-3. Send `JSON.stringify(json)` from `js` and use serde [`deserialize_with`](https://serde.rs/stream-array.html). // Consider bad practice.
+3. Send `JSON.stringify(new Uint8Array([16, 42]))` as `String/&str` from `js` and use serde [`deserialize_with`](https://serde.rs/stream-array.html).
 
    ```mermaid
    graph LR
-   A["Js <code>JSON.stringify(json)</code>"] --"String<br><code>[{'0':16,'1':42}]</code">--> B["Wasm <code>serde::deserialize_with</code>"] --"Struct<br><code>&[u8]</code>"--> C[Rust <code>Wasm</code>]
+   A["<code>JSON.stringify(new Uint8Array([16, 42]))</code>"] --"String<br><code>'{'0':16,'1':42}'</code">--> B["<code>serde::deserialize_with</code>"] --"Struct<br><code>&[u8]</code>"--> C[<code>Rust</code>]
    ```
 
 ## How to handle JSON stringify `UInt8Array`?
 
-![](/assets/kat.png) Somehow an app (actually `dApp`) tend to send us `Uint8Array` as `JSON` string like this...
+![](/assets/kat.png) Somehow an app (actually `dApp`) tend to send us `Uint8Array` as `JSON` string like this (fall into case #3 👆)...
 
 ```json
 {
