@@ -46,6 +46,7 @@
 1. [The `wasm-bindgen` Guide](https://rustwasm.github.io/wasm-bindgen/)
 1. [Hello wasm-pack!](https://rustwasm.github.io/docs/wasm-pack/)
 1. [Second State](https://github.com/second-state/wasm-learning)
+1. [WebAssembly threads](https://web.dev/webassembly-threads/)
 
 ---
 
