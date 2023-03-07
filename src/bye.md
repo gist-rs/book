@@ -48,6 +48,11 @@
 1. [Second State](https://github.com/second-state/wasm-learning)
 1. [WebAssembly threads](https://web.dev/webassembly-threads/)
 
+## FFI Resources
+
+1. [CXX — safe `FFI` between Rust and C++](https://github.com/dtolnay/cxx)
+1. [The `UniFFI` user guide](https://mozilla.github.io/uniffi-rs/)
+
 ---
 
 ## Solana Resources
