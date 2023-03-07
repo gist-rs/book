@@ -8,7 +8,7 @@ graph LR
  A["diffuser-rs (Rust Stable Diffusion library)"] <--"FFI (Foreign Function Interface)"--> C["C++ libtorch"]
 ```
 
-## Perquisites
+## Prerequisites
 
 1. Source code: [diffusers-rs](https://github.com/LaurentMazare/diffusers-rs)
 1. `HUGGINGFACE_TOKEN` : Get it from [here](https://huggingface.co/settings/tokens).
