@@ -3,6 +3,10 @@
   <p>Let's learn together ✨</p>
 </div>
 
+## TL;DR
+
+- ![](/assets/kat.png) Learn <a class="button" href="/hello/why-rust.html">Rust</a>, <a class="button" href="/hello/why-wasm.html">Wasm</a>, <a class="button" href="/hello/why-solana.html">Solana</a> ![](/assets/duck.png) or <a class="button" href="/bye.html">More</a>
+
 ## Welcome
 
 - ✨ This book is like random working `gist` + `stack overflow` + `cheat sheet` + `short note` for `Rust` and `Wasm`.

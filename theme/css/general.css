@@ -265,8 +265,8 @@ button {
   box-shadow: 0px 4px 0px #aa0033;
   top: 0px;
 
-  padding: 0.6em;
-  padding-bottom: 0.3em;
+  padding: 0.5em;
+  padding-bottom: 0.25em;
   margin: 0.25em;
 
   font-weight: 500;
@@ -290,23 +290,33 @@ button {
   margin-bottom: 0.25em;
 
   outline: none;
-  transition: all 200ms ease-out;
+  transition: all 100ms ease-out;
+}
+
+.button:hover {
+  text-decoration: none;
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+  transition: all 100ms ease-out;
 }
 
 .button:active {
+  text-decoration: none;
   color: cornsilk !important;
   box-shadow: none !important;
   position: relative;
   top: 3px;
-  transition: all 200ms ease-out;
+  transition: all 100ms ease-out;
 }
 
 .button:link {
   text-decoration: none;
   color: cornsilk !important;
+  transition: all 100ms ease-out;
 }
 
 .button:visited {
   text-decoration: none;
   color: cornsilk !important;
+  transition: all 100ms ease-out;
 }
