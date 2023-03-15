@@ -1,8 +1,17 @@
 # Hello Wasm Js
 
-![](/assets/kat.png) Here's how to create `sync` and `async` function that return `String`, `JsValue` and how to `test`.
+![](/assets/kat.png) Here's how to create `sync` and `async` function in `Rust` which return `String`, `JsValue`, `JsError` and call it from `HTML`, `Javascript` in `test` via headless browser.
 
-## Structure.
+## Fun facts
+
+- 🚧 `println!` not working with `wasm-bindgen-test` context because `--nocapture` won't [passthrough](https://github.com/rustwasm/wasm-pack/issues/730).
+  > 💡 We have to use `console_log!` in `wasm` context.
+- 🚧 `println!("{js_error:#?}")`and `console_log!("{js_error:#?}")` not working because [`JsError`](https://rustwasm.github.io/wasm-bindgen/api/wasm_bindgen/struct.JsError.html) didn't implement `Debug`.
+  > 💡 We have to convert [`JsError` to `JsValue`](https://rustwasm.github.io/wasm-bindgen/api/wasm_bindgen/struct.JsError.html#impl-From%3CJsError%3E-for-JsValue) as workaround.
+- 🚧 `#[tokio::test]` will break `wasm-bindgen-test`.
+  > 💡 We need `#[cfg(not(target_arch = "wasm32"))]` above `Rust` context when needed.
+
+## Structure
 
 #### `Cargo.toml`
 

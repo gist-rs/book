@@ -35,3 +35,15 @@ pub async fn async_greet_js_value(something: &str) -> Result<JsValue, JsError> {
     // Return Result String
     Ok(JsValue::from_str(format!("Hello {something}").as_str()))
 }
+
+#[wasm_bindgen]
+pub fn greet_js_error() -> Result<JsValue, JsError> {
+    let js_error = JsError::new("hello error!");
+
+    // `wasm_bindgen::JsError` doesn't implement `std::fmt::Debug`
+    // the trait `std::fmt::Debug` is not implemented for `wasm_bindgen::JsError`
+    // 😱 uncomment below 👇 will get above error 👆
+    // println!("{js_error:#?}");
+
+    Err(js_error)
+}
