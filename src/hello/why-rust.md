@@ -15,6 +15,7 @@
 - Google: [Should your team adopt the `Rust` programming language?](https://www.youtube.com/watch?v=Gnp4XP1b82E)
 - Google Security: [We need to be able to use `Rust` anywhere in the codebase](https://security.googleblog.com/2022/12/memory-safe-languages-in-android-13.html)
 - Huawei: [Huawei is committed to the the success of `Rust`.](https://trusted-programming.github.io/2021/02/07/our-rust-mission-at-huawei.html)
+- Hugging face: [zero-copy is achievable in `Rust`](https://github.com/huggingface/safetensors#notes)
 - IBM: [Why you should learn the `Rust` programming language](https://developer.ibm.com/articles/os-developers-know-rust/)
 - LogRocket: [optimized `Rust` code was at least 30 percent faster than the most optimized Go code.](https://blog.logrocket.com/when-to-use-rust-when-to-use-golang/)
 - Microsoft: [Ask the Expert: `Rust` at Microsoft.](https://www.youtube.com/watch?v=1uAsA1hm52I)
