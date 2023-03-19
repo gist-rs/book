@@ -1,3 +1,4 @@
 book
 target
 node_modules
+.env

@@ -1,0 +1,9 @@
+# This file describes a Fastly Compute@Edge package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+authors = ["katopz@gist.rs"]
+description = "Hello Fastly!"
+language = "rust"
+manifest_version = 2
+name = "hello-wasm-fastly"
+service_id = "xQHbmi6S43MSFk9L5p9IW7"
