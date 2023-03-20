@@ -14,6 +14,7 @@
 1. [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/about.html): How to design and present APIs.
 1. [The Rustonomicon](https://doc.rust-lang.org/nomicon): The Dark Arts of Unsafe `Rust`.
 1. [Rust Atomics and Locks](https://marabos.nl/atomics): Low-Level Concurrency in Practice.
+1. [The Rust Performance Book](https://nnethercote.github.io/perf-book/introduction.html): Contains many techniques that can improve the performance.
 
 ### 👨‍🍳 Cooking
 
