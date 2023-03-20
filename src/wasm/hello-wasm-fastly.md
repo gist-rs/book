@@ -82,6 +82,10 @@ SUCCESS: Deployed package (service xQHbmi6S43MSFk9L5p9IW7, version 1)
 
 ![](./hello-wasm-fastly/deployed.png)
 
+## Caveats
+
+- crate must support `wasm-wasi`: see https://developer.fastly.com/learning/compute/rust/#using-dependencies
+
 ## To Improve
 
 - [GitHub Actions for Compute@Edge](https://www.fastly.com/blog/introducing-github-actions-for-compute-edge-a-new-resource-to-help-ship-code)
