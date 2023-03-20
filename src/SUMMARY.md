@@ -57,4 +57,5 @@
   - [Fetch balance](solana/fetch-balance.md)
   - [NFT Memberships](solana/nft-memberships.md)
 - [ML](ml/mod.md)
+  - [LLaMA-rs](ml/llama.md)
 - [Bye](bye.md)
