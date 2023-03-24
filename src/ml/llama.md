@@ -61,7 +61,9 @@ Open source language models are clearly having a moment. We're looking forward t
 
 [Follow us on Twitter to follow along.](https://twitter.com/replicatehq)
 
-## History
+- [🍮 🦙 Flan-Alpaca](https://github.com/declare-lab/flan-alpaca) - Instruction Tuning from Humans and Machines
+
+## Relation
 
 ```mermaid
 graph LR;
