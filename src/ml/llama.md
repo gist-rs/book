@@ -61,13 +61,11 @@ Open source language models are clearly having a moment. We're looking forward t
 
 [Follow us on Twitter to follow along.](https://twitter.com/replicatehq)
 
-- [🍮 🦙 Flan-Alpaca](https://github.com/declare-lab/flan-alpaca) - Instruction Tuning from Humans and Machines
-
 ## Relation
 
 ```mermaid
 graph LR;
-A --> G("LLaMA_MPS 🐍")
+A --> AA("LLaMA_MPS 🐍")
 A("llama 🐍") --"4-bit"--> B("llama 🐇")
 B --> C("llama-rs 🦀")
 A --"16,32-bit"--> CC("RLLaMA 🦀")
@@ -75,17 +73,19 @@ C --> I("llama-node 🐥")
 B --> D("alpaca 🐇")
 A --> E("alpaca 🐍") --LoRa--> F("alpaca-lora 🐍")
 E --instruction-following--> H("codealpaca 🐍")
-D --> J("dolly 🐍")
+D --> DD("dolly 🐍")
+D --> DDD("flan-alpaca 🐍")
 ```
 
 - [llama 🐍](https://github.com/facebookresearch/llama): Open and Efficient Foundation Language Models.
 - [LLaMA_MPS 🐍](https://github.com/jankais3r/LLaMA_MPS): Run LLaMA (and Stanford-Alpaca) inference on Apple Silicon GPUs.
 - [llama 🐇](https://github.com/ggerganov/llama.cpp): Inference of LLaMA model in pure C/C++.
+- [alpaca 🐇](https://github.com/antimatter15/alpaca.cpp): This combines the LLaMA foundation model with an open reproduction of Stanford Alpaca a fine-tuning of the base model to obey instructions (akin to the RLHF used to train ChatGPT) and a set of modifications to llama.cpp to add a chat interface.
 - [llama-rs 🦀](https://github.com/setzer22/llama-rs): Do the LLaMA thing, but now in Rust 🦀🚀🦙
 - [alpaca 🐍](https://github.com/tatsu-lab/stanford_alpaca): Stanford Alpaca: An Instruction-following LLaMA Model
 - [codealpaca 🐍](https://github.com/sahil280114/codealpaca): An Instruction-following LLaMA Model trained on code generation instructions.
 - [alpaca-lora 🐍](https://github.com/tloen/alpaca-lora): Low-Rank LLaMA Instruct-Tuning
-- [alpaca 🐇](https://github.com/antimatter15/alpaca.cpp): This combines the LLaMA foundation model with an open reproduction of Stanford Alpaca a fine-tuning of the base model to obey instructions (akin to the RLHF used to train ChatGPT) and a set of modifications to llama.cpp to add a chat interface.
 - [llama-node 🐥](https://github.com/hlhr202/llama-node): nodejs client library for llama LLM built on top of llama-rs. It uses napi-rs as nodejs and native communications.
-- [RLLaMA](https://github.com/Noeda/rllama): Rust+OpenCL+AVX2 implementation of LLaMA inference code.
-- [Dolly](https://github.com/databrickslabs/dolly): This fine-tunes the GPT-J 6B model on the Alpaca dataset using a Databricks notebook.
+- [RLLaMA 🦀](https://github.com/Noeda/rllama): Rust+OpenCL+AVX2 implementation of LLaMA inference code.
+- [Dolly 🐍](https://github.com/databrickslabs/dolly): This fine-tunes the GPT-J 6B model on the Alpaca dataset using a Databricks notebook.
+- [Flan-Alpaca 🐍](https://github.com/declare-lab/flan-alpaca): Instruction Tuning from Humans and Machines
