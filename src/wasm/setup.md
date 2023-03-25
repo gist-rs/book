@@ -63,6 +63,7 @@ authors = ["katopz <katopz@gmail.com>"]
 edition = "2018"
 
 [lib]
+# Wasm type is library.
 crate-type = ["cdylib", "rlib"]
 
 [features]
@@ -90,6 +91,7 @@ wasm-bindgen-test = "0.3.13"
 opt-level = "s"
 ```
 
+c
 │ ├─ 📄 lib.rs
 
 ```rust,no_run

@@ -29,5 +29,11 @@ A[Rust Lib] -.Struct.-> B[Rust Main]
 A[Rust Lib] --Struct--> C[Rust Wasm]--<code>wasm_bindgen</code> <br> JsValue/Struct/Primitive--> D[JavaScript]
 ```
 
+## Target
+
+- `wasm32-unknown-unknown`: for standalone use in or outside the browser.
+- `wasm32-wasi`: for use outside the browser. (e.g. [`Fastly`](https://developer.fastly.com/learning/compute/))
+- `wasm32-unknown-emscripten`: mostly for browser (JavaScript) use.
+
 // 🚧 UNDER CONSTRUCTION
 // If you can't wait try start [here](https://book.gist.rs/bye.html#wasm-resources)
