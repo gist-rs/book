@@ -69,12 +69,15 @@ A --> AA("LLaMA_MPS 🐍")
 A("llama 🐍") --"4-bit"--> B("llama 🐇")
 B --> C("llama-rs 🦀")
 A --"16,32-bit"--> CC("RLLaMA 🦀")
-C --> I("llama-node 🐥")
-B --> D("alpaca 🐇")
+C --"napi-rs"--> I("llama-node 🐥")
+B --"fine-tuning to obey ix"--> D("alpaca 🐇")
 A --> E("alpaca 🐍") --LoRa--> F("alpaca-lora 🐍")
 E --instruction-following--> H("codealpaca 🐍")
-D --> DD("dolly 🐍")
-D --> DDD("flan-alpaca 🐍")
+D --"fine-tunes the GPT-J 6B"--> DD("dolly 🐍")
+D --"instruction-tuned Flan-T5"--> DDD("flan-alpaca 🐍")
+B --> BB("bloomz 🐇")
+BB --LoRA--> DDDD("BLOOM-LoRA 🐍")
+D --Alpaca_data_cleaned.json--> DDDD("BLOOM-LoRA 🐍")
 ```
 
 - [llama 🐍](https://github.com/facebookresearch/llama): Open and Efficient Foundation Language Models.
@@ -88,4 +91,20 @@ D --> DDD("flan-alpaca 🐍")
 - [llama-node 🐥](https://github.com/hlhr202/llama-node): nodejs client library for llama LLM built on top of llama-rs. It uses napi-rs as nodejs and native communications.
 - [RLLaMA 🦀](https://github.com/Noeda/rllama): Rust+OpenCL+AVX2 implementation of LLaMA inference code.
 - [Dolly 🐍](https://github.com/databrickslabs/dolly): This fine-tunes the GPT-J 6B model on the Alpaca dataset using a Databricks notebook.
-- [Flan-Alpaca 🐍](https://github.com/declare-lab/flan-alpaca): Instruction Tuning from Humans and Machines
+- [Flan-Alpaca 🐍](https://github.com/declare-lab/flan-alpaca): Instruction Tuning from Humans and Machines.
+- [bloomz 🐇](https://github.com/NouamaneTazi/bloomz.cpp): Inference of HuggingFace's BLOOM-like models in pure C/C++ built on top of the amazing llama.cpp.
+- [BLOOM-LoRA 🐍](https://github.com/linhduongtuan/BLOOM-LORA): Low-Rank LLaMA Instruct-Tuning.
+
+## Tools
+
+```mermaid
+graph LR;
+A("🐍 langchain")
+A --> AA("🐥 langchainjs")
+AA --> B("🐥 langchain-alpaca")
+D("alpaca 🐇") --> B
+```
+
+- 🐍 [langchain](https://github.com/hwchase17/langchain): Building applications with LLMs through composability.
+- 🐥 [langchainjs](https://github.com/hwchase17/langchainjs): langchain in js.
+- 🐥 [langchain-alpaca](https://github.com/linonetwo/langchain-alpaca): Run alpaca LLM fully locally in langchain.
