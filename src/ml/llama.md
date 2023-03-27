@@ -102,9 +102,15 @@ graph LR;
 A("🐍 langchain")
 A --> AA("🐥 langchainjs")
 AA --> B("🐥 langchain-alpaca")
-D("alpaca 🐇") --> B
+D("🐇 alpaca") --> B
+E-->D
+E("🐇 llama") --ggml/13B--> H
+F("🐇 whisper") --> H
+H("🐇 talk")
 ```
 
-- 🐍 [langchain](https://github.com/hwchase17/langchain): Building applications with LLMs through composability.
-- 🐥 [langchainjs](https://github.com/hwchase17/langchainjs): langchain in js.
-- 🐥 [langchain-alpaca](https://github.com/linonetwo/langchain-alpaca): Run alpaca LLM fully locally in langchain.
+- [🐍 langchain](https://github.com/hwchase17/langchain): Building applications with LLMs through composability.
+- [🐥 langchainjs](https://github.com/hwchase17/langchainjs): langchain in js.
+- [🐥 langchain-alpaca](https://github.com/linonetwo/langchain-alpaca): Run alpaca LLM fully locally in langchain.
+- [🐇 whisper](https://github.com/ggerganov/whisper.cpp): High-performance inference of OpenAI's Whisper automatic speech recognition (ASR) model.
+- [🐇 talk](https://github.com/ggerganov/whisper.cpp/tree/master/examples/talk): Talk with an Artificial Intelligence in your terminal.
