@@ -65,35 +65,35 @@ Open source language models are clearly having a moment. We're looking forward t
 
 ```mermaid
 graph LR;
-A --> AA("LLaMA_MPS 🐍")
-A("llama 🐍") --"4-bit"--> B("llama 🐇")
-B --> C("llama-rs 🦀")
-A --"16,32-bit"--> CC("RLLaMA 🦀")
-C --"napi-rs"--> I("llama-node 🐥")
-B --"fine-tuning to obey ix"--> D("alpaca 🐇")
-A --> E("alpaca 🐍") --LoRa--> F("alpaca-lora 🐍")
-E --instruction-following--> H("codealpaca 🐍")
-D --"fine-tunes the GPT-J 6B"--> DD("dolly 🐍")
-D --"instruction-tuned Flan-T5"--> DDD("flan-alpaca 🐍")
-B --> BB("bloomz 🐇")
-BB --LoRA--> DDDD("BLOOM-LoRA 🐍")
-D --Alpaca_data_cleaned.json--> DDDD("BLOOM-LoRA 🐍")
+A --Apple Silicon GPU--> AA("🐍 LLaMA_MPS")
+A("🐍 llama") --"4-bit"--> B("🐇 llama")
+B --port w/ ggml--> C("🦀 llama-rs")
+A --"16,32-bit"--> CC("🦀 RLLaMA")
+C --"napi-rs"--> I("🐥 llama-node")
+E --"fine-tuning to obey ix"--> D("🐇 alpaca")
+A --instruction-following--> E("🐍 alpaca") --LoRa--> F("🐍 alpaca-lora")
+E --instruction-following--> H("🐍 codealpaca")
+D --"fine-tunes the GPT-J 6B"--> DD("🐍 Dolly")
+D --"instruction-tuned Flan-T5"--> DDD("🐍 Flan-Alpaca")
+B --BLOOM-like--> BB("🐇 bloomz")
+BB --LoRA--> DDDD("🐍 BLOOM-LoRA")
+D --Alpaca_data_cleaned.json--> DDDD
 ```
 
-- [llama 🐍](https://github.com/facebookresearch/llama): Open and Efficient Foundation Language Models.
-- [LLaMA_MPS 🐍](https://github.com/jankais3r/LLaMA_MPS): Run LLaMA (and Stanford-Alpaca) inference on Apple Silicon GPUs.
-- [llama 🐇](https://github.com/ggerganov/llama.cpp): Inference of LLaMA model in pure C/C++.
-- [alpaca 🐇](https://github.com/antimatter15/alpaca.cpp): This combines the LLaMA foundation model with an open reproduction of Stanford Alpaca a fine-tuning of the base model to obey instructions (akin to the RLHF used to train ChatGPT) and a set of modifications to llama.cpp to add a chat interface.
-- [llama-rs 🦀](https://github.com/setzer22/llama-rs): Do the LLaMA thing, but now in Rust 🦀🚀🦙
-- [alpaca 🐍](https://github.com/tatsu-lab/stanford_alpaca): Stanford Alpaca: An Instruction-following LLaMA Model
-- [codealpaca 🐍](https://github.com/sahil280114/codealpaca): An Instruction-following LLaMA Model trained on code generation instructions.
-- [alpaca-lora 🐍](https://github.com/tloen/alpaca-lora): Low-Rank LLaMA Instruct-Tuning
-- [llama-node 🐥](https://github.com/hlhr202/llama-node): nodejs client library for llama LLM built on top of llama-rs. It uses napi-rs as nodejs and native communications.
-- [RLLaMA 🦀](https://github.com/Noeda/rllama): Rust+OpenCL+AVX2 implementation of LLaMA inference code.
-- [Dolly 🐍](https://github.com/databrickslabs/dolly): This fine-tunes the GPT-J 6B model on the Alpaca dataset using a Databricks notebook.
-- [Flan-Alpaca 🐍](https://github.com/declare-lab/flan-alpaca): Instruction Tuning from Humans and Machines.
-- [bloomz 🐇](https://github.com/NouamaneTazi/bloomz.cpp): Inference of HuggingFace's BLOOM-like models in pure C/C++ built on top of the amazing llama.cpp.
-- [BLOOM-LoRA 🐍](https://github.com/linhduongtuan/BLOOM-LORA): Low-Rank LLaMA Instruct-Tuning.
+- [🐍 llama](https://github.com/facebookresearch/llama): Open and Efficient Foundation Language Models.
+- [🐍 LLaMA_MPS](https://github.com/jankais3r/LLaMA_MPS): Run LLaMA (and Stanford-Alpaca) inference on Apple Silicon GPUs.
+- [🐇 llama](https://github.com/ggerganov/llama.cpp): Inference of LLaMA model in pure C/C++.
+- [🐇 alpaca](https://github.com/antimatter15/alpaca.cpp): This combines the LLaMA foundation model with an open reproduction of Stanford Alpaca a fine-tuning of the base model to obey instructions (akin to the RLHF used to train ChatGPT) and a set of modifications to llama.cpp to add a chat interface.
+- [🦀 llama-rs](https://github.com/setzer22/llama-rs): Do the LLaMA thing, but now in Rust 🦀🚀🦙
+- [🐍 alpaca](https://github.com/tatsu-lab/stanford_alpaca): Stanford Alpaca: An Instruction-following LLaMA Model
+- [🐍 codealpaca](https://github.com/sahil280114/codealpaca): An Instruction-following LLaMA Model trained on code generation instructions.
+- [🐍 alpaca-lora](https://github.com/tloen/alpaca-lora): Low-Rank LLaMA Instruct-Tuning
+- [🐥 llama-node](https://github.com/hlhr202/llama-node): nodejs client library for llama LLM built on top of llama-rs. It uses napi-rs as nodejs and native communications.
+- [🦀 RLLaMA](https://github.com/Noeda/rllama): Rust+OpenCL+AVX2 implementation of LLaMA inference code.
+- [🐍 Dolly](https://github.com/databrickslabs/dolly): This fine-tunes the GPT-J 6B model on the Alpaca dataset using a Databricks notebook.
+- [🐍 Flan-Alpaca](https://github.com/declare-lab/flan-alpaca): Instruction Tuning from Humans and Machines.
+- [🐇 bloomz](https://github.com/NouamaneTazi/bloomz.cpp): Inference of HuggingFace's BLOOM-like models in pure C/C++ built on top of the amazing llama.cpp.
+- [🐍 BLOOM-LoRA](https://github.com/linhduongtuan/BLOOM-LORA): Low-Rank LLaMA Instruct-Tuning.
 
 ## Tools
 
