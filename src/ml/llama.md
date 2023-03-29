@@ -58,7 +58,7 @@ BB --LoRA--> DDDD("🐍 BLOOM-LoRA")
 D --Alpaca_data_cleaned.json--> DDDD
 E --RNN-->EE("🐍 RWKV-LM")
 H --finetuned--> EE
-EE -..-> EEE("🦀 smolrsrwkv")
+EE("🐍 RWKV-LM") -..-> EEE("🦀 smolrsrwkv")
 ```
 
 - [🐍 llama](https://github.com/facebookresearch/llama): Open and Efficient Foundation Language Models.
@@ -78,10 +78,21 @@ EE -..-> EEE("🦀 smolrsrwkv")
 - [🐍 RWKV-LM](https://github.com/BlinkDL/RWKV-LM): [🤗](https://huggingface.co/spaces/BlinkDL/Raven-RWKV-7B) RWKV is an RNN with transformer-level LLM performance. It can be directly trained like a GPT (parallelizable). So it's combining the best of RNN and transformer - great performance, fast inference, saves VRAM, fast training, "infinite" ctx_len, and free sentence embedding.
 - [🦀 smolrsrwkv](https://github.com/KerfuffleV2/smolrsrwkv): A very basic example of the RWKV approach to language models written in Rust by someone that knows basically nothing about math or neural networks.
 
-## Tools
+## Alternatives
+
+![](./assets/scaling-laws-blog-comparison.png)
 
 ```mermaid
 graph LR;
+Z("Cerebras-GPT")
+```
+
+- [🐍 Cerebras-GPT](https://www.cerebras.net/blog/cerebras-gpt-a-family-of-open-compute-efficient-large-language-models/): a family of seven GPT models ranging from 111 million to 13 billion parameters. Trained using the Chinchilla formula, these models provide the highest accuracy for a given compute budget. Cerebras-GPT has faster training times, lower training costs, and consumes less energy than any publicly available model to date.
+
+## Tools
+
+```mermaid
+graph TD;
 AAA("🐍 llama") --> BB("🐍 LLaMA-Adapter")
 AAA --> A
 A("🐍 langchain")

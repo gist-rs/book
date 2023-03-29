@@ -4,7 +4,7 @@
 
 ## Goals
 
-- Try to catch up `ML` knowledge first.
+- Collection of `ML` knowledge I like.
 - Categorize later.
 
 ## Topic
