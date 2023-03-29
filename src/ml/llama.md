@@ -59,6 +59,7 @@ D --Alpaca_data_cleaned.json--> DDDD
 E --RNN-->EE("🐍 RWKV-LM")
 H --finetuned--> EE
 EE("🐍 RWKV-LM") -..-> EEE("🦀 smolrsrwkv")
+A --"GPT-3.5-Turbo"--> FF("🐍 gpt4all-lora")
 ```
 
 - [🐍 llama](https://github.com/facebookresearch/llama): Open and Efficient Foundation Language Models.
@@ -77,6 +78,7 @@ EE("🐍 RWKV-LM") -..-> EEE("🦀 smolrsrwkv")
 - [🐍 BLOOM-LoRA](https://github.com/linhduongtuan/BLOOM-LORA): Low-Rank LLaMA Instruct-Tuning.
 - [🐍 RWKV-LM](https://github.com/BlinkDL/RWKV-LM): [🤗](https://huggingface.co/spaces/BlinkDL/Raven-RWKV-7B) RWKV is an RNN with transformer-level LLM performance. It can be directly trained like a GPT (parallelizable). So it's combining the best of RNN and transformer - great performance, fast inference, saves VRAM, fast training, "infinite" ctx_len, and free sentence embedding.
 - [🦀 smolrsrwkv](https://github.com/KerfuffleV2/smolrsrwkv): A very basic example of the RWKV approach to language models written in Rust by someone that knows basically nothing about math or neural networks.
+- [🐍 gpt4all-lora](https://github.com/nomic-ai/gpt4all): A chatbot trained on a massive collection of clean assistant data including code, stories and dialogue.
 
 ## Alternatives
 
@@ -84,10 +86,13 @@ EE("🐍 RWKV-LM") -..-> EEE("🦀 smolrsrwkv")
 
 ```mermaid
 graph LR;
-Z("Cerebras-GPT")
+Z("GPT")
+Z-.Chinchilla formula..->Y("Cerebras-GPT")
+Z-.Flamingo-style LMMs..-X("OpenFlamingo")
 ```
 
 - [🐍 Cerebras-GPT](https://www.cerebras.net/blog/cerebras-gpt-a-family-of-open-compute-efficient-large-language-models/): a family of seven GPT models ranging from 111 million to 13 billion parameters. Trained using the Chinchilla formula, these models provide the highest accuracy for a given compute budget. Cerebras-GPT has faster training times, lower training costs, and consumes less energy than any publicly available model to date.
+- [🐍 OpenFlamingo](https://laion.ai/blog/open-flamingo/): a framework that enables training and evaluation of large multimodal models (LMMs).
 
 ## Tools
 
