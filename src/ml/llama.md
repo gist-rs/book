@@ -51,10 +51,10 @@ C --"napi-rs"--> I("🐥 llama-node")
 E --"fine-tuning to obey ix"--> D("🐇 alpaca")
 A --instruction-following--> E("🐍 alpaca") --LoRa--> F("🐍 alpaca-lora")
 E --instruction-following--> H("🐍 codealpaca")
-D --"fine-tunes the GPT-J 6B"--> DD("🐍 Dolly")
-D --"instruction-tuned Flan-T5"--> DDD("🐍 Flan-Alpaca")
 B --BLOOM-like--> BB("🐇 bloomz")
 BB --LoRA--> DDDD("🐍 BLOOM-LoRA")
+D --"fine-tunes the GPT-J 6B"--> DD("🐍 Dolly")
+D --"instruction-tuned Flan-T5"--> DDD("🐍 Flan-Alpaca")
 D --Alpaca_data_cleaned.json--> DDDD
 E --RNN-->EE("🐍 RWKV-LM")
 H --finetuned--> EE
