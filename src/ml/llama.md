@@ -43,7 +43,7 @@ graph TD;
 ```mermaid
 graph LR;
 A --Apple Silicon GPU--> AA("🐍 LLaMA_MPS")
-A -..- AAA("Raspberry Pi, Pixel 5, iPhone, NodeJS")
+A -..-> AAA("Raspberry Pi, Pixel 5, iPhone, NodeJS")
 A("🐍 llama") --"4-bit"--> B("🐇 llama")
 B --port w/ ggml--> C("🦀 llama-rs")
 A --"16,32-bit"--> CC("🦀 RLLaMA")
@@ -58,6 +58,7 @@ BB --LoRA--> DDDD("🐍 BLOOM-LoRA")
 D --Alpaca_data_cleaned.json--> DDDD
 E --RNN-->EE("🐍 RWKV-LM")
 H --finetuned--> EE
+EE -..-> EEE("🦀 smolrsrwkv")
 ```
 
 - [🐍 llama](https://github.com/facebookresearch/llama): Open and Efficient Foundation Language Models.
@@ -75,11 +76,14 @@ H --finetuned--> EE
 - [🐇 bloomz](https://github.com/NouamaneTazi/bloomz.cpp): Inference of HuggingFace's BLOOM-like models in pure C/C++ built on top of the amazing llama.cpp.
 - [🐍 BLOOM-LoRA](https://github.com/linhduongtuan/BLOOM-LORA): Low-Rank LLaMA Instruct-Tuning.
 - [🐍 RWKV-LM](https://github.com/BlinkDL/RWKV-LM): [🤗](https://huggingface.co/spaces/BlinkDL/Raven-RWKV-7B) RWKV is an RNN with transformer-level LLM performance. It can be directly trained like a GPT (parallelizable). So it's combining the best of RNN and transformer - great performance, fast inference, saves VRAM, fast training, "infinite" ctx_len, and free sentence embedding.
+- [🦀 smolrsrwkv](https://github.com/KerfuffleV2/smolrsrwkv): A very basic example of the RWKV approach to language models written in Rust by someone that knows basically nothing about math or neural networks.
 
 ## Tools
 
 ```mermaid
 graph LR;
+AAA("🐍 llama") --> BB("🐍 LLaMA-Adapter")
+AAA --> A
 A("🐍 langchain")
 A --port--> AA("🐥 langchainjs")
 AA --> B("🐥 langchain-alpaca")
@@ -99,6 +103,7 @@ I("🐍 chatgpt-retrieval-plugin") --> II("🐍 llama-retrieval-plugin")
 - [🐇 talk](https://github.com/ggerganov/whisper.cpp/tree/master/examples/talk): Talk with an Artificial Intelligence in your terminal.
 - [chatgpt-retrieval-plugin](https://github.com/openai/chatgpt-retrieval-plugin): The ChatGPT Retrieval Plugin lets you easily search and find personal or work documents by asking questions in everyday language.
 - [llama-retrieval-plugin](https://github.com/lastmile-ai/llama-retrieval-plugin): LLaMa retrieval plugin script using OpenAI's retrieval plugin
+- [🐍 LLaMA-Adapter](https://github.com/ZrrSkywalker/LLaMA-Adapter): LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention. Using 52K self-instruct demonstrations, LLaMA-Adapter only introduces 1.2M learnable parameters upon the frozen LLaMA 7B model, and costs less than one hour for fine-tuning on 8 A100 GPUs .
 
 ## Serve
 
