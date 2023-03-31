@@ -51,7 +51,7 @@ D --Alpaca_data_cleaned.json--> DDDD
 E --RNN-->EE("🐍 RWKV-LM")
 H --finetuned--> EE
 EE("🐍 RWKV-LM") --port--> EEE("🦀 smolrsrwkv")
-EE --ggml---> EEEE("🐇 rwkv.cpp")
+EE --ggml--> EEEE("🐇 rwkv.cpp")
 A --"GPT-3.5-Turbo/7B"--> FF("🐍 gpt4all-lora")
 A --"Apache0/nanoGPT"--> AAAA("🐍 Lit-LLaMA")
 ```
