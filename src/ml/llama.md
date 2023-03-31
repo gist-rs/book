@@ -54,6 +54,7 @@ EE --ggml--> EEEE("🐇 rwkv.cpp")
 A --"GPT-3.5-Turbo/7B"--> FF("🐍 gpt4all-lora")
 A --"Apache0/nanoGPT"--> AAAA("🐍 Lit-LLaMA")
 A --> AAA("🐍 LLaMA-Adapter")
+A --ShareGPT/13B--> AAAAA("🐍 vicuna")
 ```
 
 - [🐍 llama](https://github.com/facebookresearch/llama): Open and Efficient Foundation Language Models.
@@ -76,6 +77,7 @@ A --> AAA("🐍 LLaMA-Adapter")
 - [🐍 Lit-LLaMA](https://github.com/Lightning-AI/lit-llama): Independent implementation of LLaMA that is fully open source under the Apache 2.0 license. This implementation builds on nanoGPT. `The finetuning requires a GPU with 40 GB memory (A100). Coming soon: LoRA + quantization for training on a consumer-grade GPU!`
 - [🐇 rwkv.cpp](https://github.com/saharNooby/rwkv.cpp): a port of BlinkDL/RWKV-LM to ggerganov/ggml. The end goal is to allow 4-bit quanized inference on CPU. `// WIP`
 - [🐍 LLaMA-Adapter](https://github.com/ZrrSkywalker/LLaMA-Adapter): LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention. Using 52K self-instruct demonstrations, LLaMA-Adapter only introduces 1.2M learnable parameters upon the frozen LLaMA 7B model. `// 1 hour for fine-tuning on 8 A100 GPUs.`
+- [🐍 vicuna](https://vicuna.lmsys.org/): An Open-Source Chatbot Impressing GPT-4 with 90% ChatGPT Quality.
 
 ## Alternatives
 
@@ -105,12 +107,14 @@ AAA --> A
 A("🐍 langchain")
 A --port--> AA("🐥 langchainjs")
 AA --> B("🐥 langchain-alpaca")
-D("🐇 alpaca") --> B
+D("🐇 alpaca.cpp") --> B
 E-..-D
-E("🐇 llama") --ggml/13B--> H
-F("🐇 whisper") --whisper-small--> H
+E-..-DD("🐍 petals")
+E("🐇 llama.cpp") --ggml/13B--> H
+F("🐇 whisper.cpp") --whisper-small--> H
 H("🐇 talk")
 I("🐍 chatgpt-retrieval-plugin") --> II("🐍 llama-retrieval-plugin")
+
 ```
 
 - [🐍 langchain](https://github.com/hwchase17/langchain): Building applications with LLMs through composability.
@@ -122,6 +126,8 @@ I("🐍 chatgpt-retrieval-plugin") --> II("🐍 llama-retrieval-plugin")
 - [🐍 chatgpt-retrieval-plugin](https://github.com/openai/chatgpt-retrieval-plugin): The ChatGPT Retrieval Plugin lets you easily search and find personal or work documents by asking questions in everyday language.
 - [🐍 llama-retrieval-plugin](https://github.com/lastmile-ai/llama-retrieval-plugin): LLaMa retrieval plugin script using OpenAI's retrieval plugin
 - [🦀 llm-chain](https://github.com/sobelio/llm-chain): prompt templates and chaining together prompts in multi-step chains, summarizing lengthy texts or performing advanced data processing tasks.
+- [🐍 petals](https://github.com/bigscience-workshop/petals): Run 100B+ language models at home, BitTorrent-style.
+  Fine-tuning and inference up to 10x faster than offloading.
 
 ## Demo
 
