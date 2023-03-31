@@ -84,12 +84,14 @@ A --> AAA("🐍 LLaMA-Adapter")
 ```mermaid
 graph LR;
 Z("GPT")
-Z-.Chinchilla formula..->Y("Cerebras-GPT")
 Z-.Flamingo-style LMMs..-X("OpenFlamingo")
+Z-.Chinchilla formula..->Y("Cerebras-GPT")--LoRA--> YY("🐍 Cerebras-GPT2.7B LoRA Alpaca")
+W("Alpaca")-..->YY
 ```
 
 - [🐍 Cerebras-GPT](https://www.cerebras.net/blog/cerebras-gpt-a-family-of-open-compute-efficient-large-language-models/): a family of seven GPT models ranging from 111 million to 13 billion parameters. Trained using the Chinchilla formula, these models provide the highest accuracy for a given compute budget. Cerebras-GPT has faster training times, lower training costs, and consumes less energy than any publicly available model to date.
 - [🐍 OpenFlamingo](https://laion.ai/blog/open-flamingo/): a framework that enables training and evaluation of large multimodal models (LMMs).
+- [🐍 Cerebras-GPT2.7B LoRA Alpaca ShortPrompt](https://github.com/lxe/cerebras-lora-alpaca): Cerebras-GPT2.7B LoRA Alpaca ShortPrompt.
 
 ## Tools
 
