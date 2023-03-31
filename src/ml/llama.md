@@ -36,43 +36,45 @@ graph TD;
 graph LR;
 A --Apple Silicon GPU--> AA("🐍 LLaMA_MPS")
 A -..-> AAA("Raspberry Pi, Pixel 5, iPhone, NodeJS")
-A("🐍 llama") --"4-bit"--> B("🐇 llama")
-B --port w/ ggml--> C("🦀 llama-rs")
+A("🐍 llama") --"4-bit"--> B("🐇 llama.cpp")
+B --port ggml--> C("🦀 llama-rs")
 A --"16,32-bit"--> CC("🦀 RLLaMA")
 C --"napi-rs"--> I("🐥 llama-node")
-E --"fine-tuning to obey ix"--> D("🐇 alpaca")
-A --instruction-following--> E("🐍 alpaca") --LoRa--> F("🐍 alpaca-lora")
+E --"fine-tuning to obey ix"--> D("🐇 alpaca.cpp")
 E --instruction-following--> H("🐍 codealpaca")
-B --BLOOM-like--> BB("🐇 bloomz")
+A --instruction-following--> E("🐍 alpaca") --LoRa--> F("🐍 alpaca-lora")
+B --BLOOM-like--> BB("🐇 bloomz.cpp")
 BB --LoRA--> DDDD("🐍 BLOOM-LoRA")
 D --"fine-tunes the GPT-J 6B"--> DD("🐍 Dolly")
 D --"instruction-tuned Flan-T5"--> DDD("🐍 Flan-Alpaca")
 D --Alpaca_data_cleaned.json--> DDDD
 E --RNN-->EE("🐍 RWKV-LM")
 H --finetuned--> EE
-EE("🐍 RWKV-LM") -..-> EEE("🦀 smolrsrwkv")
+EE("🐍 RWKV-LM") --port--> EEE("🦀 smolrsrwkv")
+EE --ggml---> EEEE("🐇 rwkv.cpp")
 A --"GPT-3.5-Turbo/7B"--> FF("🐍 gpt4all-lora")
 A --"Apache0/nanoGPT"--> AAAA("🐍 Lit-LLaMA")
 ```
 
 - [🐍 llama](https://github.com/facebookresearch/llama): Open and Efficient Foundation Language Models.
 - [🐍 LLaMA_MPS](https://github.com/jankais3r/LLaMA_MPS): Run LLaMA (and Stanford-Alpaca) inference on Apple Silicon GPUs.
-- [🐇 llama](https://github.com/ggerganov/llama.cpp): Inference of LLaMA model in pure C/C++.
-- [🐇 alpaca](https://github.com/antimatter15/alpaca.cpp): This combines the LLaMA foundation model with an open reproduction of Stanford Alpaca a fine-tuning of the base model to obey instructions (akin to the RLHF used to train ChatGPT) and a set of modifications to llama.cpp to add a chat interface.
+- [🐇 llama.cpp](https://github.com/ggerganov/llama.cpp): Inference of LLaMA model in pure C/C++.
+- [🐇 alpaca.cpp](https://github.com/antimatter15/alpaca.cpp): This combines the LLaMA foundation model with an open reproduction of Stanford Alpaca a fine-tuning of the base model to obey instructions (akin to the RLHF used to train ChatGPT) and a set of modifications to llama.cpp to add a chat interface.
 - [🦀 llama-rs](https://github.com/setzer22/llama-rs): Do the LLaMA thing, but now in Rust 🦀🚀🦙
 - [🐍 alpaca](https://github.com/tatsu-lab/stanford_alpaca): Stanford Alpaca: An Instruction-following LLaMA Model
 - [🐍 codealpaca](https://github.com/sahil280114/codealpaca): An Instruction-following LLaMA Model trained on code generation instructions.
-- [🐍 alpaca-lora](https://github.com/tloen/alpaca-lora): Low-Rank LLaMA Instruct-Tuning
+- [🐍 alpaca-lora](https://github.com/tloen/alpaca-lora): Low-Rank LLaMA Instruct-Tuning `// train 1hr/RTX 4090`
 - [🐥 llama-node](https://github.com/hlhr202/llama-node): nodejs client library for llama LLM built on top of llama-rs. It uses napi-rs as nodejs and native communications.
 - [🦀 RLLaMA](https://github.com/Noeda/rllama): Rust+OpenCL+AVX2 implementation of LLaMA inference code.
 - [🐍 Dolly](https://github.com/databrickslabs/dolly): This fine-tunes the GPT-J 6B model on the Alpaca dataset using a Databricks notebook.
 - [🐍 Flan-Alpaca](https://github.com/declare-lab/flan-alpaca): Instruction Tuning from Humans and Machines.
-- [🐇 bloomz](https://github.com/NouamaneTazi/bloomz.cpp): Inference of HuggingFace's BLOOM-like models in pure C/C++ built on top of the amazing llama.cpp.
+- [🐇 bloomz.cpp](https://github.com/NouamaneTazi/bloomz.cpp): Inference of HuggingFace's BLOOM-like models in pure C/C++ built on top of the amazing llama.cpp.
 - [🐍 BLOOM-LoRA](https://github.com/linhduongtuan/BLOOM-LORA): Low-Rank LLaMA Instruct-Tuning.
 - [🐍 RWKV-LM](https://github.com/BlinkDL/RWKV-LM): RWKV is an RNN with transformer-level LLM performance. It can be directly trained like a GPT (parallelizable). So it's combining the best of RNN and transformer - great performance, fast inference, saves VRAM, fast training, "infinite" ctx_len, and free sentence embedding.
 - [🦀 smolrsrwkv](https://github.com/KerfuffleV2/smolrsrwkv): A very basic example of the RWKV approach to language models written in Rust by someone that knows basically nothing about math or neural networks.
 - [🐍 gpt4all-lora](https://github.com/nomic-ai/gpt4all): A chatbot trained on a massive collection of clean assistant data including code, stories and dialogue.
-- [🐍 Lit-LLaMA](https://github.com/Lightning-AI/lit-llama): Independent implementation of LLaMA that is fully open source under the Apache 2.0 license. This implementation builds on nanoGPT.
+- [🐍 Lit-LLaMA](https://github.com/Lightning-AI/lit-llama): Independent implementation of LLaMA that is fully open source under the Apache 2.0 license. This implementation builds on nanoGPT. `The finetuning requires a GPU with 40 GB memory (A100). Coming soon: LoRA + quantization for training on a consumer-grade GPU!`
+- [🐇 rwkv.cpp](https://github.com/saharNooby/rwkv.cpp): a port of BlinkDL/RWKV-LM to ggerganov/ggml. The end goal is to allow 4-bit quanized inference on CPU. `// WIP`
 
 ## Alternatives
 
@@ -108,11 +110,11 @@ I("🐍 chatgpt-retrieval-plugin") --> II("🐍 llama-retrieval-plugin")
 - [🐍 langchain](https://github.com/hwchase17/langchain): Building applications with LLMs through composability.
 - [🐥 langchainjs](https://github.com/hwchase17/langchainjs): langchain in js.
 - [🐥 langchain-alpaca](https://github.com/linonetwo/langchain-alpaca): Run alpaca LLM fully locally in langchain.
-- [🐇 whisper](https://github.com/ggerganov/whisper.cpp): High-performance inference of OpenAI's Whisper automatic speech recognition (ASR) model.
+- [🐇 whisper.cpp](https://github.com/ggerganov/whisper.cpp): High-performance inference of OpenAI's Whisper automatic speech recognition (ASR) model.
 - [🐍 whisper-small](https://github.com/openai/whisper): Whisper is a pre-trained model for automatic speech recognition (ASR) and speech translation. Trained on 680k hours of labelled data, Whisper models demonstrate a strong ability to generalise to many datasets and domains without the need for fine-tuning.
 - [🐇 talk](https://github.com/ggerganov/whisper.cpp/tree/master/examples/talk): Talk with an Artificial Intelligence in your terminal.
-- [chatgpt-retrieval-plugin](https://github.com/openai/chatgpt-retrieval-plugin): The ChatGPT Retrieval Plugin lets you easily search and find personal or work documents by asking questions in everyday language.
-- [llama-retrieval-plugin](https://github.com/lastmile-ai/llama-retrieval-plugin): LLaMa retrieval plugin script using OpenAI's retrieval plugin
+- [🐍 chatgpt-retrieval-plugin](https://github.com/openai/chatgpt-retrieval-plugin): The ChatGPT Retrieval Plugin lets you easily search and find personal or work documents by asking questions in everyday language.
+- [🐍 llama-retrieval-plugin](https://github.com/lastmile-ai/llama-retrieval-plugin): LLaMa retrieval plugin script using OpenAI's retrieval plugin
 - [🐍 LLaMA-Adapter](https://github.com/ZrrSkywalker/LLaMA-Adapter): LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention. Using 52K self-instruct demonstrations, LLaMA-Adapter only introduces 1.2M learnable parameters upon the frozen LLaMA 7B model, and costs less than one hour for fine-tuning on 8 A100 GPUs .
 
 ## Demo
