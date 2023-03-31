@@ -34,11 +34,10 @@ graph TD;
 
 ```mermaid
 graph LR;
-A --Apple Silicon GPU--> AA("🐍 LLaMA_MPS")
-A -..-> AAA("Raspberry Pi, Pixel 5, iPhone, NodeJS")
 A("🐍 llama") --"4-bit"--> B("🐇 llama.cpp")
 B --port ggml--> C("🦀 llama-rs")
 A --"16,32-bit"--> CC("🦀 RLLaMA")
+A --Apple Silicon GPU--> AA("🐍 LLaMA_MPS")
 C --"napi-rs"--> I("🐥 llama-node")
 E --"fine-tuning to obey ix"--> D("🐇 alpaca.cpp")
 E --instruction-following--> H("🐍 codealpaca")
@@ -48,12 +47,13 @@ BB --LoRA--> DDDD("🐍 BLOOM-LoRA")
 D --"fine-tunes the GPT-J 6B"--> DD("🐍 Dolly")
 D --"instruction-tuned Flan-T5"--> DDD("🐍 Flan-Alpaca")
 D --Alpaca_data_cleaned.json--> DDDD
-E --RNN-->EE("🐍 RWKV-LM")
-H --finetuned--> EE
+E --RNN--> EE("🐍 RWKV-LM")
 EE("🐍 RWKV-LM") --port--> EEE("🦀 smolrsrwkv")
+H --finetuned--> EE
 EE --ggml--> EEEE("🐇 rwkv.cpp")
 A --"GPT-3.5-Turbo/7B"--> FF("🐍 gpt4all-lora")
 A --"Apache0/nanoGPT"--> AAAA("🐍 Lit-LLaMA")
+A --> AAA("🐍 LLaMA-Adapter")
 ```
 
 - [🐍 llama](https://github.com/facebookresearch/llama): Open and Efficient Foundation Language Models.
@@ -75,6 +75,7 @@ A --"Apache0/nanoGPT"--> AAAA("🐍 Lit-LLaMA")
 - [🐍 gpt4all-lora](https://github.com/nomic-ai/gpt4all): A chatbot trained on a massive collection of clean assistant data including code, stories and dialogue.
 - [🐍 Lit-LLaMA](https://github.com/Lightning-AI/lit-llama): Independent implementation of LLaMA that is fully open source under the Apache 2.0 license. This implementation builds on nanoGPT. `The finetuning requires a GPU with 40 GB memory (A100). Coming soon: LoRA + quantization for training on a consumer-grade GPU!`
 - [🐇 rwkv.cpp](https://github.com/saharNooby/rwkv.cpp): a port of BlinkDL/RWKV-LM to ggerganov/ggml. The end goal is to allow 4-bit quanized inference on CPU. `// WIP`
+- [🐍 LLaMA-Adapter](https://github.com/ZrrSkywalker/LLaMA-Adapter): LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention. Using 52K self-instruct demonstrations, LLaMA-Adapter only introduces 1.2M learnable parameters upon the frozen LLaMA 7B model. `// 1 hour for fine-tuning on 8 A100 GPUs.`
 
 ## Alternatives
 
@@ -94,7 +95,10 @@ Z-.Flamingo-style LMMs..-X("OpenFlamingo")
 
 ```mermaid
 graph TD;
-AAA("🐍 llama") --> BB("🐍 LLaMA-Adapter")
+AAAA("ChatGPT")
+AAAA --> AAA
+AAAA ---> J("🦀 llm-chain")
+AAAA --> I
 AAA --> A
 A("🐍 langchain")
 A --port--> AA("🐥 langchainjs")
@@ -115,7 +119,7 @@ I("🐍 chatgpt-retrieval-plugin") --> II("🐍 llama-retrieval-plugin")
 - [🐇 talk](https://github.com/ggerganov/whisper.cpp/tree/master/examples/talk): Talk with an Artificial Intelligence in your terminal.
 - [🐍 chatgpt-retrieval-plugin](https://github.com/openai/chatgpt-retrieval-plugin): The ChatGPT Retrieval Plugin lets you easily search and find personal or work documents by asking questions in everyday language.
 - [🐍 llama-retrieval-plugin](https://github.com/lastmile-ai/llama-retrieval-plugin): LLaMa retrieval plugin script using OpenAI's retrieval plugin
-- [🐍 LLaMA-Adapter](https://github.com/ZrrSkywalker/LLaMA-Adapter): LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention. Using 52K self-instruct demonstrations, LLaMA-Adapter only introduces 1.2M learnable parameters upon the frozen LLaMA 7B model, and costs less than one hour for fine-tuning on 8 A100 GPUs .
+- [🦀 llm-chain](https://github.com/sobelio/llm-chain): prompt templates and chaining together prompts in multi-step chains, summarizing lengthy texts or performing advanced data processing tasks.
 
 ## Demo
 
