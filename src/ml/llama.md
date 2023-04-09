@@ -87,7 +87,10 @@ A --Dialogue fine-tuned--> AAAAAA("🐍 Koala")
 <ref>https://www.cerebras.net/blog/cerebras-gpt-a-family-of-open-compute-efficient-large-language-models/</ref>
 
 ![](./assets/bair-berkeley-edu-comparison.png)
-<ref style="color:dimgrey;">https://bair.berkeley.edu/blog/2023/04/03/koala/</ref>
+<ref>https://bair.berkeley.edu/blog/2023/04/03/koala/</ref>
+
+![](./assets/vicuna-lmsys-org-comparison.png)
+<ref>https://vicuna.lmsys.org/</ref>
 
 ## Alternatives
 
