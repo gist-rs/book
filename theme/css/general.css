@@ -320,3 +320,11 @@ button {
   color: cornsilk !important;
   transition: all 100ms ease-out;
 }
+
+ref {
+  font-size: xx-small;
+  color: dimgrey;
+  text-align: center;
+  width: 100%;
+  display: block;
+}

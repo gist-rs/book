@@ -79,12 +79,17 @@ A --Dialogue fine-tuned--> AAAAAA("🐍 Koala")
 - [🐇 rwkv.cpp](https://github.com/saharNooby/rwkv.cpp): a port of BlinkDL/RWKV-LM to ggerganov/ggml. The end goal is to allow 4-bit quanized inference on CPU. `// WIP`
 - [🐍 LLaMA-Adapter](https://github.com/ZrrSkywalker/LLaMA-Adapter): LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention. Using 52K self-instruct demonstrations, LLaMA-Adapter only introduces 1.2M learnable parameters upon the frozen LLaMA 7B model. `// 1 hour for fine-tuning on 8 A100 GPUs.`
 - [🐍 vicuna](https://vicuna.lmsys.org/): An Open-Source Chatbot Impressing GPT-4 with 90% ChatGPT Quality.
-- [🐍 koala](https://bair.berkeley.edu/blog/2023/04/03/koala/):
+- [🐍 koala](https://bair.berkeley.edu/blog/2023/04/03/koala/): a chatbot trained by fine-tuning Meta’s LLaMA on dialogue data gathered from the web.
 
-## Alternatives
+## Comparisons
 
 ![](./assets/scaling-laws-blog-comparison.png)
-![https://bair.berkeley.edu/blog/2023/04/03/koala/](./assets/bair-berkeley-edu-comparison.png)
+<ref>https://www.cerebras.net/blog/cerebras-gpt-a-family-of-open-compute-efficient-large-language-models/</ref>
+
+![](./assets/bair-berkeley-edu-comparison.png)
+<ref style="color:dimgrey;">https://bair.berkeley.edu/blog/2023/04/03/koala/</ref>
+
+## Alternatives
 
 ```mermaid
 graph LR;
