@@ -96,15 +96,16 @@ A --Dialogue fine-tuned--> AAAAAA("🐍 Koala")
 
 ```mermaid
 graph LR;
-Z("GPT")
+Z("LLM")
 Z-.Flamingo-style LMMs..-X("OpenFlamingo")
 Z-.Chinchilla formula..->Y("Cerebras-GPT")--LoRA--> YY("🐍 Cerebras-GPT2.7B LoRA Alpaca")
-W("Alpaca")-..->YY
+Z-..-ZZ("Dolly")
 ```
 
 - [🐍 Cerebras-GPT](https://www.cerebras.net/blog/cerebras-gpt-a-family-of-open-compute-efficient-large-language-models/): a family of seven GPT models ranging from 111 million to 13 billion parameters. Trained using the Chinchilla formula, these models provide the highest accuracy for a given compute budget. Cerebras-GPT has faster training times, lower training costs, and consumes less energy than any publicly available model to date.
 - [🐍 OpenFlamingo](https://laion.ai/blog/open-flamingo/): a framework that enables training and evaluation of large multimodal models (LMMs).
 - [🐍 Cerebras-GPT2.7B LoRA Alpaca ShortPrompt](https://github.com/lxe/cerebras-lora-alpaca): Cerebras-GPT2.7B LoRA Alpaca ShortPrompt.
+- [Dolly](https://www.databricks.com/blog/2023/04/12/dolly-first-open-commercially-viable-instruction-tuned-llm): 12B parameter language model based on the EleutherAI pythia model family and fine-tuned exclusively on a new, high-quality human generated instruction following dataset, crowdsourced among Databricks employees.
 
 ## Tools
 
