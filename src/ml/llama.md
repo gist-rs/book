@@ -150,6 +150,7 @@ I("🐍 chatgpt-retrieval-plugin") --> II("🐍 llama-retrieval-plugin")
 - [🤗 LLaMA-Adapter](https://huggingface.co/spaces/csuhan/LLaMA-Adapter): `7B` +`1.2M`, The official demo for LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention.
 - [🤖 Alpaca-LoRA Playground](https://notebooksf.jarvislabs.ai/BuOu_VbEuUHb09VEVHhfnFq4-PMhBRVCcfHBRCOrq7c4O9GI4dIGoidvNf76UsRL/): `30B`, Alpaca-LoRA which is instruction fine-tuned version of LLaMA. This demo currently runs 30B version on a 3\*A6000 instance at Jarvislabs.ai.
 - [🤖 Koala](https://chat.lmsys.org/?model=koala-13b): `13B` a chatbot fine-tuned from LLaMA on user-shared conversations and open-source datasets. This one performs similarly to Vicuna.
+- [🐥 Web LLM](https://github.com/mlc-ai/web-llm): llm on web browsers via WebGPU.
 
 ## ETC
 
