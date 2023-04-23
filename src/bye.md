@@ -48,6 +48,7 @@
 1. [Hello wasm-pack!](https://rustwasm.github.io/docs/wasm-pack/)
 1. [Second State](https://github.com/second-state/wasm-learning)
 1. [WebAssembly threads](https://web.dev/webassembly-threads/)
+1. [Rhai - WebAssembly (WASM) Build](https://rhai.rs/book/start/builds/wasm.html)
 
 ## FFI Resources
 
