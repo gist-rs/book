@@ -50,10 +50,11 @@
 1. [WebAssembly threads](https://web.dev/webassembly-threads/)
 1. [Rhai - WebAssembly (WASM) Build](https://rhai.rs/book/start/builds/wasm.html)
 
-## FFI Resources
+## Binding Resources
 
 1. [CXX — safe `FFI` between Rust and C++](https://github.com/dtolnay/cxx)
 1. [The `UniFFI` user guide](https://mozilla.github.io/uniffi-rs/)
+1. [Rust-CUDA](https://rust-gpu.github.io/Rust-CUDA/faq.html)
 
 ---
 
