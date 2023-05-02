@@ -59,4 +59,5 @@
   - [NFT Memberships](solana/nft-memberships.md)
 - [ML](ml/mod.md)
   - [LLaMA-rs](ml/llama.md)
+  - [Stable Diffusion](ml/stable-diiffusion.md)
 - [Bye](bye.md)
