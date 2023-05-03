@@ -27,8 +27,8 @@ graph LR;
 
 EasyNegative["<a href='https://huggingface.co/datasets/gsdf/EasyNegative'>EasyNegative</a><br/>(Negative Embedding)"] .- counterfeit
 
-defacta3th[<img src='https://imagecache.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/83eee1eb-fd3a-4497-b04a-64da85667d00/width=450/00256-4261342171.jpeg' height=128/><br/><a href='https://civitai.com/models/45804/defacta3th'>Defacta3th</a>] --> defacounter-mix[<img src='https://imagecache.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/27c1e448-198b-46b9-9869-9081e1883400/width=450/00216-1523285327.jpeg' height=128/><br/> <a href='https://civitai.com/models/55237'> defacounter-mix</a>]
-counterfeit[<img src='https://imagecache.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/5f06c30d-0169-4d58-381c-3ee00ea90100/width=450/002.jpeg' height=128/><br/> <a href='https://civitai.com/models/4468/counterfeit-v30'>Counterfeit-V3.0</a>] --> defacounter-mix
+defacta3th[<img src='https://imagecache.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/83eee1eb-fd3a-4497-b04a-64da85667d00/width=450/00256-4261342171.jpeg' height='72' width='128' style='object-fit:cover'/><br/><a href='https://civitai.com/models/45804/defacta3th'>Defacta3th</a>] --> defacounter-mix[<img src='https://imagecache.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/27c1e448-198b-46b9-9869-9081e1883400/width=450/00216-1523285327.jpeg' height='72' width='128' style='object-fit:cover'/><br/> <a href='https://civitai.com/models/55237'> defacounter-mix</a>]
+counterfeit[<img src='https://imagecache.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/5f06c30d-0169-4d58-381c-3ee00ea90100/width=450/002.jpeg' height='72' width='128' style='object-fit:cover'/><br/> <a href='https://civitai.com/models/4468/counterfeit-v30'>Counterfeit-V3.0</a>] --> defacounter-mix
 ```
 
 ## Library
