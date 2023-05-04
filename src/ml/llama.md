@@ -1,17 +1,15 @@
-# LLaMA-rs
+# llm (aka LLaMA-rs)
 
-**LLaMA-rs** is a Rust port of the
-[llama.cpp](https://github.com/ggerganov/llama.cpp) project. This allows running
-inference for Facebook's [LLaMA](https://github.com/facebookresearch/llama)
-model on a CPU with good performance using full precision, f16 or 4-bit
-quantized versions of the model.
+`llm` is a Rust ecosystem of libraries for running inference on large language models, inspired by [llama.cpp](https://github.com/ggerganov/llama.cpp).
 
-Just like its C++ counterpart, it is powered by the
-[`ggml`](https://github.com/ggerganov/ggml) tensor library, achieving the same performance as the original code.
+The primary crate is the `llm` crate, which wraps `llm-base` and supported model crates. This is used by `llm-cli` to provide inference for all supported models.
+
+It is powered by the [`ggml`](https://github.com/ggerganov/ggml) tensor library, and aims to bring
+the robustness and ease of use of Rust to the world of large language models.
 
 ## Source
 
-- https://github.com/setzer22/llama-rs
+- https://github.com/rustformers/llm
 
 <details>
 <summary>Conversions note</summary>
@@ -35,7 +33,7 @@ graph TD;
 ```mermaid
 graph LR;
 A("🐍 llama") --"4-bit"--> B("🐇 llama.cpp")
-B --port ggml--> C("🦀 llama-rs")
+B --port ggml--> C("🦀 llm")
 A --"16,32-bit"--> CC("🦀 RLLaMA")
 A --Apple Silicon GPU--> AA("🐍 LLaMA_MPS")
 C --"napi-rs"--> I("🐥 llama-node")
@@ -62,11 +60,11 @@ A --Dialogue fine-tuned--> AAAAAA("🐍 Koala")
 - [🐍 LLaMA_MPS](https://github.com/jankais3r/LLaMA_MPS): Run LLaMA (and Stanford-Alpaca) inference on Apple Silicon GPUs.
 - [🐇 llama.cpp](https://github.com/ggerganov/llama.cpp): Inference of LLaMA model in pure C/C++.
 - [🐇 alpaca.cpp](https://github.com/antimatter15/alpaca.cpp): This combines the LLaMA foundation model with an open reproduction of Stanford Alpaca a fine-tuning of the base model to obey instructions (akin to the RLHF used to train ChatGPT) and a set of modifications to llama.cpp to add a chat interface.
-- [🦀 llama-rs](https://github.com/setzer22/llama-rs): Do the LLaMA thing, but now in Rust 🦀🚀🦙
+- [🦀 llm](https://github.com/rustformers/llm): Do the LLaMA thing, but now in Rust 🦀🚀🦙
 - [🐍 alpaca](https://github.com/tatsu-lab/stanford_alpaca): Stanford Alpaca: An Instruction-following LLaMA Model
 - [🐍 codealpaca](https://github.com/sahil280114/codealpaca): An Instruction-following LLaMA Model trained on code generation instructions.
 - [🐍 alpaca-lora](https://github.com/tloen/alpaca-lora): Low-Rank LLaMA Instruct-Tuning `// train 1hr/RTX 4090`
-- [🐥 llama-node](https://github.com/hlhr202/llama-node): nodejs client library for llama LLM built on top of llama-rs. It uses napi-rs as nodejs and native communications.
+- [🐥 llama-node](https://github.com/hlhr202/llama-node): nodejs client library for llama LLM built on top of on top of llama-rs, llama.cpp and rwkv.cpp. It uses napi-rs as nodejs and native communications.
 - [🦀 RLLaMA](https://github.com/Noeda/rllama): Rust+OpenCL+AVX2 implementation of LLaMA inference code.
 - [🐍 Dolly](https://github.com/databrickslabs/dolly): This fine-tunes the GPT-J 6B model on the Alpaca dataset using a Databricks notebook.
 - [🐍 Flan-Alpaca](https://github.com/declare-lab/flan-alpaca): Instruction Tuning from Humans and Machines.
