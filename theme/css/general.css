@@ -328,3 +328,8 @@ ref {
   width: 100%;
   display: block;
 }
+
+.thumb128 {
+  width: 128px;
+  height: 72px;
+}
