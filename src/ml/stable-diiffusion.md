@@ -11,7 +11,7 @@
 - `img2img` // Draw something like this.
 - `VAE`: Variational Auto-Encoder // Fix washout color.
 - `SAM`: Segment Anything // It's a magic wand.
-- `AutoSaM`: Auto Segment Anything // It's a lazy magic wand.
+- `AutoSAM`: Auto Segment Anything // It's a lazy magic wand.
 - `Hires.fix` // Upscale with some fix.
 - `OpenPose` // Draw human from skelton.
 - `3D Model & Pose Loader` // Create skeleton from 3D.
