@@ -1,6 +1,6 @@
-## Stable Diffusion
+# Stable Diffusion
 
-### Glossaries
+## Glossaries
 
 - `txt2img`
   - `Prompt`: Syntax (`()`, `<>`), Checkpoints // What we want in text.
@@ -17,6 +17,7 @@
 - `3D Model & Pose Loader` // Create skeleton from 3D.
 - `Checkpoint Merger` // Mix 2 checkpoint.
 - `Train` // Create new model by our pictures.
+- ``
 
 ```mermaid
 graph LR;
@@ -37,8 +38,45 @@ img2img -- "Fix color" --> VAE(["Variational Auto-Encoder (VAE)"])
 VAE -- "smoother" --> MSE
 VAE -- "original" --> EMA
 ```
+## Prompt
+- You can use `BREAK` to end current and not influent next word. [ref](https://br-d.fanbox.cc/posts/5731955)
+  ```
+  absurdres , highres, ultra detailed, (1girl:1.3),
+  BREAK
+  solarization, inverted tones, experimental photography, surreal contrast, striking visuals, artistic abstraction,
+  BREAK
+  paper cut art, layered silhouettes, intricate patterns, delicate craftsmanship, shadow play, depth and dimension, creative expression,
+  BREAK
+  ice art, frozen sculptures, translucent forms, ephemeral beauty, crystalline textures, delicate craftsmanship, chilling allure,
+  BREAK
+  green eyes,
+  ```
+
+## Extensions
+- [stable-diffusion-webui-state](https://github.com/ilian6806/stable-diffusion-webui-state): Preserve web UI parameters (inputs, sliders, checkboxes etc.) after page reload.
+- [sd-webui-controlnet](https://github.com/Mikubill/sd-webui-controlnet): The WebUI extension for ControlNet and other injection-based SD controls.
+- [sd-webui-segment-anything](https://github.com/continue-revolution/sd-webui-segment-anything): Segment Anything for Stable Diffusion WebUI.
+- [sd-webui-regional-prompter](https://github.com/hako-mikan/sd-webui-regional-prompter): Set prompt to divided region.
+  ![](https://github.com/hako-mikan/sd-webui-regional-prompter/raw/imgs/2d.jpg)
+- [sd-webui-model-converter](https://github.com/Akegarasu/sd-webui-model-converter): TODO: Replace with about this link.
+- [sd-webui-3d-open-pose-editor](https://github.com/nonnonstop/sd-webui-3d-open-pose-editor): TODO: Replace with about this link.
+- [sd-3dmodel-loader](https://github.com/jtydhr88/sd-3dmodel-loader): Model convert extension , Used for AUTOMATIC1111's stable diffusion webui.
+- [sd-webui-depth-lib](https://github.com/jexom/sd-webui-depth-lib): Depth map library for use with the Control Net extension for Automatic1111/stable-diffusion-webui.
+  ![](https://github.com/jexom/sd-webui-depth-lib/raw/main/images/ui.png)
+- [Latent Couple extension (two shot diffusion port)](https://github.com/opparco/stable-diffusion-webui-two-shot): This extension is an extension of the built-in Composable Diffusion. This allows you to determine the region of the latent space that reflects your subprompts.
+
+## Negative Prompt
+> You will need these unwanted prompt
+- [bad_prompt_version2](https://huggingface.co/datasets/Nerfgun3/bad_prompt/resolve/main/bad_prompt_version2.pt)
+- [bad-hands-5](https://huggingface.co/yesyeahvh/bad-hands-5/resolve/main/bad-hands-5.pt)
+- [bad-image-v2-39000](https://huggingface.co/Xynon/models/resolve/main/experimentals/TI/bad-image-v2-39000.pt)
+- [EasyNegative](https://huggingface.co/datasets/gsdf/EasyNegative/resolve/main/EasyNegative.safetensors): [civitai](https://civitai.com/models/7808/easynegative)
+- [EasyNegativeV2](https://huggingface.co/gsdf/Counterfeit-V3.0/resolve/main/embedding/EasyNegativeV2.safetensors)
+- [ng_deepnegative_v1_75t](https://civitai.com/api/download/models/5637): [civitai](https://civitai.com/models/4629/deep-negative-v1x)
+- [verybadimagenegative_v1.3](https://civitai.com/api/download/models/25820): [civitai](https://civitai.com/models/11772/verybadimagenegative)
 
 ## Models
+> You can merge model via `stable-diffusion-web-ui`.
 
 ```mermaid
 graph LR;
