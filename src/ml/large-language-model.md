@@ -1,4 +1,7 @@
-# llm (aka LLaMA-rs)
+# Large Language Model
+FYI: We will focus this topic in `Rust` landscape which usually follow Python and C++ developments.
+
+## llm (aka LLaMA-rs)
 
 `llm` is a Rust ecosystem of libraries for running inference on large language models, inspired by [llama.cpp](https://github.com/ggerganov/llama.cpp).
 

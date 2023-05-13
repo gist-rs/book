@@ -58,6 +58,6 @@
   - [Fetch balance](solana/fetch-balance.md)
   - [NFT Memberships](solana/nft-memberships.md)
 - [ML](ml/mod.md)
-  - [LLaMA-rs](ml/llama.md)
+  - [Large Language Model](ml/large-language-model.md)
   - [Stable Diffusion](ml/stable-diiffusion.md)
 - [Bye](bye.md)
