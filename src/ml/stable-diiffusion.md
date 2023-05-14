@@ -82,6 +82,8 @@ VAE -- "original" --> EMA
   ![](https://github.com/jexom/sd-webui-depth-lib/raw/main/images/ui.png)
 - [Latent Couple extension (two shot diffusion port)](https://github.com/opparco/stable-diffusion-webui-two-shot): This extension is an extension of the built-in Composable Diffusion. This allows you to determine the region of the latent space that reflects your subprompts.
 - [EbSynth](https://github.com/s9roll7/ebsynth_utility): AUTOMATIC1111 UI extension for creating videos using img2img and ebsynth.
+- [DAAM](https://defpoint-ai.com/ai-illustration/prompt-daam/): Diffusion Attentive Attribution Maps. // How much and where is text influenced picture. [](https://github.com/toriato/stable-diffusion-webui-daam)
+   ![](https://defpoint-ai.com/wp-content/uploads/2022/12/tmpu3i4jg0q.jpg)
 
 ## Advanced
 - `Sampler`: Most use `DPM++ 2M Karras`.
@@ -94,8 +96,7 @@ VAE -- "original" --> EMA
 - `3D Model & Pose Loader` // Create skeleton from 3D.
 - `Checkpoint Merger` // Mix 2 checkpoint.
 - `Train` // Create new model by our pictures.
-- [`DAAM`](https://defpoint-ai.com/ai-illustration/prompt-daam/): Diffusion Attentive Attribution Maps. // How much and where is text influenced picture.
-   ![](https://defpoint-ai.com/wp-content/uploads/2022/12/tmpu3i4jg0q.jpg)
+
 - [`Real-ESRGAN`](https://github.com/xinntao/Real-ESRGAN): ![](https://github.com/xinntao/Real-ESRGAN/raw/master/assets/teaser.jpg)
 - `Clip skip`, `Script-X/Y/Z plot`: To create grid for comparison
   ![](./assets/xyz_grid-0003-3779026953.jpg)
