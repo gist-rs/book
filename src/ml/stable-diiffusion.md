@@ -89,7 +89,7 @@ VAE -- "original" --> EMA
 - `Checkpoint Merger` // Mix 2 checkpoint.
 - `Train` // Create new model by our pictures.
 - [`DAAM`](https://defpoint-ai.com/ai-illustration/prompt-daam/): Diffusion Attentive Attribution Maps. // How much and where is text influenced picture.
-   ![](https://defpoint-ai.com/wp-content/uploads/2022/12/tmpqi8nu7l0.jpg)
+   ![](https://defpoint-ai.com/wp-content/uploads/2022/12/tmpu3i4jg0q.jpg)
 - [`Real-ESRGAN`](https://github.com/xinntao/Real-ESRGAN): ![](https://github.com/xinntao/Real-ESRGAN/raw/master/assets/teaser.jpg)
 
 ### Modify Model
