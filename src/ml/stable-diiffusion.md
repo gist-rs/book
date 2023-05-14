@@ -80,6 +80,7 @@ VAE -- "original" --> EMA
 - [sd-webui-depth-lib](https://github.com/jexom/sd-webui-depth-lib): Depth map library for use with the Control Net extension for Automatic1111/stable-diffusion-webui.
   ![](https://github.com/jexom/sd-webui-depth-lib/raw/main/images/ui.png)
 - [Latent Couple extension (two shot diffusion port)](https://github.com/opparco/stable-diffusion-webui-two-shot): This extension is an extension of the built-in Composable Diffusion. This allows you to determine the region of the latent space that reflects your subprompts.
+- [EbSynth](https://github.com/s9roll7/ebsynth_utility): AUTOMATIC1111 UI extension for creating videos using img2img and ebsynth.
 
 ## Advanced
 - `SAM`: Segment Anything // It's a magic wand.
@@ -91,7 +92,7 @@ VAE -- "original" --> EMA
 - [`DAAM`](https://defpoint-ai.com/ai-illustration/prompt-daam/): Diffusion Attentive Attribution Maps. // How much and where is text influenced picture.
    ![](https://defpoint-ai.com/wp-content/uploads/2022/12/tmpu3i4jg0q.jpg)
 - [`Real-ESRGAN`](https://github.com/xinntao/Real-ESRGAN): ![](https://github.com/xinntao/Real-ESRGAN/raw/master/assets/teaser.jpg)
-
+     
 ### Modify Model
 > You can merge model via `stable-diffusion-web-ui`.
 
