@@ -36,7 +36,8 @@ VAE -- "original" --> EMA
 
 ### UI
 > You will need some ui for generate some cool picture.
-- [Stable Diffusion web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui): A browser interface based on Gradio library for Stable Diffusion. // Most famous.
+- `WEB` [Stable Diffusion web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui): A browser interface based on Gradio library for Stable Diffusion. // Most famous.
+- `WEB` [vladmandic/automatic](https://github.com/vladmandic/automatic): Forked of `AUTOMATIC1111` + Advanced CUDA tuning
 
 ### Prompts
 - You can use `BREAK` to end current and not influent next word. [ref](https://br-d.fanbox.cc/posts/5731955)
@@ -83,6 +84,10 @@ VAE -- "original" --> EMA
 - [EbSynth](https://github.com/s9roll7/ebsynth_utility): AUTOMATIC1111 UI extension for creating videos using img2img and ebsynth.
 
 ## Advanced
+- `Sampler`: Most use `DPM++ 2M Karras`.
+  ![](https://i0.wp.com/blog.openart.ai/wp-content/uploads/2023/02/Screen-Shot-2023-02-13-at-5.21.07-PM.png?w=1360&ssl=1)
+- `CFGScale`: aka CFG Guidance Scale // Low = creative, High = prompt. [ref](https://blog.openart.ai/2023/02/13/the-most-complete-guide-to-stable-diffusion-parameters/)
+  ![](https://i0.wp.com/blog.openart.ai/wp-content/uploads/2023/02/Screen-Shot-2023-02-13-at-5.25.57-PM.png?resize=1024%2C284&ssl=1)
 - `SAM`: Segment Anything // It's a magic wand.
 - `AutoSAM`: Auto Segment Anything // It's a lazy magic wand.
 - `OpenPose` // Draw human from skelton.
@@ -92,6 +97,8 @@ VAE -- "original" --> EMA
 - [`DAAM`](https://defpoint-ai.com/ai-illustration/prompt-daam/): Diffusion Attentive Attribution Maps. // How much and where is text influenced picture.
    ![](https://defpoint-ai.com/wp-content/uploads/2022/12/tmpu3i4jg0q.jpg)
 - [`Real-ESRGAN`](https://github.com/xinntao/Real-ESRGAN): ![](https://github.com/xinntao/Real-ESRGAN/raw/master/assets/teaser.jpg)
+- `Clip skip`, `Script-X/Y/Z plot`: To create grid for comparison
+  ![](./assets/xyz_grid-0003-3779026953.jpg)
      
 ### Modify Model
 > You can merge model via `stable-diffusion-web-ui`.
