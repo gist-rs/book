@@ -59,5 +59,5 @@
   - [NFT Memberships](solana/nft-memberships.md)
 - [ML](ml/mod.md)
   - [Large Language Model](ml/large-language-model.md)
-  - [Stable Diffusion](ml/stable-diiffusion.md)
+  - [Stable Diffusion](ml/stable-diffusion.md)
 - [Bye](bye.md)

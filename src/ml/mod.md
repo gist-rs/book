@@ -5,8 +5,8 @@
 ## Goals
 
 - Collection of `ML` knowledge I like.
-- Categorize later.
 
 ## Topic
 
-- [llama-rs](./llama.md)
+- [Large Language Model](large-language-model.md)
+- [Stable Diffusion](stable-diffusion.md)
