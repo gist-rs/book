@@ -96,6 +96,7 @@ VAE -- "original" --> EMA
 - [EbSynth](https://github.com/s9roll7/ebsynth_utility): AUTOMATIC1111 UI extension for creating videos using img2img and ebsynth.
 - [DAAM](https://defpoint-ai.com/ai-illustration/prompt-daam/): Diffusion Attentive Attribution Maps. // How much and where is text influenced picture. [](https://github.com/toriato/stable-diffusion-webui-daam)
   ![](https://defpoint-ai.com/wp-content/uploads/2022/12/tmpu3i4jg0q.jpg)
+- [System Info](https://github.com/vladmandic/sd-extension-system-info): System Info + Benchmark.
 
 ## Advanced
 
