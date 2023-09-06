@@ -49,6 +49,7 @@
 1. [Second State](https://github.com/second-state/wasm-learning)
 1. [WebAssembly threads](https://web.dev/webassembly-threads/)
 1. [Rhai - WebAssembly (WASM) Build](https://rhai.rs/book/start/builds/wasm.html)
+1. [Rust `no_std` Playbook](https://hackmd.io/@alxiong/rust-no-std)
 
 ## Binding Resources
 
