@@ -1,6 +1,7 @@
 # Stable Diffusion
 
 ## Overview
+
 ```mermaid
 graph LR;
 Text(Text) -- prompt --> txt2img([txt2img]) --> Image
@@ -22,8 +23,11 @@ VAE -- "original" --> EMA
 ```
 
 ## Basic
+
 ### Glossaries
+
 > Base knowledge for starter.
+
 - `txt2img`
   - `Prompts`: Syntax (`()`, `<>`), Checkpoints // What we want in text.
   - `Negative Prompts`: Textual Inversion // What we not want in text.
@@ -35,11 +39,14 @@ VAE -- "original" --> EMA
 - `Hires.fix` // Upscale with some fix.
 
 ### UI
+
 > You will need some ui for generate some cool picture.
+
 - `WEB` [Stable Diffusion web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui): A browser interface based on Gradio library for Stable Diffusion. // Most famous.
 - `WEB` [vladmandic/automatic](https://github.com/vladmandic/automatic): Forked of `AUTOMATIC1111` + Advanced CUDA tuning
 
 ### Prompts
+
 - You can use `BREAK` to end current and not influent next word. [ref](https://br-d.fanbox.cc/posts/5731955)
   ```
   absurdres , highres, ultra detailed, (1girl:1.3),
@@ -54,7 +61,9 @@ VAE -- "original" --> EMA
   ```
 
 ### Negative Prompts
+
 > You will need these unwanted prompts to prevent bad hand.
+
 - [bad_prompt_version2](https://huggingface.co/datasets/Nerfgun3/bad_prompt/resolve/main/bad_prompt_version2.pt)
 - [bad-hands-5](https://huggingface.co/yesyeahvh/bad-hands-5/resolve/main/bad-hands-5.pt)
 - [bad-image-v2-39000](https://huggingface.co/Xynon/models/resolve/main/experimentals/TI/bad-image-v2-39000.pt)
@@ -64,12 +73,15 @@ VAE -- "original" --> EMA
 - [verybadimagenegative_v1.3](https://civitai.com/api/download/models/25820): [civitai](https://civitai.com/models/11772/verybadimagenegative)
 
 ### Models
+
 > Model is a new artist. You can find one below anyway consider use `safetensor` because `.ckpt` (aka `.zip`) can [contain harmful script](https://rentry.org/safetensorsguide).
+
 - [Civit AI](https://civitai.com/)
 - [Hugging Face](https://huggingface.co/)
 - [Official Research Models](https://upscale.wiki/wiki/Official_Research_Models)
 
 ### Extensions
+
 - [stable-diffusion-webui-state](https://github.com/ilian6806/stable-diffusion-webui-state): Preserve web UI parameters (inputs, sliders, checkboxes etc.) after page reload.
 - [sd-webui-controlnet](https://github.com/Mikubill/sd-webui-controlnet): The WebUI extension for ControlNet and other injection-based SD controls.
 - [sd-webui-segment-anything](https://github.com/continue-revolution/sd-webui-segment-anything): Segment Anything for Stable Diffusion WebUI.
@@ -83,9 +95,10 @@ VAE -- "original" --> EMA
 - [Latent Couple extension (two shot diffusion port)](https://github.com/opparco/stable-diffusion-webui-two-shot): This extension is an extension of the built-in Composable Diffusion. This allows you to determine the region of the latent space that reflects your subprompts.
 - [EbSynth](https://github.com/s9roll7/ebsynth_utility): AUTOMATIC1111 UI extension for creating videos using img2img and ebsynth.
 - [DAAM](https://defpoint-ai.com/ai-illustration/prompt-daam/): Diffusion Attentive Attribution Maps. // How much and where is text influenced picture. [](https://github.com/toriato/stable-diffusion-webui-daam)
-   ![](https://defpoint-ai.com/wp-content/uploads/2022/12/tmpu3i4jg0q.jpg)
+  ![](https://defpoint-ai.com/wp-content/uploads/2022/12/tmpu3i4jg0q.jpg)
 
 ## Advanced
+
 - `Sampler`: Most use `DPM++ 2M Karras`.
   ![](https://i0.wp.com/blog.openart.ai/wp-content/uploads/2023/02/Screen-Shot-2023-02-13-at-5.21.07-PM.png?w=1360&ssl=1)
 - `CFGScale`: aka CFG Guidance Scale // Low = creative, High = prompt. [ref](https://blog.openart.ai/2023/02/13/the-most-complete-guide-to-stable-diffusion-parameters/)
@@ -100,8 +113,9 @@ VAE -- "original" --> EMA
 - [`Real-ESRGAN`](https://github.com/xinntao/Real-ESRGAN): ![](https://github.com/xinntao/Real-ESRGAN/raw/master/assets/teaser.jpg)
 - `Clip skip`, `Script-X/Y/Z plot`: To create grid for comparison
   ![](./assets/xyz_grid-0003-3779026953.jpg)
-     
+
 ### Modify Model
+
 > You can merge model via `stable-diffusion-web-ui`.
 
 ```mermaid
@@ -114,12 +128,14 @@ counterfeit[<img class='thumb128' src='https://imagecache.civitai.com/xG1nkqKTMz
 ```
 
 ## Rust
+
 ### Libraries
 
 - [tch-rs](https://github.com/LaurentMazare/tch-rs): Rust bindings for the C++ api of PyTorch. The goal of the tch crate is to provide some thin wrappers around the C++ PyTorch api (a.k.a. libtorch). It aims at staying as close as possible to the original C++ api.
 - [tch-m1](https://github.com/ssoudan/tch-m1): how to use LaurentMazare/tch-rs on M1.
 - [burn-rs](https://burn-rs.github.io/): This library strives to serve as a comprehensive deep learning framework, offering exceptional flexibility and written in Rust. Our objective is to cater to both researchers and practitioners by simplifying the process of experimenting, training, and deploying models.
 - [diffusers-rs](https://github.com/LaurentMazare/diffusers-rs): An implementation of the diffusers api in Rust.
+- [sic image cli](https://github.com/foresterre/sic): Convert images and perform image operations from the command-line.
 
 ## ETC
 

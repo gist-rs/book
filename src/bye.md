@@ -15,6 +15,7 @@
 1. [The Rustonomicon](https://doc.rust-lang.org/nomicon): The Dark Arts of Unsafe `Rust`.
 1. [Rust Atomics and Locks](https://marabos.nl/atomics): Low-Level Concurrency in Practice.
 1. [The Rust Performance Book](https://nnethercote.github.io/perf-book/introduction.html): Contains many techniques that can improve the performance.
+1. [Effective Rust](https://www.lurklurk.org/effective-rust/intro.html): 35 Specific Ways to Improve Your Rust Code.
 
 ### 👨‍🍳 Cooking
 
