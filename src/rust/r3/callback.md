@@ -4,7 +4,9 @@
 
 > 🤔 Refer to : https://stackoverflow.com/questions/41081240/idiomatic-callbacks-in-rust
 
-### 1️⃣ Store the `callback` as `FnMut` in the `Box` with the callback setter generic on callback type. 🤯
+![](/assets/kat.png) Below is simple `callback`.
+
+### 1️⃣ "Function pointers": `callbacks` as `fn`
 
 ```rust,editable
 type Callback = fn();
@@ -19,7 +21,7 @@ impl Processor {
     }
 
     fn process_events(&self) {
-        (self.callback)();
+        (self.callback)(); // 👈 Use parentheses to call the function.
     }
 }
 
@@ -35,6 +37,8 @@ fn main() {
 }
 ```
 
+![](/assets/kat.png) Let's make it more generic.
+
 ### 2️⃣ Callbacks as generic function objects
 
 ```rust,editable
@@ -44,12 +48,14 @@ struct Processor<CB> {
 
 impl<CB> Processor<CB>
 where
-    CB: FnMut(),
+    // 👇 We use `FnMut` here because...
+    CB: FnMut(), // 👈 `FnOnce` is call only once, `Fn` tend to readonly.
 {
     fn set_callback(&mut self, c: CB) {
         self.callback = c;
     }
 
+    // This mutating self 👇 because `FnMut`
     fn process_events(&mut self) {
         (self.callback)();
     }
@@ -63,14 +69,18 @@ fn main() {
 }
 ```
 
+![](/assets/kat.png) It's generic but callback is not, let's go deeper.
+
 ### 3️⃣ Non-generic callbacks: function trait objects
 
 ```rust,editable
 struct Processor {
-    callback: Box<dyn FnMut()>,
+    // We put previous `FnMut` into the `Box`
+    callback: Box<dyn FnMut()>, // And `dyn` for more dynamic fn.
 }
 
 impl Processor {
+    // We will need lifetime bound on the type here 👇
     fn set_callback(&mut self, c: impl FnMut() + 'static) {
         self.callback = Box::new(c);
     }
@@ -96,15 +106,19 @@ fn main() {
 }
 ```
 
+![](/assets/kat.png) Nicer but `'static` is too much, let's fix it.
+
 ### 4️⃣ Lifetime of references inside boxed closures
 
 ```rust,editable
+// Now we use `'a` 👇 here instead.
 struct Processor<'a> {
-    callback: Box<dyn FnMut() + 'a>,
+    callback: Box<dyn FnMut() + 'a>, // 👈 Also here
 }
 
+// Now 👇 this look messy (for good)
 impl<'a> Processor<'a> {
-    fn set_callback(&mut self, c: impl FnMut() + 'a) {
+    fn set_callback(&mut self, c: impl FnMut() + 'a) {// 👈 Also here
         self.callback = Box::new(c);
     }
 
