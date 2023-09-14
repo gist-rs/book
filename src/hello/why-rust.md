@@ -24,6 +24,12 @@
 - Vercel: [`Rust` was a clear choice from day one.](https://vercel.com/blog/turborepo-migration-go-rust)
 - Volvo: [Code developed from scratch should definitely be developed in `Rust`.](https://medium.com/volvo-cars-engineering/why-volvo-thinks-you-should-have-rust-in-your-car-4320bd639e09)
 
+## Jobs
+
+> Refer to: [Rust Jobs Report: August 2023](https://filtra.io/rust-aug-23)
+
+![](largeindustries_aug23.png)
+
 ## Resources
 
 - [awesome-rust](https://github.com/katopz/awesome-rust)

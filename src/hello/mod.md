@@ -22,3 +22,7 @@
 
 - We won't cover the topics that we didn't have a chance to use it yet e.g. [`macros`](https://doc.rust-lang.org/book/ch19-06-macros.html), [`unsafe`](https://doc.rust-lang.org/nomicon/),[`FFI`](https://github.com/dtolnay/cxx), [embed device](https://doc.rust-lang.org/stable/embedded-book/).
 - We maybe cover `game`, `3d`, `ml` topic if we get enough funding and time on earth.
+
+## Love us?
+
+- Donate you must! 👉 <a class="button" href="https://patreon.com/gist_rs" title="Sponsor" aria-label="Sponsor" target="_blank" rel="noopener"><i id="sponsor-button" class="fa fa-heart fa-beat beat-fade"></i> Patreon</a>
