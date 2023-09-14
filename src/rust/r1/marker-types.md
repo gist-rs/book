@@ -50,7 +50,7 @@ fn main() {
     let ps5 = PlayStation::default();
 
     // Can access only version.
-    println!("ps4_version:{}", ps5.version());
+    println!("ps5.version:{}", ps5.version());
 
     // Can play after turn on.
     ps5.turn_on().play();
