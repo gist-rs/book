@@ -37,6 +37,7 @@
     - [AsRef](rust/r3/as-ref.md)
     - [Callback](rust/r3/callback.md)
     - [Async](rust/r3/async.md)
+    - [Iterators](rust/r3/iterators.md)
   - [R2 - Expert](rust/r2/mod.md)
     - [Hello Github Action](rust/r2/hello-github-action.md)
     - [Hello Actix CloudRun](rust/r2/hello-actix-cloudrun.md)
