@@ -1,10 +1,12 @@
 # Rust
 
-![](/assets/kat.png) <span class="speech-bubble">Welcome to `Rust` journey. I'll be with you til the end. Enjoy!</span>
+![](/assets/kat.png) <span class="speech-bubble">Welcome to `Rust` 🦀 journey. I'll be your companion til the end!</span>
+
+![](/assets/duck.png) <span class="speech-bubble">Cool!</span>
 
 ## R5 : Entry
 
-> An easy parts of `Rust` that you need for surviving chewing glass.
+> An easy parts of `Rust` that you need for survival.
 
 [Enjoy R5 ➠](./r5/mod.md)
 
