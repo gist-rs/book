@@ -56,6 +56,7 @@
   margin-bottom: 1em;
   display: inline-block;
   top: -0.8em;
+  max-width: 90%;
 }
 
 .speech-bubble:after {

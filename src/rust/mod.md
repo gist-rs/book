@@ -1,6 +1,6 @@
 # Rust
 
-![](/assets/kat.png) Welcome to `Rust` journey. I'll be with you til the end. Enjoy!
+![](/assets/kat.png) <span class="speech-bubble">Welcome to `Rust` journey. I'll be with you til the end. Enjoy!</span>
 
 ## R5 : Entry
 

@@ -69,7 +69,7 @@ async fn main() {
 
 > 🤔 refer to [Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/01_getting_started/02_why_async.html#async-vs-threads-in-rust)
 
-![](/assets/kat.png) If you don't need async for performance reasons, threads can often be the simpler alternative.
+![](/assets/kat.png) <span class="speech-bubble">If you don't need async for performance reasons, threads can often be the simpler alternative.</span>
 
 ## Best practices
 
@@ -115,4 +115,4 @@ fn main() -> Result<()> {
 }
 ```
 
-![](/assets/kat.png) Read more 👉 [Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html)
+![](/assets/kat.png) <span class="speech-bubble">Read more 👉 [Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html)</span>

@@ -1,6 +1,6 @@
 # Hello Github Action
 
-![](/assets/kat.png) Here's how we release `Rust` library with built binary via `Github Action` (rn with some caveat).
+![](/assets/kat.png) <span class="speech-bubble">Here's how we release `Rust` library with built binary via `Github Action` (rn with some caveat).</span>
 
 ## Release
 

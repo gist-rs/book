@@ -2,7 +2,7 @@
 
 > 🚧 UNDER CONSTRUCTION: Please bear 🧸 with me! If you can't wait please try [read more](../../bye.md).
 
-![](/assets/kat.png) At this point you should familiar with your/other library and want to expose your lib/service to the world. Let's do it!
+![](/assets/kat.png) <span class="speech-bubble">At this point you should familiar with your/other library and want to expose your lib/service to the world. Let's do it!</span>
 
 ## Goals
 

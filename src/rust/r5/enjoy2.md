@@ -1,6 +1,6 @@
 # Enjoy Day 2
 
-![](/assets/kat.png) We will need `vec` and `array` to keep things organized as index.
+![](/assets/kat.png) <span class="speech-bubble">We will need `vec` and `array` to keep things organized as index.</span>
 
 ### Vec, iter, map, collect, into_iter, enumerate, unwrap
 
@@ -64,9 +64,9 @@ fn main() {
 > 💡 Read more about `iterate` [here](https://doc.rust-lang.org/rust-by-example/trait/iter.html).  
 > 💡 If you crazy about `iterate` do try [Rust Iterator Cheat Sheet](https://danielkeep.github.io/itercheat_baked.html)
 
-![](/assets/duck.png) So `iter` will make an auto borrow `&` for us which is handy.  
+![](/assets/duck.png) <span class="speech-bubble">So `iter` will make an auto borrow `&` for us which is handy.  
 Anyway we can use `into_iter` if we need to move instead of borrow with caution.  
-And also `<Vec<_>>` is for lazy crab like us, nice!
+And also `<Vec<_>>` is for lazy crab like us, nice!</span>
 
 > 🏂 Fun fact!  
 > `String` and `Vec` is allocated in `heap`.  
@@ -74,7 +74,7 @@ And also `<Vec<_>>` is for lazy crab like us, nice!
 
 ### HashMap, match, Option, Some, None, unwrap_or, panic
 
-![](/assets/kat.png) `HashMap` is like Key/Value pair.
+![](/assets/kat.png) <span class="speech-bubble">`HashMap` is like Key/Value pair.</span>
 
 ```rust,editable
 use std::collections::HashMap; // `use` aka `import` in js.
@@ -136,7 +136,7 @@ fn main() {
 > 💡 `Option<T>`⎯⎯ unwrap → `Some<T>`/`None` which `T` is generic.  
 > To know more about this try [read more](https://doc.rust-lang.org/rust-by-example/error/option_unwrap.html).
 
-![](/assets/duck.png) Don't be surprise if you found all this confusing. I did! But don't give up just yet!
+![](/assets/duck.png) <span class="speech-bubble">Don't be surprise if you found all this confusing. I did! But don't give up just yet!</span>
 
 ---
 

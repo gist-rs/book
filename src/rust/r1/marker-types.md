@@ -1,6 +1,6 @@
 # Marker Types
 
-![](/assets/kat.png) Let's make use of `Marker Types` by a little help from [PhantomData](https://doc.rust-lang.org/nomicon/phantom-data.html) which use for make compiler happy.
+![](/assets/kat.png) <span class="speech-bubble">Let's make use of `Marker Types` by a little help from [PhantomData](https://doc.rust-lang.org/nomicon/phantom-data.html) which use for make compiler happy.</span>
 
 ```rust,editable
 use std::marker::PhantomData;

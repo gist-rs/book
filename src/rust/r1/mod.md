@@ -2,8 +2,8 @@
 
 > 🚧 UNDER CONSTRUCTION: Please bear 🧸 with me! If you can't wait please try [read more](../../bye.md).
 
-![](/assets/kat.png) Welcome to highest curve of learning `Rust`, be proud of yourself!
-This is a last part so you can expect super confuse and hard to understand topic. Let's roll!
+![](/assets/kat.png) <span class="speech-bubble">Welcome to highest curve of learning `Rust`, be proud of yourself!
+This is a last part so you can expect super confuse and hard to understand topic. Let's roll!</span>
 
 ## Goals
 

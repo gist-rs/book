@@ -1,6 +1,6 @@
 # Enjoy Day 3
 
-![](/assets/kat.png) Hey! Nice to see you here. Previously we use `HashMap` which is fine but `Struct` is way more better, Let's get grab some coffee ☕️ and getting start.
+![](/assets/kat.png) <span class="speech-bubble">Hey! Nice to see you here. Previously we use `HashMap` which is fine but `Struct` is way more better, Let's get grab some coffee ☕️ and getting start.</span>
 
 ## Struct
 
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-![](/assets/kat.png) Still curious about why `String` instead of `&str`? [try read this](https://doc.rust-lang.org/book/ch05-01-defining-structs.html#ownership-of-struct-data)
+![](/assets/kat.png) <span class="speech-bubble">Still curious about why `String` instead of `&str`? [try read this](https://doc.rust-lang.org/book/ch05-01-defining-structs.html#ownership-of-struct-data)</span>
 
 ## derive, impl, Self, &self
 
@@ -130,7 +130,7 @@ fn main() {
 }
 ```
 
-![](/assets/duck.png) Oh! I read a [Rust book](https://doc.rust-lang.org/book/ch05-03-method-syntax.html#associated-functions) they call all functions defined within an `impl` block are called `associated functions`. Cool name!
+![](/assets/duck.png) <span class="speech-bubble">Oh! I read a [Rust book](https://doc.rust-lang.org/book/ch05-03-method-syntax.html#associated-functions) they call all functions defined within an `impl` block are called `associated functions`. Cool name!</span>
 
 > 💡 You can derive more than one e.g. `#[derive(Debug,Display,Clone,Copy)]` read more about `derive` [here](https://doc.rust-lang.org/rust-by-example/trait/derive.html) and `struct` [here](https://doc.rust-lang.org/rust-by-example/custom_types/structs.html).
 

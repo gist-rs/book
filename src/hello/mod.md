@@ -5,7 +5,7 @@
 
 ## TL;DR
 
-- ![](/assets/kat.png) Learn <a class="button" href="/hello/why-rust.html">Rust</a>, <a class="button" href="/hello/why-wasm.html">Wasm</a>, <a class="button" href="/ml/mod.html">ML</a>, <a class="button" href="/hello/why-solana.html">Solana</a> ![](/assets/duck.png) or <a class="button" href="/bye.html">More</a>
+- ![](/assets/kat.png) <span class="speech-bubble">Learn <a class="button" href="/hello/why-rust.html">Rust</a>, <a class="button" href="/hello/why-wasm.html">Wasm</a>, <a class="button" href="/ml/mod.html">ML</a>, <a class="button" href="/hello/why-solana.html">Solana</a> ![](/assets/duck.png) or <a class="button" href="/bye.html">More</a></span>
 
 ## Welcome
 

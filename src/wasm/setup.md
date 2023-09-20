@@ -25,7 +25,7 @@ wasm-pack build --target web          # 👈 Build (target web) to pkg dir.
 wasm-pack publish                     # 👈 Publish to npm.
 ```
 
-![](/assets/kat.png) We can use with `cargo watch` like this 👇 to watch with ignore(`-i`) and auto refresh the tests.
+![](/assets/kat.png) <span class="speech-bubble">We can use with `cargo watch` like this 👇 to watch with ignore(`-i`) and auto refresh the tests.</span>
 
 ```bash
 cargo watch -i .gitignore -i "pkg/*" -s "wasm-pack test --headless --firefox"

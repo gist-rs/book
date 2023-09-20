@@ -1,6 +1,6 @@
 # Serialize Js data
 
-![](/assets/kat.png) Here's fun facts. let say we have this in `Js`.
+![](/assets/kat.png) <span class="speech-bubble">Here's fun facts. let say we have this in `Js`.</span>
 
 ```js
 const u8 = new Uint8Array([16, 42]) // Uint8Array [16,42]
@@ -34,7 +34,7 @@ And want to send that `u8` from `Js` → `Wasm` → `Rust`.
 
 ## How to handle JSON stringify `UInt8Array`?
 
-![](/assets/kat.png) Somehow an app (actually `dApp`) tend to send us `Uint8Array` as `JSON` string like this (fall into case #3 👆)...
+![](/assets/kat.png) <span class="speech-bubble">Somehow an app (actually `dApp`) tend to send us `Uint8Array` as `JSON` string like this (fall into case #3 👆)...</span>
 
 ```json
 {
@@ -47,7 +47,7 @@ And want to send that `u8` from `Js` → `Wasm` → `Rust`.
 }
 ```
 
-![](/assets/kat.png) And yes you can convert it to `JsValue` before sending to `Wasm`.
+![](/assets/kat.png) <span class="speech-bubble">And yes you can convert it to `JsValue` before sending to `Wasm`.</span>
 
 ```js
 const u8 = new Uint8Array([16, 42]) // Uint8Array [16,42]
@@ -56,7 +56,7 @@ const u8_map = JSON.parse(u8_string) // {0: 16, 1: 42}
 const parsed_u8 = new Uint8Array(Object.values(u8_map)) // Uint8Array [16,42]
 ```
 
-![](/assets/kat.png) But if we tend to keep all logic in `Rust` so we cry and accept `JSON` as `String` then convert it to `u8` in `Wasm` instead.
+![](/assets/kat.png) <span class="speech-bubble">But if we tend to keep all logic in `Rust` so we cry and accept `JSON` as `String` then convert it to `u8` in `Wasm` instead.</span>
 
 ### `Deserialize` with `serde`
 

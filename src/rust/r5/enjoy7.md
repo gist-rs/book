@@ -1,10 +1,10 @@
 # Enjoy Day 7
 
-![](/assets/kat.png) Sometime compiler didn't know what size (and type) we will return so `Box` and `dyn` is here to help.
+![](/assets/kat.png) <span class="speech-bubble">Sometime compiler didn't know what size (and type) we will return so `Box` and `dyn` is here to help.</span>
 
-![](/assets/duck.png) Oh, it's just like we put something in the 📦 so mister postman(compiler) can manage them properly!
+![](/assets/duck.png) <span class="speech-bubble">Oh, it's just like we put something in the 📦 so mister postman(compiler) can manage them properly!</span>
 
-![](/assets/kat.png) Yes!, same idea for `String` → `str`, `Vec` → `array` which is `Stack` → `Heap`.
+![](/assets/kat.png) <span class="speech-bubble">Yes!, same idea for `String` → `str`, `Vec` → `array` which is `Stack` → `Heap`.</span>
 
 ```bob
 
@@ -82,11 +82,11 @@ fn main() {
 }
 ```
 
-![](/assets/kat.png) We call this `-> Box<dyn Sayable>` as [Dynamic Dispatch](https://doc.rust-lang.org/book/ch17-02-trait-objects.html#trait-objects-perform-dynamic-dispatch) which have some little overhead compare to `-> impl Sayable` (static dispatch).
+![](/assets/kat.png) <span class="speech-bubble">We call this `-> Box<dyn Sayable>` as [Dynamic Dispatch](https://doc.rust-lang.org/book/ch17-02-trait-objects.html#trait-objects-perform-dynamic-dispatch) which have some little overhead compare to `-> impl Sayable` (static dispatch).</span>
 
 ---
 
-![](/assets/kat.png) Let's try avoid `Dynamic Dispatch` with `Static Dispatch` by [enum_dispatch](https://crates.io/crates/enum_dispatch)
+![](/assets/kat.png) <span class="speech-bubble">Let's try avoid `Dynamic Dispatch` with `Static Dispatch` by [enum_dispatch](https://crates.io/crates/enum_dispatch)</span>
 
 ## Static dispatch with [enum_dispatch](https://crates.io/crates/enum_dispatch)
 
@@ -143,7 +143,7 @@ fn main() {
 
 ---
 
-![](/assets/kat.png) Or avoid `Dynamic Dispatch` with `Static Dispatch` by [either](https://crates.io/crates/either)
+![](/assets/kat.png) <span class="speech-bubble">Or avoid `Dynamic Dispatch` with `Static Dispatch` by [either](https://crates.io/crates/either)</span>
 
 ## Static Dispatch with [either](https://crates.io/crates/either)
 
@@ -197,4 +197,4 @@ fn main() {
 
 ---
 
-![](/assets/kat.png) At this point you should able to read a lot of `Rust` code out there, let's [teardown ➠](./teardown.md).
+![](/assets/kat.png) <span class="speech-bubble">At this point you should able to read a lot of `Rust` code out there, let's [teardown ➠](./teardown.md).</span>

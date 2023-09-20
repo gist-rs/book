@@ -146,14 +146,14 @@ fn main() {
 
 > 💡 There's lot more [Primitives](https://doc.rust-lang.org/rust-by-example/primitives.html) we didn't cover here, feel free to take a look!
 
-![](/assets/kat.png) We just use [unsafe](https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html) mutate because `static mut` can be mutate and access by any function at anytime globally so that make sense to make as `unsafe`. But no worry! we won't do that again until we really need it.
+![](/assets/kat.png) <span class="speech-bubble">We just use [unsafe](https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html) mutate because `static mut` can be mutate and access by any function at anytime globally so that make sense to make as `unsafe`. But no worry! we won't do that again until we really need it.</span>
 
 ## String, Vec, Tuple
 
 ### `String` ⚔️ `&str`
 
-![](/assets/kat.png) We will need both `&str`and `String` for entire our `Rust` journey.
-You will know when and which to use it later. Let's just use it for now.
+![](/assets/kat.png) <span class="speech-bubble">We will need both `&str`and `String` for entire our `Rust` journey.
+You will know when and which to use it later. Let's just use it for now.</span>
 
 ```rust,editable
 fn main() {
@@ -191,8 +191,8 @@ fn main() {
 }
 ```
 
-![](/assets/duck.png) Now we know why we need `&` to borrow some value from some variable instead of move.  
-And we don't like to `clone` (or `copy`) that much because of more memory will need for doing that.
+![](/assets/duck.png) <span class="speech-bubble">Now we know why we need `&` to borrow some value from some variable instead of move.  
+And we don't like to `clone` (or `copy`) that much because of more memory will need for doing that.</span>
 
 ---
 

@@ -1,6 +1,6 @@
 # How to handle multiple result and option
 
-![](/assets/kat.png) We have many way to handle returned value, let's sum it up here so we can recall them when needed.
+![](/assets/kat.png) <span class="speech-bubble">We have many way to handle returned value, let's sum it up here so we can recall them when needed.</span>
 
 ## How to handle multiple `Result`.
 

@@ -37,4 +37,4 @@
 
 ---
 
-![](/assets/kat.png) Easy right? We're not done yet. Let's dig deeper! 👉 [Continue to R4 ➠](../r4/mod.md)
+![](/assets/kat.png) <span class="speech-bubble">Easy right? We're not done yet. Let's dig deeper! 👉 [Continue to R4 ➠](../r4/mod.md)</span>

@@ -1,6 +1,6 @@
 # Hello Wasm Js
 
-![](/assets/kat.png) Here's how to create `sync` and `async` function in `Rust` which return `String`, `JsValue`, `JsError` and call it from `HTML`, `Javascript` in `test` via headless browser.
+![](/assets/kat.png) <span class="speech-bubble">Here's how to create `sync` and `async` function in `Rust` which return `String`, `JsValue`, `JsError` and call it from `HTML`, `Javascript` in `test` via headless browser.</span>
 
 ## Fun facts
 

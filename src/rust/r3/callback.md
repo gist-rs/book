@@ -4,7 +4,7 @@
 
 > 🤔 Refer to : https://stackoverflow.com/questions/41081240/idiomatic-callbacks-in-rust
 
-![](/assets/kat.png) Below is simple `callback`.
+![](/assets/kat.png) <span class="speech-bubble">Below is simple `callback`.</span>
 
 ### 1️⃣ "Function pointers": `callbacks` as `fn`
 
@@ -37,7 +37,7 @@ fn main() {
 }
 ```
 
-![](/assets/kat.png) Let's make it more generic.
+![](/assets/kat.png) <span class="speech-bubble">Let's make it more generic.</span>
 
 ### 2️⃣ Callbacks as generic function objects
 
@@ -69,7 +69,7 @@ fn main() {
 }
 ```
 
-![](/assets/kat.png) It's generic but callback is not, let's go deeper.
+![](/assets/kat.png) <span class="speech-bubble">It's generic but callback is not, let's go deeper.</span>
 
 ### 3️⃣ Non-generic callbacks: function trait objects
 
@@ -106,7 +106,7 @@ fn main() {
 }
 ```
 
-![](/assets/kat.png) Nicer but `'static` is too much, let's fix it.
+![](/assets/kat.png) <span class="speech-bubble">Nicer but `'static` is too much, let's fix it.</span>
 
 ### 4️⃣ Lifetime of references inside boxed closures
 
