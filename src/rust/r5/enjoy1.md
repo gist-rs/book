@@ -1,6 +1,6 @@
 # Enjoy Day 1
 
-![](/assets/kat.png) Here's shortest way to learning `Rust`, Let's do it!
+![](/assets/kat.png) <span class="speech-bubble">Here's shortest way to learning `Rust`, Let's do it!</span>
 
 > 💡 for more examples see 👉 [rust-by-example](https://doc.rust-lang.org/rust-by-example/index.html)
 
