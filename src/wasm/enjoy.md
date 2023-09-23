@@ -1,6 +1,6 @@
 # Enjoy
 
-![](/assets/kat.png) They said `Wasm` should be fun, Let's do it!
+![](/assets/kat.png) <span class="speech-bubble">They said `Wasm` should be fun, Let's do it!</span>
 
 > 💡 for more examples see 👉 [here](https://github.com/rustwasm/wasm-bindgen/tree/main/examples)
 

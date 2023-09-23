@@ -5,7 +5,7 @@
 
 ## TL;DR
 
-- ![](/assets/kat.png) Learn <a class="button" href="/hello/why-rust.html">Rust</a>, <a class="button" href="/hello/why-wasm.html">Wasm</a>, <a class="button" href="/ml/mod.html">ML</a>, <a class="button" href="/hello/why-solana.html">Solana</a> ![](/assets/duck.png) or <a class="button" href="/bye.html">More</a>
+- ![](/assets/kat.png) <span class="speech-bubble">Learn <a class="button" href="/hello/why-rust.html">Rust</a>, <a class="button" href="/hello/why-wasm.html">Wasm</a>, <a class="button" href="/ml/mod.html">ML</a>, <a class="button" href="/hello/why-solana.html">Solana</a> ![](/assets/duck.png) or <a class="button" href="/bye.html">More</a></span>
 
 ## Welcome
 
@@ -22,3 +22,7 @@
 
 - We won't cover the topics that we didn't have a chance to use it yet e.g. [`macros`](https://doc.rust-lang.org/book/ch19-06-macros.html), [`unsafe`](https://doc.rust-lang.org/nomicon/),[`FFI`](https://github.com/dtolnay/cxx), [embed device](https://doc.rust-lang.org/stable/embedded-book/).
 - We maybe cover `game`, `3d`, `ml` topic if we get enough funding and time on earth.
+
+## Coffee?
+
+- Buy me some ☕️ so I can turn it to code! 👉 <a class="button" href="https://patreon.com/gist_rs" title="Sponsor" aria-label="Sponsor" target="_blank" rel="noopener"><i id="sponsor-button" class="fa fa-heart fa-beat beat-fade"></i> Patreon</a>

@@ -29,7 +29,7 @@ open http://127.0.0.1:7676/
 
 ## Prepare FASTLY_API_TOKEN
 
-> Get `REPLACE_ME_WITH_YOUR_FASTLY_API_TOKEN` from https://manage.fastly.com/account/personal/tokens with write permission.
+> Get `REPLACE_ME_WITH_YOUR_FASTLY_API_TOKEN` from [https://manage.fastly.com/account/personal/tokens]() with write permission.
 
 ```
 Name: hello-wasm-fastly
@@ -84,7 +84,7 @@ SUCCESS: Deployed package (service xQHbmi6S43MSFk9L5p9IW7, version 1)
 
 ## Caveats
 
-- crate must support `wasm-wasi`: see https://developer.fastly.com/learning/compute/rust/#using-dependencies
+- crate must support `wasm-wasi`: see [https://developer.fastly.com/learning/compute/rust/#using-dependencies]()
 
 ## To Improve
 

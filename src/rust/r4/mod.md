@@ -2,7 +2,7 @@
 
 > 🚧 UNDER CONSTRUCTION: Please bear 🧸 with me! If you can't wait please try [read more](../../bye.md).
 
-![](/assets/kat.png) Before we can continue please make sure that you have learnt this [cool stuff](../r5/teardown.md) already. From now on we will learn by examples.
+![](/assets/kat.png) <span class="speech-bubble">Before we can continue please make sure that you have learnt this [cool stuff](../r5/teardown.md) already. From now on we will learn by examples.</span>
 
 ## Goals
 

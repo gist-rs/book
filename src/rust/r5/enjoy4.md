@@ -1,6 +1,6 @@
 # Enjoy Day 4
 
-![](/assets/kat.png) Now we need `enum` to replace "cat" and "duck" type from previous example.
+![](/assets/kat.png) <span class="speech-bubble">Now we need `enum` to replace "cat" and "duck" type from previous example.</span>
 
 ## Enum
 
@@ -48,7 +48,7 @@ fn main() {
 
 > 💡 There's more examples about [Enums](https://doc.rust-lang.org/rust-by-example/custom_types/enum.html), and [match enums](https://doc.rust-lang.org/rust-by-example/flow_control/match/destructuring/destructure_enum.html).
 
-![](/assets/kat.png) Don't worry about `&'static str` or `lifetimes` just yet, compiler will let you know when need (usually out of `{ }` scope ) and we will talk about it later. Let's continue on other topics.
+![](/assets/kat.png) <span class="speech-bubble">Don't worry about `&'static str` or `lifetimes` just yet, compiler will let you know when need (usually out of `{ }` scope ) and we will talk about it later. Let's continue on other topics.</span>
 
 ## strum, Result, Ok, Err
 

@@ -1,6 +1,6 @@
 # Fetch balance
 
-![](/assets/kat.png) Usually we will use [Solana SDK](https://solanacookbook.com/references/accounts.html#how-to-get-account-balance) but we doing vanilla here so...
+![](/assets/kat.png) <span class="speech-bubble">Usually we will use [Solana SDK](https://solanacookbook.com/references/accounts.html#how-to-get-account-balance) but we doing vanilla here so...</span>
 
 ## How to fetch account balance in `Javascript` vanilla.
 
@@ -49,7 +49,7 @@ get_balance('gistmeAhMG7AcKSPCHis8JikGmKT9tRRyZpyMLNNULq', {
 
 ---
 
-![](/assets/kat.png) Now let's try `Rust` version.
+![](/assets/kat.png) <span class="speech-bubble">Now let's try `Rust` version.</span>
 
 ## How to fetch account balance in `Rust` vanilla.
 

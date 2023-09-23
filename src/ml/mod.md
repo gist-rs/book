@@ -1,6 +1,6 @@
 # ML
 
-![](/assets/kat.png) A notes about ML, still ongoing!
+![](/assets/kat.png) <span class="speech-bubble">A notes about ML, still ongoing!</span>
 
 ## Goals
 
@@ -10,3 +10,4 @@
 
 - [Large Language Model](large-language-model.md)
 - [Stable Diffusion](stable-diffusion.md)
+- [Hugging Face - Candle](huggingface-candle.md)

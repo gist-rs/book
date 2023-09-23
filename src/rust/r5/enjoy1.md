@@ -1,6 +1,6 @@
 # Enjoy Day 1
 
-![](/assets/kat.png) Here's shortest way to learning `Rust`, Let's do it!
+![](/assets/kat.png) <span class="speech-bubble">Here's shortest way to learning `Rust`, Let's do it!</span>
 
 > 💡 for more examples see 👉 [rust-by-example](https://doc.rust-lang.org/rust-by-example/index.html)
 
@@ -11,17 +11,22 @@ fn main() {
     // Define immutable variable.
     let count = 0;
 
-    // {} mean param(0).
+    // {} mean param_0.
     println!("count = {}", count);
 
     // Define mutable variable.
     let mut count = 1;
 
-    // So we can change it
+    // So we can change it.
     count += 1;
 
-    // {0} mean param(0), {1:#?} mean param(1) with pretty print(#) for Debug(?).
+    // {0} mean param_0.
+    // {1} mean param_1.
+    //         ╭────────────────╮
     println!("{0} = {1:#?}", "count", count);
+    //               ╰──────────────────╯
+    // # mean pretty print.
+    // ? mean debug.
 
     // Let's make some condition.
     if count == 2 {
@@ -43,6 +48,7 @@ fn main() {
 
 ```rust,editable
 fn main() {
+    //  👇 Mutable so we change the value later.
     let mut count = 0;
 
     // This .. 👇 mean range i from 0 to 7.
@@ -92,13 +98,13 @@ fn main() {
 
         // Break at 200
         if count >= 200 {
-            // Never readch here.
+            // Never reach here because 👇.
             break;
         } else {
             // Inner loop
             loop {
                 count += 1;
-                // Because thi s break first.
+                // Because this will break first.
                 if count >= 150 {
                     break 'outer;
                 }
@@ -146,14 +152,14 @@ fn main() {
 
 > 💡 There's lot more [Primitives](https://doc.rust-lang.org/rust-by-example/primitives.html) we didn't cover here, feel free to take a look!
 
-![](/assets/kat.png) We just use [unsafe](https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html) mutate because `static mut` can be mutate and access by any function at anytime globally so that make sense to make as `unsafe`. But no worry! we won't do that again until we really need it.
+![](/assets/kat.png) <span class="speech-bubble">We just use [unsafe](https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html) mutate because `static mut` can be mutate and access by any function at anytime globally so that make sense to make as `unsafe`. But no worry! we won't do that again until we really need it.</span>
 
 ## String, Vec, Tuple
 
 ### `String` ⚔️ `&str`
 
-![](/assets/kat.png) We will need both `&str`and `String` for entire our `Rust` journey.
-You will know when and which to use it later. Let's just use it for now.
+![](/assets/kat.png) <span class="speech-bubble">We will need both `&str`and `String` for entire our `Rust` journey.
+You will know when and which to use it later. Let's just use it for now.</span>
 
 ```rust,editable
 fn main() {
@@ -164,35 +170,39 @@ fn main() {
     println!("foo_str: {foo_str}");
     println!("foo_string:  {foo_string}");
 
-    // Convert String to &str
-    let another_foo_string = foo_string; // Move foo_string to another_foo_string. 👋
-    let another_foo_str = another_foo_string.as_str();
+    // Try move it.
+    let bar_string = foo_string;
 
-    println!("another_foo_string: {another_foo_string}");
-    println!("another_foo_str: {another_foo_str}");
-
-    assert_eq!(another_foo_string, foo_str.to_string());
-
-    // 😱 You can try uncomment 👇 this to experience an error `value borrowed here after move`.
+    // From now on foo_string is dead. 💀
+    // 😱 You can try uncomment 👇 this to see an error.
     // println!("foo_string:{foo_string}");
+    //                      ^^^^^^^^^^^^ value borrowed here after move
+
+    // Convert String to &str
+    let bar_str = bar_string.as_str();
+
+    println!("bar_string: {bar_string}");
+    println!("bar_str: {bar_str}");
+
+    assert_eq!(bar_string, foo_str.to_string());
 
     // But if you really want to keep access `foo_string`.
     // Just don't move in the first place! See below👇
 
     // 1️⃣ let other borrow `&` instead of move.
-    let borrowed_foo_string = &another_foo_string;
-    println!("another_foo_string: {another_foo_string}"); // Still can access.
-    println!("borrowed_foo_string: {borrowed_foo_string}"); // Also here.
+    let borrowed_bar_string = &bar_string;
+    println!("bar_string: {bar_string}"); // Still can access.
+    println!("borrowed_bar_string: {borrowed_bar_string}"); // Also here.
 
     // 2️⃣ or make a clone/copy instead of move.
-    let borrowed_foo_string = another_foo_string.clone();
-    println!("another_foo_string: {another_foo_string}"); // Still can access.
-    println!("borrowed_foo_string: {borrowed_foo_string}"); // Also here.
+    let borrowed_bar_string = bar_string.clone();
+    println!("bar_string: {bar_string}"); // Still can access.
+    println!("borrowed_bar_string: {borrowed_bar_string}"); // Also here.
 }
 ```
 
-![](/assets/duck.png) Now we know why we need `&` to borrow some value from some variable instead of move.  
-And we don't like to `clone` (or `copy`) that much because of more memory will need for doing that.
+![](/assets/kat.png) <span class="speech-bubble">So we need `&` to borrow the instead of moving it.
+Anyway we tend to avoid `clone`/`copy` to reduce overhead aka [zero-copy](https://swatinem.de/blog/magic-zerocopy) as possible.</span></span>
 
 ---
 

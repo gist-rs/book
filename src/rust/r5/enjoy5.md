@@ -1,6 +1,6 @@
 # Enjoy Day 5
 
-![](/assets/kat.png) We `impl` (implement) some `trait` (aka skill) for `struct` so that `struct` can have that skill.
+![](/assets/kat.png) <span class="speech-bubble">We `impl` (implement) some `trait` (aka skill) for `struct` so that `struct` can have that skill.</span>
 
 ## trait, impl
 
@@ -46,7 +46,7 @@ fn main() {
 }
 ```
 
-![](/assets/duck.png) That's look like [`impl`](enjoy3.md) to `struct`, but this time we can implement that `trait` to any `struct` we want!
+![](/assets/duck.png) <span class="speech-bubble">That's look like [`impl`](enjoy3.md) to `struct`, but this time we can implement that `trait` to any `struct` we want!</span>
 
 ---
 

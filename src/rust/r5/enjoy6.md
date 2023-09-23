@@ -1,6 +1,6 @@
 # Enjoy Day 6
 
-![](/assets/kat.png) We should use `Composition` over `Inheritance` and here's how to do it.
+![](/assets/kat.png) <span class="speech-bubble">We should use `Composition` over `Inheritance` and here's how to do it.</span>
 
 ## Supertraits
 
@@ -62,7 +62,7 @@ fn main() {
 
 ---
 
-![](/assets/kat.png) We can use `generic` to make a boundary what we accept, see example below.
+![](/assets/kat.png) <span class="speech-bubble">We can use `generic` to make a boundary what we accept, see example below.</span>
 
 ## Generic Bounds
 

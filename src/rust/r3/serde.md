@@ -37,4 +37,4 @@ impl TryFrom<String> for Id {
 
 > 💡 [Read more](https://serde.rs/container-attrs.html#try_from)
 
-![](/assets/kat.png) [borsh](https://borsh.io/) is alternative to `serde`.
+![](/assets/kat.png) <span class="speech-bubble">[borsh](https://borsh.io/) is alternative to `serde`.</span>

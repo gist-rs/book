@@ -35,7 +35,7 @@ fn main() {
 }
 ```
 
-![](/assets/kat.png) That should show why `Deref coercions` is handy, without it we will have to do `&&str → &str` ourself and that's no joy. You can enjoy it now or continue reading to dig deeper. 👇
+![](/assets/kat.png) <span class="speech-bubble">That should show why `Deref coercions` is handy, without it we will have to do `&&str → &str` ourself and that's no joy. You can enjoy it now or continue reading to dig deeper. 👇</span>
 
 ## Deref
 

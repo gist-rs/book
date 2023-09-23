@@ -42,3 +42,33 @@
   line-height: 0.8em;
   color: crimson;
 }
+
+.speech-bubble {
+  position: relative;
+  background: #ffffff;
+  border-radius: 0.6em;
+  color: dimgray;
+  margin-left: 1em;
+  margin-top: 1em;
+  padding: 0.3em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+  margin-bottom: 1em;
+  display: inline-block;
+  top: -0.8em;
+  max-width: 80%;
+}
+
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 0.5em solid transparent;
+  border-right-color: #ffffff;
+  border-left: 0;
+  border-bottom: 0;
+  margin-left: -0.5em;
+}

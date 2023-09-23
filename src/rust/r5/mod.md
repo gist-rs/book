@@ -1,6 +1,6 @@
 # R5 - Entry
 
-![](/assets/kat.png) Enjoy!
+![](/assets/kat.png) <span class="speech-bubble">Enjoy!</span>
 
 ## Goals
 

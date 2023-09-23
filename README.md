@@ -1,6 +1,6 @@
 # Gist of Rust Book
 
-Focus on gist of `Rust`, `Wasm`, `Solana`.
+Focus on gist of `Rust`, `Wasm`, `Solana`, `Generative AI`.
 
 > 🚧 This gist is WIP, feel free to help.
 
@@ -35,3 +35,7 @@ If you have any feedback please feel welcome to [open an issue](https://github.c
 ## Discuss
 
 This repo has a [discussion forum](https://github.com/gist-rs/book/discussions)! Feel free to ask questions or start discussions.
+
+## TODO
+
+- [ ] `WASM`: Try `alloc` from [https://hackmd.io/@alxiong/rust-no-std]()
