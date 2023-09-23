@@ -64,9 +64,10 @@ fn main() {
 > 💡 Read more about `iterate` [here](https://doc.rust-lang.org/rust-by-example/trait/iter.html).  
 > 💡 If you crazy about `iterate` do try [Rust Iterator Cheat Sheet](https://danielkeep.github.io/itercheat_baked.html)
 
-![](/assets/duck.png) <span class="speech-bubble">So `iter` will make an auto borrow `&` for us which is handy.  
-Anyway we can use `into_iter` if we need to move instead of borrow with caution.  
-And also `<Vec<_>>` is for lazy crab like us, nice!</span>
+![](/assets/kat.png) <span class="speech-bubble">So `iter` will make an auto borrow `&` for us which is handy.  
+And we can use `into_iter` if we need.</span>
+
+![](/assets/duck.png) <span class="speech-bubble">Also `<Vec<_>>` is for lazy crab like us, nice!</span>
 
 > 🏂 Fun fact!  
 > `String` and `Vec` is allocated in `heap`.  
@@ -94,49 +95,64 @@ fn main() {
         ("age", "42"),
     ]);
 
-    // Now use it
-    let maybe_name: Option<&&str> = foo_hashmap.get("name"); // Will return `Option<&&str>`.
+    // 1️⃣ And when we tend to throw an error if not exist.
+    let name_or_error = foo_hashmap.get("name").expect("Expect name");        // Will return &&str
+    let name_or_error = foo_hashmap.get::<str>("name").expect("Expect name"); // Will return &&str
+
+    println!("1️⃣ name_or_error:{name_or_error:?}");
+
+    // 2️⃣ Now use it in varies style.
+    let maybe_name = foo_hashmap.get("name");          // Will return `Option<&&str>`.
+    let maybe_name = foo_hashmap.get("name").copied(); // Will return `Option<&str>`.
+    let maybe_name = foo_hashmap.get::<str>("name");   // Will return `Option<&&str>`.
 
     // `match` aka `switch` in js.
     // Let's handle `Option<&&str>` which can be `Some` or `None`.
     match maybe_name {
-        Some(name) => println!("1️⃣ hello {name}"), // Will print "hello foo".
+        Some(name) => println!("2️⃣ hello {name}"), // Will print "hello foo".
         None => panic!("who!?"),                   // Will throw error with `panic!` macro.
     };
 
-    // Or handle with `unwrap_or`.
+    // 3️⃣ Or handle with `unwrap_or`.
     let unwrapped_name = maybe_name.unwrap_or(&"who!?");
 
     // And assign back by return after matched.
     let hi = match unwrapped_name {
-        &"foo" => format!("2️⃣ hi! {unwrapped_name}"), // Will return unwrapped_name.
-        _ => panic!("who!?"),                         // `_` aka `default` in js.
+        &"foo" => format!("3️⃣ unwrapped_name:{unwrapped_name}"), // Will return unwrapped_name.
+        _ => panic!("who!?"),                                    // `_` aka `default` in js.
     };
 
     println!("{hi}");
 
-    // Let's iterate and print it out.
+    // 4️⃣ Let's iterate and print it out.
     foo_hashmap
-        .iter()                             // iter as usual, will use `for_each`.
-        .for_each(|e| println!("{:?}", e)); // Just print, No need to collect.
+        .iter()                               // iter as usual, will use `for_each`.
+        .for_each(|e| println!("4️⃣ {:?}", e)); // Just print, No need to collect.
 
-    // Then we will use get👇 to borrow the value.
+    // 5️⃣ Then we will use get👇 to borrow the value.
     let name = foo_hashmap.get("name").unwrap();
-    println!("name:{name:?}");
+    println!("5️⃣ unwrap_name:{name}");
 
-    // Or take it by remove 👇.
+    // 6️⃣ Or take it by remove 👇.
     let age = foo_hashmap.remove("age").unwrap();
-    println!("age:{age:?}");
+    println!("6️⃣ remove_age:{age}");
 
     // 😱 So this will fail because we already remove it above.
     // let age = foo_hashmap.remove("age").unwrap();
 }
 ```
 
-> 💡 `Option<T>`⎯⎯ unwrap → `Some<T>`/`None` which `T` is generic.  
-> To know more about this try [read more](https://doc.rust-lang.org/rust-by-example/error/option_unwrap.html).
+> 💡 `T` is generic, `unwrap` always has 2 outputs.
 
-![](/assets/duck.png) <span class="speech-bubble">Don't be surprise if you found all this confusing. I did! But don't give up just yet!</span>
+```
+                      ╭─▶︎ Some<T>
+Option<T> ── unwrap ──┤
+                      ╰─▶︎ None
+```
+
+![](/assets/kat.png) <span class="speech-bubble"> To know more about this try [read more](https://doc.rust-lang.org/rust-by-example/error/option_unwrap.html).</span>
+
+![](/assets/duck.png) <span class="speech-bubble">Don't be surprise if you found this confusing. I did! But don't give up just yet!</span>
 
 ---
 
