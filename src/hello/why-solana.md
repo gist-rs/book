@@ -7,6 +7,7 @@
 
 ## Landscape
 
+- Wallet: [Phantom](https://phantom.app/)
 - LaunchPad: [Strata](https://strataprotocol.com/)
 - NFTs: [Metaplex](https://www.metaplex.com/)
 - Conditional ownership of NFTs: [Cardinal](https://www.cardinal.so/)
