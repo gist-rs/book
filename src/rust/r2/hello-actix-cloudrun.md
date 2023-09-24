@@ -2,7 +2,7 @@
 
 ![](/assets/kat.png) <span class="speech-bubble">An example for deploy Rust (`Actix`) on `CloudRun` (revisit 2022)</span>
 
-> 💡 full source code: [https://github.com/katopz/hello-rust-actix-cloudrun]()
+> 💡 full source code is on [<i id="git-repository-button" class="fa fa-github"></i> github](https://github.com/katopz/hello-rust-actix-cloudrun)
 
 ## References
 
