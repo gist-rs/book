@@ -164,8 +164,8 @@ You will know when and which to use it later. Let's just use it for now.</span>
 ```rust,editable
 fn main() {
     // Convert &str to String
-    let foo_str = "foo"; // &str
-    let foo_string = foo_str.to_string(); // String
+    let foo_str = "foo"; // &str 👈🤯 This weird & will make sense later.
+    let foo_string = foo_str.to_string(); // String 👈 So we can move it.
 
     println!("foo_str: {foo_str}");
     println!("foo_string:  {foo_string}");
@@ -187,7 +187,7 @@ fn main() {
     assert_eq!(bar_string, foo_str.to_string());
 
     // But if you really want to keep access `foo_string`.
-    // Just don't move in the first place! See below👇
+    // Just don't move it in the first place! See below 👇
 
     // 1️⃣ let other borrow `&` instead of move.
     let borrowed_bar_string = &bar_string;
@@ -202,7 +202,7 @@ fn main() {
 ```
 
 ![](/assets/kat.png) <span class="speech-bubble">So we need `&` to borrow the instead of moving it.
-Anyway we tend to avoid `clone`/`copy` to reduce overhead aka [zero-copy](https://swatinem.de/blog/magic-zerocopy) as possible.</span></span>
+Anyway we tend to avoid `clone`/`copy` to reduce overhead aka [zero-copy](https://swatinem.de/blog/magic-zerocopy) as possible.</span>
 
 ---
 

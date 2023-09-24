@@ -1,6 +1,6 @@
 # Enjoy Day 5
 
-![](/assets/kat.png) <span class="speech-bubble">We `impl` (implement) some `trait` (aka skill) for `struct` so that `struct` can have that skill.</span>
+![](/assets/kat.png) <span class="speech-bubble">We `impl` (implement) some `trait` (aka skill) for our `struct` so it can have any desired skill.</span>
 
 ## trait, impl
 

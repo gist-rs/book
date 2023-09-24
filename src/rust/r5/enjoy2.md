@@ -6,19 +6,19 @@
 
 ```rust,editable
 fn main() {
-    // Create new `vec` and `array` of `&str`.
-    let mut vec_of_foo = vec!["foo", "bar"]; // Say hi to vec! macro.
+    // Create new `array` of `&str` and `vec`.
     let array_of_foo = ["foo", "bar"]; // Array of &str.
+    let mut vec_of_foo = vec!["foo", "bar"]; // Say hi to vec! macro.
 
-    println!("vec_of_foo: {vec_of_foo:#?}");
     println!("array_of_foo: {array_of_foo:#?}");
+    println!("vec_of_foo: {vec_of_foo:#?}");
 
     // The different?
     vec_of_foo.push("baz"); // You can push more to Vec
 
     // 😱 Uncomment to see an error "no method named `push` found for array `[&str; 2]`".
     // FYI: `[&str; 2]` mean fixed array of &str usize 2.
-    // 👍 Anyway fixed size is actually good for memory management, don't hate it!
+    // 👍 Anyway fixed size is good for memory management, so don't hate it!
     // array_of_foo.push("baz"); // You can't to fixed Array [&str; 2]
 
     // 1️⃣ Back to Vec, Let's iterate them.
@@ -60,17 +60,17 @@ fn main() {
 }
 ```
 
-> 💡 `::<>` is [turbo fish](https://turbo.fish/) <span style="transform: scaleX(-1);"><span>🐟💨</span></span> .  
-> 💡 Read more about `iterate` [here](https://doc.rust-lang.org/rust-by-example/trait/iter.html).  
+> 💡 `::<>` is [turbo fish](https://turbo.fish/) <span style="transform: scaleX(-1);"><span>🐟💨</span></span> .
+> 💡 Read more about `iterate` [here](https://doc.rust-lang.org/rust-by-example/trait/iter.html).
 > 💡 If you crazy about `iterate` do try [Rust Iterator Cheat Sheet](https://danielkeep.github.io/itercheat_baked.html)
 
-![](/assets/kat.png) <span class="speech-bubble">So `iter` will make an auto borrow `&` for us which is handy.  
+![](/assets/kat.png) <span class="speech-bubble">So `iter` will make an auto borrow `&` for us which is handy.
 And we can use `into_iter` if we need.</span>
 
 ![](/assets/duck.png) <span class="speech-bubble">Also `<Vec<_>>` is for lazy crab like us, nice!</span>
 
-> 🏂 Fun fact!  
-> `String` and `Vec` is allocated in `heap`.  
+> 🏂 Fun fact!
+> `String` and `Vec` is allocated in `heap`.
 > `str` and `array` is allocated in `stack`.
 
 ### HashMap, match, Option, Some, None, unwrap_or, panic
@@ -142,10 +142,10 @@ fn main() {
 }
 ```
 
-> 💡 `T` is generic, `unwrap` always has 2 outputs.
+> 💡 `T` is generic Type, `None` is nothing, `unwrap` always has 2 outputs.
 
 ```
-                      ╭─▶︎ Some<T>
+                      ╭─▶︎ Some(T)
 Option<T> ── unwrap ──┤
                       ╰─▶︎ None
 ```

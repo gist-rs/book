@@ -1,17 +1,17 @@
 # Enjoy Day 3
 
-![](/assets/kat.png) <span class="speech-bubble">Hey! Nice to see you here. Previously we use `HashMap` which is fine but `Struct` is way more better, Let's get grab some coffee ☕️ and getting start.</span>
+![](/assets/kat.png) <span class="speech-bubble">Hey! Nice to see you here. Previously we use `HashMap` which is fine but `Struct` is way more better, Let's grab some coffee ☕️ and getting start.</span>
 
 ## Struct
 
 ```rust,editable
 fn main() {
-    // 😭 Before: use `Tuple`.
+    // 😭 Before: we did use `Tuple`.
     let animal = (("name", "foo"), ("age", 42));
     println!("{0:?}: {1:?}", animal.0 .0, animal.0 .1); // 😭 So hard to access tuple!
     println!("{0:?}: {1:?}", animal.1 .0, animal.1 .1); // 😭 Stop this!
 
-    // 😚 After: use `Struct`.
+    // 😚 After: we use `Struct` instead.
     struct Animal {
         name: String, // We use `String` here not &str (will talk about this later).
         age: u8,      // `u8` mean unsigned integer (2^8 − 1) = 255

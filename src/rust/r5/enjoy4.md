@@ -133,7 +133,14 @@ fn main() {
 
 </details>
 
-> 💡 `Result<T, E>`⎯⎯ unwrap → `Ok<T>`/`Err(E)` which `T`,`E` are generic.  
+> 💡 `T` is generic Type, `E` is generic Error, `unwrap` always has 2 outputs.
+
+```
+                         ╭─▶︎ Ok(T)
+Result<T, E> ── unwrap ──┤
+                         ╰─▶︎ Err(E)
+```
+
 > Read more about how to handle `Result` [here](https://doc.rust-lang.org/rust-by-example/error/result.html)
 
 ---
