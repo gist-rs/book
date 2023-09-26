@@ -1,6 +1,6 @@
 # Enjoy Day 1
 
-![](/assets/kat.png) <span class="speech-bubble">Here's shortest way to learning `Rust`, Let's do it!</span>
+![](/assets/kat.png) <span class="speech-bubble">Glad to see you here! Let's `Rust`!</span>
 
 > 💡 for more examples see 👉 [rust-by-example](https://doc.rust-lang.org/rust-by-example/index.html)
 
@@ -152,43 +152,48 @@ fn main() {
 
 > 💡 There's lot more [Primitives](https://doc.rust-lang.org/rust-by-example/primitives.html) we didn't cover here, feel free to take a look!
 
-![](/assets/kat.png) <span class="speech-bubble">We just use [unsafe](https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html) mutate because `static mut` can be mutate and access by any function at anytime globally so that make sense to make as `unsafe`. But no worry! we won't do that again until we really need it.</span>
+![](/assets/kat.png) <span class="speech-bubble">We (rarely) use [unsafe](https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html) mutate because `static mut` can be mutate and access by any function at anytime globally so that make sense to make as `unsafe`.</span>
 
-## String, Vec, Tuple
+![](/assets/duck.png) <span class="speech-bubble">No worry! we won't do `unsafe` things anytime soon.</span>
 
-### `String` ⚔️ `&str`
+## String, &str
 
 ![](/assets/kat.png) <span class="speech-bubble">We will need both `&str`and `String` for entire our `Rust` journey.
-You will know when and which to use it later. Let's just use it for now.</span>
+You will know the other [fancy type of string](https://www.youtube.com/watch?v=CpvzeyzgQdw) in Rust later.</span>
+
+### Without reference
+
+- `str` = string slice, <u>immutable</u> view into a sequence of UTF-8 bytes, reference to a portion of a string or an array of bytes and has no ownership.
+- `String` = owned, heap-allocated string, <u>mutable</u>, growable, and dynamic string type that you can modify at runtime.
+
+### With reference &
+
+- `&str` = reference to a `str`.
+- `&String` = reference to a `String`.
 
 ```rust,editable
 fn main() {
-    // Convert &str to String
-    let foo_str = "foo"; // &str 👈🤯 This weird & will make sense later.
+    // Start with str
+    let foo_str = "foo"; // &str 👈 Reference to a string slice.
+
+    // Try move str
+    let bar_str = foo_str;
+    println!("bar_str: {bar_str}");
+    println!("foo_str: {foo_str}");
+
+    // Now let's try String
     let foo_string = foo_str.to_string(); // String 👈 So we can move it.
 
-    println!("foo_str: {foo_str}");
-    println!("foo_string:  {foo_string}");
-
-    // Try move it.
+    // Try move String.
     let bar_string = foo_string;
+    println!("bar_string: {bar_string}");
 
-    // From now on foo_string is dead. 💀
+    // But foo_string is already moved. 💀
     // 😱 You can try uncomment 👇 this to see an error.
     // println!("foo_string:{foo_string}");
     //                      ^^^^^^^^^^^^ value borrowed here after move
 
-    // Convert String to &str
-    let bar_str = bar_string.as_str();
-
-    println!("bar_string: {bar_string}");
-    println!("bar_str: {bar_str}");
-
-    assert_eq!(bar_string, foo_str.to_string());
-
-    // But if you really want to keep access `foo_string`.
-    // Just don't move it in the first place! See below 👇
-
+    // So we need & to make a reference.
     // 1️⃣ let other borrow `&` instead of move.
     let borrowed_bar_string = &bar_string;
     println!("bar_string: {bar_string}"); // Still can access.
@@ -204,6 +209,25 @@ fn main() {
 ![](/assets/kat.png) <span class="speech-bubble">So we need `&` to borrow the instead of moving it.
 Anyway we tend to avoid `clone`/`copy` to reduce overhead aka [zero-copy](https://swatinem.de/blog/magic-zerocopy) as possible.</span>
 
----
+![](/assets/duck.png) <span class="speech-bubble">Oh, We also can convert between `&str` and `String`.</span>
+
+```rust,editable
+fn main() {
+    // String → &str
+    let bar_str = bar_string.as_str();
+
+    println!("bar_string: {bar_string}");
+    println!("bar_str: {bar_str}");
+
+    // &str → String
+    assert_eq!(bar_string, foo_str.to_string());
+}
+```
+
+![](/assets/kat.png) <span class="speech-bubble">One more thing!</span>
+
+- `'static str` = `str` with a `'static` lifetime. It's a reference to a string that is valid for the entire duration of the program (which is both good and bad).
+
+![](/assets/duck.png) <span class="speech-bubble">It's `OK` to confuse about `str`, `String` and `&str`, but no worries! we will get use to it in the end.</span>
 
 [Continue to Day 2 ➠](./enjoy2.md)

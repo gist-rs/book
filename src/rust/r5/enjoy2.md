@@ -2,7 +2,7 @@
 
 ![](/assets/kat.png) <span class="speech-bubble">We will need `vec` and `array` to keep things organized as index.</span>
 
-### Vec, iter, map, collect, into_iter, enumerate, unwrap
+### Vec, iter, map, collect, into_iter, enumerate, unwrap, Tuple
 
 ```rust,editable
 fn main() {

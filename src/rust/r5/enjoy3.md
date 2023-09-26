@@ -134,6 +134,11 @@ fn main() {
 
 > 💡 You can derive more than one e.g. `#[derive(Debug,Display,Clone,Copy)]` read more about `derive` [here](https://doc.rust-lang.org/rust-by-example/trait/derive.html) and `struct` [here](https://doc.rust-lang.org/rust-by-example/custom_types/structs.html).
 
+![](/assets/kat.png) <span class="speech-bubble">Take a way</span>
+
+- Use `&str` for function parameters. 👉 no copying or allocating memory.
+- Use `String` for fields in a `Struct` 👉 the struct takes ownership of the string data.
+
 ---
 
 [Continue to Day 4 ➠](./enjoy4.md)
