@@ -21,6 +21,11 @@ body {
   overflow-x: hidden;
 }
 
+p {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
 code {
   font-family: 'Source Code Pro', Consolas, 'Ubuntu Mono', Menlo, 'DejaVu Sans Mono', monospace, monospace !important;
   font-size: 0.875em; /* please adjust the ace font size accordingly in editor.js */
@@ -29,6 +34,11 @@ code {
 /* make long words/inline code not x overflow */
 main {
   overflow-wrap: break-word;
+}
+
+hr {
+  margin-bottom: 1.6em;
+  border-style: dashed;
 }
 
 /* make wide tables scroll if they overflow */
@@ -64,7 +74,7 @@ h6 code {
 
 h2,
 h3 {
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 h4,
 h5 {
