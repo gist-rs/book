@@ -1,6 +1,6 @@
 # String
 
-> 🤔 [refer to Will Crichton](https://twitter+com/wcrichton/status/1608632382256746498)
+> 🤔 [refer to Will Crichton](https://twitter.com/wcrichton/status/1608632382256746498)
 
 ```rust
 let s1 = String::from("Hello ");
