@@ -21,6 +21,7 @@
 - Microsoft: [Ask the Expert: `Rust` at Microsoft.](https://www.youtube.com/watch?v=1uAsA1hm52I)
 - MIT: [How Rust went from a side project to the world’s most-loved programming language.](https://www.technologyreview.com/2023/02/14/1067869/rust-worlds-fastest-growing-programming-language/)
 - Twitter: [Navi:ML serving server implemented in `Rust` offering top-notch performance.](https://github.com/twitter/the-algorithm/tree/main/navi)
+- Ubuntu: [Clearly, Rust has excellent foundations for making reliable and efficient software](https://ubuntu.com/blog/why-and-how-to-use-rust-on-ubuntu)
 - Vercel: [`Rust` was a clear choice from day one.](https://vercel.com/blog/turborepo-migration-go-rust)
 - Volvo: [Code developed from scratch should definitely be developed in `Rust`.](https://medium.com/volvo-cars-engineering/why-volvo-thinks-you-should-have-rust-in-your-car-4320bd639e09)
 
