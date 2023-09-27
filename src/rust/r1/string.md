@@ -36,3 +36,16 @@ let s1 = String::from("Hello ");
 |  +----------------------------------------------+|
 +--------------------------------------------------+
 ```
+
+> 🤔 [refer to Swatinem](https://swatinem.de/blog/optimized-strings/)
+
+| Name          | Size of `<T>` | Size of `<Option<T>>` | Clone | SSO     | Mutable |
+| ------------- | ------------: | --------------------: | ----- | ------- | ------- |
+| String        |            24 |                    24 | O(n)  | -       | yes     |
+| Arc<str>      |            16 |                    16 | O(1)  | -       | no      |
+| arcstr        |             8 |                     8 | O(1)  | -       | no      |
+| smol_str      |            24 |                    24 | O(1)  | 23      | no      |
+| kstring (arc) |            24 |                    32 | O(1)  | 15 / 22 | no      |
+| flexstr       |            24 |                    32 | O(1)  | 22      | no      |
+| compact_str   |            24 |                    24 | O(n)  | 24      | yes     |
+| smartstring   |            24 |                    32 | O(n)  | 23      | yes     |
