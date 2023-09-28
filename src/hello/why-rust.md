@@ -17,6 +17,7 @@
 - Huawei: [Huawei is committed to the the success of `Rust`.](https://trusted-programming.github.io/2021/02/07/our-rust-mission-at-huawei.html)
 - Hugging face: [zero-copy is achievable in `Rust`](https://github.com/huggingface/safetensors#notes)
 - IBM: [Why you should learn the `Rust` programming language](https://developer.ibm.com/articles/os-developers-know-rust/)
+- Intel: [`Rust` is the future of systems programming, `C` is the new Assembly](https://youtu.be/l9hM0h6IQDo)
 - LogRocket: [optimized `Rust` code was at least 30 percent faster than the most optimized Go code.](https://blog.logrocket.com/when-to-use-rust-when-to-use-golang/)
 - Microsoft: [Ask the Expert: `Rust` at Microsoft.](https://www.youtube.com/watch?v=1uAsA1hm52I)
 - MIT: [How Rust went from a side project to the world’s most-loved programming language.](https://www.technologyreview.com/2023/02/14/1067869/rust-worlds-fastest-growing-programming-language/)
