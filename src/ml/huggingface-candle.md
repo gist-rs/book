@@ -43,3 +43,80 @@ These online demos run entirely in your browser:
 - [DINOv2](https://github.com/huggingface/candle/blob/main/candle-examples/examples/dinov2/): computer vision model trained
   using self-supervision (can be used for imagenet classification, depth
   evaluation, segmentation).
+
+### Setup
+
+![](/assets/kat.png) <span class="speech-bubble">[llama2-c](https://github.com/huggingface/candle/blob/main/candle-wasm-examples/llama2-c/README.md) on Windows 11 WSL2 Ubuntu, RTX4090</span>
+
+```bash
+# Choose example llama2-c
+cd candle-wasm-examples/llama2-c
+
+# Setup raw
+wget https://huggingface.co/spaces/lmz/candle-llama2/resolve/main/model.bin
+wget https://huggingface.co/spaces/lmz/candle-llama2/resolve/main/tokenizer.json
+
+# Setup tools
+cargo install --locked trunk
+cargo install --locked wasm-bindgen-cli
+sudo apt install libssl-dev
+
+# Build
+. ./build-lib.sh
+
+# Serve
+trunk serve --release --port 8081
+open http://127.0.0.1:8081
+```
+
+![](/assets/kat.png) <span class="speech-bubble">[Mistral](https://mistral.ai/) on Windows 11 WSL2 Ubuntu, RTX4090</span>
+
+```bash
+# Update & upgrade
+sudo apt update && sudo apt upgrade
+
+# Remove previous NVIDIA installation
+sudo apt autoremove nvidia* --purge
+
+# Setup cuda ref: https://gist.github.com/denguir/b21aa66ae7fb1089655dd9de8351a202
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
+sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/12.2.0/local_installers/cuda-repo-ubuntu2204-12-2-local_12.2.0-535.54.03-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu2204-12-2-local_12.2.0-535.54.03-1_amd64.deb
+sudo cp /var/cuda-repo-ubuntu2204-12-2-local/cuda-*-keyring.gpg /usr/share/keyrings/
+sudo apt-get -y install cuda
+
+sudo ubuntu-drivers autoinstall
+sudo apt install nvidia-driver-525
+sudo apt install nvidia-cuda-toolkit
+sudo apt-get -y install cuda-nvcc-12-2
+sudo apt-get -y install cuda-toolkit-12-2
+
+# Check NVIDIA Drivers
+nvidia-smi
+
+# Check CUDA
+nvcc --version
+
+# Setup cuDNN
+sudo apt install libcudnn8
+sudo apt install libcudnn8-dev
+
+# Check CuDNN
+/sbin/ldconfig -N -v $(sed 's/:/ /' <<< $LD_LIBRARY_PATH) 2>/dev/null | grep libcudnn
+
+# Setup raw
+wget https://huggingface.co/lmz/candle-mistral/resolve/main/pytorch_model-00001-of-00002.safetensors
+wget https://huggingface.co/lmz/candle-mistral/resolve/main/pytorch_model-00002-of-00002.safetensors
+wget https://huggingface.co/lmz/candle-mistral/resolve/main/tokenizer.json
+
+# Source
+echo 'export CUDA_HOME=/usr/local/cuda-12.2' >> ~/.bashrc
+echo 'export PATH=/usr/local/cuda-12.2/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
+sudo ln -s /usr/local/cuda-12.2/bin/nvcc /usr/bin/nvcc
+
+# Run
+cargo run --example mistral --release --features cuda,cudnn -- --prompt "Write helloworld code in Rust" --weight-files=pytorch_model-00001-of-00002.safetensors,pytorch_model-00002-of-00002.safetensors --tokenizer-file=tokenizer.json --sample-len 15
+```
