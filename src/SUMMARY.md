@@ -64,4 +64,5 @@
   - [Large Language Model](ml/large-language-model.md)
   - [Stable Diffusion](ml/stable-diffusion.md)
   - [Hugging Face - Candle](ml/huggingface-candle.md)
+  - [Hugging Face - AutoTrain](ml/huggingface-autotrain.md)
 - [Bye](bye.md)

@@ -1,13 +1,13 @@
-## HuggingFace Auto train
+## 🤗 HuggingFace - AutoTrain
 
-### Knowledge Base
+### 📚 Knowledge Base
 
-- `PEFT` Parameter-Efficient Fine-Tuning: https://github.com/huggingface/peft
-- `TRL` Transformer Reinforcement Learning: https://github.com/huggingface/trl
+- `PEFT` [Parameter-Efficient Fine-Tuning](https://github.com/huggingface/peft)
+- `TRL` [Transformer Reinforcement Learning](https://github.com/huggingface/trl)
 
 > ref: https://github.com/huggingface/trl/blob/main/examples/README.md
 
-### Setup
+### ⚙️ Setup
 
 ```bash
 # Install Python3 pip
@@ -30,7 +30,7 @@ pip3 install deepspeed
 pip install accelerate
 ```
 
-### Config
+### 📝 Config
 
 ```bash
 accelerate config
@@ -99,7 +99,9 @@ bf16
 accelerate configuration saved at /home/katopz/.cache/huggingface/accelerate/default_config.yaml
 ```
 
-### Fine-tuned
+### 🪛 Fine tune
+
+![](/assets/kat.png) <span class="speech-bubble">Let's fine-tune [Mistral](https://mistral.ai/) locally.</span>
 
 ```bash
 # Setup
@@ -110,17 +112,17 @@ autotrain llm --help
 # Fine tune
 autotrain llm \
   --train \
-  --model mistralai/Mistral-7B-Instruct-v0.1  \
-  --data-path $DATA_PATH  \
-  --use-peft  \
-  --use-int4 \
-  --lr 20-4 \
-  --batch-size 4  \
-  --epochs 1  \
+  --model mistralai/Mistral-7B-Instruct-v0.1 \
+  --data-path $DATA_PATH \
+  --use-peft\
+  --use-int4\
+  --lr 2e-4 \
+  --batch-size 4 \
+  --epochs 1 \
   --trainer sft \
-  --username $USERNAME \
+  --username $USER_NAME \
   --token $HF_TOKEN \
-  --project-name foo-bar  \
-  --target-modules q_proj,v_proj  \
+  --project-name $PROJECT_NAME \
+  --target-modules q_proj,v_proj \
   --push-to-hub
 ```

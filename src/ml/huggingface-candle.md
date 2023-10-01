@@ -1,4 +1,4 @@
-# Hugging Face - Candle
+# 🤗 HuggingFace - Candle
 
 > [https://github.com/huggingface/candle]()
 
