@@ -50,7 +50,7 @@ fn main() {
 
 ![](/assets/kat.png) <span class="speech-bubble">Don't worry about `&'static str` or `lifetimes` just yet, compiler will let you know when need (usually out of `{ }` scope ) and we will talk about it later. Let's continue on other topics.</span>
 
-## strum, Result, Ok, Err
+## strum
 
 ```rust,editable
 use std::str::FromStr;
@@ -130,18 +130,6 @@ fn main() {
 4️⃣ cat_sound_string: "meaowww"
 5️⃣ my_pet: "snoopy"
 ```
-
-</details>
-
-> 💡 `T` is generic Type, `E` is generic Error, `unwrap` always has 2 outputs.
-
-```
-                         ╭─▶︎ Ok(T)
-Result<T, E> ── unwrap ──┤
-                         ╰─▶︎ Err(E)
-```
-
-> Read more about how to handle `Result` [here](https://doc.rust-lang.org/rust-by-example/error/result.html)
 
 ---
 

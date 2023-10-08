@@ -185,20 +185,29 @@ fn main() {
     let duration_since:Duration = duration_since_result.unwrap();
     println!("1️⃣ duration_since:{:?}", duration_since);
 
-    // But what if result is error. 😱
+    // 2️⃣ Or use match to handle Result<Ok(Duration),Err(())>
+    let duration = match now.duration_since(UNIX_EPOCH) {
+        // Handle happy case.
+        Ok(duration) => duration,
+
+        // Handle error case.
+        Err(err) => panic!("{:?}", err),
+    };
+    println!("2️⃣ duration:{:?}", duration);
+
+    // But what if result is error? 😱
     let duration_since_result = Err(());
 
     // // 💥 👇 It will panic and crash with no reason. 😭
     // let duration_since:Duration = duration_since_result.unwrap();
     // println!("💥 duration_since:{:?}", duration_since);
 
-    // 2️⃣ You can fallback with unwrap_or.
-    let duration_since:Duration = duration_since_result.unwrap_or(Duration::new(0u64,0u32));
-    println!("2️⃣ duration_since:{:?}", duration_since);
+    // 3️⃣ You can fallback with unwrap_or.
+    let duration:Duration = duration_since_result.unwrap_or(Duration::new(0u64,0u32));
+    println!("3️⃣ duration:{:?}", duration);
 
-    // 3️⃣ Or panic with a reason, we will use `expect` instead. 🫣
-    let duration_since:Duration = duration_since_result.expect("🔥 Expect some number.");
-    println!("3️⃣ duration_since:{:?}", duration_since);
+    // 4️⃣ Or panic with a reason, we will use `expect` instead. 🫣
+    let _duration:Duration = duration_since_result.expect("4️⃣ 🔥 Expect some number.");
 }
 ```
 
@@ -226,6 +235,6 @@ Result<T, E> ── unwrap_or ──┤
 
 ![](/assets/duck.png) <span class="speech-bubble">Don't be surprise if you found this confusing. I did! But don't give up just yet!</span>
 
-![](/assets/kat.png) <span class="speech-bubble">We will revisit about error handling again and it will be easier I promise!</span>
+![](/assets/kat.png) <span class="speech-bubble">We will use `Option` and `Result` a lot from now on, so deal with it!</span>
 
 [Continue to Day 3 ➠](./enjoy3.md)
