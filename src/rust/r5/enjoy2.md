@@ -73,7 +73,7 @@ And we can use `into_iter` if we need.</span>
 > `String` and `Vec` is allocated in `heap`.
 > `str` and `array` is allocated in `stack`.
 
-### HashMap, match, Option, Some, None, unwrap_or, panic
+### Option, Some, None, use, HashMap, match, expect, unwrap_or, panic
 
 ![](/assets/kat.png) <span class="speech-bubble">`HashMap` is like Key/Value pair.</span>
 
@@ -142,18 +142,90 @@ fn main() {
 }
 ```
 
+![](/assets/kat.png) <span class="speech-bubble">Recap: `unwrap`, `expect`, `unwrap_or`</span>
+
 > 💡 `T` is generic Type, `None` is nothing, `unwrap` always has 2 outputs.
 
 ```
-                      ╭─▶︎ Some(T)
-Option<T> ── unwrap ──┤
-                      ╰─▶︎ None
+                         ╭─ Some(T) ──▶︎ T
+Option<T> ── unwrap ─────┤
+                         ╰─ None ─────▶︎ 💥 Panic
 ```
 
-![](/assets/kat.png) <span class="speech-bubble"> To know more about this try [read more](https://doc.rust-lang.org/rust-by-example/error/option_unwrap.html).</span>
+```
+                         ╭─ Some(T) ──▶︎ T
+Option<T> ── expect ─────┤
+                         ╰─ None ─────▶︎ 💥 Panic with reason.
+```
+
+```
+                         ╭─ Some(T) ──▶︎ T
+Option<T> ── unwrap_or ──┤
+                         ╰─ None ─────▶︎ Some fallback value you desired.
+```
+
+![](/assets/kat.png) <span class="speech-bubble">To know more about this try [read more](https://doc.rust-lang.org/rust-by-example/error/option_unwrap.html).</span>
+
+![](/assets/duck.png) <span class="speech-bubble">We tend to avoid `unwrap` and use `unwrap_or` or `expect` instead.</span>
+
+### Result, Ok, Err, SystemTime
+
+```rust,editable
+use std::time::{SystemTime, UNIX_EPOCH, Duration};
+
+fn main() {
+    // Get current system time.
+    let now = SystemTime::now();
+
+    // And it will return a Result.
+    let duration_since_result = now.duration_since(UNIX_EPOCH);
+    println!("duration_since_result:{:?}", duration_since_result);
+
+    // 1️⃣ We can unwrap it to get inner value. 😃
+    let duration_since:Duration = duration_since_result.unwrap();
+    println!("1️⃣ duration_since:{:?}", duration_since);
+
+    // But what if result is error. 😱
+    let duration_since_result = Err(());
+
+    // // 💥 👇 It will panic and crash with no reason. 😭
+    // let duration_since:Duration = duration_since_result.unwrap();
+    // println!("💥 duration_since:{:?}", duration_since);
+
+    // 2️⃣ You can fallback with unwrap_or.
+    let duration_since:Duration = duration_since_result.unwrap_or(Duration::new(0u64,0u32));
+    println!("2️⃣ duration_since:{:?}", duration_since);
+
+    // 3️⃣ Or panic with a reason, we will use `expect` instead. 🫣
+    let duration_since:Duration = duration_since_result.expect("🔥 Expect some number.");
+    println!("3️⃣ duration_since:{:?}", duration_since);
+}
+```
+
+> 💡 `T` is generic Type, `E` is generic Error, `unwrap` always has 2 outputs.
+
+```
+                            ╭─ Ok(T) ──▶︎ T
+Result<T, E> ── unwrap ─────┤
+                            ╰─ Err(E) ─▶︎ 💥 Panic
+```
+
+```
+                            ╭─ Ok(T) ──▶︎ T
+Result<T, E> ── expect ─────┤
+                            ╰─ Err(E) ─▶︎ 💥 Panic with reason.
+```
+
+```
+                            ╭─ Ok(T) ──▶︎ T
+Result<T, E> ── unwrap_or ──┤
+                            ╰─ Err(E) ─▶︎ Some fallback value you desired.
+```
+
+> Read more about how to handle `Result` [here](https://doc.rust-lang.org/rust-by-example/error/result.html)
 
 ![](/assets/duck.png) <span class="speech-bubble">Don't be surprise if you found this confusing. I did! But don't give up just yet!</span>
 
----
+![](/assets/kat.png) <span class="speech-bubble">We will revisit about error handling again and it will be easier I promise!</span>
 
 [Continue to Day 3 ➠](./enjoy3.md)
