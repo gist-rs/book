@@ -6,6 +6,7 @@ FYI: We will focus this topic in `Rust` landscape which usually follow Python an
 
 - ⚠️ Below info is outdates, The clear `2023/10` winner is [Mistral-7B](https://huggingface.co/mistralai)
 - For `Rust` consider use [Candle](https://github.com/huggingface/candle)
+- For coding related see: [Replit Code V-1.5 3B](https://huggingface.co/replit) and newcomer [Tabby](https://tabby.tabbyml.com/)
 - The format is `GGUF`.
 
 | Feature                    | GGUF                                              | GGML                                 |
