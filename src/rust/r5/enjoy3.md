@@ -32,6 +32,8 @@ fn main() {
 
 ## derive, impl, Self, &self
 
+![](/assets/duck.png) <span class="speech-bubble">You can `impl` to `struct` 👇.</span>
+
 ```rust,editable
 // 👇 Let's move struct out from `fn main`.
 #[derive(Debug, Clone)] // Derive Debug so we can print later.

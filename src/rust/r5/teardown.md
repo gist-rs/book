@@ -2,10 +2,10 @@
 
 ## Recap
 
-1. 🦀`Rust` like to move it move it 🎵, borrow `&` when need.
-1. 🦀`Rust` variable are `immutable` by default, `mut` when need.
-1. 🦀`Rust` variable will drop when out of scope `{ }`, consider borrow `&` when need.
-1. No `null`, only `Option`, Use `match` (or [other ways](https://doc.rust-lang.org/rust-by-example/std/option.html)) to handle it; `unwrap` will `panic`.
+1. 🦀`Rust` like to move it move it 🎵, borrow `&` when needed.
+1. 🦀`Rust` variable are `immutable` by default, `mut` when needed.
+1. 🦀`Rust` variable will drop when out of scope `{ }`, consider borrow `&` when needed.
+1. No `null`, only `Option`, Use `match` (or [other ways](https://doc.rust-lang.org/rust-by-example/std/option.html)) to handle it; `unwrap` and `expect` will `panic`.
 
    ```rust,no_run
    enum Option<T> {
@@ -14,7 +14,7 @@
    }
    ```
 
-1. When `fn` return `Result`, Use `match` (or [other ways](https://doc.rust-lang.org/rust-by-example/std/result.html)) to handle it; `unwrap` will `panic`.
+1. When `fn` return `Result`, Use `match` (or [other ways](https://doc.rust-lang.org/rust-by-example/std/result.html)) to handle it; `unwrap` and `expect` will `panic`.
 
    ```rust,no_run
    enum Result<T, E> {

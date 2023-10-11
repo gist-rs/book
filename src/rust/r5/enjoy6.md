@@ -4,6 +4,8 @@
 
 ## Supertraits
 
+![](/assets/duck.png) <span class="speech-bubble">We can compose `trait` like this 👇</span>
+
 ```rust,editable
 trait Human {
     fn name(&self) -> String;
@@ -191,15 +193,52 @@ fn main() {
 
 ---
 
-<details>
-<summary>🚧 TODO : parameterize traits</summary>
+## Parameterize traits
 
-```rust
+![](/assets/kat.png) <span class="speech-bubble">We can make `trait` parameters generic like this 👇.</span>
+
+```rust,editable
+// Define a trait called `Combiner` that takes three generic type parameters: A, B, and C.
 trait Combiner<A, B, C> {
+    // Declare an associated function `combine`.
     fn combine(a: &A, b: &B) -> C;
+}
+
+// String + String = String
+struct StringCombiner;
+
+impl Combiner<String, String, String> for StringCombiner {
+    fn combine(a: &String, b: &String) -> String {
+        format!("{}{}", a, b)
+    }
+}
+
+// i32 + i32 = i32
+struct NumberCombiner;
+
+impl Combiner<i32, i32, i32> for NumberCombiner {
+    fn combine(a: &i32, b: &i32) -> i32 {
+        *a + *b
+    }
+}
+
+fn main() {
+    // Combine string.
+    let str1 = String::from("Hello, ");
+    let str2 = String::from("world!");
+
+    let str_result = StringCombiner::combine(&str1, &str2);
+    println!("String result: {}", str_result);
+
+    // Combine number
+    let num1 = 5;
+    let num2 = 10;
+
+    let num_result = NumberCombiner::combine(&num1, &num2);
+    println!("Number result: {}", num_result);
 }
 ```
 
-</details>
+![](/assets/duck.png) <span class="speech-bubble">Look handy!</span>
 
 [Continue to Day 7 ➠](./enjoy7.md)

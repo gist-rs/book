@@ -6,21 +6,40 @@
 
 ![](/assets/kat.png) <span class="speech-bubble">Yes!, same idea for `String` → `str`, `Vec` → `array` which is `Stack` → `Heap`.</span>
 
+```rust
+let rust = "Rust".to_string()
+let us = &rust[1..=2];
+```
+
 ```bob
 
  Stack                              Heap
 .- - - - - - - - - - - - - -.      .- - - - - - - - - - - - - -.
 :                           :      :                           :
-:    String                 :      :    str                    :
+:    String "Rust"          :      :    str                    :
 :   +-----------+------+    : owns :   +----+----+----+----+   :
 :   | ptr       |   o--+----+------+-->| R  | u  | s  | t  |   :
 :   | len       |   4  |    :      :   +----+----+----+----+   :
-:   | capacity  |   4  |    :      :                           :
-:   +-----------+------+    :      :                           :
-:                           :      :                           :
-`- - - - - - - - - - - - - -'      `- - - - - - - - - - - - - -'
-
+:   | capacity  |   4  |    :      :           ^               :
+:   +-----------+------+    :      :           |               :
+:                           :      :           |               :
+`- - - - - - - - - - - - - -'      `- - - - - -+- - - - - - - -'
+                                               |
+Stack                                          |
+.- - - - - - - - - - - - - -.                  |
+:                           :                  |
+:    &str "us"              :                  |
+:   +-----------+------+    : borrows          |
+:   | ptr       |   o--+----+------------------+
+:   | len       |   4  |    :
+:   +-----------+------+    :
+:                           :
+`- - - - - - - - - - - - - -'
 ```
+
+![](/assets/kat.png) <span class="speech-bubble">Imagine each `R` `u` `s` `t` is super car...</span>
+
+![](/assets/duck.png) <span class="speech-bubble">It would be nice if we can borrow `&` instead of buying a new one!</span>
 
 ## Dynamic Dispatch with `Box`, `dyn`
 
@@ -46,9 +65,9 @@
 #     }
 # }
 
-// Compiler'll need this👇 Box to know a size (Box size BTW).
+// Compiler'll need this👇 Box to know its size (Box's size).
 fn animal_or_human() -> Box<dyn Sayable> {
-    // Compiler'll need this 👆 dyn to know it's dynamic (Animal or Human)
+    // Compiler'll need this 👆 dyn to know it'll be dynamic (Animal or Human)
 
     // How to get current time.
     let now = std::time::SystemTime::now();

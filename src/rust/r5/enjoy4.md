@@ -4,6 +4,8 @@
 
 ## Enum
 
+![](/assets/duck.png) <span class="speech-bubble">You also can `impl` to `enum` 👇.</span>
+
 ```rust,editable
 #[derive(Debug)]
 enum AnimalType {

@@ -4,6 +4,8 @@
 
 ## trait, impl
 
+![](/assets/duck.png) <span class="speech-bubble">You also can `impl` any `trait` for `struct` 👇.</span>
+
 ```rust,editable
 // Just boring struct.
 #[derive(Debug, Clone)]
@@ -47,6 +49,12 @@ fn main() {
 ```
 
 ![](/assets/duck.png) <span class="speech-bubble">That's look like [`impl`](enjoy3.md) to `struct`, but this time we can implement that `trait` to any `struct` we want!</span>
+
+![](/assets/kat.png) <span class="speech-bubble">Take a way</span>
+
+- `trait` is a skill.
+- `impl` is how we implement skill.
+- So `impl Sayable for Animal` littery mean `implement sayable skill to animal`. 🐈💬
 
 ---
 
