@@ -5,7 +5,7 @@
 - `PEFT` [Parameter-Efficient Fine-Tuning](https://github.com/huggingface/peft)
 - `TRL` [Transformer Reinforcement Learning](https://github.com/huggingface/trl)
 
-> ref: https://github.com/huggingface/trl/blob/main/examples/README.md
+> ref: [https://github.com/huggingface/trl/blob/main/examples/README.md]()
 
 ### ⚙️ Setup
 
