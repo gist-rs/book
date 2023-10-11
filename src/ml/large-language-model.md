@@ -1,5 +1,20 @@
 # Large Language Model
+
 FYI: We will focus this topic in `Rust` landscape which usually follow Python and C++ developments.
+
+## TL;DR
+
+- ⚠️ Below info is outdates, The clear `2023/10` winner is [Mistral-7B](https://huggingface.co/mistralai)
+- For `Rust` consider use [Candle](https://github.com/huggingface/candle)
+- The format is `GGUF`.
+
+| Feature                    | GGUF                                              | GGML                                 |
+| -------------------------- | ------------------------------------------------- | ------------------------------------ |
+| Extensibility              | Yes                                               | No                                   |
+| Future-proofing            | Yes                                               | No                                   |
+| Performance                | Better, especially for models with special tokens | Good                                 |
+| Support for various models | Yes                                               | Yes, but limited to llama.cpp models |
+| Status                     | Current standard format                           | Deprecated                           |
 
 ## llm (aka LLaMA-rs)
 
