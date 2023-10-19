@@ -66,5 +66,5 @@
   - [Stable Diffusion](ml/stable-diffusion.md)
   - [Hugging Face - Candle](ml/huggingface-candle.md)
   - [Hugging Face - AutoTrain](ml/huggingface-autotrain.md)
-  - [LLM Train and FineTune](ml/llm-train-finetune.md)
+  - [LLM Train and FineTune](ml/llm-train-finetune/mod.md)
 - [Bye](bye.md)
