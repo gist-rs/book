@@ -49,8 +49,9 @@
 
 ## TODO
 
-- [x] Understand pgvector: https://bugbytes.io/posts/vector-databases-pgvector-and-langchain/
-- [ ] Try RAG: https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/
+- [ ] Understand `pgvector`: https://bugbytes.io/posts/vector-databases-pgvector-and-langchain/
+- [ ] Try RAG with `pgvector` for faster query: https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/
+- [ ] Use `MistralLite` for longer context retrieval: https://huggingface.co/amazon/MistralLite
 - [ ] Create POC PDF pipeline service.
 
 ## TOREAD
