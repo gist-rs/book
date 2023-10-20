@@ -9,7 +9,7 @@ Image -.-> img2img([img2img])
 
 ControlNet(ControlNet) --> upscale["Upscale:tile"] --> Image
 ControlNet --> shuffle --> Image
-ControlNet --> inpaint --> Image
+ControlNet --> inpaint,outpaint --> Image
 ControlNet --> seg["Semantic Segmentation"] --> Image
 ControlNet --> depth,normalbae,openpose --> Image
 ControlNet --> mlsd,canny,softedge,scribble,lineart --> Image
@@ -96,7 +96,7 @@ VAE -- "original" --> EMA
 - [EbSynth](https://github.com/s9roll7/ebsynth_utility): AUTOMATIC1111 UI extension for creating videos using img2img and ebsynth.
 - [DAAM](https://defpoint-ai.com/ai-illustration/prompt-daam/): Diffusion Attentive Attribution Maps. // How much and where is text influenced picture. [](https://github.com/toriato/stable-diffusion-webui-daam)
   ![](https://defpoint-ai.com/wp-content/uploads/2022/12/tmpu3i4jg0q.jpg)
-- [System Info](https://github.com/vladmandic/sd-extension-system-info): System Info + Benchmark.
+- [sd-extension-system-info](https://github.com/vladmandic/sd-extension-system-info): System Info + Benchmark.
 
 ## Advanced
 
@@ -114,6 +114,7 @@ VAE -- "original" --> EMA
 - [`Real-ESRGAN`](https://github.com/xinntao/Real-ESRGAN): ![](https://github.com/xinntao/Real-ESRGAN/raw/master/assets/teaser.jpg)
 - `Clip skip`, `Script-X/Y/Z plot`: To create grid for comparison
   ![](./assets/xyz_grid-0003-3779026953.jpg)
+- outpaint
 
 ### Modify Model
 
