@@ -68,4 +68,6 @@
   - [Hugging Face - AutoTrain](ml/huggingface-autotrain.md)
   - [LLM Train and FineTune](ml/llm-train-finetune/mod.md)
   - [TabbyML](ml/tabbyml.md)
+- [Bevy](bevy/mod.md)
+  - [Physics with Rapier](bevy/physics-rapier.md)
 - [Bye](bye.md)
