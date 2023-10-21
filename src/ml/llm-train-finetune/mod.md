@@ -55,6 +55,7 @@
 
 ## TOREAD
 
+- [ ] TimeGPT: https://docs.nixtla.io/docs
 - [ ] Read, try and summary: https://github.com/replit/replitLM#alpaca-style-instruct-tuning-with-hugging-face-transformers
 - [ ] Try fine-tune-mistral: https://github.com/abacaj/fine-tune-mistral
 - [ ] Try fine-tune-mistral: https://github.com/brevdev/notebooks/blob/main/mistral-finetune-own-data.ipynb
