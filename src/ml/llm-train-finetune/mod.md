@@ -29,8 +29,7 @@
 - Colab: [https://colab.research.google.com/drive/11sf5LAF5EC1M0cDh-pUyowvS7EflwlMH?usp=sharing]()
 - ⚠️ This notebook didn't use GPU. To support GPU will need.
   ```bash
-  %%bash
-  CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python
+  !CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python
   ```
   and
   ```python
