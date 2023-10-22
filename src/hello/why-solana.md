@@ -2,15 +2,15 @@
 
 ## Reasons
 
-- Smart Contract using `Rust`.
+- A Smart Contract using `Rust`.
 - [Fast](https://break.solana.com/)/Cheap/[Green](https://solana.com/environment).
+- Use by `VISA`: https://www.helius.dev/blog/evaluating-solana-for-enterprise-use-a-comprehensive-guide
 
 ## Landscape
 
 - Wallet: [Phantom](https://phantom.app/)
-- LaunchPad: [Strata](https://strataprotocol.com/)
+- RPC: [Helius](https://www.helius.dev/)
 - NFTs: [Metaplex](https://www.metaplex.com/)
-- Conditional ownership of NFTs: [Cardinal](https://www.cardinal.so/)
 - Multisig: [Squads](https://squads.so/)
 - Automation: [Clockwork](https://www.clockwork.xyz/)
 - Storage: [Shadow Drive](https://github.com/GenesysGo/shadow-drive)
