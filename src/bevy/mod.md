@@ -15,14 +15,15 @@ rustup default stable-x86_64-pc-windows-msvc
 ## Note
 
 - [x] Hot reload: https://github.com/lee-orr/dexterous_developer // Not seem to work and will need `XCode` to be installed for faster reload.
-- [ ] Game template: https://github.com/NiklasEi/bevy_game_template
+- [x] Game template: https://github.com/NiklasEi/bevy_game_template
 - [x] Load scene from Blender: https://github.com/kaosat-dev/Blender_bevy_components_workflow // Work but animation will failed.
-- [ ] Oxidized Navigation: Tiled Runtime Nav-mesh generation for 3D worlds https://github.com/TheGrimsey/oxidized_navigation
-- [ ] 💾 Moonshine Save: A save/load framework for Bevy game engine. https://github.com/Zeenobit/moonshine_save
-- [ ] Bevy Replicon: Write the same logic that works for both multiplayer and single-player. https://github.com/lifescapegame/bevy_replicon
-- [ ] Renet: Renet is a network library for Server/Client game: https://github.com/lucaspoffo/renet
+- [x] Renet: Renet is a network library for Server/Client game: https://github.com/lucaspoffo/renet
 - [x] bevy_xpbd: 2D and 3D physics engine based on Extended Position Based Dynamics for Bevy. https://github.com/Jondolf/bevy_xpbd // Not ready for prod.
 - [x] Sea : https://github.com/claudijo/pirate-sea-jam // Work `0.11` but weird firing ammo.
+- [x] Oxidized Navigation: Tiled Runtime Nav-mesh generation for 3D worlds https://github.com/TheGrimsey/oxidized_navigation
+- [x] Picking and Pointer Events for Bevy: https://github.com/aevyrie/bevy_mod_picking
+- [ ] 💾 Moonshine Save: A save/load framework for Bevy game engine. https://github.com/Zeenobit/moonshine_save
+- [ ] Bevy Replicon: Write the same logic that works for both multiplayer and single-player. https://github.com/lifescapegame/bevy_replicon
 
 ## Windows
 

@@ -8,4 +8,8 @@
 
 - Able to deploy `Rust` web app to some server(less) e.g. (`CloudRun`, `CloudFlare`, `Fastly`).
 
+## TODO
+
+- [ ] https://blog.orhun.dev/automated-rust-releases/
+
 [Let's Rust! ➠](./hello-actix-cloudrun.md)
