@@ -2,20 +2,24 @@
 
 FYI: We will focus this topic in `Rust` landscape which usually follow Python and C++ developments.
 
+![](./assets/llm-flow.jpeg)
+
+> ref: https://twitter.com/_aigeek/status/1717046220714308026/photo/1
+
 ## TL;DR
 
-- ⚠️ Below info is outdates, The clear `2023/10` winner is [Mistral-7B](https://huggingface.co/mistralai)
+- `2023/10` model winner is [Mistral-7B](https://huggingface.co/mistralai) and [Zephyr 7B Alpha](https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha).
 - For `Rust` consider use [Candle](https://github.com/huggingface/candle)
 - For coding related see: [Replit Code V-1.5 3B](https://huggingface.co/replit) and newcomer [Tabby](https://tabby.tabbyml.com/)
-- The format is `GGUF`.
-
-| Feature                    | GGUF                                              | GGML                                 |
-| -------------------------- | ------------------------------------------------- | ------------------------------------ |
-| Extensibility              | Yes                                               | No                                   |
-| Future-proofing            | Yes                                               | No                                   |
-| Performance                | Better, especially for models with special tokens | Good                                 |
-| Support for various models | Yes                                               | Yes, but limited to llama.cpp models |
-| Status                     | Current standard format                           | Deprecated                           |
+- The winner format is `GGUF`.
+  | Feature | GGUF | GGML |
+  | -------------------------- | ------------------------------------------------- | ------------------------------------ |
+  | Extensibility | Yes | No |
+  | Future-proofing | Yes | No |
+  | Performance | Better, especially for models with special tokens | Good |
+  | Support for various models | Yes | Yes, but limited to llama.cpp models |
+  | Status | Current standard format | Deprecated |
+- ⚠️ Below info is outdates.
 
 ## llm (aka LLaMA-rs)
 

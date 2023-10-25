@@ -10,7 +10,7 @@
 
 ### A Beginner’s Guide to Fine-Tuning Mistral 7B Instruct Model
 
-> Fixed notebook is [Mistral_7B_qLora_Finetuning.ipynb](./Mistral_7B_qLora_Finetuning.ipynb). But prompt formatting is still questioned.
+> Fixed notebook is [Mistral_7B_qLora_Finetuning.ipynb](./Mistral_7B_qLora_Finetuning.ipynb). But prompt formatting is still in doubt.
 
 - Colab: [https://adithyask.medium.com/a-beginners-guide-to-fine-tuning-mistral-7b-instruct-model-0f39647b20fe]()
 - Source: [https://github.com/adithya-s-k/CompanionLLM]()
@@ -48,20 +48,28 @@
 
 ## TODO
 
-- [ ] Understand `pgvector`: https://bugbytes.io/posts/vector-databases-pgvector-and-langchain/
-- [ ] Try RAG with `pgvector` for faster query: https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/
-- [ ] Use `MistralLite` for longer context retrieval: https://huggingface.co/amazon/MistralLite
-- [ ] Create POC PDF pipeline service.
+- [x] Understand `pgvector`: https://bugbytes.io/posts/vector-databases-pgvector-and-langchain/
+- [ ] Try `RAG` with `pgvector` for faster query: https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/
+
+## TOTRY - `TimeGPT`
+
+- [ ] Read `TimeGPT`: https://docs.nixtla.io/docs
+- [ ] Try `TimeGPT` with [LlamaIndex's Supabase Vector Store](https://colab.research.google.com/github/supabase/supabase/blob/master/examples/ai/llamaindex/llamaindex.ipynb).
+
+## TOTRY - `ChatWithPDF`
+
+- [ ] `ChatWithPDF`: Use `MistralLite` for longer context retrieval: https://huggingface.co/amazon/MistralLite
+  - [ ] try [Using MistralLite with HuggingFace Transformers and FlashAttention-2](https://github.com/awslabs/extending-the-context-length-of-open-source-llms/blob/main/MistralLite/huggingface-transformers/example_usage.ipynb)
+- [ ] `ChatWithPDF`: Try: https://github.com/aigeek0x0/zephyr-7b-alpha-langchain-chatbot
+- [ ] `ChatWithPDF`: Take a look: https://github.com/chatchat-space/Langchain-Chatchat
 
 ## TOREAD
 
-- [ ] TimeGPT: https://docs.nixtla.io/docs
 - [ ] Read, try and summary: https://github.com/replit/replitLM#alpaca-style-instruct-tuning-with-hugging-face-transformers
 - [ ] Try fine-tune-mistral: https://github.com/abacaj/fine-tune-mistral
 - [ ] Try fine-tune-mistral: https://github.com/brevdev/notebooks/blob/main/mistral-finetune-own-data.ipynb
-- [ ] Try LocalGPT: https://github.com/PromtEngineer/localGPT
+- [ ] Try `LocalGPT`: https://github.com/PromtEngineer/localGPT
 - [ ] Read and summary: https://twitter.com/manelferreira_/status/1711788177458090388
 - [ ] Read and summary: https://docs.llamaindex.ai/en/stable/core_modules/data_modules/index/metadata_extraction.html
 - [ ] LLaVA: Visual and language AI with GPT-4, instruction tuning to visual data.
 - [ ] MUFFIN: follow Scaling Tasks per Input paradigm to collect multiple task instructions for a single input. (Keywords: Instruction Brainstorm, Instruction Rematching)
-- [ ] Take a look: https://github.com/chatchat-space/Langchain-Chatchat
