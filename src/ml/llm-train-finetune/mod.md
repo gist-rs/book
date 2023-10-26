@@ -58,18 +58,19 @@
 
 ## TOTRY - `ChatWithPDF`
 
-- [ ] `ChatWithPDF`: Use `MistralLite` for longer context retrieval: https://huggingface.co/amazon/MistralLite
-  - [ ] try [Using MistralLite with HuggingFace Transformers and FlashAttention-2](https://github.com/awslabs/extending-the-context-length-of-open-source-llms/blob/main/MistralLite/huggingface-transformers/example_usage.ipynb)
-- [ ] `ChatWithPDF`: Try: https://github.com/aigeek0x0/zephyr-7b-alpha-langchain-chatbot
-- [ ] `ChatWithPDF`: Take a look: https://github.com/chatchat-space/Langchain-Chatchat
+- [ ] Use `MistralLite` for longer context retrieval: https://huggingface.co/amazon/MistralLite
+- [ ] try [Using MistralLite with HuggingFace Transformers and FlashAttention-2](https://github.com/awslabs/extending-the-context-length-of-open-source-llms/blob/main/MistralLite/huggingface-transformers/example_usage.ipynb)
+- [ ] Try: https://github.com/aigeek0x0/zephyr-7b-alpha-langchain-chatbot
+- [ ] Take a look: https://github.com/chatchat-space/Langchain-Chatchat
 
 ## TOREAD
 
+- [ ] Jina 8K Context Window `Embeddings`: https://github.com/run-llama/llama_index/blob/main/docs/examples/embeddings/jina_embeddings.ipynb
 - [ ] Read, try and summary: https://github.com/replit/replitLM#alpaca-style-instruct-tuning-with-hugging-face-transformers
 - [ ] Try fine-tune-mistral: https://github.com/abacaj/fine-tune-mistral
 - [ ] Try fine-tune-mistral: https://github.com/brevdev/notebooks/blob/main/mistral-finetune-own-data.ipynb
 - [ ] Try `LocalGPT`: https://github.com/PromtEngineer/localGPT
 - [ ] Read and summary: https://twitter.com/manelferreira_/status/1711788177458090388
 - [ ] Read and summary: https://docs.llamaindex.ai/en/stable/core_modules/data_modules/index/metadata_extraction.html
-- [ ] LLaVA: Visual and language AI with GPT-4, instruction tuning to visual data.
-- [ ] MUFFIN: follow Scaling Tasks per Input paradigm to collect multiple task instructions for a single input. (Keywords: Instruction Brainstorm, Instruction Rematching)
+- [ ] `LLaVA`: Visual and language AI with GPT-4, instruction tuning to visual data.
+- [ ] `MUFFIN`: follow Scaling Tasks per Input paradigm to collect multiple task instructions for a single input. (Keywords: Instruction Brainstorm, Instruction Rematching)
