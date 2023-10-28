@@ -1,6 +1,6 @@
 # Build a fetch module
 
-![](/assets/kat.png) <span class="speech-bubble">We able to fetch and handle things nicely, it's time to reuse it as a module.</span>
+![](/assets/kat.png) <span class="speech-bubble">We able to fetch and handle errors from previously examples, it's time to reuse it as a module!</span>
 
 ```rust
 📂 fetch-any-lib
@@ -19,4 +19,4 @@
 └─ 📦 Cargo.toml          # 👈 Workspace's Cargo.
 ```
 
-> 🚧 UNDER CONSTRUCTION
+> 🚧 You can do this as a homework, no need to wait for me!
