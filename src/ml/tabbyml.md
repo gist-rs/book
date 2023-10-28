@@ -27,10 +27,16 @@
 
 ## How to select model
 
-1. Optional use `TabbyML/CodeLlama-7B`
+1. Optional completion model use `TabbyML/CodeLlama-7B`
 
    ```bash
    sudo docker run -it --gpus all -p 8080:8080 -v $HOME/.tabby:/data tabbyml/tabby serve --model TabbyML/CodeLlama-7B --device cuda
+   ```
+
+1. Optional chat model use `TabbyML/Mistral-7B`
+   > ⚠️ I can't make this one work properly. 🤔
+   ```bash
+   sudo docker run -it --gpus all -p 8080:8080 -v $HOME/.tabby:/data tabbyml/tabby serve --model TabbyML/CodeLlama-7B --chat-model TabbyML/Mistral-7B --device cuda
    ```
 
 ## How to get code completion = index from target repos
@@ -43,9 +49,12 @@
    sudo docker run -v $HOME/.tabby:/data tabbyml/tabby scheduler --now
    ```
 
-## How to request the `TabbyML` services from other machine to Windows WSL2
+1. Or schedule via running docker
+   ```bash
+   sudo docker ps -a | grep tabby | awk '{print $1}' | xargs sudo docker exec -it $1 tabbyml/tabby scheduler --now
+   ```
 
-1. Open Windows firewall and create new rule that allow port 8080.
+## How to request the `TabbyML` services from other machine to Windows WSL2
 
 1. See your host info
 
@@ -54,8 +63,23 @@
    ipconfig
    ```
 
-1. Then forward port 8080 to WLS2
+1. Open `Windows Firewall`→`Advanced Settings` and create new `Inbound Rules` for `Your local IP4 (e.g. 192.168.1.33)` that allow port `8080`.
+1. Then forward port `8080` to `WLS2`
    ```bash
    netsh interface portproxy add v4tov4 listenaddress=192.168.1.33 listenport=8080 connectaddress=127.0.0.1 connectport=8080
    ```
-1. Open http://192.168.1.33:8080 in your browser.
+1. Open in your browser.
+   ```bash
+   open http://192.168.1.33:8080
+   ```
+
+## Ideas
+
+- `CLI` Health report
+- `CLI` Model selection
+- `CLI` Configurable repos
+- `CLI` Indexing trigger
+- `Query` Include/Exclude repos for faster query
+- `Query` Include/Exclude language for faster query
+- `Embedding` Code in comment, PDF, Table, Image
+- `Extension` Chat with Tabby
