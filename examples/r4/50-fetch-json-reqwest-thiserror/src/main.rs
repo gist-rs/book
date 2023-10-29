@@ -41,7 +41,7 @@ async fn main() {
         }
         Err(err) => {
             // Will yelling.
-            println!("No animals!: {}", err);
+            println!("No animals!: {:?}", err);
             
             // Will return empty vector animals.
             Vec::from([])
