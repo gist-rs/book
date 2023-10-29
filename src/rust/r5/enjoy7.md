@@ -4,8 +4,6 @@
 
 ![](/assets/duck.png) <span class="speech-bubble">Oh, it's just like we put something in the 📦 so mister postman(compiler) can manage them properly!</span>
 
-![](/assets/kat.png) <span class="speech-bubble">Yes!, same idea for `String` → `str`, `Vec` → `array` which is `Stack` → `Heap`.</span>
-
 ```rust
 let rust = "Rust".to_string()
 let us = &rust[1..=2];
@@ -13,7 +11,7 @@ let us = &rust[1..=2];
 
 ```bob
 
- Stack                              Heap
+Stack                              Heap
 .- - - - - - - - - - - - - -.      .- - - - - - - - - - - - - -.
 :                           :      :                           :
 :    String "Rust"          :      :    str                    :

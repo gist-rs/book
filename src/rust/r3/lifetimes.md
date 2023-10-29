@@ -185,8 +185,6 @@ fn main() {
 - `to_owned()` = more generic, can be any type.
 - `to_string()` = more specific that we need `String`.
 
-![](/assets/kat.png) <span class="speech-bubble">Now we know that we need to add `<'a>` or `static` lifetime annotations to let compiler know its lifetime on stack or maybe use `String`, `Vec`, `Box` on heap (depend on use case).</span>
-
 Consider read more about [Common Rust Lifetime Misconceptions](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md) if you plan to use it properly.
 
 Don't be surprise if this seem complicated at first, try start with [why](https://app.rust-for-js.dev/posts/12-lifetimes/) which will explain you again from `error` perspective.

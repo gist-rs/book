@@ -54,7 +54,7 @@ fn main() {
 
     // 😱 Uncomment this to see an error.
     // assert_eq!(
-    //     indexed_vec.first().unwrap().1,  // FYI: avoid unwrap on prod.
+    //     indexed_vec.first().unwrap().1,
     //     &into_iter_indexed_vec.first().unwrap().1
     // );
 }
@@ -68,10 +68,6 @@ fn main() {
 And we can use `into_iter` if we need.</span>
 
 ![](/assets/duck.png) <span class="speech-bubble">Also `<Vec<_>>` is for lazy crab like us, nice!</span>
-
-> 🏂 Fun fact!
-> `String` and `Vec` is allocated in `heap`.
-> `str` and `array` is allocated in `stack`.
 
 ### Option, Some, None, use, HashMap, match, expect, unwrap_or, panic
 
