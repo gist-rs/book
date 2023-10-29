@@ -65,6 +65,7 @@
 
 ## TOREAD
 
+- [ ] Demystifying Advanced `RAG` Pipelines: https://github.com/pchunduri6/rag-demystified
 - [ ] Jina 8K Context Window `Embeddings`: https://github.com/run-llama/llama_index/blob/main/docs/examples/embeddings/jina_embeddings.ipynb
 - [ ] Read, try and summary: https://github.com/replit/replitLM#alpaca-style-instruct-tuning-with-hugging-face-transformers
 - [ ] Try fine-tune-mistral: https://github.com/abacaj/fine-tune-mistral
