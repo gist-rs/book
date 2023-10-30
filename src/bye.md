@@ -30,7 +30,8 @@
 
 ### 🎮 Playing
 
-1. [The Rust Programming Language + Quiz](https://rust-book.cs.brown.edu/): Tricky quiz.
+1. [The Rust Programming Language + Quiz](https://rust-book.cs.brown.edu/): Tricky quiz, viz stack/heap.
+   ![https://rust-book.cs.brown.edu/](assets/rust-book-cs-brown-edu.png)
 1. [Rust By Practice](https://github.com/sunface/rust-by-practice): Fill in the blank quiz.
 1. [Tour of Rust](https://tourofrust.com/): Explore rust with playground.
 
