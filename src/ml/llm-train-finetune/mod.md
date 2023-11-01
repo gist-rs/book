@@ -6,6 +6,16 @@
 
 > ref: https://github.com/chatchat-space/Langchain-Chatchat/blob/master/README_en.md
 
+## Pipelines
+
+> Ref: https://ai.plainenglish.io/direct-preference-optimization-dpo-a-simplified-approach-to-fine-tuning-large-language-models-bae1c6d7ec29
+
+```mermaid
+graph LR
+  A["Direct Preference Optimization (DPO)"]---B["1️⃣ Supervised Fine-tuning (SFT)"]
+  A---C["2️⃣ Preference Learning"]
+```
+
 ## Brain dump (WIP)
 
 ### A Beginner’s Guide to Fine-Tuning Mistral 7B Instruct Model
@@ -65,6 +75,7 @@
 
 ## TOREAD
 
+- [ ] Optimizing Text Embeddings with HuggingFace’s text-embeddings-inference Server and `LlamaIndex`: https://levelup.gitconnected.com/optimizing-text-embeddings-with-huggingfaces-text-embeddings-inference-server-and-llamaindex-ef7df35882a4
 - [ ] Demystifying Advanced `RAG` Pipelines: https://github.com/pchunduri6/rag-demystified
 - [ ] Jina 8K Context Window `Embeddings`: https://github.com/run-llama/llama_index/blob/main/docs/examples/embeddings/jina_embeddings.ipynb
 - [ ] Read, try and summary: https://github.com/replit/replitLM#alpaca-style-instruct-tuning-with-hugging-face-transformers
