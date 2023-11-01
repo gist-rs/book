@@ -4,6 +4,8 @@
 
 ![](/assets/kat.png) <span class="speech-bubble">Below is simple `callback`.</span>
 
+### `Fn`, `FnOnce`
+
 ```rust,editable
 fn callback<F>(say: F, message: &str)
 where
@@ -15,6 +17,39 @@ where
 
     // 😱 uncomment to see scary error.
     // say(message.to_owned());
+}
+
+fn main() {
+    // callback the say(message)
+    callback(|msg| {
+        println!("Say: {}", msg);
+    }, "Hi!");
+}
+```
+
+### `+ Copy`
+
+```rust,editable
+fn second_callback<F>(say: F, message: &str)
+where
+    F: FnOnce(String)
+{
+    say(message.to_owned());
+}
+
+fn callback<F>(say: F, message: &str)
+where
+    // 👇 We use `Fn` here because we will can it twice.
+    F: Fn(String),
+
+    // Or use `FnOnce` but copyable.
+    // F: FnOnce(String) + std::marker::Copy,
+{
+    // Say Hi!
+    say(message.to_owned());
+
+    // Say Hey!
+    second_callback(say, "Hey!");
 }
 
 fn main() {
