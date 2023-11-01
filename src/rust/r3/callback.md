@@ -2,9 +2,32 @@
 
 ## How to implement `callback`.
 
+![](/assets/kat.png) <span class="speech-bubble">Below is simple `callback`.</span>
+
+```rust,editable
+fn callback<F>(say: F, message: &str)
+where
+    // 👇 We use `FnOnce` here because...
+    F: FnOnce(String), // 👈 We not mutate anything and call only once.
+{
+    // Just saying. 👇 `to_owned` or `to_string` can be use.
+    say(message.to_owned());
+
+    // 😱 uncomment to see scary error.
+    // say(message.to_owned());
+}
+
+fn main() {
+    // callback the say(message)
+    callback(|msg| {
+        println!("Say: {}", msg);
+    }, "Hi!");
+}
+```
+
 > 🤔 Refer to : https://stackoverflow.com/questions/41081240/idiomatic-callbacks-in-rust
 
-![](/assets/kat.png) <span class="speech-bubble">Below is simple `callback`.</span>
+![](/assets/kat.png) <span class="speech-bubble">Now we will use `struct` to hold the `callback`.</span>
 
 ### 1️⃣ "Function pointers": `callbacks` as `fn`
 
