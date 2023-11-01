@@ -4,7 +4,7 @@
 
 > 💡 for more examples see 👉 [rust-by-example](https://doc.rust-lang.org/rust-by-example/index.html)
 
-## Variables, println, assert_eq, for
+## Variables, println, assert_eq
 
 ```rust,editable
 fn main() {
