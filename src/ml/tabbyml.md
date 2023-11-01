@@ -27,16 +27,24 @@
 
 ## How to select model
 
-1. Optional completion model use `TabbyML/CodeLlama-7B`
+1. Optional code completion model use `TabbyML/CodeLlama-7B`
 
    ```bash
    sudo docker run -it --gpus all -p 8080:8080 -v $HOME/.tabby:/data tabbyml/tabby serve --model TabbyML/CodeLlama-7B --device cuda
    ```
 
-1. Optional chat model use `TabbyML/Mistral-7B`
-   > ⚠️ I can't make this one work properly. 🤔
+1. Optional code completion model use `TabbyML/CodeLlama-7B`
+
    ```bash
-   sudo docker run -it --gpus all -p 8080:8080 -v $HOME/.tabby:/data tabbyml/tabby serve --model TabbyML/CodeLlama-7B --chat-model TabbyML/Mistral-7B --device cuda
+   sudo docker run -it --gpus all -p 8080:8080 -v $HOME/.tabby:/data tabbyml/tabby serve --model TabbyML/Mistral-7B --device cuda
+   ```
+
+1. Optional chat model use `TabbyML/Mistral-7B`
+
+   > ⚠️ I can't make this one work, it's just crash and exit. 🤔
+
+   ```bash
+   sudo docker run -it --gpus all -p 8080:8080 -v $HOME/.tabby:/data tabbyml/tabby serve --model TabbyML/StarCoder-1B --chat-model TabbyML/Mistral-7B --device cuda
    ```
 
 ## How to get code completion = index from target repos
@@ -51,7 +59,7 @@
 
 1. Or schedule via running docker
    ```bash
-   sudo docker ps -a | grep tabby | awk '{print $1}' | xargs sudo docker exec -it $1 tabbyml/tabby scheduler --now
+   sudo docker ps -a | grep tabby | awk '{print $1}' | xargs sudo docker exec -it $1 sh -c "/opt/tabby/bin/tabby scheduler --now"
    ```
 
 ## How to request the `TabbyML` services from other machine to Windows WSL2
