@@ -33,7 +33,7 @@
    sudo docker run -it --gpus all -p 8080:8080 -v $HOME/.tabby:/data tabbyml/tabby serve --model TabbyML/CodeLlama-7B --device cuda
    ```
 
-1. Optional code completion model use `TabbyML/CodeLlama-7B`
+1. Optional code completion model use `TabbyML/Mistral-7B`
 
    ```bash
    sudo docker run -it --gpus all -p 8080:8080 -v $HOME/.tabby:/data tabbyml/tabby serve --model TabbyML/Mistral-7B --device cuda
@@ -44,7 +44,7 @@
    > ⚠️ I can't make this one work, it's just crash and exit. 🤔
 
    ```bash
-   sudo docker run -it --gpus all -p 8080:8080 -v $HOME/.tabby:/data tabbyml/tabby serve --model TabbyML/StarCoder-1B --chat-model TabbyML/Mistral-7B --device cuda
+   sudo docker run -m 8g -it --gpus all -p 8080:8080 -v $HOME/.tabby:/data tabbyml/tabby serve --model TabbyML/StarCoder-1B --chat-model TabbyML/Mistral-7B --device cuda
    ```
 
 ## How to get code completion = index from target repos
@@ -83,11 +83,11 @@
 
 ## Ideas
 
-- `CLI` Health report
-- `CLI` Model selection
-- `CLI` Configurable repos
-- `CLI` Indexing trigger
-- `Query` Include/Exclude repos for faster query
-- `Query` Include/Exclude language for faster query
-- `Embedding` Code in comment, PDF, Table, Image
-- `Extension` Chat with Tabby
+- `CLI` Lazy git.
+- `CLI` Auto fix after compile.
+- `CLI` Model selection.
+- `CLI` Configurable repos.
+- `CLI` Indexing manual trigger.
+- `Query` Include/Exclude repos for faster query.
+- `Query` Include/Exclude language for faster query.
+- `Embedding` Code in comment?, PDF, Table, Image.
