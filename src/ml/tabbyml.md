@@ -44,8 +44,15 @@
    > ⚠️ I can't make this one work, it's just crash and exit. 🤔
 
    ```bash
-   sudo docker run -m 8g -it --gpus all -p 8080:8080 -v $HOME/.tabby:/data tabbyml/tabby serve --model TabbyML/StarCoder-1B --chat-model TabbyML/Mistral-7B --device cuda
+   sudo docker run -it --gpus all -p 8080:8080 -v $HOME/.tabby:/data tabbyml/tabby serve --model TabbyML/StarCoder-1B --chat-model TabbyML/Mistral-7B --device cuda
    ```
+
+## How to build and run docker locally to match your cuda version e.g. 12.2.0
+
+```
+CUDA_VERSION=12.3.0 docker build -t tabby_cuda12_2 .
+docker run -it --gpus all -p 8080:8080 -v $HOME/.tabby:/data tabby_cuda12_2 serve --device cuda --model TabbyML/StarCoder-1B --chat-model TabbyML/Mistral-7B
+```
 
 ## How to get code completion = index from target repos
 
