@@ -16,6 +16,7 @@ We will look `llm` from `Rust` perspective.
 ![jina-ai](assets/jina-ai-multimodal-ai-stack.png)
 
 - Sentence Embedding [Jina AI](https://huggingface.co/jinaai): [jina-embeddings-v2-base-en](https://huggingface.co/jinaai/jina-embeddings-v2-base-en).
+- [Text Embeddings Inference](https://github.com/huggingface/text-embeddings-inference)
 
 ## Rust
 
@@ -24,7 +25,17 @@ We will look `llm` from `Rust` perspective.
 ## Coding
 
 - For coding related see: [Replit Code V-1.5 3B](https://huggingface.co/replit)
-- Runner up [Tabby](https://tabby.tabbyml.com/)
+- Runner up: [Tabby](https://tabby.tabbyml.com/)
+- Runner up: [CodeGPT](https://www.codegpt.co/)
+
+## RAG
+
+- Famous but...: [Langchain](https://www.langchain.com/)
+- Runner up: [LlamaIndex](https://www.llamaindex.ai/)
+
+## Lazy
+
+- [ollama](https://ollama.ai/)
 
 ## Model format
 
