@@ -30,6 +30,7 @@
 - Ubuntu: [Clearly, `Rust` 🦀 has excellent foundations for making reliable and efficient software](https://ubuntu.com/blog/why-and-how-to-use-rust-on-ubuntu)
 - Vercel: [`Rust` 🦀 was a clear choice from day one.](https://vercel.com/blog/turborepo-migration-go-rust)
 - Volvo: [Code developed from scratch should definitely be developed in `Rust` 🦀.](https://medium.com/volvo-cars-engineering/why-volvo-thinks-you-should-have-rust-in-your-car-4320bd639e09)
+- X: [`Rust` 🦀 has proven to be an ideal choice for building scalable, reliable, and maintainable infrastructure. ](https://x.ai/)
 
 ## Jobs
 
