@@ -79,18 +79,18 @@ sudo apt update && sudo apt upgrade
 sudo apt autoremove nvidia* --purge
 
 # Setup cuda ref: https://gist.github.com/denguir/b21aa66ae7fb1089655dd9de8351a202
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
-sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
-wget https://developer.download.nvidia.com/compute/cuda/12.2.0/local_installers/cuda-repo-ubuntu2204-12-2-local_12.2.0-535.54.03-1_amd64.deb
-sudo dpkg -i cuda-repo-ubuntu2204-12-2-local_12.2.0-535.54.03-1_amd64.deb
-sudo cp /var/cuda-repo-ubuntu2204-12-2-local/cuda-*-keyring.gpg /usr/share/keyrings/
-sudo apt-get -y install cuda
+wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
+sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/12.3.0/local_installers/cuda-repo-wsl-ubuntu-12-3-local_12.3.0-1_amd64.deb
+sudo dpkg -i cuda-repo-wsl-ubuntu-12-3-local_12.3.0-1_amd64.deb
+sudo cp /var/cuda-repo-wsl-ubuntu-12-3-local/cuda-*-keyring.gpg /usr/share/keyrings/
+sudo apt-get update
+sudo apt-get -y install cuda-toolkit-12-3
+sudo apt-get -y install cuda-nvcc-12-3
 
 sudo ubuntu-drivers autoinstall
 sudo apt install nvidia-driver-525
 sudo apt install nvidia-cuda-toolkit
-sudo apt-get -y install cuda-nvcc-12-2
-sudo apt-get -y install cuda-toolkit-12-2
 
 # Check NVIDIA Drivers
 nvidia-smi
@@ -105,17 +105,17 @@ sudo apt install libcudnn8-dev
 # Check CuDNN
 /sbin/ldconfig -N -v $(sed 's/:/ /' <<< $LD_LIBRARY_PATH) 2>/dev/null | grep libcudnn
 
+# Source
+echo 'export CUDA_HOME=/usr/local/cuda-12.3' >> ~/.bashrc
+echo 'export PATH=/usr/local/cuda-12.3/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.3/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
+sudo ln -s /usr/local/cuda-12.3/bin/nvcc /usr/bin/nvcc
+
 # Setup raw
 wget https://huggingface.co/lmz/candle-mistral/resolve/main/pytorch_model-00001-of-00002.safetensors
 wget https://huggingface.co/lmz/candle-mistral/resolve/main/pytorch_model-00002-of-00002.safetensors
 wget https://huggingface.co/lmz/candle-mistral/resolve/main/tokenizer.json
-
-# Source
-echo 'export CUDA_HOME=/usr/local/cuda-12.2' >> ~/.bashrc
-echo 'export PATH=/usr/local/cuda-12.2/bin:$PATH' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
-source ~/.bashrc
-sudo ln -s /usr/local/cuda-12.2/bin/nvcc /usr/bin/nvcc
 
 # Run
 cargo run --example mistral --release --features cuda,cudnn -- --prompt "Write helloworld code in Rust" --weight-files=pytorch_model-00001-of-00002.safetensors,pytorch_model-00002-of-00002.safetensors --tokenizer-file=tokenizer.json --sample-len 150
