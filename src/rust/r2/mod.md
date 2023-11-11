@@ -6,10 +6,14 @@
 
 ## Goals
 
-- Able to deploy `Rust` web app to some server(less) e.g. (`CloudRun`, `CloudFlare`, `Fastly`).
+- Able to deploy `Rust` web app to some server(less) e.g. (`CloudRun`, `CloudFlare`, `Fastly`, `Shuttle`).
+
+## Index
+
+- [How to use `Actix` on `CloudRun`](./hello-actix-cloudrun.md)
+- [Hello Diffusers `Stable Diffusion`](./hello-diffusers-stable-diffusion.md)
 
 ## TODO
 
 - [ ] https://blog.orhun.dev/automated-rust-releases/
-
-[Let's Rust! ➠](./hello-actix-cloudrun.md)
+- [ ] https://github.com/bheisler/criterion.rs
