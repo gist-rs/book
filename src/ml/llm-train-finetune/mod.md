@@ -59,7 +59,7 @@ graph LR
 ## TODO
 
 - [x] Understand `pgvector`: https://bugbytes.io/posts/vector-databases-pgvector-and-langchain/
-- [ ] Try `RAG` with `pgvector` for faster query: https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/
+- [ ] `RAG` with `Qdrant`: https://github.com/qdrant/rust-client
 
 ## TOTRY - `TimeGPT`
 
@@ -72,6 +72,7 @@ graph LR
 - [ ] try [Using MistralLite with HuggingFace Transformers and FlashAttention-2](https://github.com/awslabs/extending-the-context-length-of-open-source-llms/blob/main/MistralLite/huggingface-transformers/example_usage.ipynb)
 - [ ] Try: https://github.com/aigeek0x0/zephyr-7b-alpha-langchain-chatbot
 - [ ] Take a look: https://github.com/chatchat-space/Langchain-Chatchat
+- [ ] Try `RAG` with `pgvector` for faster query: https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/
 
 ## TOREAD
 
