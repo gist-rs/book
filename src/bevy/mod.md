@@ -27,7 +27,7 @@ rustup default stable-x86_64-pc-windows-msvc
 
 ## Windows
 
-> Use `dynamic`
+> Use `dynamic` refer to https://bevyengine.org/learn/book/getting-started/setup/#compile-with-performance-optimizations
 
 ```toml
 [profile.dev]
