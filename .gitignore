@@ -2,3 +2,5 @@ book
 target
 node_modules
 .env
+jupyter_notebook_config.py
+__pycache__
