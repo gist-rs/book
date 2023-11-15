@@ -30,12 +30,16 @@ We will look `llm` from `Rust` perspective.
 
 ## RAG
 
-- Famous but...: [Langchain](https://www.langchain.com/)
+- Famous: [Langchain](https://www.langchain.com/)
 - Runner up: [LlamaIndex](https://www.llamaindex.ai/)
 
 ## Lazy
 
 - [ollama](https://ollama.ai/)
+
+## Serve
+
+- https://github.com/huggingface/llm-ls
 
 ## Model format
 
