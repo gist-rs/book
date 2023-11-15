@@ -58,21 +58,18 @@ graph LR
 
 ## TODO
 
-- [x] Understand `pgvector`: https://bugbytes.io/posts/vector-databases-pgvector-and-langchain/
 - [ ] `RAG` with `Qdrant`: https://github.com/qdrant/rust-client
+- [ ] Try [LlamaIndex's Supabase Vector Store](https://colab.research.google.com/github/supabase/supabase/blob/master/examples/ai/llamaindex/llamaindex.ipynb).
+- [ ] Try The Alignment Handbook: https://github.com/huggingface/alignment-handbook
 
-## TOTRY - `TimeGPT`
-
-- [ ] Read `TimeGPT`: https://docs.nixtla.io/docs
-- [ ] Try `TimeGPT` with [LlamaIndex's Supabase Vector Store](https://colab.research.google.com/github/supabase/supabase/blob/master/examples/ai/llamaindex/llamaindex.ipynb).
-
-## TOTRY - `ChatWithPDF`
+## TOTRY
 
 - [ ] Use `MistralLite` for longer context retrieval: https://huggingface.co/amazon/MistralLite
-- [ ] try [Using MistralLite with HuggingFace Transformers and FlashAttention-2](https://github.com/awslabs/extending-the-context-length-of-open-source-llms/blob/main/MistralLite/huggingface-transformers/example_usage.ipynb)
-- [ ] Try: https://github.com/aigeek0x0/zephyr-7b-alpha-langchain-chatbot
-- [ ] Take a look: https://github.com/chatchat-space/Langchain-Chatchat
-- [ ] Try `RAG` with `pgvector` for faster query: https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/
+- [ ] [Using MistralLite with HuggingFace Transformers and FlashAttention-2](https://github.com/awslabs/extending-the-context-length-of-open-source-llms/blob/main/MistralLite/huggingface-transformers/example_usage.ipynb)
+- [ ] https://github.com/aigeek0x0/zephyr-7b-alpha-langchain-chatbot
+- [ ] https://github.com/chatchat-space/Langchain-Chatchat
+- [ ] `RAG` with `pgvector` for faster query: https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/
+- [ ] https://github.com/flows-network/demo-RAG-embeddings
 
 ## TOREAD
 
