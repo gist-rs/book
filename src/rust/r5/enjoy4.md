@@ -21,29 +21,59 @@ impl AnimalType {
             AnimalType::Duck => "🐥",
         }
     }
-}
 
-// How to use type as a parameters, hey!👇 what's this? 😳
-fn say(animal_type: AnimalType) -> &'static str {
-    // To survive from fn {}, we need 👆 'static to let is has program's lifetime.
-    match animal_type {
-        AnimalType::Cat => "meaowww",
-        AnimalType::Duck => "quackkk",
+    // How to use type as a parameters, but hey!👇 what's this? 😳
+    fn say1(animal_type: AnimalType) -> &'static str {
+        // To survive from fn {}, we need 👆 'static to let is has program's lifetime.
+        match animal_type {
+            AnimalType::Cat => "meaowww",
+            AnimalType::Duck => "quackkk",
+        }
+    }
+
+    // But why this didn't need to add static here? 👇 😳
+    fn say2(&self, animal_type: AnimalType) -> &str {
+        match animal_type {
+            AnimalType::Cat => "meaowww",
+            AnimalType::Duck => "quackkk",
+        }
+    }
+
+    // That's because `elided lifetime rules` cover that for you already!
+    // Then👇 you👇 don't need to write this loooooong👇
+    fn say3<'a>(&'a self, animal_type: AnimalType) -> &'a str {
+        match animal_type {
+            AnimalType::Cat => "meaowww",
+            AnimalType::Duck => "quackkk",
+        }
+    }
+
+    // Remember this?
+    fn static_say1(animal_type: &str) -> &str {
+        match animal_type {
+            "cat" => "meaowww",
+            "duck" => "quackkk",
+            _ => "wat!",
+        }
+    }
+
+    // Actually the longer one look like this
+    fn static_say2<'a>(animal_type: &'a str) -> &'a str {
+        match animal_type {
+            "cat" => "meaowww",
+            "duck" => "quackkk",
+            _ => "wat!",
+        }
     }
 }
 
 fn main() {
     println!(
-        "{0:?} aka {1:?} say {2:?}",
+        "{0:?} aka {1:?} say {2:?}, {3:?}",
         AnimalType::Cat,
         AnimalType::Cat.as_str(),
-        say(AnimalType::Cat)
-    );
-    println!(
-        "{0:?} aka {1:?} say {2:?}",
-        AnimalType::Duck,
-        AnimalType::Duck.as_str(),
-        say(AnimalType::Duck)
+        AnimalType::say1(AnimalType::Cat),
+        AnimalType::say2(&AnimalType::Cat, AnimalType::Cat),
     );
 }
 ```
