@@ -23,3 +23,22 @@ fn main() {
     );
 }
 ```
+
+## How's the different between `iter` and `into_iter`?
+
+```rust,editable
+fn main() {
+    // iter will borrow.
+    let numbers = vec![0,1,2,3,4,5];
+    let sum = numbers.iter().sum::<u32>();
+    println!("Sum of {numbers:?} is {sum}");
+
+    //into_iter will take ownership.
+    let numbers = vec![0,1,2,3,4,5];
+    let sum = numbers.into_iter().sum::<u32>();
+
+    // 😱 uncomment this line 👇 will get an error below.
+    // println!("Sum of {numbers:?} is {sum}");
+    //                   ^^^^^^^^^^^ value borrowed here after move
+}
+```
