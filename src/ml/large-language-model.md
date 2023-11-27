@@ -10,6 +10,8 @@ We will look `llm` from `Rust` perspective.
 
 - Winner: [Mistral-7B](https://huggingface.co/mistralai).
 - Runner up model: [Zephyr 7B Alpha](https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha)
+- Long context: [MistralLite](https://huggingface.co/amazon/MistralLite)
+- With function call: [Openhermes 2.5 Mistral 7B](https://github.com/abacaj/openhermes-function-calling/blob/main/openhermes-functions.ipynb)
 
 ## Embedding
 
