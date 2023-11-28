@@ -58,7 +58,53 @@ fn main() {
 
 ---
 
+## Async with Tokio
+
+![](/assets/kat.png) <span class="speech-bubble">We will use `tokio` crate for now.</span>
+
+### `Cargo.toml`
+
+```toml
+[package]
+name = "foo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+async-trait = "0.1.59"
+tokio = { version ="1.22", features = ["full"] }
+```
+
+### `main.rs`
+
+```rust,editable,edition2021
+use std::thread::sleep;
+use std::time::{Duration, SystemTime};
+
+async fn sleep_2secs() {
+    // Will sleep for 2 seconds.
+    sleep(Duration::new(2, 0));
+}
+
+// This `async fn main` need `tokio::main`.
+#[tokio::main]
+async fn main() {
+    // Wait for for 2 sec.
+    let now = SystemTime::now();
+    sleep_2secs().await;
+
+    // Ensure it's 2 sec.
+    let now_sec = now.elapsed().ok().unwrap().as_secs();
+    assert_eq!(now_sec, 2);
+    println!("We have been asleep for {} seconds.", now_sec);
+}
+```
+
+---
+
 ## Async Traits
+
+![](/assets/kat.png) <span class="speech-bubble">And let's use `tokio` with `trait`.</span>
 
 ### `Cargo.toml`
 
@@ -108,7 +154,7 @@ async fn main() {
     // Ensure it's 2 sec.
     let now_sec = now.elapsed().ok().unwrap().as_secs();
     assert_eq!(now_sec, 2);
-    println!("Cat has been sleep for {} sec.", now_sec);
+    println!("Cat has been asleep for {} seconds.", now_sec);
 }
 ```
 
