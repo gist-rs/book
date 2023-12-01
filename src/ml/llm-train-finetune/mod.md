@@ -58,9 +58,11 @@ graph LR
 
 ## TODO
 
+- [x] Update slide: https://blog.cloudflare.com/workers-ai-update-hello-mistral-7b/
 - [ ] `RAG` with `Qdrant`: https://github.com/qdrant/rust-client
 - [ ] Try [LlamaIndex's Supabase Vector Store](https://colab.research.google.com/github/supabase/supabase/blob/master/examples/ai/llamaindex/llamaindex.ipynb).
 - [ ] Try The Alignment Handbook: https://github.com/huggingface/alignment-handbook
+- [ ] Read Using LLM’s for Retrieval and Reranking: https://blog.llamaindex.ai/using-llms-for-retrieval-and-reranking-23cf2d3a14b6
 
 ## TOTRY
 
