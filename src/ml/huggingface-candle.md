@@ -117,6 +117,17 @@ wget https://huggingface.co/lmz/candle-mistral/resolve/main/pytorch_model-00001-
 wget https://huggingface.co/lmz/candle-mistral/resolve/main/pytorch_model-00002-of-00002.safetensors
 wget https://huggingface.co/lmz/candle-mistral/resolve/main/tokenizer.json
 
+# Or macOS
+curl -LO https://huggingface.co/lmz/candle-mistral/resolve/main/pytorch_model-00001-of-00002.safetensors
+curl -LO https://huggingface.co/lmz/candle-mistral/resolve/main/pytorch_model-00002-of-00002.safetensors
+curl -LO https://huggingface.co/lmz/candle-mistral/resolve/main/tokenizer.json
+
 # Run
 cargo run --example mistral --release --features cuda,cudnn -- --prompt "Write helloworld code in Rust" --weight-files=pytorch_model-00001-of-00002.safetensors,pytorch_model-00002-of-00002.safetensors --tokenizer-file=tokenizer.json --sample-len 150
+```
+---
+
+## Whisper v3
+```bash
+cargo run --example whisper --release -- --model=large-v3
 ```
