@@ -50,7 +50,9 @@ Ref: https://stackoverflow.com/a/71665244
 
 ## MistralLite - hg
 > hg-transformers: https://github.com/awslabs/extending-the-context-length-of-open-source-llms/blob/9bd948000c25a1f34a56657a21ad6b2a167f73ea/MistralLite/huggingface-transformers/example_usage.ipynb
+
 RAM `16215MiB / 24564MiB`
 
 > tgi: https://github.com/awslabs/extending-the-context-length-of-open-source-llms/blob/8b2608196ceb291ac788c6ed0ca06aa1a0d20cb0/MistralLite/tgi/example_usage.ipynb
+
 RAM `23097MiB / 24564MiB`
