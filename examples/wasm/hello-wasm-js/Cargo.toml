@@ -26,13 +26,13 @@ wee_alloc = { version = "0.4.5", optional = true }
 
 # use for `async fn`.
 wasm-bindgen-futures = { version = "0.4.33", default-features = false }
-serde-wasm-bindgen = "0.4.5"
+serde-wasm-bindgen = "0.6.1"
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.33"
 
 # for conversion
-serde-wasm-bindgen = "0.4.5"
+serde-wasm-bindgen = "0.6.1"
 
 [profile.release]
 opt-level = "z"  # Optimize for size.
