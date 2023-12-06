@@ -1,6 +1,43 @@
 # TabbyML
 
-## How to run `TabbyML`
+## How to install for `Apple Silicon` via `homebrew`
+
+> Ref: https://tabby.tabbyml.com/docs/installation/apple
+
+```
+# Install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install tabby
+brew install tabbyml/tabby/tabby
+
+# Serve completion and chat with some model https://tabby.tabbyml.com/docs/models/
+tabby serve --device metal --model TabbyML/CodeLlama-13B --chat-model TabbyML/Mistral-7B
+
+# Or
+tabby serve --device metal --model TabbyML/Mistral-7B --chat-model TabbyML/Mistral-7B
+
+# Config to indexing some repo
+cat << 'EOF' > ~/.tabby/config.toml
+[[repositories]]
+git_url = "https://github.com/rust-lang/book.git"
+
+[[repositories]]
+git_url = "https://github.com/rust-lang/rust-by-example.git"
+EOF
+
+# Indexing now
+tabby scheduler --now
+```
+
+## RAM used
+
+`--model TabbyML/DeepseekCoder-6.7B = RAM 2.1GB`
+`--chat-model TabbyML/Mistral-7B = RAM 2.6GB`
+
+---
+
+## How to run `TabbyML` via `Windows`
 
 1. Install `Docker` via `WSL`
 
@@ -98,3 +135,33 @@ docker run -it --gpus all -p 8080:8080 -v $HOME/.tabby:/data tabby_cuda12_3 serv
 - `Query` Include/Exclude repos for faster query.
 - `Query` Include/Exclude language for faster query.
 - `Embedding` Code in comment?, PDF, Table, Image.
+
+---
+
+## How to dev tabby
+
+```
+# Setup
+git clone --recurse-submodules https://github.com/TabbyML/tabby
+cd tabby
+
+# macos
+brew install protobuf
+brew install cmake
+
+# Update
+git pull
+git submodule update --init --recursive
+```
+
+## How to build
+
+> ref: https://github.com/rust-lang/rust/issues/117976
+
+```
+## Workaround for Rust 1.17.4
+rustup default nightly
+
+## Build release
+cargo build --release
+```
