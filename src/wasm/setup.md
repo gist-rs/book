@@ -91,7 +91,6 @@ wasm-bindgen-test = "0.3.13"
 opt-level = "s"
 ```
 
-c
 │ ├─ 📄 lib.rs
 
 ```rust,no_run
