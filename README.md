@@ -1,10 +1,10 @@
 # Gist of Rust Book
 
-Focus on gist of `Rust`, `Wasm`, `Solana`, `Generative AI`.
+Focus on gist of `Rust`, `Wasm`, `Solana`, `Generative AI`, `Bevy`.
 
 > 🚧 This gist is WIP, feel free to help.
 
-<img width="1163" alt="image" src="https://user-images.githubusercontent.com/97060/213910328-dfdfa119-74b8-470c-a00d-69a67f7d1ecc.png">
+<img width="1163" alt="image" src="./gist.rs.png">
 
 ## Online
 
