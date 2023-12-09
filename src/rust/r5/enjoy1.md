@@ -213,6 +213,9 @@ Anyway we tend to avoid `clone`/`copy` to reduce overhead aka [zero-copy](https:
 
 ```rust,editable
 fn main() {
+    let foo_str = "str and String";
+    let bar_string = String::from("str and String");
+
     // String → &str
     let bar_str = bar_string.as_str();
 
