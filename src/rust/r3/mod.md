@@ -15,4 +15,4 @@ We will do just that in this `R3`! and also some idiom/pattern/crate you need to
 
 ## TODO
 
-- [ ] [https://github.com/jbaublitz/getset]()
+- [ ] https://github.com/jbaublitz/getset

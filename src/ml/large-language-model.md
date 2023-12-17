@@ -13,6 +13,10 @@ We will look `llm` from `Rust` perspective.
 - Long context: [MistralLite](https://huggingface.co/amazon/MistralLite)
 - With function call: [Openhermes 2.5 Mistral 7B](https://github.com/abacaj/openhermes-function-calling/blob/main/openhermes-functions.ipynb)
 
+## MoE
+
+- Winner: [Mixtral-8x7B-Instruct-v0.1](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1)
+
 ## Embedding
 
 ![jina-ai](assets/jina-ai-multimodal-ai-stack.png)
@@ -34,10 +38,6 @@ We will look `llm` from `Rust` perspective.
 
 - Famous: [Langchain](https://www.langchain.com/)
 - Runner up: [LlamaIndex](https://www.llamaindex.ai/)
-
-## Lazy
-
-- [ollama](https://ollama.ai/)
 
 ## Serve
 

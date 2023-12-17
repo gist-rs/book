@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-[https://github.com/katopz/hello-firebase-wasm]()
+https://github.com/katopz/hello-firebase-wasm
 
 ## Initialize
 

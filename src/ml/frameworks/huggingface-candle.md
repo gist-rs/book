@@ -1,6 +1,6 @@
 # 🤗 HuggingFace - Candle
 
-> [https://github.com/huggingface/candle]()
+> https://github.com/huggingface/candle
 
 A minimalist ML framework for Rust with a focus on performance (including GPU support) and ease of use.
 
@@ -125,9 +125,11 @@ curl -LO https://huggingface.co/lmz/candle-mistral/resolve/main/tokenizer.json
 # Run
 cargo run --example mistral --release --features cuda,cudnn -- --prompt "Write helloworld code in Rust" --weight-files=pytorch_model-00001-of-00002.safetensors,pytorch_model-00002-of-00002.safetensors --tokenizer-file=tokenizer.json --sample-len 150
 ```
+
 ---
 
 ## Whisper v3
+
 ```bash
 cargo run --example whisper --release -- --model=large-v3
 ```

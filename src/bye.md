@@ -73,6 +73,6 @@
 
 ### Awesome
 
-1. [https://github.com/katopz/awesome-rust]()
-1. [https://github.com/katopz/awesome-wasm]()
-1. [https://github.com/avareum/awesome-solana]()
+1. https://github.com/katopz/awesome-rust
+1. https://github.com/katopz/awesome-wasm
+1. https://github.com/avareum/awesome-solana

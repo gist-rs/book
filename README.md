@@ -38,4 +38,4 @@ This repo has a [discussion forum](https://github.com/gist-rs/book/discussions)!
 
 ## TODO
 
-- [ ] `WASM`: Try `alloc` from [https://hackmd.io/@alxiong/rust-no-std]()
+- [ ] `WASM`: Try `alloc` from https://hackmd.io/@alxiong/rust-no-std
