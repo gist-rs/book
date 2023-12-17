@@ -4,15 +4,31 @@
 
 ## Goals
 
-- Collection of `ML` knowledge I like.
+- Collection of `ML` knowledge base I like.
 
-## Topic
+## Generative AI
 
-  - [Large Language Model](large-language-model.md)
-  - [Stable Diffusion](stable-diffusion.md)
-  - [Hugging Face - Candle](huggingface-candle.md)
-  - [Hugging Face - AutoTrain](huggingface-autotrain.md)
-  - [LLM Train and FineTune](llm-train-finetune/mod.md)
-  - [TabbyML](tabbyml.md)
-  - [Vector Database - Qdrant](vector-db-qdrant.md)
-  - [Text Generation Inference](text-generation-inference.md)
+- [Large Language Model](large-language-model.md)
+- [Stable Diffusion](stable-diffusion.md)
+- [LLM Train and FineTune](llm-train-finetune/mod.md)
+- [Chat_with_MultiplePDFs_Mistral_7B_Instruct1](llm-train-finetune/Chat_with_MultiplePDFs_Mistral_7B_Instruct1.ipynb)
+
+## Frameworks
+
+- [Hugging Face - Candle](frameworks/huggingface-candle.md)
+- [Hugging Face - AutoTrain](frameworks/huggingface-autotrain.md)
+- [Apple - MLX](frameworks/apple-mlx.md)
+
+## Inferences
+
+- [Text Generation Inference](infer/huggingface-text-generation-inference.md)
+- [TabbyML](infer/tabbyml.md)
+- [WasmEdge](infer/wasmedge.md)
+
+## RAG
+
+- [Vector Database - Qdrant](rag/vector-db-qdrant.md)
+
+## Resource
+
+- https://github.com/nogibjj/candle-cookbook
