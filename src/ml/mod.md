@@ -27,6 +27,7 @@
 
 ## RAG
 
+- [LlamaHub 🦙](https://github.com/run-llama/llama-hub)
 - [Vector Database - Qdrant](rag/vector-db-qdrant.md)
 
 ## Resource
