@@ -18,6 +18,8 @@
 ```bash
 wasm-pack new hello-wasm              # 👈 Create new app.
 
+cd hello-wasm                         # 👈 Get into folder.
+
 wasm-pack test --headless --firefox   # 👈 Test with headless firefox.
 
 wasm-pack build --target web          # 👈 Build (target web) to pkg dir.
