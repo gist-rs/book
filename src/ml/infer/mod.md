@@ -4,4 +4,5 @@
 - [x] [llamafile](https://future.mozilla.org/blog/introducing-llamafile/) // MacOS/Windows // 28GB (no gc) // 34.68 tokens/sec
 - [x] [WasmEdge](./wasmedge.md) // MacOS/Windows/WSL2
 - [x] [TabbyML](./tabbyml.md) // MacOS/Windows/WSL2
+- [x] [llama.cpp](https://github.com/ggerganov/llama.cpp) // MacOS/Windows // 13GB // 34.01 tokens/sec
 - [ ] [ollama](https://ollama.ai/) // MacOS
