@@ -49,3 +49,28 @@ let s1 = String::from("Hello ");
 | flexstr       |            24 |                    32 | O(1)  | 22      | no      |
 | compact_str   |            24 |                    24 | O(n)  | 24      | yes     |
 | smartstring   |            24 |                    32 | O(n)  | 23      | yes     |
+
+> 🤔 [refer to Matt Davies](https://dev.to/cthutu/rust-8-strings-53o)
+
+```mermaid
+graph TD
+    subgraph "🦀 Strings"
+        &Path --to_path_buf--> PathBuf
+        PathBuf --into_os_string--> OsString
+        PathBuf --as_path--> &Path
+        &Path --as_os_str--> &OsStr
+        OsString --into_string?--> String
+        OsString --as_os_str--> &OsStr
+        &OsStr --to_os_string--> OsString
+        &OsStr --to_str?--> &str
+        String --as_str--> &str
+        CString --as_c_str--> &CStr
+        CString --into_string?--> String
+        &CStr --to_str?-->&str
+        String --as_bytes--> u8["&[u8]"]
+        &str --as_bytes--> u8["&[u8]"]
+        &CStr --to_bytes--> u8["&[u8]"]
+        CString --as_bytes--> u8["&[u8]"]
+        &str --as_ptr--> cu8["*const u8"]
+    end
+```
