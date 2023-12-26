@@ -1,5 +1,11 @@
 # WasmEdge
 
+## Install WASI-NN with GGML Backend
+
+```bash
+bash <(curl -sSfL 'https://code.flows.network/webhook/iwYN1SdN3AmPgR5ao5Gt/run-llm.sh')
+```
+
 ## Models
 
 ```bash
@@ -13,6 +19,28 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:mistral-7b-instruct-v0.1.Q5_K_
 ```
 
 RAM `4.1GB`
+
+## Thai
+
+```
+# Model OpenThaiGPT
+curl -LO https://huggingface.co/openthaigpt/openthaigpt-1.0.0-beta-13b-chat-gguf/resolve/main/ggml-model-q4_0.gguf
+
+# Chat CLI
+curl -LO https://github.com/second-state/llama-utils/raw/main/chat/llama-chat.wasm
+wasmedge --dir .:. --nn-preload default:GGML:AUTO:ggml-model-q4_0.gguf llama-chat.wasm --log-stat
+
+# API
+curl -LO https://github.com/second-state/llama-utils/raw/main/api-server/llama-api-server.wasm
+wasmedge --dir .:. --nn-preload default:GGML:AUTO:ggml-model-q4_0.gguf llama-api-server.wasm
+curl -X POST http://0.0.0.0:8080/v1/chat/completions -H 'accept:application/json' -H 'Content-Type: application/json' -d '{"messages":[{"role":"system", "content":"You are a helpful AI assistant"}, {"role":"user", "content":"กทม ย่อมาจากอะไร"}], "model":"
+openthaigpt-1.0.0-beta-13b-chat"}'
+
+# Chat GUI
+curl -LO https://github.com/second-state/chatbot-ui/releases/download/v0.1.0/chatbot-ui.tar.gz
+tar xzf chatbot-ui.tar.gz
+wasmedge --dir .:. --nn-preload default:GGML:AUTO:ggml-model-q4_0.gguf llama-api-server.wasm -p llama-2-chat
+```
 
 ---
 
