@@ -33,8 +33,9 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:ggml-model-q4_0.gguf llama-cha
 # API
 curl -LO https://github.com/second-state/llama-utils/raw/main/api-server/llama-api-server.wasm
 wasmedge --dir .:. --nn-preload default:GGML:AUTO:ggml-model-q4_0.gguf llama-api-server.wasm
-curl -X POST http://0.0.0.0:8080/v1/chat/completions -H 'accept:application/json' -H 'Content-Type: application/json' -d '{"messages":[{"role":"system", "content":"You are a helpful AI assistant"}, {"role":"user", "content":"กทม ย่อมาจากอะไร"}], "model":"
-openthaigpt-1.0.0-beta-13b-chat"}'
+
+# API - test
+curl -X POST http://0.0.0.0:8080/v1/chat/completions -H 'accept:application/json' -H 'Content-Type: application/json' -d '{"messages":[{"role":"system", "content":"You are a helpful AI assistant"}, {"role":"user", "content":"กทม ย่อมาจากอะไร"}], "model":"openthaigpt-1.0.0-beta-13b-chat"}'
 
 # Chat GUI
 curl -LO https://github.com/second-state/chatbot-ui/releases/download/v0.1.0/chatbot-ui.tar.gz
