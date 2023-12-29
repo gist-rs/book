@@ -11,6 +11,7 @@
 - Understand `Accounts`, `Programs`, `Transactions`, `Instructions`.
 - hello(read)
 - counter(read/write)
+- Mint `NFT` with `sugar`. // https://github.com/metaplex-foundation/sugar
 
 ### Web3 (rs)
 
@@ -18,7 +19,7 @@
 - Create wallet, Connect `Phantom`.
 - Sign, Send, SignAndSend.
 - Transfer `Native` token.
-- Mint `NFT` with `sugar`.
+- Mint `NFT` with `Helius`. // https://docs.helius.dev/compression-and-das-api/mint-api/mint-compressed-nft
 
 <!-- [Enjoy S5 ➠](./s5) -->
 
@@ -90,6 +91,7 @@
 
 - Clockwork ⚙️
 - Cardinal
+- Kamino
 
 ### Web3 (rs)
 

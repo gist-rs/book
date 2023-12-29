@@ -68,6 +68,8 @@
 1. [SolDev](https://soldev.app/)
 1. [Anchor](https://github.com/coral-xyz/anchor/tree/master/tests)
 1. [Metaplex](https://github.com/metaplex-foundation/metaplex-program-library)
+1. [The Solana Reading List - Mert](https://www.mertimus.com/p/the-solana-reading-list)
+1. [Solandy](https://www.youtube.com/solandy)
 
 ---
 
