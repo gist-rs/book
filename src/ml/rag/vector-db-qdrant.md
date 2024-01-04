@@ -11,4 +11,4 @@ netsh interface portproxy add v4tov4 listenaddress=192.168.1.33 listenport=8080 
 
 ## Examples
 
-- [x] [Qdrant & Text Data](../../../examples/ml/qdrant/qdrant_and_text_data.ipynb)
+- [x] [Qdrant & Text Data](https://drive.google.com/file/d/1atab1iS_I87TVouAh19fKdPhtpUbCu3i)
