@@ -12,6 +12,13 @@ bash <(curl -sSfL 'https://code.flows.network/webhook/iwYN1SdN3AmPgR5ao5Gt/run-l
 curl -LO https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/mistral-7b-instruct-v0.1.Q5_K_M.gguf
 ```
 
+## Wasm
+
+```
+curl -LO https://code.flows.network/webhook/iwYN1SdN3AmPgR5ao5Gt/llama-api-server.wasm
+curl -LO https://code.flows.network/webhook/iwYN1SdN3AmPgR5ao5Gt/llama-chat.wasm
+```
+
 ## M3Max
 
 ```bash
@@ -26,12 +33,16 @@ RAM `4.1GB`
 # Model OpenThaiGPT
 curl -LO https://huggingface.co/openthaigpt/openthaigpt-1.0.0-beta-13b-chat-gguf/resolve/main/ggml-model-q4_0.gguf
 
+# Or typhoon (need --ctx-size 10000 but not working due to no instruct)
+curl -LO https://huggingface.co/TheBloke/typhoon-7B-GGUF/resolve/main/typhoon-7b.Q4_K_M.gguf
+
+# Or SeaLLM
+curl -LO https://huggingface.co/parinzee/SeaLLM-7B-Chat-GGUF/resolve/main/seallm-7b-chat.q4_k_m.gguf
+
 # Chat CLI
-curl -LO https://github.com/second-state/llama-utils/raw/main/chat/llama-chat.wasm
 wasmedge --dir .:. --nn-preload default:GGML:AUTO:ggml-model-q4_0.gguf llama-chat.wasm --log-stat
 
 # API
-curl -LO https://github.com/second-state/llama-utils/raw/main/api-server/llama-api-server.wasm
 wasmedge --dir .:. --nn-preload default:GGML:AUTO:ggml-model-q4_0.gguf llama-api-server.wasm
 
 # API - test
@@ -41,6 +52,13 @@ curl -X POST http://0.0.0.0:8080/v1/chat/completions -H 'accept:application/json
 curl -LO https://github.com/second-state/chatbot-ui/releases/download/v0.1.0/chatbot-ui.tar.gz
 tar xzf chatbot-ui.tar.gz
 wasmedge --dir .:. --nn-preload default:GGML:AUTO:ggml-model-q4_0.gguf llama-api-server.wasm -p llama-2-chat
+```
+
+## Sea
+
+```
+curl -LO https://huggingface.co/parinzee/SeaLLM-7B-Chat-GGUF/resolve/main/seallm-7b-chat.q4_k_m.gguf
+wasmedge --dir .:. --nn-preload default:GGML:AUTO:seallm-7b-chat.q4_k_m.gguf llama-api-server.wasm
 ```
 
 ---
@@ -62,8 +80,6 @@ RAM `7012MiB / 24564MiB`
 > mistral-7b-instruct-v0.1.Q5_K_M
 
 ```bash
-curl -LO https://github.com/second-state/llama-utils/raw/main/chat/llama-chat.wasm
-
 wasmedge --dir .:. --nn-preload default:GGML:AUTO:mistral-7b-instruct-v0.1.Q5_K_M.gguf llama-chat.wasm -p mistral-instruct-v0.1 -r '</s>'
 ```
 
@@ -72,8 +88,6 @@ RAM `9608MiB / 24564MiB`
 > mistrallite.Q5_K_M
 
 ```bash
-curl -LO https://github.com/second-state/llama-utils/raw/main/chat/llama-chat.wasm
-
 wasmedge --dir .:. --nn-preload default:GGML:AUTO:mistrallite.Q5_K_M.gguf llama-chat.wasm -p mistrallite -r '</s>'
 ```
 
@@ -84,8 +98,6 @@ RAM `9608MiB / 24564MiB`
 > mistrallite.Q5_K_M
 
 ```bash
-curl -LO https://github.com/second-state/llama-utils/raw/main/api-server/llama-api-server.wasm
-
 wasmedge --dir .:. --nn-preload default:GGML:AUTO:mistrallite.Q5_K_M.gguf llama-api-server.wasm -p mistrallite -r '</s>'
 ```
 
