@@ -58,19 +58,10 @@ graph LR
 
 ## TODO
 
-- [x] Update slide: https://blog.cloudflare.com/workers-ai-update-hello-mistral-7b/
-- [ ] `RAG` with `Qdrant`: https://github.com/qdrant/rust-client
-- [ ] Try [LlamaIndex's Supabase Vector Store](https://colab.research.google.com/github/supabase/supabase/blob/master/examples/ai/llamaindex/llamaindex.ipynb).
 - [ ] Try The Alignment Handbook: https://github.com/huggingface/alignment-handbook
-- [ ] Read Using LLM’s for Retrieval and Reranking: https://blog.llamaindex.ai/using-llms-for-retrieval-and-reranking-23cf2d3a14b6
-
-## TOTRY
-
-- [ ] Use `MistralLite` for longer context retrieval: https://huggingface.co/amazon/MistralLite
 - [ ] [Using MistralLite with HuggingFace Transformers and FlashAttention-2](https://github.com/awslabs/extending-the-context-length-of-open-source-llms/blob/main/MistralLite/huggingface-transformers/example_usage.ipynb)
 - [ ] https://github.com/aigeek0x0/zephyr-7b-alpha-langchain-chatbot
 - [ ] https://github.com/chatchat-space/Langchain-Chatchat
-- [ ] `RAG` with `pgvector` for faster query: https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/
 - [ ] https://github.com/flows-network/demo-RAG-embeddings
 
 ## TOREAD
@@ -83,6 +74,4 @@ graph LR
 - [ ] Try fine-tune-mistral: https://github.com/brevdev/notebooks/blob/main/mistral-finetune-own-data.ipynb
 - [ ] Try `LocalGPT`: https://github.com/PromtEngineer/localGPT
 - [ ] Read and summary: https://twitter.com/manelferreira_/status/1711788177458090388
-- [ ] Read and summary: https://docs.llamaindex.ai/en/stable/core_modules/data_modules/index/metadata_extraction.html
 - [ ] `LLaVA`: Visual and language AI with GPT-4, instruction tuning to visual data.
-- [ ] `MUFFIN`: follow Scaling Tasks per Input paradigm to collect multiple task instructions for a single input. (Keywords: Instruction Brainstorm, Instruction Rematching)
