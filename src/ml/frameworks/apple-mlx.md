@@ -15,7 +15,7 @@ pip install -r requirements.txt
 curl -O https://files.mistral-7b-v0-1.mistral.ai/mistral-7B-v0.1.tar
 tar -xf mistral-7B-v0.1.tar
 
-# Convert qith 4bits quantize
+# Convert to 4bits quantize
 python convert.py \
     --torch-path mistral-7B-v0.1 -q
 
