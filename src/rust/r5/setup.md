@@ -98,7 +98,7 @@ mod utils;          // 👈 include utils file.
 use utils;          // 👈 and use it.
 
 fn main () {
-  utils.hello();    // 👈 call hello function.
+  utils::hello();    // 👈 call hello function.
 }
 ```
 
@@ -148,7 +148,7 @@ pub fn hello() {    // 👈 make it public, or just pub(crate) for internal use.
 use super::say      // 👈 just use. (no mod need because of super)
 
 pub fn cast() {
-  say.hello();      // 👈 then call hello function.
+  say::hello();      // 👈 then call hello function.
 }
 ```
 
