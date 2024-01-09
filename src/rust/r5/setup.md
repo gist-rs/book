@@ -111,6 +111,8 @@ fn main () {
 <details>
 <summary>Group related files to each folder.</summary>
 
+> See [setup4 example](https://github.com/gist-rs/book/blob/867cb1b1953d475153d58d8f4376c14e62af31d6/examples/r5/setup4)
+
 ```yml
 📂 foo
 ├─ 📂 src
