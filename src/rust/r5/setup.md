@@ -227,8 +227,21 @@ pub fn hello() {    // 👈  make it pub so other can use.
 │ └─ 📦 Cargo.toml
 
 ```yaml
+# 👇 3️⃣ foo's cargo.
 [dependencies]
-foo = { path="../utils" }  # 👈 2️⃣ foo's cargo. refer to utils via path
+utils = { path="../utils" }  # 👈 2️⃣ foo's cargo. refer to utils via path
+```
+│ └─ 📦 main.rs
+
+```yaml
+# 👇 3️⃣ foo's main.rs.
+```
+```rust,no_run
+use utils;     // 👈 use utils.
+
+fn main() {
+    utils::hello();      // 👈 then call hello function.
+}
 ```
 
 └─ 📦 Cargo.toml
