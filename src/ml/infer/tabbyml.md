@@ -12,7 +12,7 @@
 brew install tabbyml/tabby/tabby
 
 # Serve completion and chat with some model https://tabby.tabbyml.com/docs/models/
-tabby serve --device metal --model TabbyML/CodeLlama-13B --chat-model TabbyML/Mistral-7B
+tabby serve --device metal --model TabbyML/DeepseekCoder-6.7B --chat-model TabbyML/Mistral-7B
 
 # Or
 tabby serve --device metal --model TabbyML/Mistral-7B --chat-model TabbyML/Mistral-7B
