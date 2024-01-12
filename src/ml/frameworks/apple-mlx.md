@@ -83,3 +83,24 @@ columns: Player, No., Nationality, Position, Years in Toronto, School/Club Team
 Q: What position does the player who played for butler cc (ks) play?
 A: "
 ```
+
+## Convert
+
+```bash
+# Get access token
+open https://huggingface.co/settings/tokens
+
+# Install huggingface cli
+pip install --upgrade huggingface_hub
+huggingface-cli login
+
+# Setup
+git clone https://github.com/ml-explore/mlx-examples
+cd mlx-examples/llms/hf_llm
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# convert and upload
+python convert.py --hf-path intfloat/multilingual-e5-small --upload-name multilingual-e5-small-mlx
+```
