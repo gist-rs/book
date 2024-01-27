@@ -96,11 +96,18 @@ huggingface-cli login
 
 # Setup
 git clone https://github.com/ml-explore/mlx-examples
-cd mlx-examples/llms/hf_llm
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
 # convert and upload
-python convert.py --hf-path intfloat/multilingual-e5-small --upload-name multilingual-e5-small-mlx
+python3 -m mlx_lm.convert --hf-path mlabonne/NeuralBeagle14-7B --upload-repo mlx-community/NeuralBeagle14-7B-mlx
+python3 -m mlx_lm.convert -q --hf-path mlabonne/NeuralBeagle14-7B --upload-repo mlx-community/NeuralBeagle14-7B-4bit-mlx
+```
+
+## Use with `mlx_lm` cli
+
+```bash
+pip install -U mlx-lm
+python3 -m mlx_lm.generate --model mlx-community/NeuralBeagle14-7B --prompt "<|im_start|>system\nYou are the best programmer<|im_end|>\n<|im_start|>user\nWrite helloworld code in Rust.<|im_end|>\n<|im_start|>assistant\n" --max-tokens 2048
 ```
