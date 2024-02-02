@@ -4,6 +4,7 @@
 
 ```bash
 bash <(curl -sSfL 'https://code.flows.network/webhook/iwYN1SdN3AmPgR5ao5Gt/run-llm.sh')
+source ~/.zshenv
 ```
 
 ## Models
@@ -15,8 +16,8 @@ curl -LO https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/m
 ## Wasm
 
 ```
-curl -LO https://code.flows.network/webhook/iwYN1SdN3AmPgR5ao5Gt/llama-api-server.wasm
-curl -LO https://code.flows.network/webhook/iwYN1SdN3AmPgR5ao5Gt/llama-chat.wasm
+curl -LO https://github.com/second-state/LlamaEdge/releases/latest/download/llama-api-server.wasm
+curl -LO https://github.com/second-state/LlamaEdge/releases/latest/download/llama-chat.wasm
 ```
 
 ## M3Max
