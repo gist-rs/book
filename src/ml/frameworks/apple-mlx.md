@@ -1,18 +1,37 @@
 # Apple - MLX
 
-> https://github.com/ml-explore  
-> https://github.com/ml-explore/mlx-examples
+- https://github.com/ml-explore
+- https://github.com/ml-explore/mlx-examples
 
-## Infer example
+## Infer (huggingface)
 
+```bash
+# Setup
+python3 -m venv .venv
+source .venv/bin/activate
+pip install mlx-lm
+
+# Infer (multi-lang)
+MODEL=SeaLLMs/SeaLLM-7B-v2
+MODEL_NAME=SeaLLM-7B-v2
+# MODEL=aisingapore/sealion7b-instruct-nc
+# MODEL_NAME=sealion7b-instruct-nc
+
+python -m mlx_lm.generate --model ${MODEL} --prompt "สวัสดี"
+python -m mlx_lm.convert --hf-path ${MODEL} -q --upload-repo mlx-community/${MODEL_NAME}-4bit-mlx
+python -m mlx_lm.generate --model mlx-community/SeaLLM-7B-v2-4bit-mlx --prompt "สอนเขียน helloworld ด้วย Rust หน่อย"
 ```
+
+## Infer (manual)
+
+```bash
 # Setup
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-# Download model
-curl -O https://files.mistral-7b-v0-1.mistral.ai/mistral-7B-v0.1.tar
+# Download model (outdate, not recommend)
+curl -LO https://files.mistral-7b-v0-1.mistral.ai/mistral-7B-v0.1.tar
 tar -xf mistral-7B-v0.1.tar
 
 # Convert to 4bits quantize
@@ -32,7 +51,7 @@ python mistral.py --prompt "Write helloworld code in Rust"
 
 > https://github.com/ml-explore/mlx-examples/tree/main/lora
 
-```
+```bash
 # Setup
 python3 -m venv .venv
 source .venv/bin/activate
