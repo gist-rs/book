@@ -8,14 +8,19 @@ We will look `llm` from `Rust` perspective.
 
 ## Models
 
-- Winner: [Mistral-7B](https://huggingface.co/mistralai).
-- Runner up model: [Zephyr 7B Alpha](https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha)
+- Recommend: [Mistral-7B](https://huggingface.co/mistralai).
 - Long context: [MistralLite](https://huggingface.co/amazon/MistralLite)
 - With function call: [Openhermes 2.5 Mistral 7B](https://github.com/abacaj/openhermes-function-calling/blob/main/openhermes-functions.ipynb)
 
 ## MoE
 
-- Winner: [Mixtral-8x7B-Instruct-v0.1](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1)
+- Recommend: [Mixtral-8x7B-Instruct-v0.1](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1)
+
+## Small Models
+
+- Recommend: [Qwen1.5](https://qwenlm.github.io/blog/qwen1.5/)
+- New Comer: [MiniCPM](https://shengdinghu.notion.site/MiniCPM-Unveiling-the-Potential-of-End-side-Large-Language-Models-d4d3a8c426424654a4e80e42a711cb20)
+- New Comer: [Bunny](https://github.com/BAAI-DCAI/Bunny)
 
 ## Embedding
 
@@ -24,9 +29,15 @@ We will look `llm` from `Rust` perspective.
 - Sentence Embedding [Jina AI](https://huggingface.co/jinaai): [jina-embeddings-v2-base-en](https://huggingface.co/jinaai/jina-embeddings-v2-base-en).
 - [Text Embeddings Inference](https://github.com/huggingface/text-embeddings-inference)
 
+## Dataset
+
+- [CohereForAI/aya_dataset](https://huggingface.co/datasets/CohereForAI/aya_dataset)
+
 ## Rust
 
 - [Candle](https://github.com/huggingface/candle)
+- [llm-chain](https://github.com/sobelio/llm-chain)
+- [second-state/LlamaEdge](https://github.com/second-state/LlamaEdge)
 
 ## Coding
 
@@ -41,19 +52,17 @@ We will look `llm` from `Rust` perspective.
 
 ## Serve
 
+- [huggingface/text-generation-inference](https://github.com/huggingface/text-generation-inference)
 - https://github.com/huggingface/llm-ls
 
-## Model format
+## Chat
 
-- Famous but...: `GGML`
-- Runner up `GGUF`.
-  | Feature | `GGUF` | `GGML` |
-  | -------------------------- | ------------------------------------------------- | ------------------------------------ |
-  | Extensibility | Yes | No |
-  | Future-proofing | Yes | No |
-  | Performance | Better, especially for models with special tokens | Good |
-  | Support for various models | Yes | Yes, but limited to llama.cpp models |
-  | Status | Current standard format | Deprecated |
+- [HuggingChat](https://github.com/huggingface/chat-ui)
+
+## Good read
+
+- https://docs.mistral.ai/guides/basic-RAG/
+- https://mlabonne.github.io/blog/
 
 ---
 
