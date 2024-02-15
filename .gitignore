@@ -7,3 +7,4 @@ __pycache__
 local_cache
 .locks
 .venv
+experiments
