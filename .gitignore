@@ -6,3 +6,4 @@ jupyter_notebook_config.py
 __pycache__
 local_cache
 .locks
+.venv
