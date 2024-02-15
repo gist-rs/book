@@ -1,6 +1,9 @@
 # 🤗 HuggingFace - Candle
 
-> https://github.com/huggingface/candle
+## Raw
+
+- https://github.com/huggingface/candle
+- https://github.com/nogibjj/candle-cookbook
 
 A minimalist ML framework for Rust with a focus on performance (including GPU support) and ease of use.
 

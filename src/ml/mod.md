@@ -10,8 +10,7 @@
 
 - [Large Language Model](large-language-model.md)
 - [Stable Diffusion](stable-diffusion.md)
-- [LLM Train and FineTune](llm-train-finetune/mod.md)
-- [Chat_with_MultiplePDFs_Mistral_7B_Instruct1](llm-train-finetune/Chat_with_MultiplePDFs_Mistral_7B_Instruct1.ipynb)
+- [Chat_with_MultiplePDFs_Mistral_7B_Instruct1](rag/Chat_with_MultiplePDFs_Mistral_7B_Instruct1.ipynb)
 
 ## Frameworks
 
@@ -27,10 +26,7 @@
 
 ## RAG
 
-- [RAG with LlamaIndex - Nvidia CUDA + WSL + Word documents + Local LLM](https://github.com/marklysze/LlamaIndex-RAG-WSL-CUDA)
-- [LlamaHub 🦙](https://github.com/run-llama/llama-hub)
+- [Retrieval Augmented Generation](rag/mod.md)
 - [Vector Database - Qdrant](rag/vector-db-qdrant.md)
 
-## Resource
-
-- https://github.com/nogibjj/candle-cookbook
+## Resources
