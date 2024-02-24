@@ -22,6 +22,7 @@
 - InfluxData: [`Rust` 🦀 has fearless concurrency which allows developers to write code free of subtle bugs.](https://www.influxdata.com/blog/meet-founders-who-rewrote-in-rust/)
 - Intel: [`Rust` 🦀 is the future of systems programming, `C` is the new Assembly](https://youtu.be/l9hM0h6IQDo)
 - LogRocket: [Optimized `Rust` 🦀 code was at least 30 percent faster than the most optimized Go code.](https://blog.logrocket.com/when-to-use-rust-when-to-use-golang/)
+- Matic: [`Rust` 🦀 is the safe choice, and it's hard to imagine using anything else](https://maticrobots.com/blog/why-rust-its-the-safe-choice/)
 - Microsoft: [Ask the Expert: `Rust` 🦀 at Microsoft.](https://www.youtube.com/watch?v=1uAsA1hm52I)
 - MIT: [How `Rust` 🦀 went from a side project to the world’s most-loved programming language.](https://www.technologyreview.com/2023/02/14/1067869/rust-worlds-fastest-growing-programming-language/)
 - NGINX: [Respect to memory safety and correctness. This has paved the way for languages like `Rust` 🦀](https://www.nginx.com/blog/extending-nginx-with-rust-an-alternative-to-c/)
