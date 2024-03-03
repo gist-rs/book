@@ -3,8 +3,12 @@
 ## Install WASI-NN with GGML Backend
 
 ```bash
+# Install everything (recommended)
 bash <(curl -sSfL 'https://code.flows.network/webhook/iwYN1SdN3AmPgR5ao5Gt/run-llm.sh')
 source ~/.zshenv
+
+# Or only plugin https://wasmedge.org/docs/start/install/#install-wasmedge-with-plug-ins
+curl -sSf https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | bash -s -- --plugins wasmedge_rustls wasi_nn-ggml
 ```
 
 ## Models
@@ -13,7 +17,7 @@ source ~/.zshenv
 curl -LO https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/mistral-7b-instruct-v0.1.Q5_K_M.gguf
 ```
 
-## Wasm
+## API Server/Chat (optional)
 
 ```
 curl -LO https://github.com/second-state/LlamaEdge/releases/latest/download/llama-api-server.wasm
