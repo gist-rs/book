@@ -1,3 +1,17 @@
+# Embeddings
+
+## Raw
+
+- [Sparse Vectors in Qdrant: Pure Vector-based Hybrid Search](https://qdrant.tech/articles/sparse-vectors/)
+- [SPLADE for Sparse Vector Search Explained](https://www.pinecone.io/learn/splade/)
+- [Hybrid Search: SPLADE (Sparse Encoder)](https://medium.com/@sowmiyajaganathan/hybrid-search-splade-sparse-encoder-neural-retrieval-models-d092e5f46913)
+
+```mermaid
+graph LR
+    A--"matching<br/>BM25"-->C["1️⃣ sparse = <pre>[{331: 0.5}, {14136: 0.7}]</pre>"]
+    A["Vector Search"]--"semantic meaning<br/>cosine similarity"-->B("2️⃣ dense(BERT) = <pre>[0.2, 0.3, 0.5, 0.7, ...]</pre>")
+```
+
 ## Build
 
 ```bash
