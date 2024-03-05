@@ -1,19 +1,31 @@
 # LLM FineTuning
 
-## Options
+## Raw
 
 - [RLHF in 2024 with DPO & Hugging Face](https://www.philschmid.de/dpo-align-llms-in-2024-with-trl)
+- [Direct Preference Optimization (DPO): A Simplified Approach to Fine-tuning Large Language Models](https://ai.plainenglish.io/direct-preference-optimization-dpo-a-simplified-approach-to-fine-tuning-large-language-models-bae1c6d7ec29)
 - [Fine-tuning SeaLLM on Your Own Dataset with QLoRA on RTX4090](./finetune-seallm.ipynb)
 - [MLX: Quantize, LoRA, QLoRA, Fuse](./mlx.md)
 
-## Pipelines
+## Direct Preference Optimization (DPO)
 
-> Ref: https://ai.plainenglish.io/direct-preference-optimization-dpo-a-simplified-approach-to-fine-tuning-large-language-models-bae1c6d7ec29
+### Steps
 
 ```mermaid
 graph LR
-  A["Direct Preference Optimization (DPO)"]---B["1️⃣ Supervised Fine-tuning (SFT)"]
-  A---C["2️⃣ Preference Learning"]
+  A["1️⃣ Supervised Fine-tuning (SFT)"]--->B["2️⃣ Preference Learning"]
+```
+
+### Datasets
+
+> train.json, test.json
+
+```json
+[
+  { "role": "system", "content": "You are..." },
+  { "role": "user", "content": "..." },
+  { "role": "assistant", "content": "..." }
+]
 ```
 
 ## Brain dump (WIP)
