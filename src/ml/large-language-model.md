@@ -6,11 +6,21 @@ We will look `llm` from `Rust` perspective.
 
 > ref: https://twitter.com/_aigeek/status/1717046220714308026/photo/1
 
+## Raw
+
+- [Templates for Chat Models](https://huggingface.c o/docs/transformers/main/en/chat_templating)
+- [LLM Distillation Playbook](https://github.com/predibase/llm_distillation_playbook)
+
+## Leader
+
+- https://llm.extractum.io/static/llm-leaderboards/
+
 ## Models
 
 - Recommend: [Mistral-7B](https://huggingface.co/mistralai).
 - Long context: [MistralLite](https://huggingface.co/amazon/MistralLite)
 - With function call: [Openhermes 2.5 Mistral 7B](https://github.com/abacaj/openhermes-function-calling/blob/main/openhermes-functions.ipynb)
+- Coder: [deepseek-ai/deepseek-coder-7b-instruct-v1.5](https://huggingface.co/deepseek-ai)
 
 ## MoE
 
@@ -21,6 +31,13 @@ We will look `llm` from `Rust` perspective.
 - Recommend: [Qwen1.5](https://qwenlm.github.io/blog/qwen1.5/)
 - New Comer: [MiniCPM](https://shengdinghu.notion.site/MiniCPM-Unveiling-the-Potential-of-End-side-Large-Language-Models-d4d3a8c426424654a4e80e42a711cb20)
 - New Comer: [Bunny](https://github.com/BAAI-DCAI/Bunny)
+
+## Multi-lang (Asia/Thai)
+
+- [SeaLLMs/SeaLLM-7B-v2](https://huggingface.co/SeaLLMs/SeaLLM-7B-v2)
+- [Aya | Cohere For AI](https://cohere.com/research/aya)
+- [sail/Sailor-7B-Chat](https://huggingface.co/sail/Sailor-7B-Chat)
+- [OpenThaiGPT](https://huggingface.co/openthaigpt)
 
 ## Embedding
 
@@ -49,14 +66,18 @@ We will look `llm` from `Rust` perspective.
 
 - Famous: [Langchain](https://www.langchain.com/)
 - Runner up: [LlamaIndex](https://www.llamaindex.ai/)
+- Rust: [llm-chain](https://github.com/sobelio/llm-chain)
+- Rust/Wasm: [LlamaEdge](https://github.com/LlamaEdge/LlamaEdge)
 
 ## Serve
 
+- Rust/Wasm: [LlamaEdge](https://github.com/LlamaEdge/LlamaEdge)
 - [huggingface/text-generation-inference](https://github.com/huggingface/text-generation-inference)
 - https://github.com/huggingface/llm-ls
 
 ## Chat
 
+- Rust/Wasm: [LlamaEdge](https://github.com/LlamaEdge/LlamaEdge)
 - [HuggingChat](https://github.com/huggingface/chat-ui)
 
 ## Good read

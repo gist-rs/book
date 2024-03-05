@@ -9,7 +9,14 @@ pip install mlx-lm
 # Config
 # MODEL=SeaLLMs/SeaLLM-7B-v2
 # MODEL=Qwen/Qwen1.5-7B
-MODEL=Qwen/Qwen1.5-7B-Chat
+# MODEL=Qwen/Qwen1.5-7B-Chat
+MODEL=sail/Sailor-7B-Chat
+
+# Infer
+python -m mlx_lm.generate \
+    --model ${MODEL} \
+    --eos-token "<|im_end|>" \
+    --prompt "สวัสดี"
 
 # Train
 python3 -m mlx_lm.lora \
