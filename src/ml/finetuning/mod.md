@@ -5,7 +5,7 @@
 - [RLHF in 2024 with DPO & Hugging Face](https://www.philschmid.de/dpo-align-llms-in-2024-with-trl)
 - [Direct Preference Optimization (DPO): A Simplified Approach to Fine-tuning Large Language Models](https://ai.plainenglish.io/direct-preference-optimization-dpo-a-simplified-approach-to-fine-tuning-large-language-models-bae1c6d7ec29)
 - [Fine-tuning SeaLLM on Your Own Dataset with QLoRA on RTX4090](./finetune-seallm.ipynb)
-- [MLX: Quantize, LoRA, QLoRA, Fuse](./mlx.md)
+- [MLX: Quantize, LoRA, QLoRA, Fuse](./apple-mlx.md)
 
 ## Direct Preference Optimization (DPO)
 
