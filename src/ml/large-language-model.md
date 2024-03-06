@@ -73,6 +73,7 @@ We will look `llm` from `Rust` perspective.
 
 - Rust/Wasm: [LlamaEdge](https://github.com/LlamaEdge/LlamaEdge)
 - [huggingface/text-generation-inference](https://github.com/huggingface/text-generation-inference)
+- [LoRAX: Multi-LoRA inference server](https://github.com/predibase/lorax): Based on TGI 👆.
 - https://github.com/huggingface/llm-ls
 
 ## Chat
