@@ -28,6 +28,22 @@ graph LR
 ]
 ```
 
+### Use LlamaEdge instead of OpenAI
+
+```
+# Load model
+MODEL=sail/Sailor-7B-Chat-gguf
+MODEL_NAME=ggml-model-q4_0.gguf
+curl -LO https://huggingface.co/${MODEL}/resolve/main/ggml-model-Q5_K_M.gguf
+
+# API
+bash <(curl -sSfL 'https://raw.githubusercontent.com/LlamaEdge/LlamaEdge/main/run-llm.sh')
+wasmedge --dir .:. --nn-preload default:GGML:AUTO:${MODEL_NAME} llama-api-server.wasm
+
+# Test API
+curl -X POST http://0.0.0.0:8080/v1/chat/completions -H 'accept:application/json' -H 'Content-Type: application/json' -d '{"messages":[{"role":"system", "content":"You are a helpful AI assistant"}, {"role":"user", "content":"กทม ย่อมาจากอะไร"}], "model":"${MODEL}"}'
+```
+
 ## Brain dump (WIP)
 
 ### A Beginner’s Guide to Fine-Tuning Mistral 7B Instruct Model

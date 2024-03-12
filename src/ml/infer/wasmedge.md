@@ -4,7 +4,7 @@
 
 ```bash
 # Install everything (recommended)
-bash <(curl -sSfL 'https://code.flows.network/webhook/iwYN1SdN3AmPgR5ao5Gt/run-llm.sh')
+bash <(curl -sSfL 'https://raw.githubusercontent.com/LlamaEdge/LlamaEdge/main/run-llm.sh')
 source ~/.zshenv
 
 # Or only plugin https://wasmedge.org/docs/start/install/#install-wasmedge-with-plug-ins
@@ -32,7 +32,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:mistral-7b-instruct-v0.1.Q5_K_
 
 RAM `4.1GB`
 
-## Thai
+## Asia/Thai
 
 ```
 # Model OpenThaiGPT
@@ -57,13 +57,6 @@ curl -X POST http://0.0.0.0:8080/v1/chat/completions -H 'accept:application/json
 curl -LO https://github.com/second-state/chatbot-ui/releases/download/v0.1.0/chatbot-ui.tar.gz
 tar xzf chatbot-ui.tar.gz
 wasmedge --dir .:. --nn-preload default:GGML:AUTO:ggml-model-q4_0.gguf llama-api-server.wasm -p llama-2-chat
-```
-
-## Sea
-
-```
-curl -LO https://huggingface.co/parinzee/SeaLLM-7B-Chat-GGUF/resolve/main/seallm-7b-chat.q4_k_m.gguf
-wasmedge --dir .:. --nn-preload default:GGML:AUTO:seallm-7b-chat.q4_k_m.gguf llama-api-server.wasm
 ```
 
 ---
