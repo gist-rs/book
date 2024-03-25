@@ -78,6 +78,7 @@
     - [Hugging Face - AutoTrain](ml/frameworks/huggingface-autotrain.md)
     - [Apple - MLX](ml/frameworks/apple-mlx.md)
   - [Stable Diffusion](ml/stable-diffusion.md)
+  - [Vision Language Model](ml/vision-language-model.md)
 - [Bevy](bevy/mod.md)
   - [Physics with Rapier](bevy/physics-rapier.md)
 - [Bye](bye.md)
