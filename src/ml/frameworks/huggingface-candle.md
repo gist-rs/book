@@ -82,14 +82,14 @@ sudo apt update && sudo apt upgrade
 sudo apt autoremove nvidia* --purge
 
 # Setup cuda ref: https://gist.github.com/denguir/b21aa66ae7fb1089655dd9de8351a202
-wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
+sudo wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
 sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
-wget https://developer.download.nvidia.com/compute/cuda/12.3.0/local_installers/cuda-repo-wsl-ubuntu-12-3-local_12.3.0-1_amd64.deb
-sudo dpkg -i cuda-repo-wsl-ubuntu-12-3-local_12.3.0-1_amd64.deb
-sudo cp /var/cuda-repo-wsl-ubuntu-12-3-local/cuda-*-keyring.gpg /usr/share/keyrings/
+sudo wget https://developer.download.nvidia.com/compute/cuda/12.4.0/local_installers/cuda-repo-wsl-ubuntu-12-4-local_12.4.0-1_amd64.deb
+sudo dpkg -i cuda-repo-wsl-ubuntu-12-4-local_12.4.0-1_amd64.deb
+sudo cp /var/cuda-repo-wsl-ubuntu-12-4-local/cuda-*-keyring.gpg /usr/share/keyrings/
 sudo apt-get update
-sudo apt-get -y install cuda-toolkit-12-3
-sudo apt-get -y install cuda-nvcc-12-3
+sudo apt-get -y install cuda-toolkit-12-4
+sudo apt-get -y install cuda-nvcc-12-4
 
 sudo ubuntu-drivers autoinstall
 sudo apt install nvidia-driver-525
@@ -109,11 +109,11 @@ sudo apt install libcudnn8-dev
 /sbin/ldconfig -N -v $(sed 's/:/ /' <<< $LD_LIBRARY_PATH) 2>/dev/null | grep libcudnn
 
 # Source
-echo 'export CUDA_HOME=/usr/local/cuda-12.3' >> ~/.bashrc
-echo 'export PATH=/usr/local/cuda-12.3/bin:$PATH' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.3/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+echo 'export CUDA_HOME=/usr/local/cuda-12.4' >> ~/.bashrc
+echo 'export PATH=/usr/local/cuda-12.4/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.4/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
 source ~/.bashrc
-sudo ln -s /usr/local/cuda-12.3/bin/nvcc /usr/bin/nvcc
+sudo ln -fs /usr/local/cuda-12.4/bin/nvcc /usr/bin/nvcc
 
 # Setup raw
 wget https://huggingface.co/lmz/candle-mistral/resolve/main/pytorch_model-00001-of-00002.safetensors
