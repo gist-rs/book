@@ -15,6 +15,7 @@
 - Facebook: [Reliability is a top priority. That’s why the team chose to go with `Rust` 🦀 over `C++`.](https://engineering.fb.com/2021/04/29/developer-tools/rust/)
 - Fastly: [Why We Love `Rust` 🦀: Ferris Is Only Part Of It.](https://dev.to/fastly/why-we-love-rust-ferris-is-only-part-of-it-53hc)
 - Google: [Should your team adopt the `Rust` 🦀 programming language?](https://www.youtube.com/watch?v=Gnp4XP1b82E)
+- Google(RustNationUK): [🦀 `Rust` teams at Google are as productive as ones using `Go`, and more than twice as productive as teams using `C++`](https://twitter.com/spastorino/status/1773025016822497392)
 - Google Security: [We need to be able to use `Rust` 🦀 anywhere in the codebase](https://security.googleblog.com/2022/12/memory-safe-languages-in-android-13.html)
 - Huawei: [Huawei is committed to the the success of `Rust` 🦀.](https://trusted-programming.github.io/2021/02/07/our-rust-mission-at-huawei.html)
 - Hugging face: [zero-copy is achievable in `Rust` 🦀](https://github.com/huggingface/safetensors#notes)
