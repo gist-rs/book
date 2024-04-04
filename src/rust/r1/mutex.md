@@ -29,7 +29,7 @@ use std::thread;
 use std::sync::{Arc, Mutex};
 
 fn main() {
-    // Use Mutex to proect the shared vector
+    // Use Mutex to protect the shared vector
     let mutex_numbers = Mutex::new(vec![1, 2, 3]);
 
     // Use Arc here 👇 to share the numbers vector between threads
