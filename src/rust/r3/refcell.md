@@ -4,7 +4,7 @@
 
 > 🤔 [refer to stack overflow](https://stackoverflow.com/questions/28521637/how-can-i-move-a-captured-variable-into-a-closure-within-a-closure)
 
-### With `RefCell`
+### Without `RefCell`
 
 ```rust,editable
 fn main() {
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-### Without `RefCell`
+### With `RefCell`
 
 ```rust,editable
 use std::cell::RefCell;
