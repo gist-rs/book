@@ -77,7 +77,7 @@ fn hello(foo: String) -> String
 fn hello(foo: &str) -> Cow<'_, str>
 
 // Take impl, return impl.
-fn hello(foo: impl AsRef<Str>) -> impl AsRef<str>
+fn hello(foo: impl AsRef<str>) -> impl AsRef<str>
 ```
 
 > 💡 You can read more about `Cow` here 👉 [6 things you can do with the Cow 🐄 in Rust 🦀](https://dev.to/kgrech/6-things-you-can-do-with-the-cow-in-rust-4l55)
