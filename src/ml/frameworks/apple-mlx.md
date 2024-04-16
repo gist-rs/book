@@ -3,26 +3,39 @@
 - https://github.com/ml-explore
 - https://github.com/ml-explore/mlx-examples
 
+## Setup
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -U mlx-lm --quiet
+```
+
 ## Infer (huggingface)
 
 ```bash
-# Setup
-python3 -m venv .venv
-source .venv/bin/activate
-pip install mlx-lm
-
-# Infer (multi-lang)
-MODEL=SeaLLMs/SeaLLM-7B-v2
-MODEL_NAME=SeaLLM-7B-v2
-# MODEL=aisingapore/sealion7b-instruct-nc
-# MODEL_NAME=sealion7b-instruct-nc
-
+MODEL=SeaLLMs/SeaLLM-7B-v2.5-GGUF
 python -m mlx_lm.generate --model ${MODEL} --prompt "สวัสดี"
-python -m mlx_lm.convert --hf-path ${MODEL} -q --upload-repo mlx-community/${MODEL_NAME}-4bit-mlx
-python -m mlx_lm.generate --model mlx-community/SeaLLM-7B-v2-4bit-mlx --prompt "สอนเขียน helloworld ด้วย Rust หน่อย"
 ```
 
-## Infer (manual)
+## Infer (OpenThaiGPT)
+
+```bash
+MODEL=mlx-community/openthaigpt-1.0.0-7b-chat-4bit-mlx
+
+python3 -m mlx_lm.generate --model ${MODEL} --prompt "[INST] <<SYS>
+You are a question answering assistant. Answer the question as truthful and helpful as possible คุณคือผู้ช่วยตอบคำถาม จงตอบคำถามอย่างถูกต้องและมีประโยชน์ที่สุด
+<</SYS>>
+แนะนำอาหารไทย 3 อย่าง [/INST]"
+```
+
+## Infer with `im_start`
+
+```bash
+python3 -m mlx_lm.generate --model mlx-community/NeuralBeagle14-7B --prompt "<|im_start|>system\nYou are the best programmer<|im_end|>\n<|im_start|>user\nWrite helloworld code in Rust.<|im_end|>\n<|im_start|>assistant\n" --max-tokens 2048
+```
+
+## Infer (manual, outdated not recommend)
 
 ```bash
 # Setup
@@ -103,7 +116,7 @@ Q: What position does the player who played for butler cc (ks) play?
 A: "
 ```
 
-## Convert
+## Quantize 4bit and Upload
 
 ```bash
 # Get access token
@@ -113,20 +126,9 @@ open https://huggingface.co/settings/tokens
 pip install --upgrade huggingface_hub
 huggingface-cli login
 
-# Setup
-git clone https://github.com/ml-explore/mlx-examples
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+MODEL=SeaLLMs/SeaLLM-7B-v2
+MODEL_NAME=SeaLLM-7B-v2
 
-# convert and upload
-python3 -m mlx_lm.convert --hf-path mlabonne/NeuralBeagle14-7B --upload-repo mlx-community/NeuralBeagle14-7B-mlx
-python3 -m mlx_lm.convert -q --hf-path mlabonne/NeuralBeagle14-7B --upload-repo mlx-community/NeuralBeagle14-7B-4bit-mlx
-```
-
-## Use with `mlx_lm` cli
-
-```bash
-pip install -U mlx-lm
-python3 -m mlx_lm.generate --model mlx-community/NeuralBeagle14-7B --prompt "<|im_start|>system\nYou are the best programmer<|im_end|>\n<|im_start|>user\nWrite helloworld code in Rust.<|im_end|>\n<|im_start|>assistant\n" --max-tokens 2048
+python3 -m mlx_lm.convert --hf-path ${MODEL} -q --upload-repo mlx-community/${MODEL_NAME}-4bit-mlx
+python3 -m mlx_lm.generate --model mlx-community/SeaLLM-7B-v2-4bit-mlx --prompt "สอนเขียน helloworld ด้วย Rust หน่อย"
 ```
