@@ -32,8 +32,8 @@ tabby scheduler --now
 
 ## RAM used
 
-`--model TabbyML/DeepseekCoder-6.7B = RAM 2.1GB`
-`--chat-model TabbyML/Mistral-7B = RAM 2.6GB`
+- `--model TabbyML/DeepseekCoder-6.7B` // RAM used 2.1GB
+- `--chat-model TabbyML/Mistral-7B` // RAM used 2.6GB
 
 ---
 
