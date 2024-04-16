@@ -30,6 +30,27 @@ EOF
 tabby scheduler --now
 ```
 
+## How to add more repos manually
+
+### Open config file
+
+```
+open ~/.tabby/config.toml
+```
+
+### Then add some repo
+
+```
+[[repositories]]
+git_url = "https://github.com/DioxusLabs/dioxus.git"
+```
+
+### Finally force indexing
+
+```
+tabby scheduler --now
+```
+
 ## RAM used
 
 - `--model TabbyML/DeepseekCoder-6.7B` // RAM used 2.1GB
