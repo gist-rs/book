@@ -7,42 +7,14 @@
 - [Fine-tuning SeaLLM on Your Own Dataset with QLoRA on RTX4090](./finetune-seallm.ipynb)
 - [MLX: Quantize, LoRA, QLoRA, Fuse](./apple-mlx.md)
 
-## Direct Preference Optimization (DPO)
+## Supervised Fine-tuning (SFT) with `Unsloth` (Recommend)
 
-### Steps
+- [4x longer context windows & 1.7x larger batch sizes](https://unsloth.ai/blog/long-context)
+- [Long context Gemma 7b + ChatML](./sft/Long_context_Gemma_7b_+_ChatML.ipynb)
 
-```mermaid
-graph LR
-  A["1️⃣ Supervised Fine-tuning (SFT)"]--->B["2️⃣ Preference Learning"]
-```
+## Direct Preference Optimization (DPO) (Not Recommend)
 
-### Datasets
-
-> train.json, test.json
-
-```json
-[
-  { "role": "system", "content": "You are..." },
-  { "role": "user", "content": "..." },
-  { "role": "assistant", "content": "..." }
-]
-```
-
-### Use LlamaEdge instead of OpenAI
-
-```
-# Load model
-MODEL=sail/Sailor-7B-Chat-gguf
-MODEL_NAME=ggml-model-q4_0.gguf
-curl -LO https://huggingface.co/${MODEL}/resolve/main/ggml-model-Q5_K_M.gguf
-
-# API
-bash <(curl -sSfL 'https://raw.githubusercontent.com/LlamaEdge/LlamaEdge/main/run-llm.sh')
-wasmedge --dir .:. --nn-preload default:GGML:AUTO:${MODEL_NAME} llama-api-server.wasm
-
-# Test API
-curl -X POST http://0.0.0.0:8080/v1/chat/completions -H 'accept:application/json' -H 'Content-Type: application/json' -d '{"messages":[{"role":"system", "content":"You are a helpful AI assistant"}, {"role":"user", "content":"กทม ย่อมาจากอะไร"}], "model":"${MODEL}"}'
-```
+- [RLHF in 2024 with DPO & Hugging Face](./dpo/dpo-align-llms-in-2024-with-trl.ipynb)
 
 ## Brain dump (WIP)
 
