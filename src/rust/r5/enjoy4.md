@@ -84,6 +84,32 @@ fn main() {
 
 ## strum
 
+Install
+
+```bash
+cargo add strum
+cargo add strum_macros
+```
+
+and get
+
+```toml
+strum = "0.26"
+strum_macros = "0.26"
+```
+
+or
+
+```bash
+cargo add strum --features=derive
+```
+
+and get
+
+```toml
+strum = { version = "0.26", features = ["derive", "strum_macros"] }
+```
+
 ```rust,editable
 use std::str::FromStr;
 use strum_macros::{Display, EnumString};
