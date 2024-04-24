@@ -25,7 +25,7 @@
 
 1. Both `Option`, `Result` are `enum` so eat that frog 🐸!
 1. Generic `T` and `E` nearly like generic in `TypeScript` so it should be easy there.
-1. Use `iter`, `iter_into`, `collect` wisely, but no worry [`clippy`](https://doc.rust-lang.org/clippy/) will got your back anyway.
+1. Use `iter`, `into_iter`, `collect` wisely, but no worry [`clippy`](https://doc.rust-lang.org/clippy/) will got your back anyway.
 1. Choose `composition` over `inheritance`, learn to love `struct`, `impl`, `trait`, `derive` instead.
 1. We `impl` (implement) some `trait` (aka skill) for `struct` so it can have that skill.
 1. `String`,`Vec`,`Box` are smart pointer allocated on `heap`.
