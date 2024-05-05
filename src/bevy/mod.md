@@ -1,4 +1,4 @@
-# WIP Bevy
+# Bevy (WIP)
 
 ```
 ld: cannot find -lshlwapi: No such file or directory
@@ -25,6 +25,10 @@ rustup default stable-x86_64-pc-windows-msvc
 - [ ] 💾 Moonshine Save: A save/load framework for Bevy game engine. https://github.com/Zeenobit/moonshine_save
 - [ ] Bevy Replicon: Write the same logic that works for both multiplayer and single-player. https://github.com/lifescapegame/bevy_replicon
 
+## Mac Silicon
+
+- You can open FPS HUD by `MTL_HUD_ENABLED=1 cargo run release`
+
 ## Windows
 
 > Use `dynamic` refer to https://bevyengine.org/learn/book/getting-started/setup/#compile-with-performance-optimizations
@@ -42,7 +46,7 @@ bevy = {version = "0.11.3", features = ["dynamic"] }
 
 ---
 
-## Mac intel
+## Mac Intel
 
 ### Problem
 
