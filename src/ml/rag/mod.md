@@ -6,6 +6,10 @@
 
 > ref: https://github.com/chatchat-space/Langchain-Chatchat/blob/master/README_en.md
 
+## My Pick
+
+- [LlamaEdge](https://github.com/LlamaEdge/Example-LlamaEdge-RAG)
+
 ## Raw
 
 - [Basic RAG](https://docs.mistral.ai/guides/basic-RAG/)
