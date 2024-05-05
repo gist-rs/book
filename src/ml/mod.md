@@ -20,8 +20,13 @@
 
 ## Inferences
 
-- [Text Generation Inference](infer/huggingface-text-generation-inference.md)
+- [Text Generation Inference (TGI)](infer/huggingface-text-generation-inference.md)
 - [TabbyML](infer/tabbyml.md): For locally code completion.
+- [LlamaEdge](https://github.com/LlamaEdge/LlamaEdge): Wasm base chat/embeddings/api.
+
+## Embedding
+
+- [Text Embeddings Inference (TEI)](https://huggingface.co/docs/text-embeddings-inference/en/index)
 - [LlamaEdge](https://github.com/LlamaEdge/LlamaEdge): Wasm base chat/embeddings/api.
 
 ## RAG
