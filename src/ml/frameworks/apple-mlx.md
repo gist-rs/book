@@ -18,6 +18,14 @@ MODEL=SeaLLMs/SeaLLM-7B-v2.5-GGUF
 python -m mlx_lm.generate --model ${MODEL} --prompt "สวัสดี"
 ```
 
+## Infer (mlx-community)
+
+```bash
+# MODEL=mlx-community/Llama-3-8B-Instruct-Gradient-1048k-8bit
+MODEL=mlx-community/Llama-3-8B-Instruct-Gradient-1048k-4bit
+python3 -m mlx_lm.generate --model ${MODEL} --prompt "Write helloworld code in Rust" --eos-token "<|eot_id|>"
+```
+
 ## Infer (OpenThaiGPT)
 
 ```bash
