@@ -8,7 +8,8 @@
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -U mlx-lm --quiet
+python3 -m pip install -U mlx-lm
+python3 -c "import mlx_lm; print(mlx_lm.__version__)"
 ```
 
 ## Infer (huggingface)
@@ -134,9 +135,11 @@ open https://huggingface.co/settings/tokens
 pip install --upgrade huggingface_hub
 huggingface-cli login
 
-MODEL=SeaLLMs/SeaLLM-7B-v2
-MODEL_NAME=SeaLLM-7B-v2
+# MODEL=SeaLLMs/SeaLLM-7B-v2
+# MODEL_NAME=SeaLLM-7B-v2
+MODEL=scb10x/typhoon-v1.5-8b-instruct
+MODEL_NAME=typhoon-v1.5-8b-instruct
 
 python3 -m mlx_lm.convert --hf-path ${MODEL} -q --upload-repo mlx-community/${MODEL_NAME}-4bit-mlx
-python3 -m mlx_lm.generate --model mlx-community/SeaLLM-7B-v2-4bit-mlx --prompt "สอนเขียน helloworld ด้วย Rust หน่อย"
+python3 -m mlx_lm.generate --model mlx-community/${MODEL_NAME}-4bit-mlx --prompt "สอนเขียน helloworld ด้วย Rust หน่อย" --eos-token "<|eot_id|>"
 ```
