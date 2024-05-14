@@ -17,6 +17,9 @@ tabby serve --device metal --model TabbyML/DeepseekCoder-6.7B --chat-model Tabby
 # Or
 tabby serve --device metal --model TabbyML/Mistral-7B --chat-model TabbyML/Mistral-7B
 
+# Or with port
+tabby serve --device metal --model TabbyML/CodeGemma-7B --chat-model TabbyML/CodeGemma-7B-Instruct --port 9090
+
 # Config to indexing some repo
 cat << 'EOF' > ~/.tabby/config.toml
 [[repositories]]
