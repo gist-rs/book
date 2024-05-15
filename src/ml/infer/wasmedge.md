@@ -9,6 +9,9 @@ source ~/.zshenv
 
 # Or only plugin https://wasmedge.org/docs/start/install/#install-wasmedge-with-plug-ins
 curl -sSf https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | bash -s -- --plugins wasmedge_rustls wasi_nn-ggml
+
+# Or with specific version
+curl -sSf https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | bash -s -- -v 0.13.5 --plugins wasi_nn-ggml wasmedge_rustls
 ```
 
 ## Models
