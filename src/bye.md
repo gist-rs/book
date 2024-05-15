@@ -8,7 +8,6 @@
 1. [Easy Rust](https://dhghomon.github.io/easy_rust/Chapter_1.html): Easier to read, no fancy word.
 1. [The Rust Reference](https://doc.rust-lang.org/stable/reference/): Feel like short note 🤔.
 1. [Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html): Collection of `async` things.
-1. [Rust Design Patterns](https://rust-unofficial.github.io/patterns/): Design Patterns obviously.
 1. [The Embedded Rust Book](https://doc.rust-lang.org/stable/embedded-book/): Embedded things.
 1. [MacroKata](https://tfpk.github.io/macrokata/): A set of exercises which you can use to learn how to write `macros` in `Rust`.
 1. [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/about.html): How to design and present APIs.
@@ -16,6 +15,12 @@
 1. [Rust Atomics and Locks](https://marabos.nl/atomics): Low-Level Concurrency in Practice.
 1. [The Rust Performance Book](https://nnethercote.github.io/perf-book/introduction.html): Contains many techniques that can improve the performance.
 1. [Effective Rust](https://www.lurklurk.org/effective-rust/intro.html): 35 Specific Ways to Improve Your Rust Code.
+
+### 💎 Patterns
+
+1. [Rust Design Patterns](https://rust-unofficial.github.io/patterns/): Design Patterns obviously.
+1. [Long-term Rust Project Maintenance](https://corrode.dev/blog/long-term-rust-maintenance/)
+1. [Hexagonal architecture in Rust](https://alexis-lozano.com/hexagonal-architecture-in-rust-1/)
 
 ### 👨‍🍳 Cooking
 
