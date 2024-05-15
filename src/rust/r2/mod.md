@@ -17,3 +17,4 @@
 
 - [ ] https://blog.orhun.dev/automated-rust-releases/
 - [ ] https://github.com/bheisler/criterion.rs
+- [ ] https://corrode.dev/blog/long-term-rust-maintenance/
