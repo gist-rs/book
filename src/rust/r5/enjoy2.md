@@ -28,7 +28,7 @@ fn main() {
         .collect::<Vec<_>>(); // `collect` inferred type from iterate.
         //             👆 `_` is inferred type (let compiler desire).
 
-    println!("hello_vec: {hello_vec:#?}");
+    println!("1️⃣ hello_vec: {hello_vec:#?}");
 
     // 2️⃣ Do it again but with index.
     let indexed_vec = vec_of_foo
@@ -37,7 +37,7 @@ fn main() {
         .map(|(i, e)| (i, e)) // Say hi to `Tuple` type.
         .collect::<Vec<(usize, &&str)>>(); // i is `usize`, e is &&str.
 
-    println!("indexed_vec: {indexed_vec:#?}");
+    println!("2️⃣ indexed_vec: {indexed_vec:#?}");
 
     // 3️⃣ Do it again but `into_iter`.
     let into_iter_indexed_vec = vec_of_foo
@@ -47,7 +47,7 @@ fn main() {
         .collect::<Vec<(usize, &str)>>(); // e is just &str not &&str.
                                           // Or just `<Vec<_>>` if you lazy.
 
-    println!("into_iter_indexed_vec: {into_iter_indexed_vec:#?}");
+    println!("3️⃣ into_iter_indexed_vec: {into_iter_indexed_vec:#?}");
 
     // `into_iter` is handy to pass value without borrow
     // but it can be problematic sometime if it has been borrowed by 1️⃣ and 2️⃣.
@@ -58,7 +58,7 @@ fn main() {
     //     &into_iter_indexed_vec.first().unwrap().1
     // );
 
-    // You can also define type 👇 here
+    // 4️⃣ You can also define type 👇 here
     use std::collections::HashSet;
     let binding = vec!["foo", "bar"];
     let iter_hashset: HashSet<_> = binding
@@ -66,14 +66,14 @@ fn main() {
         .map(|e|e)
         .collect();
 
-    println!("iter_hashset: {iter_hashset:#?}");
+    println!("4️⃣ iter_hashset: {iter_hashset:#?}");
 
-    // Or even shorter with 👇 FromIterator
+    // 5️⃣ Or even shorter with 👇 FromIterator
     use std::iter::FromIterator;
     let binding = vec!["foo", "bar"];
     let hashset_from: HashSet<_> = HashSet::from_iter(binding);
 
-    println!("hashset_from: {:#?}", hashset_from);
+    println!("5️⃣ hashset_from: {:#?}", hashset_from);
 }
 ```
 
