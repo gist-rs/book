@@ -2,7 +2,7 @@
 
 ![](/assets/kat.png) <span class="speech-bubble">We will need `vec` and `array` to keep things organized as index.</span>
 
-### Vec, iter, map, collect, into_iter, enumerate, unwrap, Tuple
+### Vec, iter, map, collect, into_iter, enumerate, unwrap, Tuple, HashSet
 
 ```rust,editable
 fn main() {
@@ -57,6 +57,23 @@ fn main() {
     //     indexed_vec.first().unwrap().1,
     //     &into_iter_indexed_vec.first().unwrap().1
     // );
+
+    // You can also define type 👇 here
+    use std::collections::HashSet;
+    let binding = vec!["foo", "bar"];
+    let iter_hashset: HashSet<_> = binding
+        .iter()
+        .map(|e|e)
+        .collect();
+
+    println!("iter_hashset: {iter_hashset:#?}");
+
+    // Or even shorter with 👇 FromIterator
+    use std::iter::FromIterator;
+    let binding = vec!["foo", "bar"];
+    let hashset_from: HashSet<_> = HashSet::from_iter(binding);
+
+    println!("hashset_from: {:#?}", hashset_from);
 }
 ```
 
