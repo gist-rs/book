@@ -15,7 +15,8 @@ python3 -c "import mlx_lm; print(mlx_lm.__version__)"
 ## Infer (huggingface)
 
 ```bash
-MODEL=SeaLLMs/SeaLLM-7B-v2.5-GGUF
+# MODEL=SeaLLMs/SeaLLM-7B-v2.5-GGUF
+MODEL=01-ai/Yi-1.5-9B-Chat
 python -m mlx_lm.generate --model ${MODEL} --prompt "สวัสดี"
 ```
 
