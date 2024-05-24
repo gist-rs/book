@@ -16,15 +16,16 @@ python3 -c "import mlx_lm; print(mlx_lm.__version__)"
 
 ```bash
 # MODEL=SeaLLMs/SeaLLM-7B-v2.5-GGUF
-MODEL=01-ai/Yi-1.5-9B-Chat
-python -m mlx_lm.generate --model ${MODEL} --prompt "สวัสดี"
+# MODEL=01-ai/Yi-1.5-9B-Chat
+MODEL=mistralai/Mistral-7B-v0.3
+python -m mlx_lm.generate --model ${MODEL} --max-tokens 512 --prompt "Write helloworld code in Rust"
 ```
 
 ## Infer (mlx-community)
 
 ```bash
 # MODEL=mlx-community/Llama-3-8B-Instruct-Gradient-1048k-8bit
-MODEL=mlx-community/Llama-3-8B-Instruct-Gradient-1048k-4bit
+MODEL=mlx-community/Mistral-7B-v0.3-4bit
 python3 -m mlx_lm.generate --model ${MODEL} --prompt "Write helloworld code in Rust" --eos-token "<|eot_id|>"
 ```
 
