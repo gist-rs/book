@@ -25,7 +25,8 @@ python -m mlx_lm.generate --model ${MODEL} --max-tokens 512 --prompt "Write hell
 
 ```bash
 # MODEL=mlx-community/Llama-3-8B-Instruct-Gradient-1048k-8bit
-MODEL=mlx-community/Mistral-7B-v0.3-4bit
+# MODEL=mlx-community/Mistral-7B-v0.3-4bit
+MODEL=mlx-community/Mistral-7B-Instruct-v0.3-4bit
 python3 -m mlx_lm.generate --model ${MODEL} --prompt "Write helloworld code in Rust" --eos-token "<|eot_id|>"
 ```
 
