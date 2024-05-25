@@ -146,3 +146,23 @@ MODEL_NAME=typhoon-v1.5-8b-instruct
 python3 -m mlx_lm.convert --hf-path ${MODEL} -q --upload-repo mlx-community/${MODEL_NAME}-4bit-mlx
 python3 -m mlx_lm.generate --model mlx-community/${MODEL_NAME}-4bit-mlx --prompt "สอนเขียน helloworld ด้วย Rust หน่อย" --eos-token "<|eot_id|>"
 ```
+
+## mlx-server (Not production grade)
+
+Run
+
+```bash
+MODEL=mlx-community/Mistral-7B-Instruct-v0.3-4bit
+mlx_lm.server --model ${MODEL}
+```
+
+Test
+
+```bash
+curl localhost:8080/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+     "messages": [{"role": "user", "content": "Translate to English: おはようございます"}],
+     "temperature": 0.0
+   }'
+```
