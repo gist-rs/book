@@ -10,6 +10,7 @@
 - AWS: [`Rust` 🦀 is an amazing technology to sustain and secure our industry.](https://aws.amazon.com/blogs/opensource/sustainability-with-rust/)
 - Azure: [It's time to use `Rust` 🦀.](https://twitter.com/markrussinovich/status/1571995117233504257)
 - Cloudflare: [`Rust` 🦀 is staking its claim as a must-have in the developer toolbox.](https://blog.cloudflare.com/workers-rust-sdk/)
+- DataDog: [Migrate Java to `Rust` 🦀 3x performance and resulted in a 10x reduction in memory usage](https://www.datadoghq.com/blog/engineering/how-we-migrated-our-static-analyzer-from-java-to-rust/)
 - Discord: [We drastically improved the performance of a service by switching its implementation from `Go` to `Rust` 🦀.](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
 - Disney+: [We chose `Rust` 🦀, targeting WebAssembly (`WASM`), for ease of web deployment and app updatability.](https://medium.com/disney-streaming/introducing-the-disney-application-development-kit-adk-ad85ca139073)
 - Facebook: [Reliability is a top priority. That’s why the team chose to go with `Rust` 🦀 over `C++`.](https://engineering.fb.com/2021/04/29/developer-tools/rust/)
