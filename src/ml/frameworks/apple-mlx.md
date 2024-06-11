@@ -17,7 +17,8 @@ python3 -c "import mlx_lm; print(mlx_lm.__version__)"
 ```bash
 # MODEL=SeaLLMs/SeaLLM-7B-v2.5-GGUF
 # MODEL=01-ai/Yi-1.5-9B-Chat
-MODEL=mistralai/Mistral-7B-v0.3
+# MODEL=mistralai/Mistral-7B-v0.3
+MODEL=Qwen/Qwen2-7B-Instruct-MLX
 python -m mlx_lm.generate --model ${MODEL} --max-tokens 512 --prompt "Write helloworld code in Rust"
 ```
 
