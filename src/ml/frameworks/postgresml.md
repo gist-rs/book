@@ -2,7 +2,11 @@
 
 Unified RAG (and else) with PostgreSQL
 
+> Refer to: https://postgresml.org/docs/guides/unified-rag
+
 ![](../../ml/assets/postgresml-overview.png)
+
+<div style="text-align:center;width:100%;font-size:x-small;opacity:50%">Ref: https://postgresml.org/docs/</div>
 
 ## Setup (local)
 
