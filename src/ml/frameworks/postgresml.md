@@ -34,11 +34,25 @@ docker run \
     sudo -u postgresml psql -d postgresml
 ```
 
+#### With gpu
+
+```
+docker run \
+    -it \
+    -v postgresml_data:/var/lib/postgresql \
+    --gpus all \
+    -p 5433:5432 \
+    -p 8000:8000 \
+    ghcr.io/postgresml/postgresml:2.9.1 \
+    sudo -u postgresml psql -d postgresml
+```
+
 ## Use
 
 ### Check version
 
 ```
+CREATE EXTENSION IF NOT EXISTS vector;
 CREATE EXTENSION IF NOT EXISTS pgml;
 SELECT pgml.version();
 ```
@@ -55,8 +69,15 @@ CREATE EXTENSION
 ### Use from other terminal (Optional)
 
 ```
+# Install postgresql for macos
 brew install postgresql
+
+# Local
 psql -h 127.0.0.1 -p 5433 -U postgresml
+
+# Or across network
+psql -h 192.168.1.33 -p 5433 -U postgresml
+
 ```
 
 ### Embeddings
@@ -67,3 +88,7 @@ SELECT pgml.embed(
     'passage: PostgresML is so easy!'
 );
 ```
+
+### Infer
+
+It's crash while infer for `RTX4090` 🤷‍♂️
