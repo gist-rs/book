@@ -23,7 +23,7 @@ MODEL=google/gemma-2-9b-it
 python -m mlx_lm.generate --model ${MODEL} --max-tokens 512 --prompt "Write helloworld code in Rust"
 ```
 
-![](./apple-mlx-assets/gemma-2-27b-it-4bit.png)
+![gemma-2-27b-it-4bit](./apple-mlx-assets/gemma-2-27b-it-4bit.png)
 
 ## Monitor (Optional)
 
@@ -32,7 +32,7 @@ brew install vladkens/tap/macmon
 macmon
 ```
 
-![](./apple-mlx-assets/macmon.png)
+![m3 max 64GB](./apple-mlx-assets/macmon.png)
 
 ## Infer (mlx-community)
 
