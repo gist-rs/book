@@ -70,6 +70,7 @@
     - [TabbyML](ml/infer/tabbyml.md)
     - [WasmEdge](ml/infer/wasmedge.md)
     - [Hugging Face - Text Generation Inference](ml/infer/huggingface-text-generation-inference.md)
+    - [llama.cpp](ml/frameworks/llama.cpp.md)
   - [RAG](ml/rag/mod.md)
     - [Vector Database - Qdrant](ml/rag/vector-db-qdrant.md)
   - [Embeddings](ml/embeddings/mod.md)
