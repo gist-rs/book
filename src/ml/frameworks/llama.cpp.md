@@ -1,6 +1,21 @@
 # llama.cpp
 
+## Infer homebrew
+
+> Recommend for user.
+
+```bash
+brew install llama.cpp
+
+REPO=Qwen/Qwen2-1.5B-Instruct-GGUF
+FILE=qwen2-1_5b-instruct-q4_k_m.gguf
+PROMPT="Write helloworld code in Rust"
+llama-cli --hf-repo ${REPO} --hf-file ${FILE} -p "${PROMPT}" -i --n-gpu-layers 10
+```
+
 ## Build
+
+> Recommend for dev.
 
 ```bash
 git clone https://github.com/ggerganov/llama.cpp.git
