@@ -40,8 +40,10 @@ macmon
 # MODEL=mlx-community/Llama-3-8B-Instruct-Gradient-1048k-8bit
 # MODEL=mlx-community/Mistral-7B-v0.3-4bit
 # MODEL=mlx-community/Mistral-7B-Instruct-v0.3-4bit
-MODEL=mlx-community/gemma-2-27b-it-4bit
-python3 -m mlx_lm.generate --model ${MODEL} --prompt "Write helloworld code in Rust" --eos-token "<|eot_id|>"
+# MODEL=mlx-community/gemma-2-27b-it-4bit
+# MODEL=mlx-community/DeepSeek-Coder-V2-Lite-Instruct-4bit-mlx
+MODEL=mlx-community/Meta-Llama-3.1-8B-Instruct-8bit
+python3 -m mlx_lm.generate --model ${MODEL} --prompt "Write helloworld code in Rust"
 ```
 
 ## Infer (OpenThaiGPT)
