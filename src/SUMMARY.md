@@ -67,6 +67,7 @@
 - [ML](ml/mod.md)
   - [Large Language Model](ml/large-language-model.md)
   - [Inferences](ml/infer/mod.md)
+    - [ollama](ml/infer/ollama.md)
     - [TabbyML](ml/infer/tabbyml.md)
     - [WasmEdge](ml/infer/wasmedge.md)
     - [Hugging Face - Text Generation Inference](ml/infer/huggingface-text-generation-inference.md)
