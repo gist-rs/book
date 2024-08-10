@@ -1,11 +1,13 @@
 # Embeddings
 
+![](/assets/kat.png) <span class="speech-bubble">Let's do embeddings! The most challenge is chunking to match the max token input which [depend on each model](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models).</span>
+
 ## Setup for simple use case.
 
 1. [Create and set up a Cloud resource connection.](https://cloud.google.com/bigquery/docs/create-cloud-resource-connection)
 2. Target Vertex AI LLM (see below)
 
-### How to do multi-language text embedding in `BigQuery`
+### How to do multi-language text embedding in `BigQuery`?
 
 ```sql
 CREATE OR REPLACE MODEL `llm.text_embedding_model`
@@ -13,7 +15,7 @@ CREATE OR REPLACE MODEL `llm.text_embedding_model`
   OPTIONS (ENDPOINT = 'text-multilingual-embedding-002');
 ```
 
-### How to query `ml_generate_embedding_result` as `ARRAY<FLOAT64>`
+### How to query `ml_generate_embedding_result` as `ARRAY<FLOAT64>`?
 
 ```sql
 SELECT ARRAY_AGG(text_embeddings) AS text_embeddings
@@ -24,12 +26,50 @@ FROM ML.GENERATE_EMBEDDING(
 UNNEST(ml_generate_embedding_result) AS text_embeddings
 ```
 
-## Setup for `ETL` update.
+### How can we know token length before embedding?
+
+```sql
+WITH analyzed_text AS (
+    SELECT ARRAY_LENGTH(TEXT_ANALYZE('Hello World! This is so fun!')) AS token_count
+)
+SELECT JSON_OBJECT(
+    'truncated', token_count > 5,
+    'token_count', token_count
+) AS result
+FROM analyzed_text;
+```
+
+Output
+
+```json
+{ "token_count": 6, "truncated": true }
+```
+
+### How can we know token length before embedding for each chunks?
+
+```sql
+WITH input_chunks AS (
+    SELECT chunk
+    FROM UNNEST(['foo bar baz', 'foo', 'foo bar']) AS chunk
+)
+SELECT ARRAY(
+    SELECT ARRAY_LENGTH(TEXT_ANALYZE(chunk))
+    FROM input_chunks
+) AS token_counts;
+```
+
+Output
+
+```json
+[3, 1, 2]
+```
+
+## Setup for `chunking` update.
 
 1. [Create sessions](https://cloud.google.com/bigquery/docs/sessions-intro) for `TEMP` table.
 2. Update with extracted result (see below)
 
-### How to update `ml_generate_embedding_result` and also get `ml_generate_embedding_statistics`
+### How to update `ml_generate_embedding_result` and also get `ml_generate_embedding_statistics`?
 
 ```sql
 CREATE OR REPLACE TEMP TABLE temp_embedding_stats AS
