@@ -21,33 +21,31 @@ CREATE OR REPLACE MODEL `llm.text_inference_model`
 CREATE OR REPLACE TABLE
   content_hub_v2.poc ( query_id STRING NOT NULL,
     embedding ARRAY<FLOAT64> );
+
 INSERT
-  content_hub_v2.poc (query_id,
-    embedding)
+  content_hub_v2.poc (query_id, embedding)
+
 VALUES
-  ('線形回帰', (
+  ('baz', (
     SELECT
-      ARRAY_AGG(text_embeddings) AS text_embeddings
+      ARRAY_AGG(embedding)
     FROM
       ML.GENERATE_EMBEDDING( MODEL `llm.text_embedding_model`,
-        (
-        SELECT
-          "線形回帰" AS content)),
-      UNNEST(ml_generate_embedding_result)AS text_embeddings ));
+        (SELECT "線形回帰" AS content)),
+      UNNEST(ml_generate_embedding_result) AS embedding));
+
 SELECT
   *
 FROM
-  VECTOR_SEARCH( TABLE content_hub_v2.poc,
+  VECTOR_SEARCH(
+    TABLE content_hub_v2.poc,
     'embedding',
-    (
-    SELECT
+    (SELECT
       ARRAY_AGG(embedding) AS embedding
-    FROM
-      ML.GENERATE_EMBEDDING( MODEL `llm.text_embedding_model`,
-        (
-        SELECT
-          "線形回帰" AS content)),
-      UNNEST(ml_generate_embedding_result)AS embedding ),
+     FROM
+      ML.GENERATE_EMBEDDING(MODEL `llm.text_embedding_model`,
+        (SELECT "線形回帰" AS content)),
+      UNNEST(ml_generate_embedding_result) AS embedding),
     'embedding',
     top_k => 2);
 ```
