@@ -85,4 +85,8 @@
   - [Vision Language Model](ml/vision-language-model.md)
 - [Bevy](bevy/mod.md)
   - [Physics with Rapier](bevy/physics-rapier.md)
+- [BigQuery](bigquery/mod.md)
+  - [Inferences](bigquery/inferences.md)
+  - [Embeddings](bigquery/embeddings.md)
+  - [Search](bigquery/search.md)
 - [Bye](bye.md)
