@@ -8,31 +8,35 @@
 - Use `TryFrom` for validation + `From`.
 - Implementing `Newtype` Traits with `Derive More`.
 
-```rust
-use derive_more::{Add, Display, From, FromStr};
-use std::str::FromStr;
+## Setup
 
-#[derive(FromStr, Display)]
-pub struct PhoneNumber(String);
-
-#[derive(Clone, Copy, From, Display, Add)]
-#[display(fmt = "{} years", _0)]
-pub struct Years(u32);
-
-fn main() {
-    // Use parse.
-    let num = "123-4567".parse::<PhoneNumber>().unwrap();
-    println!("1️⃣ Phone number is {}", num);
-
-    // Use from_str.
-    let num = PhoneNumber::from_str("123-4567").unwrap();
-    println!("2️⃣ Phone number is {}", num);
-
-    // Use from and Add.
-    let age_1 = Years::from(5);
-    let age_2 = Years::from(2);
-    println!("3️⃣ {} + {} = {}", age_1, age_2, age_1 + age_2);
-}
+```bash
+cargo add derive_more --features "add display from from_str"
 ```
 
-<a href="https://codesandbox.io/p/sandbox/derive-more-852zqb" class="button">▢ CodeSandbox</a>
+## Code
+
+<tabs>
+<tab label="main.rs">
+
+```rust,edition2021
+{{#include ../../../examples/r3/hello-derive-more/src/main.rs}}
+```
+
+</tab>
+<tab label="Cargo.toml">
+
+```toml
+{{#include ../../../examples/r3/hello-derive-more/Cargo.toml}}
+```
+
+</tab>
+</tabs>
+
+## Output
+
+```
+1️⃣ Phone number is 123-4567
+2️⃣ Phone number is 123-4567
+3️⃣ 5 years + 2 years = 7 years
+```
