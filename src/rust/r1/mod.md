@@ -18,3 +18,4 @@ This is a last part so you can expect super confuse and hard to understand topic
 - [6 things you can do with the Cow 🐄 in Rust 🦀](https://dev.to/kgrech/6-things-you-can-do-with-the-cow-in-rust-4l55)
 - [pretzelhammer's Rust blog 🦀](https://github.com/pretzelhammer/rust-blog/blob/master/posts)
 - [A hands-on book for abusing systems using Rust (WIP)](https://github.com/wiseaidev/dark-web-rust)
+- [Async Rust can be a pleasure to work with (without `Send + Sync + 'static`)](https://emschwartz.me/async-rust-can-be-a-pleasure-to-work-with-without-send-sync-static/)
