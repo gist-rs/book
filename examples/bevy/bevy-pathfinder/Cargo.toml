@@ -1,0 +1,8 @@
+[package]
+name = "bevy-pathfinder"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.89"
+pathfinding = "4.11.0"
