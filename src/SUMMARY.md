@@ -83,6 +83,7 @@
     - [PostgresML](ml/frameworks/postgresml.md)
   - [Stable Diffusion](ml/stable-diffusion.md)
   - [Vision Language Model](ml/vision-language-model.md)
+  - [FLUX.1](ml/flux1.md)
 - [Bevy](bevy/mod.md)
   - [Physics with Rapier](bevy/physics-rapier.md)
 - [BigQuery](bigquery/mod.md)
