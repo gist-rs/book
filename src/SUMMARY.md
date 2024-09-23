@@ -49,6 +49,7 @@
     - [Marker Types](rust/r1/marker-types.md)
     - [Mutex](rust/r1/mutex.md)
     - [Smol](rust/r1/smol.md)
+    - [Signals](rust/r1/signals.md)
 - [Wasm](wasm/mod.md)
   - [Setup](wasm/setup.md)
   - [Enjoy](wasm/enjoy.md)
