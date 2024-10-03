@@ -1,0 +1,10 @@
+[package]
+name = "sd-3d"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = { version = "0.10.1", features=["jpeg"] }
+bevy_image_export = "0.7.1"
