@@ -65,6 +65,7 @@
   - [Hello Solana](solana/hello-solana.md)
   - [Fetch balance](solana/fetch-balance.md)
   - [NFT Memberships](solana/nft-memberships.md)
+  - [Consensus](solana/consensus.md)
 - [ML](ml/mod.md)
   - [Large Language Model](ml/large-language-model.md)
   - [Inferences](ml/infer/mod.md)
