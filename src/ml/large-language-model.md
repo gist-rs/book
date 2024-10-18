@@ -8,7 +8,7 @@ We will look `llm` from `Rust` perspective.
 
 ## Raw
 
-- [Templates for Chat Models](https://huggingface.c o/docs/transformers/main/en/chat_templating)
+- [Templates for Chat Models](https://huggingface.co/docs/transformers/main/en/chat_templating)
 - [LLM Distillation Playbook](https://github.com/predibase/llm_distillation_playbook)
 
 ## Leader
