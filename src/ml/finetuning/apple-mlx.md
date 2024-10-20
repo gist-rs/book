@@ -20,12 +20,20 @@ python -m mlx_lm.generate \
     --max-tokens 500 \
     --prompt "K Point คืออะไร ?"
 
-# Train
+# Train LoRA
 python3 -m mlx_lm.lora \
     --model ${MODEL} \
     --train \
     --data /Users/katopz/git/mlx-examples/lora/data \
-    --iters 300
+    --iters 500
+
+# Train DoRA
+python3 -m mlx_lm.lora \
+    --model ${MODEL} \
+    --train \
+    --data /Users/katopz/git/mlx-examples/lora/data \
+    --fine-tune-type dora
+    --iters 500
 
 # Test
 python3 -m mlx_lm.lora \
