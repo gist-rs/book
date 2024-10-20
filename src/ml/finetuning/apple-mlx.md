@@ -2,7 +2,7 @@
 
 ```bash
 # Setup
-python3 -m venv .venv
+venv .venv
 source .venv/bin/activate
 pip install mlx-lm
 
@@ -14,21 +14,21 @@ pip install mlx-lm
 MODEL=meta-llama/Llama-3.2-3B-Instruct
 
 # Infer
-python -m mlx_lm.generate \
+mlx_lm.generate \
     --model ${MODEL} \
-    --eos-token "<|im_end|>" \
+    --eos-token "<|eot_id|>" \
     --max-tokens 500 \
     --prompt "K Point คืออะไร ?"
 
 # Train LoRA
-python3 -m mlx_lm.lora \
+mlx_lm.lora \
     --model ${MODEL} \
     --train \
     --data /Users/katopz/git/mlx-examples/lora/data \
     --iters 500
 
 # Train DoRA
-python3 -m mlx_lm.lora \
+mlx_lm.lora \
     --model ${MODEL} \
     --train \
     --data /Users/katopz/git/mlx-examples/lora/data \
@@ -36,23 +36,41 @@ python3 -m mlx_lm.lora \
     --iters 500
 
 # Test
-python3 -m mlx_lm.lora \
+mlx_lm.lora \
     --model ${MODEL} \
     --adapter-path adapters \
     --data /Users/katopz/git/mlx-examples/lora/data \
     --test
 
 # Generate
-python3 -m mlx_lm.generate \
+mlx_lm.generate \
     --model ${MODEL} \
     --adapter-path adapters \
     --max-tokens 256 \
     --prompt "K Point คืออะไร ?"
 
-# Infer fused
-python3 -m mlx_lm.generate \
+# Fused
+mlx_lm.fuse \
+    --model ${MODEL}
+
+# Upload (after huggingface-cli login with writeable token)
+mlx_lm.fuse \
+    --model ${MODEL} \
+    --upload-repo katopz/kbtg-kpoint-v1-fused \
+    --hf-path ${MODEL}
+
+# GGUF
+mlx_lm.fuse \
+    --model ${MODEL} \
+    --export-gguf
+
+# Infer local fused
+mlx_lm.generate \
     --model ./lora_fused_model \
-    # --eos-token "<|im_end|>" \
+    --eos-token "<|eot_id|>" \
     --max-tokens 256 \
     --prompt "K Point คืออะไร ?"
+
+# Infer with ollama
+ollama run hf.co/katopz/kbtg-kpoint-v1-fused
 ```
