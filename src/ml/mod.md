@@ -34,6 +34,11 @@
 - [Retrieval Augmented Generation](rag/mod.md)
 - [Vector Database - Qdrant](rag/vector-db-qdrant.md)
 
+## Tools
+
+- [Create your own GGUF Quants](https://huggingface.co/spaces/ggml-org/gguf-my-repo)
+- [Convert any model to Safetensors and open a PR](https://huggingface.co/spaces/safetensors/convert)
+
 ## TODO
 
 - [ ] Try The Alignment Handbook: https://github.com/huggingface/alignment-handbook
