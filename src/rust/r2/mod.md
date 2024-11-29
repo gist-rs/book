@@ -20,3 +20,4 @@
 - [ ] https://corrode.dev/blog/long-term-rust-maintenance/
 - [ ] tokio: https://x.com/wiseaidev/status/1819807194314834275
 - [ ] tokio chanel: https://x.com/wiseaidev/status/1820751687570645205
+- [ ] https://github.com/dexter-xD/rust-chat-app
