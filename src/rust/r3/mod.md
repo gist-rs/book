@@ -17,3 +17,4 @@ We will do just that in this `R3`! and also some idiom/pattern/crate you need to
 
 - [ ] https://github.com/jbaublitz/getset
 - [ ] https://github.com/dtolnay/erased-serde
+- [ ] https://github.com/spastorino/dynosaur
