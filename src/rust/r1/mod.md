@@ -21,3 +21,5 @@ This is a last part so you can expect super confuse and hard to understand topic
 - [Async Rust can be a pleasure to work with (without `Send + Sync + 'static`)](https://emschwartz.me/async-rust-can-be-a-pleasure-to-work-with-without-send-sync-static/)
 - [Understanding Memory Ordering in Rust](https://discord.com/channels/595317990191398933/783765338692386886)
 - [Rust Prism](https://registerspill.thorstenball.com/p/rust-prism)
+- [Smart pointers](https://stanford-cs242.github.io/f18/lectures/06-1-smart-pointers.html)
+  ![Rust container cheat sheet](/rust/r1/rust-container-cheat-sheet.png)
