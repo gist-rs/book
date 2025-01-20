@@ -21,6 +21,11 @@
 - Transfer `Native` token.
 - Mint `NFT` with `Helius`. // https://docs.helius.dev/compression-and-das-api/mint-api/mint-compressed-nft
 
+### Resources
+
+- [ ] Rust SolanaWalletAdapter: https://github.com/JamiiDao/SolanaWalletAdapter
+- [ ] Rust solana-payments: https://github.com/JamiiDao/SolanaPayments
+
 <!-- [Enjoy S5 ➠](./s5) -->
 
 ## S4 : Basic
