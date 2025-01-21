@@ -154,13 +154,20 @@ open https://huggingface.co/settings/tokens
 pip install --upgrade huggingface_hub
 huggingface-cli login
 
-# MODEL=SeaLLMs/SeaLLM-7B-v2
-# MODEL_NAME=SeaLLM-7B-v2
-MODEL=scb10x/typhoon-v1.5-8b-instruct
-MODEL_NAME=typhoon-v1.5-8b-instruct
+# Pick model
+MODEL=deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
 
+# Define the name
+MODEL_NAME=DeepSeek-R1-Distill-Qwen-7B
+
+# Clear old stuff
+rm -rf mlx_model
+
+# Convert and upload
 python3 -m mlx_lm.convert --hf-path ${MODEL} -q --upload-repo mlx-community/${MODEL_NAME}-4bit-mlx
-python3 -m mlx_lm.generate --model mlx-community/${MODEL_NAME}-4bit-mlx --prompt "สอนเขียน helloworld ด้วย Rust หน่อย" --eos-token "<|eot_id|>"
+
+# Try uploaded model
+python -m mlx_lm.generate --model ${MODEL} --max-tokens 512 --prompt "Translate to English: おはようご ざいます"
 ```
 
 ## mlx-server (Not production grade)
