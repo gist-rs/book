@@ -244,6 +244,8 @@ members = [
 ]
 ```
 
+> See [worksapce example](https://github.com/gist-rs/book/tree/8347d4a8280f87e908e2fec13ea190782c0f3a4b/examples/r5/workspace-example)
+
 </details>
 
 ---
