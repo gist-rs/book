@@ -230,7 +230,7 @@ pub fn hello() {    // 👈  make it pub so other can use.
 
 ```yaml
 [dependencies]
-foo = { path="../utils" }  # 👈 2️⃣ foo's cargo. refer to utils via path
+utils = { path="../utils" }  # 👈 2️⃣ foo's cargo. refer to utils via path
 ```
 
 └─ 📦 Cargo.toml
