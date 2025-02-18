@@ -11,6 +11,11 @@ on: # This section is REQUIRED
     types:
       - completed
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
