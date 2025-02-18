@@ -136,4 +136,5 @@ pub fn set_panic_hook() {
 
 ## Next
 
+That's a lot for hello world wasm!
 Let's continue to [Enjoy ➠](./enjoy.md)
