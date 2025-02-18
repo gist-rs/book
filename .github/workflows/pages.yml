@@ -20,11 +20,12 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read
 
 # Disallow one concurrent deployment
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   # Single deploy job since we're just deploying
