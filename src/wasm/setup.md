@@ -47,7 +47,7 @@ cargo watch -i .gitignore -i "pkg/*" -s "wasm-pack test --headless --firefox"
 │
 ├─ 📂 src
 │  ├─ 📄 lib.rs     # 👈 lib entrypoint.
-│  └─ 📄 utils.ra   # 👈 some utils.
+│  └─ 📄 utils.rs   # 👈 some utils.
 │
 ├─ 📂 tests
 │  └─ 📄 web.rs     # 👈 test file via web.
@@ -115,11 +115,9 @@ extern {
 pub fn greet() {
     alert("Hello, hello-wasm!");
 }
- println!("hello world!");
-}
 ```
 
-│ └─ 📄 utils.ra
+│ └─ 📄 utils.rs
 
 ```rust,no_run
 pub fn set_panic_hook() {
