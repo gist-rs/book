@@ -26,7 +26,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    if: github.event.workflow_run.event == 'completed' # Important: Only run if the triggering workflow completed
     steps:
       - name: Debug Workflow Run Event # For debugging
         run: |
