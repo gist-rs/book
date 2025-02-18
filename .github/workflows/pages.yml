@@ -1,56 +1,27 @@
 name: Deploy static content to Pages
 
-on:
+on: # This section is REQUIRED
   push:
     branches: ["main"]
 
-  workflow_dispatch:
+  workflow_dispatch: # Allows manual triggering
 
   workflow_run:
     workflows: ["Mdbook build"]
     types:
       - completed
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Debug Workflow Run Event # For debugging
-        run: |
-          echo "Workflow Run Event: ${{ github.event.workflow_run.event }}"
-
-      - name: Checkout
-        uses: actions/checkout@v3
-
+      - uses: actions/checkout@v3
       - name: Download artifact
-        id: download-artifact
         uses: dawidd6/action-download-artifact@v8
         with:
           name: book
           path: book/
           workflow: build.yml
-          run_id: ${{ github.event.workflow_run.run_id }} # Crucial: Specify the run_id
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: book
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+          run_id: ${{ github.event.workflow_run.run_id }}
+      - name: List files in book
+        run: ls -l book/
