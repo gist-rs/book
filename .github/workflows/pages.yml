@@ -1,53 +1,56 @@
+# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
+  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
 
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # Run
   workflow_run:
     workflows: ["Mdbook build"]
     types:
       - completed
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Disallow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
+  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    if: github.event.workflow_run.event == 'completed'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
+      # actions/download-artifact@v3 does not allow sharing across workflows
       - name: Download artifact
         id: download-artifact
         uses: dawidd6/action-download-artifact@v8
         with:
           name: book
           path: book/
-          workflow: build.yml
-          run_id: ${{ github.event.workflow_run.run_id }}
-
+          workflow: Mdbook build # Corrected workflow name
       - name: Setup Pages
         uses: actions/configure-pages@v2
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # Upload only book
           path: book
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
