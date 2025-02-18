@@ -26,7 +26,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    if: github.event.workflow_run.event == 'completed' # Important: Only run if the triggering workflow completed
+    if: github.event.workflow_run.event == 'completed'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -38,7 +38,7 @@ jobs:
           name: book
           path: book/
           workflow: build.yml
-          run_id: ${{ github.event.workflow_run.id }}
+          run_id: ${{ github.event.workflow_run.run_id }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
