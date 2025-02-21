@@ -1,0 +1,13 @@
+# This file describes a Fastly Compute package. To learn more visit:
+# https://www.fastly.com/documentation/reference/compute/fastly-toml
+
+authors = ["katopz@gmail.com"]
+cloned_from = "https://github.com/fastly/compute-starter-kit-rust-empty"
+description = "fw"
+language = "rust"
+manifest_version = 3
+name = "catbot-fw"
+service_id = "INlm1JM4UKUlMrY6eIH1O2"
+
+[scripts]
+  build = "cargo build --bin fastly-compute-project --release --target wasm32-wasi --color always"
