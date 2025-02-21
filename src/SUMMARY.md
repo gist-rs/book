@@ -40,6 +40,7 @@
     - [Async](rust/r3/async.md)
     - [Iterators](rust/r3/iterators.md)
     - [Associated Type Bounds](rust/r3/associated-type-bounds.md)
+    - [BoxStream](rust/r3/futures-boxstream.md)
   - [R2 - Expert](rust/r2/mod.md)
     - [Hello Github Action](rust/r2/hello-github-action.md)
     - [Hello Actix CloudRun](rust/r2/hello-actix-cloudrun.md)
