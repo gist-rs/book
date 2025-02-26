@@ -25,7 +25,8 @@ fn main(req: Request) -> Result<Response, Error> {
 
     // Get the host and set up a backend with timeouts and SSL.
     let host = parsed_url.host().expect("Expected host").to_string();
-    let backend = Backend::builder("catbot_fw_backend", host.as_str())
+    let backend_name = host.replace('.', "_");
+    let backend = Backend::builder(backend_name.as_str(), host.as_str())
         .override_host(host.as_str())
         .connect_timeout(Duration::from_secs(1))
         .first_byte_timeout(Duration::from_secs(15))
