@@ -4,3 +4,7 @@
 - [Hugging Face - AutoTrain](./huggingface-autotrain.md)
 - [Apple - MLX](./apple-mlx.md)
 - [PostgresML](./postgresml.md)
+
+# TODO
+
+- https://github.com/floneum/floneum
