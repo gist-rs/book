@@ -164,7 +164,7 @@ MODEL_NAME=DeepSeek-R1-Distill-Qwen-7B
 rm -rf mlx_model
 
 # Convert and upload
-python3 -m mlx_lm.convert --hf-path ${MODEL} -q --upload-repo mlx-community/${MODEL_NAME}-4bit-mlx
+python3 -m mlx_lm.convert --hf-path ${MODEL} -q --upload-repo mlx-community/${MODEL_NAME}-4bit
 
 # Try uploaded model
 python -m mlx_lm.generate --model ${MODEL} --max-tokens 512 --prompt "Translate to English: おはようご ざいます"
