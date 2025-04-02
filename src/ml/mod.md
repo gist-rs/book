@@ -39,6 +39,14 @@
 - [Create your own GGUF Quants](https://huggingface.co/spaces/ggml-org/gguf-my-repo)
 - [Convert any model to Safetensors and open a PR](https://huggingface.co/spaces/safetensors/convert)
 
+## MCP
+
+- [Rust MCP](https://github.com/modelcontextprotocol/rust-sdk)
+- [Clouflare Remote MCP Server + Github OAuth](https://github.com/cloudflare/ai/blob/main/demos/remote-mcp-github-oauth/README.md)
+
+## Agents
+- [Agents](agents/mod.md)
+
 ## TODO
 
 - [ ] Try The Alignment Handbook: https://github.com/huggingface/alignment-handbook

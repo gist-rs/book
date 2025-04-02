@@ -89,6 +89,7 @@
   - [FLUX.1](ml/flux1.md)
   - [Voices](ml/voices/mod.md)
     - [Fish Speech](ml/voices/fish-speech.md)
+  - [Agents](ml/agents/mod.md)
 - [Bevy](bevy/mod.md)
   - [Physics with Rapier](bevy/physics-rapier.md)
 - [BigQuery](bigquery/mod.md)
