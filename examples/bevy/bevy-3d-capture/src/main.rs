@@ -7,7 +7,6 @@
 
 use bevy::{
     math::Vec3A,
-    pbr::wireframe::{Wireframe, WireframeConfig, WireframePlugin},
     prelude::*,
     render::{
         camera::RenderTarget,
@@ -15,7 +14,6 @@ use bevy::{
         render_resource::{
             Extent3d, TextureDescriptor, TextureDimension, TextureFormat, TextureUsages,
         },
-        settings::{WgpuFeatures, WgpuSettings},
         RenderPlugin,
     },
     window::WindowPlugin,
@@ -27,10 +25,7 @@ mod scene_viewer_plugin;
 use camera_controller_plugin::{CameraController, CameraControllerPlugin};
 use scene_viewer_plugin::{SceneHandle, SceneViewerPlugin};
 
-use bevy::winit::WinitSettings;
-use bevy_image_export::{
-    ImageExportBundle, ImageExportPlugin, ImageExportSettings, ImageExportSource,
-};
+use bevy_image_export::{ImageExportPlugin, ImageExportSettings, ImageExportSource};
 
 use crate::camera_controller_plugin::get_dolly_points;
 
@@ -46,7 +41,7 @@ fn main() {
         brightness: 1.0 / 5.0f32,
     })
     .insert_resource(ClearColor(Color::WHITE))
-    .add_plugins(
+    .add_plugins((
         DefaultPlugins
             .set(WindowPlugin {
                 primary_window: Some(Window {
@@ -58,32 +53,21 @@ fn main() {
                 ..default()
             })
             .set(AssetPlugin {
-                asset_folder: std::env::var("CARGO_MANIFEST_DIR")
-                    .unwrap_or_else(|_| ".".to_string()),
-                watch_for_changes: true,
+                file_path: std::env::var("CARGO_MANIFEST_DIR").unwrap_or_else(|_| ".".to_string()),
+                ..default()
             })
-            // Dolly
+            // Capture
             .set(RenderPlugin {
-                wgpu_settings: WgpuSettings {
-                    features: WgpuFeatures::POLYGON_MODE_LINE,
-                    ..default()
-                },
+                synchronous_pipeline_compilation: true,
+                ..default()
             }),
-    )
-    .add_plugin(CameraControllerPlugin)
-    .add_plugin(SceneViewerPlugin)
-    .add_startup_system(setup)
-    .add_system(setup_scene_after_load.in_base_set(CoreSet::PreUpdate))
-    .add_plugin(WireframePlugin)
-    // .add_system(setup_dolly)
-    // Capture
-    .insert_resource(WinitSettings {
-        return_from_run: true,
-        ..default()
-    })
-    .add_plugin(export_plugin);
-
-    app.run();
+        export_plugin,
+    ))
+    .add_plugins(CameraControllerPlugin)
+    .add_plugins(SceneViewerPlugin)
+    .add_systems(Startup, setup)
+    .add_systems(Startup, setup_scene_after_load)
+    .run();
 
     // This line is optional but recommended.
     // It blocks the main thread until all image files have been saved successfully.
@@ -219,7 +203,7 @@ fn setup_scene_after_load(
 
         commands
             .spawn((
-                Camera3dBundle {
+                Camera3d {
                     projection: projection.into(),
                     transform: Transform::from_translation(
                         Vec3::from(aabb_info.center) + aabb_info.size * Vec3::new(1.0, 0.0, 1.0),
@@ -235,7 +219,7 @@ fn setup_scene_after_load(
                 camera_controller,
             ))
             .with_children(|parent| {
-                parent.spawn(Camera3dBundle {
+                parent.spawn(Camera3d {
                     camera: Camera {
                         // Connect the output texture to a camera as a RenderTarget.
                         target: RenderTarget::Image(output_texture_handle.clone()),
@@ -248,7 +232,7 @@ fn setup_scene_after_load(
         // Spawn the ImageExportBundle to initiate the export of the output texture.
         commands.spawn((
             ImageExportBundle {
-                source: export_sources.add(output_texture_handle.into()),
+                source: export_sources.add(output_texture_handle),
                 settings: ImageExportSettings {
                     // Frames will be saved to "./out/[#####].png".
                     output_dir: "out".into(),

@@ -57,9 +57,9 @@ pub struct SceneViewerPlugin;
 impl Plugin for SceneViewerPlugin {
     fn build(&self, app: &mut App) {
         app.init_resource::<CameraTracker>()
-            .add_system(scene_load_check.in_base_set(CoreSet::PreUpdate))
-            .add_system(update_lights)
-            .add_system(camera_tracker);
+            .add_systems(PreUpdate, scene_load_check)
+            .add_systems(Update, update_lights)
+            .add_systems(Update, camera_tracker);
 
         #[cfg(feature = "animation")]
         app.add_system(start_animation)
@@ -76,7 +76,7 @@ fn scene_load_check(
 ) {
     match scene_handle.instance_id {
         None => {
-            if asset_server.get_load_state(&scene_handle.gltf_handle) == LoadState::Loaded {
+            if asset_server.get_load_state(&scene_handle.gltf_handle) == Some(LoadState::Loaded) {
                 let gltf = gltf_assets.get(&scene_handle.gltf_handle).unwrap();
                 if gltf.scenes.len() > 1 {
                     info!(
@@ -196,20 +196,20 @@ fn keyboard_animation_control(
 }
 
 fn update_lights(
-    key_input: Res<Input<KeyCode>>,
+    // key_input: Res<Input<KeyCode>>,
     time: Res<Time>,
     mut query: Query<(&mut Transform, &mut DirectionalLight)>,
     mut animate_directional_light: Local<bool>,
 ) {
-    for (_, mut light) in &mut query {
-        if key_input.just_pressed(KeyCode::U) {
-            light.shadows_enabled = !light.shadows_enabled;
-        }
-    }
+    // for (_, mut light) in &mut query {
+    //     if key_input.just_pressed(KeyCode::U) {
+    //         light.shadows_enabled = !light.shadows_enabled;
+    //     }
+    // }
 
-    if key_input.just_pressed(KeyCode::L) {
-        *animate_directional_light = !*animate_directional_light;
-    }
+    // if key_input.just_pressed(KeyCode::L) {
+    //     *animate_directional_light = !*animate_directional_light;
+    // }
     if *animate_directional_light {
         for (mut transform, _) in &mut query {
             transform.rotation = Quat::from_euler(
@@ -253,7 +253,7 @@ impl CameraTracker {
 
 fn camera_tracker(
     mut camera_tracker: ResMut<CameraTracker>,
-    keyboard_input: Res<Input<KeyCode>>,
+    // keyboard_input: Res<Input<KeyCode>>,
     mut queries: ParamSet<(
         Query<(Entity, &mut Camera), (Added<Camera>, Without<CameraController>)>,
         Query<(Entity, &mut Camera), (Added<Camera>, With<CameraController>)>,
@@ -271,19 +271,19 @@ fn camera_tracker(
         camera.is_active = camera_tracker.track_camera(entity);
     }
 
-    if keyboard_input.just_pressed(KeyCode::C) {
-        // disable currently active camera
-        if let Some(e) = camera_tracker.active_camera() {
-            if let Ok(mut camera) = queries.p2().get_mut(e) {
-                camera.is_active = false;
-            }
-        }
+    // if keyboard_input.just_pressed(KeyCode::C) {
+    //     // disable currently active camera
+    //     if let Some(e) = camera_tracker.active_camera() {
+    //         if let Ok(mut camera) = queries.p2().get_mut(e) {
+    //             camera.is_active = false;
+    //         }
+    //     }
 
-        // enable next active camera
-        if let Some(e) = camera_tracker.set_next_active() {
-            if let Ok(mut camera) = queries.p2().get_mut(e) {
-                camera.is_active = true;
-            }
-        }
-    }
+    //     // enable next active camera
+    //     if let Some(e) = camera_tracker.set_next_active() {
+    //         if let Ok(mut camera) = queries.p2().get_mut(e) {
+    //             camera.is_active = true;
+    //         }
+    //     }
+    // }
 }

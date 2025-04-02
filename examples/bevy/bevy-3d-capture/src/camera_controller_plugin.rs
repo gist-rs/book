@@ -19,15 +19,15 @@ pub struct CameraController {
     pub enabled: bool,
     pub initialized: bool,
     pub sensitivity: f32,
-    pub key_forward: KeyCode,
-    pub key_back: KeyCode,
-    pub key_left: KeyCode,
-    pub key_right: KeyCode,
-    pub key_up: KeyCode,
-    pub key_down: KeyCode,
-    pub key_run: KeyCode,
-    pub mouse_key_enable_mouse: MouseButton,
-    pub keyboard_key_enable_mouse: KeyCode,
+    // pub key_forward: KeyCode,
+    // pub key_back: KeyCode,
+    // pub key_left: KeyCode,
+    // pub key_right: KeyCode,
+    // pub key_up: KeyCode,
+    // pub key_down: KeyCode,
+    // pub key_run: KeyCode,
+    // pub mouse_key_enable_mouse: MouseButton,
+    // pub keyboard_key_enable_mouse: KeyCode,
     pub walk_speed: f32,
     pub run_speed: f32,
     pub friction: f32,
@@ -44,15 +44,15 @@ impl Default for CameraController {
             enabled: true,
             initialized: false,
             sensitivity: 1.0,
-            key_forward: KeyCode::W,
-            key_back: KeyCode::S,
-            key_left: KeyCode::A,
-            key_right: KeyCode::D,
-            key_up: KeyCode::E,
-            key_down: KeyCode::Q,
-            key_run: KeyCode::LShift,
-            mouse_key_enable_mouse: MouseButton::Left,
-            keyboard_key_enable_mouse: KeyCode::M,
+            // key_forward: KeyCode::W,
+            // key_back: KeyCode::S,
+            // key_left: KeyCode::A,
+            // key_right: KeyCode::D,
+            // key_up: KeyCode::E,
+            // key_down: KeyCode::Q,
+            // key_run: KeyCode::LShift,
+            // mouse_key_enable_mouse: MouseButton::Left,
+            // keyboard_key_enable_mouse: KeyCode::M,
             walk_speed: 5.0,
             run_speed: 15.0,
             friction: 0.5,
@@ -67,27 +67,26 @@ impl Default for CameraController {
 
 impl fmt::Display for CameraController {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(
-            f,
-            "
-Freecam Controls:
-    MOUSE\t- Move camera orientation
-    {:?}/{:?}\t- Enable mouse movement
-    {:?}{:?}\t- forward/backward
-    {:?}{:?}\t- strafe left/right
-    {:?}\t- 'run'
-    {:?}\t- up
-    {:?}\t- down",
-            self.mouse_key_enable_mouse,
-            self.keyboard_key_enable_mouse,
-            self.key_forward,
-            self.key_back,
-            self.key_left,
-            self.key_right,
-            self.key_run,
-            self.key_up,
-            self.key_down
-        )
+        write!(f, "TODO: control")
+        //             "
+        // Freecam Controls:
+        //     MOUSE\t- Move camera orientation
+        //     {:?}/{:?}\t- Enable mouse movement
+        //     {:?}{:?}\t- forward/backward
+        //     {:?}{:?}\t- strafe left/right
+        //     {:?}\t- 'run'
+        //     {:?}\t- up
+        //     {:?}\t- down",
+        //             self.mouse_key_enable_mouse,
+        //             self.keyboard_key_enable_mouse,
+        //             self.key_forward,
+        //             self.key_back,
+        //             self.key_left,
+        //             self.key_right,
+        //             self.key_run,
+        //             self.key_up,
+        //             self.key_down
+        //         )
     }
 }
 
@@ -95,7 +94,7 @@ pub struct CameraControllerPlugin;
 
 impl Plugin for CameraControllerPlugin {
     fn build(&self, app: &mut App) {
-        app.add_system(camera_controller);
+        app.add_systems(Update, camera_controller);
     }
 }
 
@@ -106,8 +105,8 @@ fn camera_controller(
     time: Res<Time>,
     mut windows: Query<&mut Window>,
     mut mouse_events: EventReader<MouseMotion>,
-    mouse_button_input: Res<Input<MouseButton>>,
-    key_input: Res<Input<KeyCode>>,
+    // mouse_button_input: Res<Input<MouseButton>>,
+    // key_input: Res<Input<KeyCode>>,
     mut move_toggled: Local<bool>,
     mut query: Query<(&mut Transform, &mut CameraController), With<Camera>>,
     mut frame: Local<usize>,
