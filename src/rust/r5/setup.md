@@ -3,12 +3,78 @@
 ## 1️⃣ `IDE` and tools
 
 - [Rust in Visual Studio Code](https://code.visualstudio.com/docs/languages/rust)
-- Install extra tools.
-  ```bash
-  cargo install cargo-edit    # 👈 = cargo add.
-  cargo install cargo-watch   # 👈 = cargo watch.
-  cargo install cargo-audit   # 👈 = cargo audit.
-  ```
+- [Rust with Zed](https://zed.dev/)
+
+    <details>
+    <summary>🎛️ Zed settings that's look like VSCdode</summary>
+
+    ```json
+    // Zed settings
+    //
+    // For information on how to configure Zed, see the Zed
+    // documentation: https://zed.dev/docs/configuring-zed
+    //
+    // To see all of Zed's default settings without changing your
+    // custom settings, run the `open default settings` command
+    // from the command palette or from `Zed` application menu.
+    {
+      "theme": "VSCode Dark Modern",
+      "telemetry": {
+        "diagnostics": false,
+        "metrics": false
+      },
+      "ui_font_size": 16,
+      "buffer_font_size": 16,
+      "buffer_font_family": "Menlo",
+      "assistant": {
+        "default_model": {
+          "provider": "google",
+          "model": "gemini-2.5-pro-exp-03-25"
+        },
+        "version": "2",
+        "openai_api_url": null,
+        "provider": {
+          "name": "openai",
+          "type": "openai",
+          "default_model": "mistralai/mistral-7b-instruct",
+          "api_url": "http://0.0.0.0:9090/v1beta"
+        }
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "rust-analyzer"
+          }
+        },
+        {
+          "external": {
+            "command": "prettier",
+            "arguments": [
+              "--stdin-filepath",
+              "{buffer_path}"
+            ]
+          }
+        }
+      ],
+      "lsp": {
+        "rust-analyzer": {
+          "initialization_options": {
+            "checkOnSave": {
+              "command": "clippy"
+            }
+          }
+        }
+      }
+    }
+    ```
+    </details>
+
+### Install extra tools.👇
+```bash
+cargo install cargo-edit    # 👈 = cargo add.
+cargo install cargo-watch   # 👈 = cargo watch.
+cargo install cargo-audit   # 👈 = cargo audit.
+```
 
 ## 2️⃣ Use `Cargo`
 
