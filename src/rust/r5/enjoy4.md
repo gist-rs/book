@@ -82,6 +82,10 @@ fn main() {
 
 ![](/assets/kat.png) <span class="speech-bubble">Don't worry about `&'static str` or `lifetimes` just yet, compiler will let you know when need (usually out of `{ }` scope ) and we will talk about it later. Let's continue on other topics.</span>
 
+![](/assets/duck.png) <span class="speech-bubble">But I want enum string! How!</span>
+
+![](/assets/kat.png) <span class="speech-bubble">That's a great question! See below👇</span>
+
 ## strum
 
 Install
