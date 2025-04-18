@@ -2,7 +2,7 @@
 
 ![](/assets/kat.png) <span class="speech-bubble">Now we need `enum` to replace "cat" and "duck" type from previous example.</span>
 
-## Enum
+## Enums
 
 ![](/assets/duck.png) <span class="speech-bubble">You also can `impl` to `enum` 👇.</span>
 
@@ -81,6 +81,8 @@ fn main() {
 > 💡 There's more examples about [Enums](https://doc.rust-lang.org/rust-by-example/custom_types/enum.html), and [match enums](https://doc.rust-lang.org/rust-by-example/flow_control/match/destructuring/destructure_enum.html).
 
 ![](/assets/kat.png) <span class="speech-bubble">Don't worry about `&'static str` or `lifetimes` just yet, compiler will let you know when need (usually out of `{ }` scope ) and we will talk about it later. Let's continue on other topics.</span>
+
+---
 
 ![](/assets/duck.png) <span class="speech-bubble">But I want enum string! How!</span>
 
@@ -192,6 +194,83 @@ fn main() {
 4️⃣ cat_sound_string: "meaowww"
 5️⃣ my_pet: "snoopy"
 ```
+</details>
+
+---
+
+![](/assets/kat.png) <span class="speech-bubble">Let's try some more complicated one!</span>
+
+## Enums Variants
+
+```rust,editable
+// Let's create a struct for those extra-special sushi rolls! 🍣
+#[derive(Debug)]
+struct SushiRollDetails {
+    name: String,
+    has_wasabi: bool,
+    ingredients: Vec<String>,
+}
+
+// Our delightful Japanese food enum! 🍜🍣🍙
+#[derive(Debug)]
+enum JapaneseFood {
+    // Simple and tasty ramen! 🍜
+    Ramen,
+    // A single piece of nigiri! 🍚
+    Nigiri { topping: String },
+    // A flavorful onigiri! 🍙 Holding the filling!
+    Onigiri(String),
+    // Our fancy sushi roll variant, holding the SushiRollDetails struct! ✨
+    SpecialRoll(SushiRollDetails),
+    // Delicious and crispy tempura! 🍤 Holding the type!
+    Tempura(String),
+}
+
+fn main() {
+    // A comforting bowl of ramen! 😊
+    let dinner = JapaneseFood::Ramen;
+    // Salmon nigiri! 😋
+    let my_sushi = JapaneseFood::Nigiri { topping: "Salmon".to_string() };
+    // A yummy tuna onigiri! 🍙
+    let my_riceball = JapaneseFood::Onigiri("Tuna Mayo".to_string());
+    // Our amazing special sushi roll! 🤩
+    let dragon_roll = JapaneseFood::SpecialRoll(SushiRollDetails {
+        name: "Dragon Roll".to_string(),
+        has_wasabi: true,
+        ingredients: vec!["Eel".to_string(), "Avocado".to_string(), "Cucumber".to_string()],
+    });
+    // Some crispy shrimp tempura! 🍤
+    let fried_goodness = JapaneseFood::Tempura("Shrimp".to_string());
+
+    // Let's see what's on the menu! 👀
+    println!("Dinner: {:?}", dinner);
+    println!("Sushi: {:?}", my_sushi);
+    println!("Onigiri: {:?}", my_riceball);
+    println!("Special Roll: {:?}", dragon_roll);
+    println!("Tempura: {:?}", fried_goodness);
+
+    // What's in our special Dragon Roll? 🐉 Let's check the details!
+    match dragon_roll {
+        JapaneseFood::SpecialRoll(details) => {
+            println!("The {} contains: {} and has {} wasabi!",
+                     details.name,
+                     details.ingredients.join(", "),
+                     if details.has_wasabi { "wasabi" } else { "no wasabi" });
+        }
+        _ => {} // Not a special roll!
+    }
+
+    // What kind of onigiri did we get? 🤔
+    match my_riceball {
+        JapaneseFood::Onigiri(filling) => {
+            println!("Enjoying an onigiri with {} filling! 🍙", filling);
+        }
+        _ => {} // Not an onigiri!
+    }
+}
+```
+
+![](/assets/duck.png) <span class="speech-bubble">Awww, I'm hungry...</span>
 
 ---
 
