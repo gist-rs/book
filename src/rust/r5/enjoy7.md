@@ -42,7 +42,6 @@ Stack                                          |
 ## Dynamic Dispatch with `Box`, `dyn`
 
 ```rust
-// ...Continue from previous example.
 # #[derive(Debug, Clone)]
 # struct Animal {}
 # struct Human {}
@@ -108,7 +107,6 @@ fn main() {
 ## Static dispatch with [enum_dispatch](https://crates.io/crates/enum_dispatch)
 
 ```rust,no_run
-// ...Continue from previous example.
 # #[derive(Debug, Clone)]
 # struct Human {}
 # struct Animal {}
@@ -165,7 +163,6 @@ fn main() {
 ## Static Dispatch with [either](https://crates.io/crates/either)
 
 ```rust,no_run
-// ...Continue from previous example.
 # #[derive(Debug, Clone)]
 # struct Human {}
 # struct Animal {}
