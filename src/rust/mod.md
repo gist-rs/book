@@ -8,7 +8,24 @@
 
 > An easy parts of `Rust` that you need for survival.
 
+### 🦀 Rust for JS Developer 🧑‍💻
+
 [Enjoy R5 ➠](./r5/mod.md)
+
+- Part 1
+    <iframe id="ytplayer" type="text/html" width="640" height="360"
+    src="https://www.youtube.com/embed/4XdREYotK5M?autoplay=0&origin=http://gist.rs"
+    frameborder="0"></iframe>
+
+- Part 2
+    <iframe id="ytplayer" type="text/html" width="640" height="360"
+    src="https://www.youtube.com/embed/pwf6GWPdG-4?autoplay=0&origin=http://gist.rs"
+    frameborder="0"></iframe>
+
+- Part 3
+    <iframe id="ytplayer" type="text/html" width="640" height="360"
+    src="https://www.youtube.com/embed/NZh_kEf9q7w?autoplay=0&origin=http://gist.rs"
+    frameborder="0"></iframe>
 
 ## R4 : Basic
 
