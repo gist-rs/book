@@ -20,7 +20,7 @@ fn main() {
 }
 ```
 
-## How to take value and convert from `Enum::Foo` to `Enum::Bar`.
+## How to take value and convert from `Enum Variants`.
 
 > Refer to [`Rust Design Patterns`](https://rust-unofficial.github.io/patterns/idioms/mem-replace.html)
 
