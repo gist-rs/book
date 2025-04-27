@@ -26,7 +26,6 @@ fn main() {
         println!("{}: {}", name, dish);
     }
 
-    // We need to explicitly dereference the inner reference to get &str
     let emoji_dishes: Vec<&str> = emoji_buffet.values().copied().collect();
     println!("\nJust the emoji dishes: {:?}", emoji_dishes);
 }
