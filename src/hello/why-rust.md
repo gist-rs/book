@@ -39,9 +39,9 @@
 - X: [`Rust` 🦀 has proven to be an ideal choice for building scalable, reliable, and maintainable infrastructure. ](https://x.ai/)
 
 ## Jobs
-- https://filtra.io/
-- https://rustjobs.dev/
-- https://jobs.letsgetrusty.com/
+- [https://filtra.io/]()
+- [https://rustjobs.dev/]()
+- [https://jobs.letsgetrusty.com/]()
 
 > Refer to: [Rust Jobs Report: August 2023](https://filtra.io/rust-aug-23)
 
