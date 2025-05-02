@@ -19,11 +19,13 @@ We use [vite](https://vitejs.dev/guide/why.html) which is still has [Wasm bundle
 ### 1️⃣ Prerequisites
 
 - [node](https://nodejs.org/en/download/package-manager/#macos)
-- [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
 - [npm](https://www.npmjs.com/)
+- [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
+  ```bash
+  cargo install wasm-pack
+  ```
 
 ### 2️⃣ Build/Deploy
-
 ```bash
 # Get example
 git clone https://github.com/rustwasm/wasm-bindgen/tree/main/examples/hello_world
@@ -31,23 +33,41 @@ cd hello_world
 
 # Build lib `@foo/bar` target `web`.
 # Change `foo` and `bar` as you desire.
-wasm-pack build --scope foo --target web
+wasm-pack build --scope foo --target nodejs
 
-# Or maybe no organize by remove `--scope foo`.
+# Or maybe no organize by remove `--scope foo` and target web.
 wasm-pack build --target web
 
 # Login to npm.
 wasm-pack login
 
 # Publish pkg folder.
+wasm-pack publish --access=public
+```
+
+#### Optional: no wasm-pack
+
+```bash
+# Build
+cargo build --target wasm32-unknown-unknown --release
+wasm-bindgen target/wasm32-unknown-unknown/release/gslides_rs.wasm --out-dir pkg --nodejs
+
+# Release
 npm publish pkg --access=public
 ```
 
-### 3️⃣ Use `wasm` via `web`.
+### 3️⃣ Use `wasm`
 
+#### via `web`.
 ```js
 import init, { greet } from '@foo/bar'
 init().then({
-  greet('World!')
+  greet('World!');
 }).catch(console.error);
+```
+
+#### via `nodejs`.
+```js
+import { greet } from '@foo/bar'
+greet('World!');
 ```
