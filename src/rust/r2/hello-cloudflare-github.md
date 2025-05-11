@@ -2,8 +2,23 @@
 
 ![](/assets/kat.png) <span class="speech-bubble">Here's [how](https://github.com/gist-rs/hello-world-cloudflare) we release `Rust` as `Wasm` to `Cloudflare` via `Github` integration.</span>
 
-## Source
+## Setup (once)
+```shell
+rustup target add wasm32-unknown-unknown
+cargo install cargo-generate
 ```
+
+## Setup new project (optional)
+```shell
+# From template
+cargo generate cloudflare/workers-rs
+
+# Or
+npx wrangler init
+```
+
+## Or from existing source
+```shell
 git clone https://github.com/gist-rs/hello-world-cloudflare
 cd hello-world-cloudflare
 ```
