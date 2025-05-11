@@ -2,6 +2,12 @@
 
 ![](/assets/kat.png) <span class="speech-bubble">Here's [how](https://github.com/gist-rs/hello-world-cloudflare) we release `Rust` as `Wasm` to `Cloudflare` via `Github` integration.</span>
 
+## Source
+```
+git clone https://github.com/gist-rs/hello-world-cloudflare
+cd hello-world-cloudflare
+```
+
 ## Dev local
 
 ```shell
@@ -11,6 +17,7 @@ npx wrangler dev
 ## Deploy local
 
 ```shell
+npx wrangler login
 npx wrangler deploy
 ```
 
