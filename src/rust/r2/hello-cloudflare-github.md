@@ -3,13 +3,13 @@
 ![](/assets/kat.png) <span class="speech-bubble">Here's [how](https://github.com/gist-rs/hello-world-cloudflare) we release `Rust` as `Wasm` to `Cloudflare` via `Github` integration.</span>
 
 ## Setup (once)
-```shell
+```bash
 rustup target add wasm32-unknown-unknown
 cargo install cargo-generate
 ```
 
 ## Setup new project (optional)
-```shell
+```bash
 # From template
 cargo generate cloudflare/workers-rs
 
@@ -18,20 +18,20 @@ npx wrangler init
 ```
 
 ## Or from existing source
-```shell
+```bash
 git clone https://github.com/gist-rs/hello-world-cloudflare
 cd hello-world-cloudflare
 ```
 
 ## Dev local
 
-```shell
+```bash
 npx wrangler dev
 ```
 
 ## Deploy local
 
-```shell
+```bash
 npx wrangler login
 npx wrangler deploy
 ```
@@ -39,7 +39,7 @@ npx wrangler deploy
 ## Deploy command (`Github` Integration)
 > 💡 Set this in `Cloudflare` build setting via [Cloudflare Dashboard](https://dash.cloudflare.com/) ref [DOCS](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/)
 
-```shell
+```bash
 npx wrangler deploy -e production
 ```
 
