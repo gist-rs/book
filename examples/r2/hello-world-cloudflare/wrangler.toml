@@ -1,0 +1,19 @@
+name = "hello-world-cloudflare"
+main = "build/worker/shim.mjs"
+compatibility_date = "2025-05-10"
+
+# Default build command (will be used by 'wrangler dev' and for 'dev' environment)
+[build]
+command = "cargo install -q worker-build && worker-build --release"
+
+# Configuration for the 'production' environment
+[env.production]
+# Production-specific build command
+[env.production.build]
+command = "curl https://sh.rustup.rs -sSf | sh -s -- -y && . $HOME/.cargo/env && cargo install -q worker-build && worker-build --release"
+
+# You can still keep an [env.dev] section if you have other dev-specific settings
+# that are not build-related, or if you want to be explicit.
+[env.dev]
+# For example, if you wanted dev to have a different compatibility date or main entry point.
+# If [env.dev.build] is not specified, it will inherit from the top-level [build].

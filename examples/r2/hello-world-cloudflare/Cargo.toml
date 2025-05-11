@@ -1,0 +1,28 @@
+[package]
+name = "hello-world-cloudflare"
+version = "0.1.0"
+edition = "2021"
+authors = [ "katopz <katopz@gmail.com>" ]
+
+[package.metadata.release]
+release = false
+
+# https://github.com/rustwasm/wasm-pack/issues/1247
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+worker = { version="0.5.0", features=['http'] }
+worker-macros = { version="0.5.0", features=['http'] }
+tower-service = "0.3.2"
+console_error_panic_hook = { version = "0.1.1" }
+serde = "1.0.219"
+reqwest = { version = "0.12", features = ["json"] }
+currency_rs = "1.3.0"
+rand = "0.8"
+anyhow = "1.0"
+getrandom = { version="0.2", features = ["js"] }
+serde_json = "1.0.140"
