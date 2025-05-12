@@ -18,7 +18,7 @@ llama-cli --hf-repo ${REPO} --hf-file ${FILE} -p "${PROMPT}" -i --n-gpu-layers 1
 > Recommend for dev.
 
 ```bash
-git clone https://github.com/ggerganov/llama.cpp.git
+git clone https://github.com/ggml-org/llama.cpp.git
 cd llama.cpp
 
 # not working: build but no GPU
