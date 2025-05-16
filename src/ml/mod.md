@@ -64,3 +64,4 @@
 - [ ] Try fine-tune-mistral: https://github.com/brevdev/notebooks/blob/main/mistral-finetune-own-data.ipynb
 - [ ] Try `LocalGPT`: https://github.com/PromtEngineer/localGPT
 - [ ] Read and summary: https://twitter.com/manelferreira_/status/1711788177458090388
+- [ ] Try `Kalosm`: https://github.com/floneum/floneum/tree/main/interfaces/kalosm
