@@ -1,5 +1,8 @@
 # Dia
-> Currently it has a lot of bug, so be patient.
+
+> [How to setup and run `Dia-1.6B` on mac silicon](voices/dia.md)
+
+> 🚧 Currently it has a lot of bug, so be patient.
 
 - [https://github.com/nari-labs/dia]()
 - [https://huggingface.co/spaces/nari-labs/Dia-1.6B]()

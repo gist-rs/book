@@ -1,6 +1,6 @@
 # Fish Agent V0.1 3B
 
-> [fishaudio/fish-agent-v0.1-3b](https://huggingface.co/fishaudio/fish-agent-v0.1-3b)
+> How to setup and run `[fishaudio/fish-agent-v0.1-3b](https://huggingface.co/fishaudio/fish-agent-v0.1-3b)` on mac silicon.
 
 ## Run `Fish Agent` on Mac M3
 
