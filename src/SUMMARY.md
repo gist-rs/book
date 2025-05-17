@@ -85,7 +85,6 @@
     - [Hugging Face - Candle](ml/frameworks/huggingface-candle.md)
     - [Hugging Face - AutoTrain](ml/frameworks/huggingface-autotrain.md)
     - [Apple - MLX](ml/frameworks/apple-mlx.md)
-    - [PostgresML](ml/frameworks/postgresml.md)
   - [Stable Diffusion](ml/stable-diffusion.md)
   - [Vision Language Model](ml/vision-language-model.md)
   - [FLUX.1](ml/flux1.md)
