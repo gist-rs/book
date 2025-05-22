@@ -18,48 +18,32 @@
     // custom settings, run the `open default settings` command
     // from the command palette or from `Zed` application menu.
     {
-      "theme": "VSCode Dark Modern",
+      "show_edit_predictions": false,
+      "theme": "Ayu Dark",
       "telemetry": {
         "diagnostics": false,
         "metrics": false
       },
-      "ui_font_size": 16,
-      "buffer_font_size": 16,
+      "ui_font_size": 14,
+      "buffer_font_size": 12,
       "buffer_font_family": "Menlo",
-      "assistant": {
+      "agent": {
+        "inline_assistant_model": {
+          "provider": "google",
+          "model": "gemini-2.5-pro-preview-03-25"
+        },
+        "always_allow_tool_actions": true,
+        "default_profile": "write",
         "default_model": {
           "provider": "google",
-          "model": "gemini-2.5-pro-exp-03-25"
+          "model": "gemini-2.5-pro-preview-03-25"
         },
-        "version": "2",
-        "openai_api_url": null,
-        "provider": {
-          "name": "openai",
-          "type": "openai",
-          "default_model": "mistralai/mistral-7b-instruct",
-          "api_url": "http://0.0.0.0:9090/v1beta"
-        }
+        "version": "2"
       },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "rust-analyzer"
-          }
-        },
-        {
-          "external": {
-            "command": "prettier",
-            "arguments": [
-              "--stdin-filepath",
-              "{buffer_path}"
-            ]
-          }
-        }
-      ],
       "lsp": {
         "rust-analyzer": {
           "initialization_options": {
-            "checkOnSave": {
+            "check": {
               "command": "clippy"
             }
           }
