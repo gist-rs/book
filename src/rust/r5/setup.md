@@ -55,7 +55,7 @@
 
 ### Install extra tools.👇
 ```bash
-cargo install cargo-edit    # 👈 = cargo add.
+cargo install cargo-edit    # 👈 = cargo add, cargo upgrade.
 cargo install cargo-watch   # 👈 = cargo watch.
 cargo install cargo-audit   # 👈 = cargo audit.
 ```
@@ -75,6 +75,8 @@ cargo build --release    # 👈 No debug = Smaller/Faster.
 
 cargo add tokio          # 👈 add package named `tokio`
 cargo rm tokio           # 👈 remove package named `tokio`.
+
+cargo upgrade            # 👈 Upgrade current dependencies.
 ```
 
 > 💡 [`tokio`](https://tokio.rs/) crate make `async` easier.
