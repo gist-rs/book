@@ -47,6 +47,7 @@
     - [Hello Actix CloudRun](rust/r2/hello-actix-cloudrun.md)
     - [Hello Diffusers Stable Diffusion](rust/r2/hello-diffusers-stable-diffusion.md)
     - [Hello Cloudflare Github](rust/r2/hello-cloudflare-github.md)
+    - [Hello Cloudflare Container](rust/r2/hello-cloudflare-container.md)
   - [R1 - Master](rust/r1/mod.md)
     - [String](rust/r1/string.md)
     - [Marker Types](rust/r1/marker-types.md)
