@@ -23,10 +23,8 @@ async fn error_handler() -> impl Responder {
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
-            .route("/", web::get().to(handler))
-            .route("/hello", web::get().to(handler))
-            .route("/container", web::get().to(handler))
             .route("/error", web::get().to(error_handler))
+            .default_service(web::to(handler))
     })
     .bind(("0.0.0.0", 8080))?
     .run()
