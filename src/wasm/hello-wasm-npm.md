@@ -50,7 +50,7 @@ wasm-pack publish --access=public
 ```bash
 # Build
 cargo build --target wasm32-unknown-unknown --release
-wasm-bindgen target/wasm32-unknown-unknown/release/gslides_rs.wasm --out-dir pkg --nodejs
+wasm-bindgen target/wasm32-unknown-unknown/release/hello_world.wasm --out-dir pkg --nodejs
 
 # Release
 npm publish pkg --access=public
