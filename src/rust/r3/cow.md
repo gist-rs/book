@@ -17,9 +17,11 @@ fn main() {
     // --- 👽 UFO Appears! Time to SUCK the Cow! ---
     // The UFO wants to "modify" the cow (i.e., abduct it!).
     // If it's a borrowed cow, the UFO needs to make its OWN copy to take!
-    // (This simulates `to_mut()` forcing a copy for modification)
     println!("2. OH NO! A UFO appears! 👽");
+
+    // This forcing 👇 a copy for modification
     peaceful_cow.to_mut().push_str(" AIEEEE! I'm being beamed up! ⬆️");
+
     println!("   Cow after abduction attempt: {}", peaceful_cow);
     println!("   (Since it was borrowed, the UFO made a *copy* to abduct. The original is safe... for now! 🚀)\n");
 
@@ -35,7 +37,7 @@ fn main() {
     // But since this cow is *already owned*, the UFO can just grab *this specific cow*.
     // No new copy is needed because it's already "owned" for modification.
     println!("4. Another UFO! This one's persistent! 🛸");
-    owned_cow.to_mut().push_str(" Help! They're taking MY barn too! 😵‍💫");
+    owned_cow.to_mut().push_str(" Help! They're taking MY barn too! 😱");
     println!("   Owned Cow after abduction: {}", owned_cow);
     println!("   (It was already owned, so the UFO just took *that* cow. Efficient abduction! 💯)\n");
 
