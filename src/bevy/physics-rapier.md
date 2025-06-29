@@ -36,7 +36,7 @@ graph TD
   -->I["Update our objects"]
 ```
 
-```rust
+```rust,editable
 pub fn step(
     &mut self,
     gravity: &Vector<Real>,
@@ -59,7 +59,7 @@ pub fn step(
 
 > A lighter alternative to the physics pipeline is using only the collision pipeline.
 
-```rust
+```rust,editable
 pub fn step(
     &mut self,
     prediction_distance: Real,
@@ -77,7 +77,7 @@ pub fn step(
 
 > Queries are how we ask about our colliders. The pipeline itself can be in one of three modes:
 
-```rust
+```rust,editable
 // Indicates how the colliders position should be taken into account when
 // updating the query pipeline.
 pub enum QueryPipelineMode {
@@ -115,7 +115,7 @@ pub enum QueryPipelineMode {
 
 Attach `RigidBody` to `Collider` to the same entity to make it collide.
 
-```rust
+```rust,editable
 // Create a simple solid ball
 commands
     .spawn(RigidBody::Dynamic)
@@ -132,7 +132,7 @@ commands
 
 Or just detect collisions (aka door sensor)
 
-```rust
+```rust,editable
 commands
     .spawn(Collider::ball(0.5))
     .insert(Sensor);
@@ -155,7 +155,7 @@ Collision detection works in Rapier is in two phases:
 
 When we want to make only some things collide with each other we can choose to set a collision group by initializing a `CollisionGroups` component with both the `membership` of our group and the `filter`:
 
-```rust
+```rust,editable
 commands
     .spawn(Collider::ball(0.5))
     // First argument 👇 is the membership, second 👇 is the filter
@@ -179,7 +179,7 @@ Objects that can collide with the ceiling.
 
 If instead we wanted to produce the contact events but not apply the forces of the collision then we could do the same thing with `SolverGroups`: (aka `Sensor`)
 
-```rust
+```rust,editable
 commands
     .spawn(Collider::ball(0.5))
     .insert(SolverGroups::new(0b0011.into(), 0b1011.into());
@@ -187,7 +187,7 @@ commands
 
 One gotcha is that by default your kinematic rigid bodies won’t collide with your fixed bodies. This is because they are not listening for the right contact events. To enable this behaviour we need to add a `ActiveCollisionTypes` component:
 
-```rust
+```rust,editable
 commands
     .spawn(RigidBody::Fixed)
     .insert(Collider::ball(0.5))
@@ -198,7 +198,7 @@ commands
 
 The narrow phase will produce events like `CollisionEvent` and `ContactForceEvent` but not by default. To enable this at least one of the contacted entities needs to have a `ActiveEvents::COLLISION_EVENTS` or `ActiveEvents::CONTACT_FORCE_EVENTS` component to trigger them.
 
-```rust
+```rust,editable
 /* A system that displays the events. */
 fn display_events(
     mut collision_events: EventReader<CollisionEvent>,

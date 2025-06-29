@@ -2,7 +2,7 @@
 
 ## Problem
 
-```rust
+```rust,editable
 use std::thread;
 
 fn main() {
@@ -24,7 +24,7 @@ fn main() {
 
 ## Solution
 
-```rust
+```rust,editable
 use std::thread;
 use std::sync::{Arc, Mutex};
 

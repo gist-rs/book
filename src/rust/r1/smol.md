@@ -4,7 +4,7 @@
 
 ## Don't
 
-```rust
+```rust,editable
 fn main() -> io::Result<()> {
     let socket = TcpListener::bind("0.0.0.0:80")?;
 
@@ -19,7 +19,7 @@ fn main() -> io::Result<()> {
 
 - Use [async/await via smol](https://notgull.net/why-not-threads/)
 
-```rust
+```rust,editable
 #[apply(smol_macros::main!)]
 async fn main(ex: &smol::Executor) -> io::Result<()> {
     let socket = TcpListener::bind("0.0.0.0:80").await?;

@@ -4,7 +4,7 @@
 
 ![](/assets/duck.png) <span class="speech-bubble">Oh, it's just like we put something in the 📦 so mister postman(compiler) can manage them properly!</span>
 
-```rust
+```rust,editable
 let rust = "Rust".to_string()
 let us = &rust[1..=2];
 ```
@@ -41,26 +41,26 @@ Stack                                          |
 
 ## Dynamic Dispatch with `Box`, `dyn`
 
-```rust
-# #[derive(Debug, Clone)]
-# struct Animal {}
-# struct Human {}
-#
-# trait Sayable {
-#     fn say(&self) -> String;
-# }
-#
-# impl Sayable for Animal {
-#     fn say(&self) -> String {
-#         "meow!".to_owned()
-#     }
-# }
-#
-# impl Sayable for Human {
-#     fn say(&self) -> String {
-#         "hi!".to_owned()
-#     }
-# }
+```rust,editable
+#[derive(Debug, Clone)]
+struct Animal {}
+struct Human {}
+
+trait Sayable {
+    fn say(&self) -> String;
+}
+
+impl Sayable for Animal {
+    fn say(&self) -> String {
+        "meow!".to_owned()
+    }
+}
+
+impl Sayable for Human {
+    fn say(&self) -> String {
+        "hi!".to_owned()
+    }
+}
 
 // Compiler'll need this👇 Box to know its size (Box's size).
 fn animal_or_human() -> Box<dyn Sayable> {

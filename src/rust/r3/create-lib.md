@@ -69,7 +69,7 @@ pyth-sdk-solana = { git = "https://github.com/pyth-network/pyth-sdk-rs", rev = "
 
 ## Which function restrictions shall we use?
 
-```rust
+```rust,editable
 // Take owned String, return owned String.
 fn hello(foo: String) -> String
 

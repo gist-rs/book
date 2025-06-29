@@ -2,7 +2,7 @@
 
 ![](/assets/kat.png) <span class="speech-bubble">We able to fetch and handle errors from previously examples, it's time to reuse it as a module!</span>
 
-```rust
+```
 📂 fetch-any-lib
 │
 ├─ 🗂 fetch-any

@@ -58,7 +58,7 @@ fn main() {
 
 ### Async
 
-```rust
+```rust,editable
 #[tokio::main]
 async fn main() {
     // This will print a warning, but compile and do nothing at runtime

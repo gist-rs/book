@@ -2,7 +2,7 @@
 
 > 🤔 [refer to Will Crichton](https://twitter.com/wcrichton/status/1608632382256746498)
 
-```rust
+```rust,editable
 let s1 = String::from("Hello ");
 ```
 
