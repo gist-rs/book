@@ -32,6 +32,7 @@ level = 0
 
 [output.html.playground]
 editable = true
+line-numbers = true
 
 [output.html.print]
 enable = false
