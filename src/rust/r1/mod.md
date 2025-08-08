@@ -23,3 +23,5 @@ This is a last part so you can expect super confuse and hard to understand topic
 - [Rust Prism](https://registerspill.thorstenball.com/p/rust-prism)
 - [Smart pointers](https://stanford-cs242.github.io/f18/lectures/06-1-smart-pointers.html)
   ![Rust container cheat sheet](/rust/r1/rust-container-cheat-sheet.png)
+- [The Generativity Pattern in Rust](https://arhan.sh/blog/the-generativity-pattern-in-rust/)
+- [The Complexities of Rust Async Streams](https://swatinem.de/blog/rust-async-streams/)
