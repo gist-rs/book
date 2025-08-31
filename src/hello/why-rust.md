@@ -33,6 +33,7 @@
 - MIT: [How `Rust` 🦀 went from a side project to the world’s most-loved programming language.](https://www.technologyreview.com/2023/02/14/1067869/rust-worlds-fastest-growing-programming-language/)
 - NGINX: [Respect to memory safety and correctness. This has paved the way for languages like `Rust` 🦀](https://www.nginx.com/blog/extending-nginx-with-rust-an-alternative-to-c/)
 - PostgresML: [We are huge fans of `Rust` 🦀 (almost our entire codebase is written in it)](https://postgresml.org/blog/how-we-generate-javascript-and-python-sdks-from-our-canonical-rust-sdk)
+- TikTok: [Rewriting a `Go` service to `Rust` 🦀 led to 2x performance, 72% less memory usage, and saving nearly $300k annually](https://wxiaoyun.com/blog/rust-rewrite-case-study/)
 - Twitter: [Navi:ML serving server implemented in `Rust` 🦀 offering top-notch performance.](https://github.com/twitter/the-algorithm/tree/main/navi)
 - Ubuntu: [Clearly, `Rust` 🦀 has excellent foundations for making reliable and efficient software](https://ubuntu.com/blog/why-and-how-to-use-rust-on-ubuntu)
 - Vercel: [`Rust` 🦀 was a clear choice from day one.](https://vercel.com/blog/turborepo-migration-go-rust)
