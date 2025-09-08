@@ -14,4 +14,12 @@
 - Able to fetch multiple with `futures` and `tokio`
 - Able to handle multiple `result` and `option`.
 
-[Let's Rust! ➠](./10-parse-json-serde.md)
+## Index
+
+- [Parse json with serde](./10-parse-json-serde.md)
+- [Fetch json with reqwest](./20-fetch-json-reqwest.md)
+- [Fetch multiple with futures](./30-fetch-multiple-futures.md)
+- [Fetch multiple with tokio](./31-fetch-multiple-tokio.md)
+- [Handle multiple result and option](./40-handle-multiple-result-option.md)
+- [Fetch and handle with thiserror](./50-fetch-json-reqwest-thiserror.md)
+- [Build a fetch module](./60-build-fetch-module.md)

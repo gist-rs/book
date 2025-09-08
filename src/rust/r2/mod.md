@@ -10,8 +10,11 @@
 
 ## Index
 
+- [Hello Github Action](./hello-github-action.md)
 - [How to use `Actix` on `CloudRun`](./hello-actix-cloudrun.md)
 - [Hello Diffusers `Stable Diffusion`](./hello-diffusers-stable-diffusion.md)
+- [Hello Cloudflare Github](./hello-cloudflare-github.md)
+- [Hello Cloudflare Container](./hello-cloudflare-container.md)
 
 ## TODO
 
