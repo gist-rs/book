@@ -2,6 +2,8 @@
 
 ![](/assets/kat.png) <span class="speech-bubble">Enjoy!</span>
 
+![](/assets/rust-room.png)
+
 ## Goals
 
 - Able to getting start.
