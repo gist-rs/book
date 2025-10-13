@@ -2,7 +2,7 @@
 
 Focus on gist of `Rust`, `Wasm`, `Solana`, `Generative AI`, `Bevy`.
 
-> 🚧 This gist is WIP, feel free to help.
+> 🚧 This gist is work-in-progress, feel free to help out!
 
 <img width="1163" alt="image" src="./gist.rs.png">
 
@@ -22,7 +22,7 @@ mdbook serve
 
 ## Notifications
 
-Get notified when a book get published by
+Get notified when a book gets published by
 
 - [Following katopz on Twitter](https://twitter.com/katopz) or
 - [Subscribing to this repo's release RSS feed](https://github.com/gist-rs/book/releases.atom) or
@@ -30,11 +30,11 @@ Get notified when a book get published by
 
 ## Feedback
 
-If you have any feedback please feel welcome to [open an issue](https://github.com/gist-rs/book/issues/new) on this repo. I accept pull requests for minor fixes like typos and grammar.
+Got feedback? [Open an issue](https://github.com/gist-rs/book/issues/new) - I accept PRs for quick fixes like typos and grammar!
 
 ## Discuss
 
-This repo has a [discussion forum](https://github.com/gist-rs/book/discussions)! Feel free to ask questions or start discussions.
+Got questions? Check out our [discussion forum](https://github.com/gist-rs/book/discussions) - jump in and start chatting!
 
 ## TODO
 

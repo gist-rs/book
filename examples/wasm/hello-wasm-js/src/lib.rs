@@ -3,8 +3,7 @@ mod utils;
 use utils::set_panic_hook;
 use wasm_bindgen::prelude::*;
 
-// When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
-// allocator.
+// Use `wee_alloc` as global allocator when feature is enabled
 #[cfg(feature = "wee_alloc")]
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
@@ -14,7 +13,7 @@ pub fn greet(something: &str) -> String {
     // Hook when panic (optional)
     set_panic_hook();
 
-    // Return String
+    // Return string
     format!("Hello {something}")
 }
 
@@ -23,7 +22,7 @@ pub async fn async_greet(something: &str) -> Result<String, JsError> {
     // Hook when panic (optional)
     set_panic_hook();
 
-    // Return Result String
+    // Return result string
     Ok(format!("Hello {something}"))
 }
 
@@ -32,7 +31,7 @@ pub async fn async_greet_js_value(something: &str) -> Result<JsValue, JsError> {
     // Hook when panic (optional)
     set_panic_hook();
 
-    // Return Result String
+    // Return result string
     Ok(JsValue::from_str(format!("Hello {something}").as_str()))
 }
 
@@ -41,8 +40,7 @@ pub fn greet_js_error() -> Result<JsValue, JsError> {
     let js_error = JsError::new("hello error!");
 
     // `wasm_bindgen::JsError` doesn't implement `std::fmt::Debug`
-    // the trait `std::fmt::Debug` is not implemented for `wasm_bindgen::JsError`
-    // 😱 uncomment below 👇 will get above error 👆
+    // 😱 uncomment below 👇 and you'll get the error 👆
     // println!("{js_error:#?}");
 
     Err(js_error)

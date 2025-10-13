@@ -20,11 +20,11 @@
 
 ### Mistral-7B-Instruct Multiple-PDF Chatbot with Langchain & Streamlit
 
-> Fixed notebook is [Chat_with_MultiplePDFs_Mistral_7B_Instruct1.ipynb](./Chat_with_MultiplePDFs_Mistral_7B_Instruct1.ipynb)
+> Fixed notebook: [Chat_with_MultiplePDFs_Mistral_7B_Instruct1.ipynb](./Chat_with_MultiplePDFs_Mistral_7B_Instruct1.ipynb)
 
-- Youtube: https://www.youtube.com/watch?v=tqpXvPzteT4
+- YouTube: https://www.youtube.com/watch?v=tqpXvPzteT4
 - Colab: https://colab.research.google.com/drive/11sf5LAF5EC1M0cDh-pUyowvS7EflwlMH?usp=sharing
-- ⚠️ This notebook didn't use GPU. To support GPU will need.
+- ⚠️ This notebook doesn't use GPU. To add GPU support:
   ```bash
   !CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python
   ```

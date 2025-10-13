@@ -102,10 +102,10 @@ mod tests {
         let id = SOL_JLP_POOL_ID;
         let pool_info = fetch_pool_info_by_id(id).await;
 
-        // Result
+        // Debug output
         println!("{pool_info:#?}");
 
-        // Get price from pool that match id
+        // Get price from matching pool
         let price = pool_info.unwrap().price;
 
         println!("{price:#?}");
