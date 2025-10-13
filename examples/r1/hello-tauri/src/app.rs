@@ -16,8 +16,8 @@ struct GreetArgs<'a> {
 }
 
 pub fn App() -> Element {
-    let mut name = use_signal(|| String::new());
-    let mut greet_msg = use_signal(|| String::new());
+    let mut name = use_signal(String::new);
+    let mut greet_msg = use_signal(String::new);
 
     let greet = move |_: FormEvent| async move {
         if name.read().is_empty() {
@@ -25,7 +25,7 @@ pub fn App() -> Element {
         }
 
         let name = name.read();
-        let args = serde_wasm_bindgen::to_value(&GreetArgs { name: &*name }).unwrap();
+        let args = serde_wasm_bindgen::to_value(&GreetArgs { name: &name }).unwrap();
         // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
         let new_msg = invoke("greet", args).await.as_string().unwrap();
         greet_msg.set(new_msg);
