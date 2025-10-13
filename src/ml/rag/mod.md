@@ -8,6 +8,7 @@
 
 ## My Pick
 
+- [`RIG`]: [Build modular and scalable LLM Applications in Rust](https://rig.rs/)
 - [LlamaEdge](https://github.com/LlamaEdge/Example-LlamaEdge-RAG)
 
 ## Raw
