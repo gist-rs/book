@@ -2,6 +2,9 @@
 
 ![](/assets/kat.png) <span class="speech-bubble">Here's an example for `Rust` on `Cloudflare` via `Container`.</span>
 
+## TLDR;
+- source code: [hello-cloudflare-container](https://github.com/gist-rs/book/tree/main/examples/r2/hello-cloudflare-container)
+
 ## Setup
 > 💡 Refer to [https://developers.cloudflare.com/containers/]()
 
