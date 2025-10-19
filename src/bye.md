@@ -2,6 +2,10 @@
 
 ## Rust Resources
 
+### 😬 Cheating
+
+1. [Rust Language Cheat Sheet](https://cheats.rs/): Nice visual! Kinda like it but you must learn [Official Book](https://doc.rust-lang.org/book/) first and use this as brain indexing.
+
 ### 📚 Reading
 
 1. [Official Book](https://doc.rust-lang.org/book/): Don't skip this.
