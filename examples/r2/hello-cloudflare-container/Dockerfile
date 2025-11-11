@@ -27,7 +27,7 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 WORKDIR /app
 
 # Copy the Cargo files first to leverage Docker's layer caching.
-COPY container_src/Cargo.toml container_src/Cargo.lock ./
+COPY container/Cargo.toml container/Cargo.lock ./
 
 # This single RUN command determines the correct Rust target, installs it,
 # and builds the project's dependencies using the robust cargo-zigbuild.
@@ -41,7 +41,7 @@ RUN case ${TARGETPLATFORM} in \
     cargo zigbuild --release --target ${RUST_TARGET}
 
 # Now, copy the actual source code. This will be a separate layer.
-COPY container_src/src/ ./src/
+COPY container/src/ ./src/
 
 # Build the final application and create a stable symlink to the binary.
 RUN case ${TARGETPLATFORM} in \

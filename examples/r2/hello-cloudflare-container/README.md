@@ -41,7 +41,7 @@ npm run dev
 Open [http://localhost:8787](http://localhost:8787) with your browser to see the result.
 
 You can start editing your Worker by modifying `src/index.ts` and you can start
-editing your Container by editing the content of `container_src`.
+editing your Container by editing the content of `container`.
 
 ## Deploying To Production
 
@@ -65,4 +65,19 @@ docker buildx build --platform linux/arm64 -t hello-cloudflare-container-mac --l
 
 # Run
 docker run --rm -it -p 8081:8080 hello-cloudflare-container-mac
+
+# Test
+open http://127.0.0.1:8081
+```
+
+## MacOS (Intel)
+```bash
+# Build
+docker buildx build --platform linux/amd64 -t hello-cloudflare-container-mac-intel --load .
+
+# Run
+docker run --rm -it -p 8081:8080 hello-cloudflare-container-mac-intel
+
+# Test
+open http://127.0.0.1:8081
 ```
