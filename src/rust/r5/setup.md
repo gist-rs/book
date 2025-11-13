@@ -18,27 +18,76 @@
     // custom settings, run the `open default settings` command
     // from the command palette or from `Zed` application menu.
     {
+      "active_pane_modifiers": {
+        "border_size": 0.0
+      },
+      "agent_ui_font_size": 12.0,
+      "terminal": {
+        "font_size": 10.0
+      },
+      "language_models": {
+        "openai_compatible": {
+          "GLM": {
+            "api_url": "https://api.z.ai/api/coding/paas/v4",
+            "available_models": [
+              {
+                "name": "GLM-4.6",
+                "display_name": "GLM 4.6",
+                "max_tokens": 200000,
+                "max_output_tokens": 32000,
+                "max_completion_tokens": 200000,
+                "capabilities": {
+                  "tools": true,
+                  "images": true,
+                  "parallel_tool_calls": false,
+                  "prompt_cache_key": false
+                }
+              }
+            ]
+          },
+          "qwen3-vl-30b-a3b-instruct": {
+            "api_url": "http://localhost:1234/v1/chat/completions",
+            "available_models": [
+              {
+                "name": "qwen3-vl-30b-a3b-instruct",
+                "max_tokens": 100000,
+                "max_output_tokens": 32000,
+                "max_completion_tokens": 100000,
+                "capabilities": {
+                  "tools": true,
+                  "images": true,
+                  "parallel_tool_calls": false,
+                  "prompt_cache_key": false
+                }
+              }
+            ]
+          }
+        }
+      },
+      "experimental.theme_overrides": {
+        "warning.background": "#736e01"
+      },
       "show_edit_predictions": false,
-      "theme": "Ayu Dark",
+      "theme": "Monokai Charcoal (gray)",
       "telemetry": {
         "diagnostics": false,
         "metrics": false
       },
-      "ui_font_size": 14,
-      "buffer_font_size": 12,
+      "ui_font_size": 12.0,
+      "buffer_font_size": 11.0,
       "buffer_font_family": "Menlo",
       "agent": {
+        "message_editor_min_lines": 8,
         "inline_assistant_model": {
-          "provider": "google",
-          "model": "gemini-2.5-pro-preview-03-25"
+          "provider": "GLM",
+          "model": "GLM-4.6"
         },
         "always_allow_tool_actions": true,
         "default_profile": "write",
         "default_model": {
-          "provider": "google",
-          "model": "gemini-2.5-pro-preview-03-25"
-        },
-        "version": "2"
+          "provider": "GLM",
+          "model": "GLM-4.6"
+        }
       },
       "lsp": {
         "rust-analyzer": {
@@ -52,6 +101,8 @@
     }
     ```
     </details>
+
+- [Zed Monokai+Charcoal theme](https://zed-themes.com/?search=Monokai+Charcoal)
 
 ### Install extra tools.👇
 ```bash
