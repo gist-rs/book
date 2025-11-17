@@ -6,8 +6,7 @@ async fn handler() -> impl Responder {
         .unwrap_or_else(|_| "🦀 I was passed in via the container class!".to_string());
     let instance_id = env::var("CLOUDFLARE_DEPLOYMENT_ID").unwrap_or_else(|_| "local".to_string());
     format!(
-        "🦀 Hi, I'm a container and this is my message: \"{}\", my instance ID is: {}",
-        message, instance_id
+        "🦀 Hi, I'm a container and this is my message: \"{message}\", my instance ID is: {instance_id}"
     )
 }
 
