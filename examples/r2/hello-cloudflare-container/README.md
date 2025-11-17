@@ -62,6 +62,7 @@ Your feedback and contributions are welcome!
 ```bash
 # Build
 docker buildx build --platform linux/arm64 -t hello-cloudflare-container-mac --load .
+# Image size: ~2.09MB
 
 # Run
 docker run --rm -it -p 8081:8080 hello-cloudflare-container-mac
@@ -74,6 +75,7 @@ open http://127.0.0.1:8081
 ```bash
 # Build
 docker buildx build --platform linux/amd64 -t hello-cloudflare-container-mac-intel --load .
+# Image size: ~2.09MB
 
 # Run
 docker run --rm -it -p 8081:8080 hello-cloudflare-container-mac-intel
