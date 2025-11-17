@@ -41,7 +41,7 @@ npm run dev
 Open [http://localhost:8787](http://localhost:8787) with your browser to see the result.
 
 You can start editing your Worker by modifying `src/index.ts` and you can start
-editing your Container by editing the content of `container_src`.
+editing your Container by editing the content of `container`.
 
 ## Deploying To Production
 
@@ -58,49 +58,26 @@ To learn more about Containers, take a look at the following resources:
 
 Your feedback and contributions are welcome!
 
-## Container Size Analysis
-
-### Actual Build Sizes
-- **Linux AMD64**: 2.1MB
-- **Linux ARM64**: 2.09MB
-
-### Size Optimization Techniques
-
-This Dockerfile demonstrates several optimization strategies to achieve the minimal ~2MB container size:
-
-1. **Multi-stage Build**: Uses a builder stage with Rust toolchain, then copies only the binary to a `scratch` base image
-2. **Static Linking**: Compiles with `musl` target to create fully static binaries with no external dependencies
-3. **Minimal Base**: Final stage uses `scratch` (empty) image, containing only the compiled binary
-4. **Stripped Binary**: Rust's `--release` flag automatically strips debug symbols
-5. **Cross-compilation**: Uses `cargo-zigbuild` with Zig for efficient cross-platform compilation
-
-### Size Breakdown
-- Final container layers: ~937KB (binary + metadata)
-- Total compressed size: 2.1MB (includes Docker layers and metadata)
-- Runtime memory footprint: Minimal, as it's a single statically-linked binary
-
-This approach is ideal for:
-- Serverless platforms (Cloudflare Workers, AWS Lambda)
-- Edge computing deployments
-- Fast startup times and low resource usage
-- CI/CD pipelines with quick deployment
-
-## Build Commands
-
-### Linux AMD64
+## MacOS (ARM)
 ```bash
 # Build
-docker buildx build --platform linux/amd64 -t hello-cloudflare-container-amd64 --load .
+docker buildx build --platform linux/arm64 -t hello-cloudflare-container-mac --load .
 
 # Run
-docker run --rm -it -p 8081:8080 hello-cloudflare-container-amd64
+docker run --rm -it -p 8081:8080 hello-cloudflare-container-mac
+
+# Test
+open http://127.0.0.1:8081
 ```
 
-### Linux ARM64 (MacOS M1/M2)
+## MacOS (Intel)
 ```bash
 # Build
-docker buildx build --platform linux/arm64 -t hello-cloudflare-container-arm64 --load .
+docker buildx build --platform linux/amd64 -t hello-cloudflare-container-mac-intel --load .
 
 # Run
-docker run --rm -it -p 8081:8080 hello-cloudflare-container-arm64
+docker run --rm -it -p 8081:8080 hello-cloudflare-container-mac-intel
+
+# Test
+open http://127.0.0.1:8081
 ```
