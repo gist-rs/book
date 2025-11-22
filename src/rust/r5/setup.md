@@ -4,6 +4,8 @@
 
 - [Rust in Visual Studio Code](https://code.visualstudio.com/docs/languages/rust)
 - [Rust with Zed](https://zed.dev/)
+- [Zed Monokai+Charcoal theme](https://zed-themes.com/?search=Monokai+Charcoal)
+- [GLM 4.6](https://z.ai/subscribe?ic=VRXWPTEP5N): The coding plan is $3 per month and working nearly like Gemini 2.5 Pro so try it!.
 
     <details>
     <summary>🎛️ Zed settings that's look like VSCdode</summary>
@@ -101,8 +103,6 @@
     }
     ```
     </details>
-
-- [Zed Monokai+Charcoal theme](https://zed-themes.com/?search=Monokai+Charcoal)
 
 ### Install extra tools.👇
 ```bash
