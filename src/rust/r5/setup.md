@@ -21,11 +21,11 @@
     // from the command palette or from `Zed` application menu.
     {
       "active_pane_modifiers": {
-        "border_size": 0.0
+        "border_size": 0.0,
       },
       "agent_ui_font_size": 12.0,
       "terminal": {
-        "font_size": 10.0
+        "font_size": 10.0,
       },
       "language_models": {
         "openai_compatible": {
@@ -33,47 +33,30 @@
             "api_url": "https://api.z.ai/api/coding/paas/v4",
             "available_models": [
               {
-                "name": "GLM-4.6",
-                "display_name": "GLM 4.6",
+                "name": "glm-4.7",
+                "display_name": "GLM 4.7",
                 "max_tokens": 200000,
                 "max_output_tokens": 32000,
                 "max_completion_tokens": 200000,
                 "capabilities": {
                   "tools": true,
-                  "images": true,
+                  "images": false,
                   "parallel_tool_calls": false,
-                  "prompt_cache_key": false
-                }
-              }
-            ]
+                  "prompt_cache_key": false,
+                },
+              },
+            ],
           },
-          "qwen3-vl-30b-a3b-instruct": {
-            "api_url": "http://localhost:1234/v1/chat/completions",
-            "available_models": [
-              {
-                "name": "qwen3-vl-30b-a3b-instruct",
-                "max_tokens": 100000,
-                "max_output_tokens": 32000,
-                "max_completion_tokens": 100000,
-                "capabilities": {
-                  "tools": true,
-                  "images": true,
-                  "parallel_tool_calls": false,
-                  "prompt_cache_key": false
-                }
-              }
-            ]
-          }
-        }
+        },
       },
       "experimental.theme_overrides": {
-        "warning.background": "#736e01"
+        "warning.background": "#736e01",
       },
       "show_edit_predictions": false,
       "theme": "Monokai Charcoal (gray)",
       "telemetry": {
         "diagnostics": false,
-        "metrics": false
+        "metrics": false,
       },
       "ui_font_size": 12.0,
       "buffer_font_size": 11.0,
@@ -82,24 +65,24 @@
         "message_editor_min_lines": 8,
         "inline_assistant_model": {
           "provider": "GLM",
-          "model": "GLM-4.6"
+          "model": "glm-4.7",
         },
         "always_allow_tool_actions": true,
         "default_profile": "write",
         "default_model": {
           "provider": "GLM",
-          "model": "GLM-4.6"
-        }
+          "model": "glm-4.7",
+        },
       },
       "lsp": {
         "rust-analyzer": {
           "initialization_options": {
             "check": {
-              "command": "clippy"
-            }
-          }
-        }
-      }
+              "command": "clippy",
+            },
+          },
+        },
+      },
     }
     ```
     </details>
