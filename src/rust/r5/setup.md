@@ -5,10 +5,10 @@
 - [Rust in Visual Studio Code](https://code.visualstudio.com/docs/languages/rust)
 - [Rust with Zed](https://zed.dev/)
 - [Zed Monokai+Charcoal theme](https://zed-themes.com/?search=Monokai+Charcoal)
-- [GLM 4.6](https://z.ai/subscribe?ic=VRXWPTEP5N): The coding plan is $3 per month and working nearly like Gemini 2.5 Pro so try it!.
+- [GLM 4.7](https://z.ai/subscribe?ic=VRXWPTEP5N): The GLM lite coding plan is $3 per month and working nearly like Gemini 2.5 Pro so try it!.
 
     <details>
-    <summary>🎛️ Zed settings that's look like VSCdode</summary>
+    <summary>🎛️ Zed settings that's look like VSCdode with GLM and qwen3-vl-30b-a3b-instruct localhost via lmstudio</summary>
 
     ```json
     // Zed settings
@@ -20,6 +20,7 @@
     // custom settings, run the `open default settings` command
     // from the command palette or from `Zed` application menu.
     {
+      "agent_buffer_font_size": 12.0,
       "active_pane_modifiers": {
         "border_size": 0.0,
       },
@@ -41,6 +42,23 @@
                 "capabilities": {
                   "tools": true,
                   "images": false,
+                  "parallel_tool_calls": false,
+                  "prompt_cache_key": false,
+                },
+              },
+            ],
+          },
+          "qwen3-vl-30b-a3b-instruct": {
+            "api_url": "http://localhost:1234/v1/chat/completions",
+            "available_models": [
+              {
+                "name": "qwen3-vl-30b-a3b-instruct",
+                "max_tokens": 100000,
+                "max_output_tokens": 32000,
+                "max_completion_tokens": 100000,
+                "capabilities": {
+                  "tools": true,
+                  "images": true,
                   "parallel_tool_calls": false,
                   "prompt_cache_key": false,
                 },
