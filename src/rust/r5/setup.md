@@ -5,11 +5,9 @@
 - [Rust in Visual Studio Code](https://code.visualstudio.com/docs/languages/rust)
 - [Rust with Zed](https://zed.dev/)
 - [Zed Monokai+Charcoal theme](https://zed-themes.com/?search=Monokai+Charcoal)
-- [GLM 4.7](https://z.ai/subscribe?ic=VRXWPTEP5N): The GLM lite coding plan is $3 per month and working nearly like Gemini 2.5 Pro so try it!.
+- [GLM](https://z.ai/subscribe?ic=VRXWPTEP5N): Smart enough, not cheap anymore but coding plan is good enough(for now)
 
-    <details>
-    <summary>🎛️ Zed settings that's look like VSCdode with GLM and qwen3-vl-30b-a3b-instruct localhost via lmstudio</summary>
-
+ - 🎛️ Zed settings that's look like VSCdode with GLM
     ```json
     // Zed settings
     //
@@ -41,26 +39,61 @@
                 "max_completion_tokens": 200000,
                 "capabilities": {
                   "tools": true,
-                  "images": false,
+                  "images": true,
                   "parallel_tool_calls": false,
                   "prompt_cache_key": true,
                 },
               },
               {
-                "name": "glm-5",
-                "display_name": "GLM 5",
+                "name": "glm-5.1",
+                "display_name": "GLM 5.1",
                 "max_tokens": 200000,
                 "max_output_tokens": 32000,
                 "max_completion_tokens": 200000,
                 "capabilities": {
                   "tools": true,
-                  "images": false,
+                  "images": true,
                   "parallel_tool_calls": false,
                   "prompt_cache_key": true,
                 },
               },
             ],
           },
+          "gemma-4-26b-a4b": {
+            "api_url": "http://localhost:1234/v1",
+            "available_models": [
+              {
+                "name": "google/gemma-4-26b-a4b",
+                "max_tokens": 200000,
+                "max_output_tokens": 32000,
+                "max_completion_tokens": 200000,
+                "capabilities": {
+                  "tools": true,
+                  "images": true,
+                  "parallel_tool_calls": false,
+                  "prompt_cache_key": true,
+                },
+              },
+            ],
+          },
+          "qwen3-coder-next": {
+            "api_url": "http://localhost:1234/v1",
+            "available_models": [
+              {
+                "name": "qwen/qwen3-coder-next",
+                "max_tokens": 200000,
+                "max_output_tokens": 32000,
+                "max_completion_tokens": 200000,
+                "capabilities": {
+                  "tools": true,
+                  "images": true,
+                  "parallel_tool_calls": false,
+                  "prompt_cache_key": true,
+                },
+              },
+            ],
+          },
+        },
       },
       "experimental.theme_overrides": {
         "warning.background": "#736e01",
@@ -98,7 +131,6 @@
       },
     }
     ```
-    </details>
 
 ### Install extra tools.👇
 ```bash
