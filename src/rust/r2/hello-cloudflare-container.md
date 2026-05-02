@@ -27,7 +27,7 @@ npm create cloudflare@latest -- --template=cloudflare/templates/containers-templ
 <tab label="Cargo.toml">
 
 ```toml
-{{#include ../../../examples/r2/hello-cloudflare-container/container_src/Cargo.toml}}
+{{#include ../../../examples/r2/hello-cloudflare-container/container/Cargo.toml}}
 ```
 
 </tab>
@@ -39,7 +39,7 @@ npm create cloudflare@latest -- --template=cloudflare/templates/containers-templ
 <tab label="main.rs">
 
 ```rust
-{{#include ../../../examples/r2/hello-cloudflare-container/container_src/src/main.rs}}
+{{#include ../../../examples/r2/hello-cloudflare-container/container/src/main.rs}}
 ```
 
 </tab>
