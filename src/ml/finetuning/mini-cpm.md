@@ -17,7 +17,7 @@ ds_report
 
 #### `AttributeError: 'DeepSpeedCPUAdam' object has no attribute 'ds_opt_adam'`
 
-> ref: https://github.com/microsoft/DeepSpeed/issues/1846
+> ref: https://github.com/deepspeedai/DeepSpeed/issues/1846
 
 #### Attempt (didn't work)
 

@@ -18,14 +18,14 @@
 1. [The Rustonomicon](https://doc.rust-lang.org/nomicon): The Dark Arts of Unsafe `Rust`.
 1. [Rust Atomics and Locks](https://marabos.nl/atomics): Low-Level Concurrency in Practice.
 1. [The Rust Performance Book](https://nnethercote.github.io/perf-book/introduction.html): Contains many techniques that can improve the performance.
-1. [Effective Rust](https://www.lurklurk.org/effective-rust/intro.html): 35 Specific Ways to Improve Your Rust Code.
+1. [Effective Rust](https://www.lurklurk.org/effective-rust/): 35 Specific Ways to Improve Your Rust Code.
 1. [HOW TO CODE IT](https://www.howtocodeit.com/articles): Learn Rust with practical, production-tested guides
 
 ### 💎 Patterns
 
 1. [Rust Design Patterns](https://rust-unofficial.github.io/patterns/): Design Patterns obviously.
 1. [Long-term Rust Project Maintenance](https://corrode.dev/blog/long-term-rust-maintenance/)
-1. [Hexagonal architecture in Rust](https://alexis-lozano.com/hexagonal-architecture-in-rust-1/)
+1. [Hexagonal architecture in Rust](https://alexis-lozano.com/blog/hexagonal-architecture-in-rust-1/)
 
 ### 👨‍🍳 Cooking
 
@@ -47,7 +47,7 @@
 
 ### 👍 Recommended
 
-1. [Rust for JavaScript Developers](https://rustforjs.dev): Well taught from this to that, by [Sid Chatterjee](https://twitter.com/chatsidhartha)
+1. [Rust for JavaScript Developers](https://rustforjs.dev): Well taught from this to that, by [Sid Chatterjee](https://web.archive.org/web/20241002062953/https://twitter.com/chatsidhartha) (archived)
 1. [Programming Rust, 2nd Edition](https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/): In depth detail about heap/stack.
 1. [Rust for Rustaceans](https://nostarch.com/rust-rustaceans): More explain = less code.
 1. [Idiomatic Rust code](https://github.com/mre/idiomatic-rust): More to read.
@@ -57,10 +57,10 @@
 ## WASM Resources
 
 1. [Rust and WebAssembly](https://rustwasm.github.io/docs/book/)
-1. [The `wasm-bindgen` Guide](https://rustwasm.github.io/wasm-bindgen/)
+1. [The `wasm-bindgen` Guide](https://rustwasm.github.io/docs/wasm-bindgen/)
 1. [Hello wasm-pack!](https://rustwasm.github.io/docs/wasm-pack/)
 1. [Second State](https://github.com/second-state/wasm-learning)
-1. [WebAssembly threads](https://web.dev/webassembly-threads/)
+1. [WebAssembly threads](https://web.dev/articles/webassembly-threads)
 1. [Rhai - WebAssembly (WASM) Build](https://rhai.rs/book/start/builds/wasm.html)
 1. [Rust `no_std` Playbook](https://hackmd.io/@alxiong/rust-no-std)
 
@@ -68,17 +68,17 @@
 
 1. [CXX — safe `FFI` between Rust and C++](https://github.com/dtolnay/cxx)
 1. [The `UniFFI` user guide](https://mozilla.github.io/uniffi-rs/)
-1. [Rust-CUDA](https://rust-gpu.github.io/Rust-CUDA/faq.html)
+1. [Rust-CUDA](https://rust-gpu.github.io/rust-cuda/faq.html)
 
 ---
 
 ## Solana Resources
 
 1. [Solana Cookbook](https://solanacookbook.com/)
-1. [SolDev](https://soldev.app/)
+1. [SolDev](https://github.com/solana-foundation/developer-content/tree/main/content/courses) (soldev.app domain now redirects to an unrelated site)
 1. [Anchor](https://github.com/coral-xyz/anchor/tree/master/tests)
 1. [Metaplex](https://github.com/metaplex-foundation/metaplex-program-library)
-1. [The Solana Reading List - Mert](https://www.mertimus.com/p/the-solana-reading-list)
+1. [The Solana Reading List - Mert](https://web.archive.org/web/20240421203837/https://www.mertimus.com/p/the-solana-reading-list) (archived)
 1. [Solandy](https://www.youtube.com/solandy)
 
 ---

@@ -4,10 +4,10 @@
 
 ## Fun facts
 
-- 🚧 `println!` not working with `wasm-bindgen-test` context because `--nocapture` won't [passthrough](https://github.com/rustwasm/wasm-pack/issues/730).
+- 🚧 `println!` not working with `wasm-bindgen-test` context because `--nocapture` won't [passthrough](https://github.com/wasm-bindgen/wasm-pack/issues/730).
   > 💡 We have to use `console_log!` in `wasm` context.
-- 🚧 `println!("{js_error:#?}")`and `console_log!("{js_error:#?}")` not working because [`JsError`](https://rustwasm.github.io/wasm-bindgen/api/wasm_bindgen/struct.JsError.html) didn't implement `Debug`.
-  > 💡 We have to convert [`JsError` to `JsValue`](https://rustwasm.github.io/wasm-bindgen/api/wasm_bindgen/struct.JsError.html#impl-From%3CJsError%3E-for-JsValue) as workaround.
+- 🚧 `println!("{js_error:#?}")`and `console_log!("{js_error:#?}")` not working because [`JsError`](https://docs.rs/wasm-bindgen/latest/wasm_bindgen/struct.JsError.html) didn't implement `Debug`.
+  > 💡 We have to convert [`JsError` to `JsValue`](https://docs.rs/wasm-bindgen/latest/wasm_bindgen/struct.JsError.html#impl-From%3CJsError%3E-for-JsValue) as workaround.
 - 🚧 `#[tokio::test]` will break `wasm-bindgen-test`.
   > 💡 We need `#[cfg(not(target_arch = "wasm32"))]` above `Rust` context when needed.
 

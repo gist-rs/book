@@ -11,14 +11,14 @@ And want to send that `u8` from `Js` → `Wasm` → `Rust`.
 
 ## Our options
 
-1. Send `Uint8Array` as `JsValue` from `js` and use [`serde_wasm_bindgen::from_value(js_value)`](https://rustwasm.github.io/wasm-bindgen/reference/arbitrary-data-with-serde.html#receive-it-from-javascript-with-serde_wasm_bindgenfrom_value) to cast to derived `serde` struct.
+1. Send `Uint8Array` as `JsValue` from `js` and use [`serde_wasm_bindgen::from_value(js_value)`](https://rustwasm.github.io/docs/wasm-bindgen/reference/arbitrary-data-with-serde.html#receive-it-from-javascript-with-serde_wasm_bindgenfrom_value) to cast to derived `serde` struct.
 
    ```mermaid
    graph LR
     A["<code>new Uint8Array([16, 42])</code>"] --JsValue<br><code>UInt8Array</code>--> B["<code>serde_wasm_bindgen::from_value(js_value)</code>"] --"Struct<br><code>&[u8]</code>"--> C[<code>Rust</code>]
    ```
 
-2. Send `Array` as `JsValue` from `js` and use [`js_value.into_serde()`](https://rustwasm.github.io/wasm-bindgen/reference/arbitrary-data-with-serde.html#an-alternative-approach---using-json) to cast `serde` struct in `Rust`.
+2. Send `Array` as `JsValue` from `js` and use [`js_value.into_serde()`](https://rustwasm.github.io/docs/wasm-bindgen/reference/arbitrary-data-with-serde.html#an-alternative-approach---using-json) to cast `serde` struct in `Rust`.
 
    ```mermaid
    graph LR

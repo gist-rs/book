@@ -8,9 +8,9 @@
    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
    ```
 
-1. Install [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
+1. Install [wasm-pack](https://wasm-bindgen.github.io/wasm-pack/installer/)
    ```bash
-   curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+   curl https://wasm-bindgen.github.io/wasm-pack/installer/init.sh -sSf | sh
    ```
 
 ## 2️⃣ Use `wasmpack`

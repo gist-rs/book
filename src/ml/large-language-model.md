@@ -13,7 +13,7 @@ We will look `llm` from `Rust` perspective.
 
 ## Leader
 
-- https://llm.extractum.io/static/llm-leaderboards/
+- https://llm-explorer.com/static/llm-leaderboards/
 
 ## Models
 
@@ -133,7 +133,7 @@ A --meta--> AAAAAAA("🐍 llama-2")
 - [🦀 smolrsrwkv](https://github.com/KerfuffleV2/smolrsrwkv): A very basic example of the RWKV approach to language models written in Rust by someone that knows basically nothing about math or neural networks.
 - [🐍 gpt4all-lora](https://github.com/nomic-ai/gpt4all): A chatbot trained on a massive collection of clean assistant data including code, stories and dialogue.
 - [🐇 rwkv.cpp](https://github.com/saharNooby/rwkv.cpp): a port of BlinkDL/RWKV-LM to ggerganov/ggml. The end goal is to allow 4-bit quanized inference on CPU. `// WIP`
-- [🐍 vicuna](https://vicuna.lmsys.org/): An Open-Source Chatbot Impressing GPT-4 with 90% ChatGPT Quality.
+- [🐍 vicuna](https://lmsys.org/blog/2023-03-30-vicuna/): An Open-Source Chatbot Impressing GPT-4 with 90% ChatGPT Quality.
 
 ## Tools
 
@@ -162,7 +162,7 @@ I("🐍 chatgpt-retrieval-plugin") --> II("🐍 llama-retrieval-plugin")
 - [🐥 langchain-alpaca](https://github.com/linonetwo/langchain-alpaca): Run alpaca LLM fully locally in langchain.
 - [🐇 whisper.cpp](https://github.com/ggerganov/whisper.cpp): High-performance inference of OpenAI's Whisper automatic speech recognition (ASR) model.
 - [🐍 whisper-small](https://github.com/openai/whisper): Whisper is a pre-trained model for automatic speech recognition (ASR) and speech translation. Trained on 680k hours of labelled data, Whisper models demonstrate a strong ability to generalise to many datasets and domains without the need for fine-tuning.
-- [🐇 talk](https://github.com/ggerganov/whisper.cpp/tree/master/examples/talk): Talk with an Artificial Intelligence in your terminal.
+- [🐇 talk](https://github.com/ggml-org/whisper.cpp/tree/master/examples/talk-llama): Talk with an Artificial Intelligence in your terminal.
 - [🐍 chatgpt-retrieval-plugin](https://github.com/openai/chatgpt-retrieval-plugin): The ChatGPT Retrieval Plugin lets you easily search and find personal or work documents by asking questions in everyday language.
 - [🐍 llama-retrieval-plugin](https://github.com/lastmile-ai/llama-retrieval-plugin): LLaMa retrieval plugin script using OpenAI's retrieval plugin
 - [🦀 llm-chain](https://github.com/sobelio/llm-chain): prompt templates and chaining together prompts in multi-step chains, summarizing lengthy texts or performing advanced data processing tasks.
