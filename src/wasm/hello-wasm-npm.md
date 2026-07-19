@@ -20,7 +20,7 @@ We use [vite](https://vitejs.dev/guide/why.html) which is still has [Wasm bundle
 
 - [node](https://nodejs.org/en/download/package-manager/#macos)
 - [npm](https://www.npmjs.com/)
-- [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
+- [wasm-pack](https://wasm-bindgen.github.io/wasm-pack/installer/)
   ```bash
   cargo install wasm-pack
   ```

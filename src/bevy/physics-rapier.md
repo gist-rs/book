@@ -217,7 +217,7 @@ fn display_events(
 ## Vehicles
 
 - Good car example but `ammo.js`: https://github.com/kripken/ammo.js/blob/main/examples/webgl_demo_vehicle/index.html
-- Perfect `Rapier` example but js: https://github.com/grndctrl/vehicle-canary
+- Perfect `Rapier` example but js: https://github.com/grndctrl/vehicle-drag
 - Adjustable wheel and car detail but `Bevy 0.7`: https://github.com/gavlig/gryazevichki
 - Weird physics fake suspension and broken Camera `Bevy 0.10`: https://github.com/Biped-Potato/car_game
 - Working but `bevy_xpbd_3d` and only box, no wheel `Bevy 0.11.3`: https://github.com/tbillington/driving-physics-repro

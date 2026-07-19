@@ -8,7 +8,7 @@
 
 - Nearly completed but no repos 🤷‍♂️: https://www.youtube.com/watch?v=LRfraoVZDDg
 - `Actix` but no CloudRun: https://github.com/kpcyrd/mini-docker-rust/blob/main/Dockerfile
-- How to but no `Actix`: https://www.gmosx.ninja/posts/2020/09/21/how-to-deploy-a-rust-service-to-google-cloud-run/
+- How to but no `Actix`: https://web.archive.org/web/20240812095616/https://gmosx.ninja/posts/2020/09/21/how-to-deploy-a-rust-service-to-google-cloud-run (archived)
 
 ## Run locally
 
@@ -78,5 +78,5 @@ gcloud projects add-iam-policy-binding $PROJECT_ID \
 ## CI/CD Options
 
 - Connect to a GitHub repository with Cloud Build: https://cloud.google.com/build/docs/automating-builds/github/connect-repo-github
-- Creating a CI/CD environment for serverless containers on Cloud Run with GitHub Actions: https://github.com/GoogleCloudPlatform/community/blob/master/tutorials/cicd-cloud-run-github-actions/index.md
+- Creating a CI/CD environment for serverless containers on Cloud Run with GitHub Actions: https://github.com/GoogleCloudPlatform/community/blob/master/archived/cicd-cloud-run-github-actions/index.md
 - GitHub Actions best practices for Rust projects: https://www.infinyon.com/blog/2021/04/github-actions-best-practices/#optimizing-rusts-build-speed-with-sccache
